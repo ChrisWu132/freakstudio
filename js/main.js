@@ -1,4 +1,4 @@
-/* freakstudio — GSAP + ScrollTrigger animations */
+/* anvol — GSAP + ScrollTrigger animations */
 (function () {
   "use strict";
 
@@ -48,7 +48,7 @@
           email: form.email.value,
           company: form.company.value,
           message: form.message.value,
-          _subject: "New quote request — freakstudio"
+          _subject: "New quote request — anvol"
         })
       })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -58,7 +58,7 @@
           form.reset();
         })
         .catch(function () {
-          note.textContent = "Something went wrong. Email us at hello@freakstudio.com instead.";
+          note.textContent = "Something went wrong. Email us at hello@anvol.dev instead.";
           note.className = "form-note err";
         })
         .finally(function () {

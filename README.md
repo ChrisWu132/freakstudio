@@ -1,6 +1,6 @@
-# freakstudio — landing page
+# anvol — landing page
 
-Marketing site for freakstudio, a contract-manufacturing partner with entities in the US and China. Static site: no build step, no framework — HTML + CSS + GSAP.
+Marketing site for anvol, a contract-manufacturing partner with entities in the US and China. Static site: no build step, no framework — HTML + CSS + GSAP.
 
 ## Run locally
 
@@ -32,7 +32,7 @@ The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend
 ## Before launch checklist
 
 - [ ] Activate FormSubmit (submit the form once, click the confirmation link, then switch to the alias endpoint)
-- [ ] `hello@freakstudio.com` is used across the page — set up this mailbox or replace it
+- [ ] `hello@anvol.dev` is used across the page — set up this mailbox or replace it
 - [ ] Replace placeholder stats (120+ factories / 300+ projects / 22% / 15 countries) with real numbers
 - [ ] Replace the testimonial (name, quote, avatar) with a real client — the current avatar is AI-generated
 - [ ] Case-study copy is illustrative — replace with real projects
