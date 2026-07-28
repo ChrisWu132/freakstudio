@@ -34,4 +34,5 @@ The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend
 - [ ] Replace placeholder stats (120+ factories / 300+ projects / 22% / 15 countries) with real numbers
 - [ ] Replace the testimonial (name, quote, avatar) with a real client — the current avatar is AI-generated
 - [ ] Case-study copy is illustrative — replace with real projects
+- [ ] Certification badges (ISO 9001 / 13485 / IATF 16949 / IPC-A-610 / RoHS·CE·FCC) — confirm they match what your partner factories actually hold before taking real traffic
 - [ ] Add real Privacy / Terms pages (footer links currently point at #faq)
