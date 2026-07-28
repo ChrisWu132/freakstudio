@@ -37,7 +37,7 @@ Six image slots. Every slot below lists: **where it sits**, **export size**, and
 ## IMG-06 — Testimonial avatar
 - **Where:** Testimonial band, circular avatar left of "Marta Lindqvist".
 - **Size:** 96 × 96 px square, masked to a circle. 2× export = 192 × 192
-- **Prompt:** Natural headshot of a woman in her late thirties, hardware engineering professional, neutral knit top, softly blurred office background, warm natural window light, relaxed half-smile looking slightly off camera, shoulders-up framing centred for a circular crop, 1:1 square.
+- **Prompt:** Natural professional headshot of a Chinese man in his mid-thirties, hardware startup founder, short black hair, dark casual crew-neck or knit top, softly blurred modern office background, warm natural window light, relaxed confident half-smile looking slightly off camera, shoulders-up framing centred for a circular crop, 1:1 square.
 - **Note:** replace with the real client photo before launch — generated faces on a testimonial are a trust risk.
 
 ---

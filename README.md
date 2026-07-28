@@ -23,16 +23,14 @@ python -m http.server 8000
 
 The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend, free:
 
-- Endpoint is set in `js/main.js` (`FORM_ENDPOINT`), currently `https://formsubmit.co/ajax/chriswhp04@gmail.com`.
-- **Activation:** the first submission triggers a confirmation email to that address — click the link once and every later submission is delivered to the inbox.
-- **Recommended after activation:** FormSubmit's confirmation email gives you a random alias endpoint (`https://formsubmit.co/ajax/<random-string>`). Swap it into `FORM_ENDPOINT` so your raw email address is not exposed in the public repo.
-- To change the destination address later, just edit `FORM_ENDPOINT`.
+- Endpoint is set in `js/main.js` (`FORM_ENDPOINT`) and uses the activated random alias, so the destination inbox is not exposed in this public repo.
+- To change the destination address later, point `FORM_ENDPOINT` at the new address, submit once, click the activation link FormSubmit emails you, then swap in the new alias it gives you.
 - Spam protection: honeypot field `_honey` is already wired.
 
 ## Before launch checklist
 
-- [ ] Activate FormSubmit (submit the form once, click the confirmation link, then switch to the alias endpoint)
-- [ ] `hello@anvol.dev` is used across the page — set up this mailbox or replace it
+- [x] Activate FormSubmit (done — alias endpoint in place)
+- [ ] `hello@anvol.dev` is used across the page — set up Cloudflare Email Routing so it actually receives mail
 - [ ] Replace placeholder stats (120+ factories / 300+ projects / 22% / 15 countries) with real numbers
 - [ ] Replace the testimonial (name, quote, avatar) with a real client — the current avatar is AI-generated
 - [ ] Case-study copy is illustrative — replace with real projects

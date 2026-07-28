@@ -25,7 +25,7 @@
   });
 
   /* ---------- contact form (FormSubmit AJAX) ---------- */
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/chriswhp04@gmail.com";
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/e18b2a98f7d6ed1df42fe37b8c24eb5d";
   var form = document.getElementById("quote-form");
   if (form) {
     form.addEventListener("submit", function (e) {
