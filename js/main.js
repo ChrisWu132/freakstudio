@@ -25,7 +25,7 @@
   });
 
   /* ---------- contact form (FormSubmit AJAX) ---------- */
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/wuhaipen@usc.edu";
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/chriswhp04@gmail.com";
   var form = document.getElementById("quote-form");
   if (form) {
     form.addEventListener("submit", function (e) {

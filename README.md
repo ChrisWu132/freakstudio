@@ -23,7 +23,7 @@ python -m http.server 8000
 
 The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend, free:
 
-- Endpoint is set in `js/main.js` (`FORM_ENDPOINT`), currently `https://formsubmit.co/ajax/wuhaipen@usc.edu`.
+- Endpoint is set in `js/main.js` (`FORM_ENDPOINT`), currently `https://formsubmit.co/ajax/chriswhp04@gmail.com`.
 - **Activation:** the first submission triggers a confirmation email to that address — click the link once and every later submission is delivered to the inbox.
 - **Recommended after activation:** FormSubmit's confirmation email gives you a random alias endpoint (`https://formsubmit.co/ajax/<random-string>`). Swap it into `FORM_ENDPOINT` so your raw email address is not exposed in the public repo.
 - To change the destination address later, just edit `FORM_ENDPOINT`.
