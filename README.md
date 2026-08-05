@@ -30,7 +30,10 @@ The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend
 ## Before launch checklist
 
 - [x] Activate FormSubmit (done — alias endpoint in place)
-- [ ] `hello@anvol.dev` is used across the page — set up Cloudflare Email Routing so it actually receives mail
+- [x] Contact address on the page must be a mailbox that exists. There is no `hello@` on this domain —
+      only `chris@anvol.dev` — so both links point there now (2026-08-05). Cloudflare Email Routing is
+      NOT an option here: the MX already points at Google Workspace and redirecting it would take the
+      real mailbox down. To get `hello@` back, add it as an alias on chris@ in the Workspace admin.
 - [ ] Replace placeholder stats (120+ factories / 300+ projects / 22% / 15 countries) with real numbers
 - [ ] Replace the testimonial (name, quote, avatar) with a real client — the current avatar is AI-generated
 - [ ] Case-study copy is illustrative — replace with real projects
