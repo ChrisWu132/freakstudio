@@ -58,7 +58,7 @@
           form.reset();
         })
         .catch(function () {
-          note.textContent = "Something went wrong. Email us at hello@anvol.dev instead.";
+          note.textContent = "Something went wrong. Email us at chris@anvol.dev instead.";
           note.className = "form-note err";
         })
         .finally(function () {
