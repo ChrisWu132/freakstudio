@@ -153,30 +153,6 @@
     });
   });
 
-  /* testimonial: quote wipe + stars pop */
-  var quote = document.querySelector("[data-wipe]");
-  if (quote) {
-    gsap.fromTo(quote,
-      { clipPath: "inset(0 100% 0 0)" },
-      {
-        clipPath: "inset(0 0% 0 0)",
-        duration: 0.9,
-        ease: EASE,
-        scrollTrigger: { trigger: quote, start: "top 85%", once: true }
-      });
-  }
-  var stars = document.getElementById("stars");
-  if (stars) {
-    gsap.from("[data-star]", {
-      opacity: 0,
-      scale: 0.6,
-      duration: 0.4,
-      ease: EASE,
-      stagger: 0.09,
-      scrollTrigger: { trigger: stars, start: "top 90%", once: true }
-    });
-  }
-
   /* final CTA scale-in */
   var cta = document.querySelector("[data-cta]");
   if (cta) {
