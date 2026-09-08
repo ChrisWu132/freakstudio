@@ -19,6 +19,13 @@ python -m http.server 8000
 - `assets/img/` — real photos only: `case-*.jpg` our own products, `f-*.jpg` our benches and partner lines in Shenzhen, `anvol-mark.svg` the logo (source in `../brand/`). The AI-generated images were removed 2026-09-08; `IMAGE-PROMPTS.md` is history
 - `original-export/` — untouched Figma Make export this page was rebuilt from
 
+## Deploying
+
+`npx wrangler pages deploy . --project-name=freakstudio --commit-dirty=true` from this directory. Pages serves css/js with a
+4-hour browser cache, so **bump the `?v=` on the two asset links in `index.html` every time `style.css` or `main.js`
+changes** — otherwise returning visitors get the new HTML with the old stylesheet (seen 2026-09-08: black circle step
+numbers and unstyled photo grid). Then open anvol.dev and check it, not the preview URL.
+
 ## Email collection (contact form)
 
 The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend, free:
