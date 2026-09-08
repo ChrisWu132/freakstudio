@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>anvol — you have the people, we build the product</title>
-<meta name="description" content="For creators, indie developers and small businesses whose people already ask “where can I buy that?” — anvol designs, engineers and manufactures it, with our own engineers on the factory floor in Shenzhen. US company. It starts with a 20-minute conversation.">
+<title>anvol — we design and build your hardware</title>
+<meta name="description" content="Anvol is an outsourced hardware engineering and manufacturing team. Our engineers in Shenzhen design your board, firmware and enclosure, source parts, prototype and run production on partner factory lines. Send what you have and get back a DFM review and quote.">
 <link rel="icon" href="assets/img/anvol-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/launch.css">
 </head>
 <body>
 
@@ -21,12 +20,13 @@
       <span class="brand-name">anvol</span>
     </a>
     <nav class="nav-links" id="nav-links" aria-label="Main">
-      <a href="#loop">How it works</a>
       <a href="#cases">Our hardware</a>
+      <a href="#how">How it works</a>
+      <a href="#partners">Partners</a>
       <a href="#faq">FAQ</a>
     </nav>
     <div class="nav-right">
-      <a class="btn btn-primary btn-nav" href="#contact">Let's talk <span class="arrow">→</span></a>
+      <a class="btn btn-primary btn-nav" href="#contact">Get a quote <span class="arrow">→</span></a>
       <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
     </div>
   </div>
@@ -36,307 +36,60 @@
 
   <section class="hero">
     <div class="hero-copy">
-      <div class="badge" data-hero>
-        <span class="badge-dot"></span>US company · Engineers on the factory floor in Shenzhen
-      </div>
-      <h1 class="hero-title">
-        <span class="line-mask"><span data-hero-line>You have the people.</span></span>
-        <span class="line-mask"><span data-hero-line>We build the product.</span></span>
-        <span class="line-mask"><span data-hero-line>Your name on the box.</span></span>
-      </h1>
-      <p class="hero-sub" data-hero>For creators, indie developers and small businesses whose people already ask “where can I buy that?”. We design it, engineer it, sample it and produce it with our own engineers in Shenzhen — you never touch a drawing. It starts with a 20-minute conversation.</p>
-      <div class="hero-cta" data-hero>
-        <a class="btn btn-primary" href="#contact">Let's talk — 20 minutes <span class="arrow">→</span></a>
-        <a class="btn btn-ghost" href="#loop">See how it works</a>
-      </div>
-      <div class="hero-notes" data-hero>
-        <span>NDA first, always</span>
-        <span class="sep"></span>
-        <span>No cost to talk</span>
+      <div class="eyebrow">Hardware engineering &amp; manufacturing</div>
+      <h1 class="hero-title">We design and build your hardware</h1>
+      <p class="hero-sub">Our engineers in Shenzhen design your board, firmware and enclosure, source parts, prototype it and run production on partner factory lines. Send whatever you have — a sketch, a spec, a sample — and get back a DFM review and quote.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#contact">Talk to an engineer <span class="arrow">→</span></a>
+        <a class="text-link" href="#cases">See what we've built <span class="arrow">→</span></a>
       </div>
     </div>
-    <div class="hero-media" data-hero-img>
+    <div class="hero-media">
       <img src="assets/img/f-debug-bench.jpg" alt="Our engineers at the debug bench in Shenzhen — instruments, parts bins and boards under test" width="720" height="560">
     </div>
   </section>
 
-  <section class="trustbar" aria-label="Industries we serve">
-    <div class="trustbar-inner">
-      <span class="trustbar-label">Categories we build in</span>
-      <div class="marquee" id="marquee">
-        <div class="marquee-track" id="marquee-track">
-          <div class="marquee-group">
-            <span>Consumer electronics</span><span>Medical devices</span><span>Robotics</span><span>Smart home</span><span>Industrial IoT</span><span>Wearables</span><span>E-mobility</span>
-          </div>
-          <div class="marquee-group" aria-hidden="true">
-            <span>Consumer electronics</span><span>Medical devices</span><span>Robotics</span><span>Smart home</span><span>Industrial IoT</span><span>Wearables</span><span>E-mobility</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="certbar">
-      <span class="certbar-label">We only quote factories that can show</span>
-      <div class="certs">
-        <span class="cert">ISO 9001</span>
-        <span class="cert">ISO 13485</span>
-        <span class="cert">IATF 16949</span>
-        <span class="cert">IPC-A-610</span>
-        <span class="cert">RoHS · CE · FCC</span>
-      </div>
-    </div>
-  </section>
-
-  <section class="stats">
-    <div class="draw-line" data-draw></div>
-    <div class="stats-grid">
-      <div class="stat" data-reveal>
-        <div class="stat-num"><span data-count="20" data-suffix="+">20+</span></div>
-        <div class="stat-label">Products shipped</div>
-      </div>
-      <div class="stat" data-reveal data-delay="0.08">
-        <div class="stat-num"><span data-count="10" data-suffix="+">10+</span></div>
-        <div class="stat-label">Engineers in Shenzhen</div>
-      </div>
-      <div class="stat" data-reveal data-delay="0.16">
-        <div class="stat-num"><span data-count="3" data-suffix="">3</span></div>
-        <div class="stat-label">Factory quotes per enquiry</div>
-      </div>
-      <div class="stat" data-reveal data-delay="0.24">
-        <div class="stat-num"><span data-count="5" data-suffix="">5</span></div>
-        <div class="stat-label">Working days to your quote</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ MANIFESTO ============ -->
-  <section class="manifesto" id="manifesto">
-    <div class="stage">
-      <div class="mline" id="mline1" data-reveal>Making a product used to mean finding a factory, hiring an engineer, and learning what tooling is.</div>
-      <div class="mline" id="mline2" data-reveal data-delay=".15">Now it means <em>one conversation</em> about what your people keep asking for.</div>
-    </div>
-  </section>
-
-  <!-- ============ THE WHOLE LAUNCH, ONE CONVERSATION ============ -->
-  <section class="loopchat" id="loop">
-    <div class="stage">
-      <div class="head">
-        <div class="eyebrow">How it works</div>
-        <h2>The whole launch, <em>one conversation.</em></h2>
-      </div>
-      <div class="stagegrid">
-        <div class="beatstage" id="beatstage">
-
-          <div class="beat" data-reveal>
-            <div class="bk">01 · you tell us</div>
-            <div class="m-user">
-              <span class="bub">people keep asking if they can buy the thing I made</span>
-              <div class="att">sam · 40k subscribers</div>
-            </div>
-          </div>
-
-          <div class="beat" data-reveal>
-            <div class="bk">02 · we draw it up</div>
-            <div class="m-build">
-              <img src="assets/img/case-logic-analyzer.jpg" alt="">
-              <div>
-                <div class="nm">Rev A</div>
-                <div class="sp">schematic · enclosure · firmware · packaging</div>
-              </div>
-              <span class="stamp">by our own engineers</span>
-            </div>
-          </div>
-
-          <div class="beat" data-reveal>
-            <div class="bk">03 · you post it</div>
-            <div class="m-post">
-              <span class="bub">should this exist? tell me if you'd want one</span>
-              <div class="att">sam · posted it to his people</div>
-              <div class="postnote">one post — that's your whole job</div>
-            </div>
-          </div>
-
-          <div class="beat" data-reveal>
-            <div class="bk">04 · your people answer</div>
-            <div class="m-wants">
-              <span class="wantpill"><span class="h">♥</span> mia wants one</span>
-              <span class="wantpill"><span class="h">♥</span> jack wants one</span>
-              <span class="wantpill"><span class="h">♥</span> alice wants one</span>
-            </div>
-            <div class="m-journey" id="mjourney">
-              <div class="jt">product journey</div>
-              <div class="jline"><span class="jfill" id="jfill"></span></div>
-              <div class="jstops">
-                <span class="stop" data-j="1">Design review</span>
-                <span class="stop" data-j="2">Sample</span>
-                <span class="stop" data-j="3">Your sign-off</span>
-                <span class="stop" data-j="4">Production</span>
-              </div>
-              <span class="jstamp" id="jstamp">sample approved</span>
-            </div>
-          </div>
-
-          <div class="beat" data-reveal>
-            <div class="bk">05 · it ships</div>
-            <div class="m-slip" id="mslip">
-              <div class="s-top">
-                <div class="to">first unit → sam</div>
-                <div class="sub">You hold it before anyone can buy one.</div>
-              </div>
-              <div class="s-bot">
-                <div class="ri"><span>unit 001</span><b>inspected on the line</b></div>
-                <div class="ri"><span>unit 002</span><b>inspected on the line</b></div>
-                <div class="rf">checked on the line by our engineers — <b>your name on the box</b></div>
-              </div>
-            </div>
-            <div class="bfoot" id="bfoot">Sam never opened a factory and never learned CAD. He told us what his people wanted; we did the rest.</div>
-          </div>
-
-          <div class="beat beat-coda" data-reveal>
-            <div class="m-user">
-              <span class="bub">it's on my desk right now — and on theirs.</span>
-              <div class="att">sam · never touched a soldering iron</div>
-            </div>
-            <a class="say btn btn-primary" href="#contact">Let's talk — 20 minutes <span class="arrow">→</span></a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ WE HANDLE THE REST ============ -->
-  <section class="section never" id="handle">
+  <section class="section section-mist" id="cases">
     <div class="container">
-      <div class="t-head" data-reveal>
-        <div class="eyebrow">The part you never touch</div>
-        <h2>You tell us.<br><em>We handle the rest.</em></h2>
-      </div>
-      <div class="h-wrap">
-        <div class="hviz" id="hviz">
-          <div class="hv-frame">
-            <img class="hv-img on" src="assets/img/f-debug-bench.jpg" alt="Our engineers at the electronics benches in Shenzhen">
-            <img class="hv-img" src="assets/img/f-instruments.jpg" alt="Test instrument benches">
-            <img class="hv-img" src="assets/img/f-molds.jpg" alt="Injection mold workshop">
-            <img class="hv-img" src="assets/img/f-operator.jpg" alt="Technician fitting prototype parts">
-            <img class="hv-img" src="assets/img/f-cmm.jpg" alt="Coordinate measuring machine">
-            <img class="hv-img" src="assets/img/f-molding.jpg" alt="Injection molding machine">
-          </div>
-          <div class="hv-cap">Our own benches and partner lines in Shenzhen — not stock photos.</div>
-        </div>
-        <div class="hlist" id="hlist">
-          <div class="hrow"><span class="ph"><img src="assets/img/f-debug-bench.jpg" alt=""></span><span class="it">Circuit design</span><span class="stamp2">handled</span></div>
-          <div class="hrow"><span class="ph"><img src="assets/img/f-instruments.jpg" alt=""></span><span class="it">Firmware &amp; code</span><span class="stamp2">handled</span></div>
-          <div class="hrow"><span class="ph"><img src="assets/img/f-molds.jpg" alt=""></span><span class="it">Enclosure &amp; molds</span><span class="stamp2">handled</span></div>
-          <div class="hrow"><span class="ph"><img src="assets/img/f-operator.jpg" alt=""></span><span class="it">Sampling &amp; prototyping</span><span class="stamp2">handled</span></div>
-          <div class="hrow"><span class="ph"><img src="assets/img/f-cmm.jpg" alt=""></span><span class="it">Testing &amp; validation</span><span class="stamp2">handled</span></div>
-          <div class="hrow"><span class="ph"><img src="assets/img/f-molding.jpg" alt=""></span><span class="it">Production &amp; shipping</span><span class="stamp2">handled</span></div>
-        </div>
-      </div>
-      <p class="fine">End to end, with our own engineers on the line. <b>Your job ends at telling us what to make.</b></p>
-
-      <div class="deliverables">
-        <h3 class="deliv-head" data-reveal>Every stage leaves a paper trail. You get:</h3>
-        <div class="card-grid card-grid-3">
-          <div class="card" data-reveal>
-            <div class="doc" aria-hidden="true">
-              <span class="doc-line w40"></span><span class="doc-line w90"></span><span class="doc-line w75"></span><span class="doc-line w85"></span><span class="doc-line w60"></span>
-            </div>
-            <h3>DFM report</h3>
-            <p>Manufacturability review with cost-down items, tolerance risks and component alternatives — before tooling money is spent.</p>
-          </div>
-          <div class="card" data-reveal data-delay="0.08">
-            <div class="doc" aria-hidden="true">
-              <span class="doc-line w40"></span><span class="doc-line w85"></span><span class="doc-line w90"></span><span class="doc-line w70"></span><span class="doc-line w80"></span>
-            </div>
-            <h3>AQL inspection report</h3>
-            <p>In-line and pre-shipment checks against an agreed AQL, with photos of every defect found and how it was resolved.</p>
-          </div>
-          <div class="card" data-reveal data-delay="0.16">
-            <div class="doc" aria-hidden="true">
-              <span class="doc-line w40"></span><span class="doc-line w80"></span><span class="doc-line w90"></span><span class="doc-line w65"></span><span class="doc-line w85"></span>
-            </div>
-            <h3>Factory audit scorecard</h3>
-            <p>How each shortlisted factory scored on quality systems, capacity, tooling and financial health — before you choose.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-mist" id="why">
-    <div class="container why-grid">
-      <div class="why-media" data-reveal>
-        <img src="assets/img/img-02-why.png" alt="Quality engineer measuring a machined aluminium part with digital calipers" width="600" height="520" data-parallax>
-      </div>
-      <div data-reveal data-delay="0.08">
-        <div class="eyebrow">Why us</div>
-        <h2 class="why-title">We work for you, not for the factory</h2>
-        <div class="checklist">
-          <div class="check-item">
-            <span class="check-dot">✓</span>
-            <div><div class="check-title">It stays yours — NDA first</div><div class="check-desc">Signed before any drawing leaves your side, enforceable in the factory's jurisdiction. Tooling and drawings are registered to you, not to the factory.</div></div>
-          </div>
-          <div class="check-item">
-            <span class="check-dot">✓</span>
-            <div><div class="check-title">US company, production in Shenzhen</div><div class="check-desc">Contract with our US entity in USD, or contract the factory directly and have us manage it — whichever your finance and legal side prefers. The engineering and the factory work happen in Shenzhen, where we are.</div></div>
-          </div>
-          <div class="check-item">
-            <span class="check-dot">✓</span>
-            <div><div class="check-title">We build hardware ourselves</div><div class="check-desc">Not a broker relaying emails. Our own engineers design boards, firmware and enclosures — see the products below — and they are the people who walk the line during your run.</div></div>
-          </div>
-          <div class="check-item">
-            <span class="check-dot">✓</span>
-            <div><div class="check-title">You see every number, and one person answers</div><div class="check-desc">The factory quote and our fee are separate lines you can read, and the same English-speaking project manager runs your project from first conversation to final shipment.</div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="cases">
-    <div class="container">
-      <div class="section-head section-head-row" data-reveal>
-        <div>
-          <div class="eyebrow">Our own hardware</div>
-          <h2>Products we designed and built</h2>
-          <p class="case-note">Not client case studies — these are our own products. Every photo below is a unit we designed, built and shipped ourselves.</p>
-        </div>
-        <a class="text-link" href="#contact">Ask about a project <span class="arrow">→</span></a>
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">Built by us</div>
+        <h2>Products we designed and shipped ourselves</h2>
+        <p class="section-note">These are not client projects. Every product below was designed, prototyped and manufactured by our team — board layout, firmware, enclosure, sourcing, assembly, packaging.</p>
       </div>
       <div class="card-grid card-grid-3">
         <div class="card card-case" data-reveal>
           <div class="case-media"><img src="assets/img/case-logic-analyzer.jpg" alt="24-channel 100 MHz logic analyzer with a set of coloured test hooks" width="404" height="230" loading="lazy"></div>
           <div class="case-body">
             <h3>24-channel logic analyzer</h3>
-            <p>100 MHz sampling, 3.3–5 V levels, sigrok/PulseView compatible. Our own board, enclosure, silkscreen and retail carton — a full box build, not just a PCBA.</p>
+            <p>100 MHz sampling, 3.3–5 V input, sigrok/PulseView compatible. Our board, enclosure, silkscreen and retail carton — designed and produced in house.</p>
           </div>
         </div>
         <div class="card card-case" data-reveal data-delay="0.08">
           <div class="case-media"><img src="assets/img/case-underwater-rov.jpg" alt="Flat-frame underwater ROV with four thrusters and a manipulator arm" width="404" height="230" loading="lazy"></div>
           <div class="case-body">
             <h3>Flat-frame underwater ROV</h3>
-            <p>Sealed pressure housing, four thrusters, manipulator arm, tether and ground-station software. STM32 control board and firmware in house — including the leak testing.</p>
+            <p>Sealed pressure housing, four thrusters, manipulator arm, tether and ground-station software. STM32 control board and firmware designed in house.</p>
           </div>
         </div>
         <div class="card card-case" data-reveal data-delay="0.16">
           <div class="case-media"><img src="assets/img/case-tracked-robot.jpg" alt="Swing-arm tracked robot chassis with sheet-metal body and PTZ camera" width="404" height="230" loading="lazy"></div>
           <div class="case-body">
             <h3>Swing-arm tracked robot</h3>
-            <p>Welded and machined steel chassis, dual swing-arm tracks, PTZ camera, e-stop. Mechanical fabrication and electronics integrated as one build.</p>
+            <p>Welded and machined steel chassis, dual swing-arm tracks, PTZ camera and e-stop. Mechanical fabrication and electronics integrated as one build.</p>
           </div>
         </div>
         <div class="card card-case" data-reveal>
           <div class="case-media"><img src="assets/img/case-line-follower.jpg" alt="Four-wheel robot car with a spinning lidar and a custom control board" width="404" height="230" loading="lazy"></div>
           <div class="case-body">
             <h3>Lidar line-following car</h3>
-            <p>Custom control board with OLED, lidar obstacle avoidance and following, magnetic line tracking, phone app. Board, firmware and app all ours.</p>
+            <p>Custom control board with OLED display, lidar obstacle avoidance, magnetic line tracking and a companion phone app. Board, firmware and app all ours.</p>
           </div>
         </div>
         <div class="card card-case" data-reveal data-delay="0.08">
           <div class="case-media"><img src="assets/img/case-ros-platform.jpg" alt="Two large mecanum-wheel ROS inspection platforms with aluminium frames" width="404" height="230" loading="lazy"></div>
           <div class="case-body">
             <h3>Large ROS inspection platform</h3>
-            <p>Mecanum wheels, sprung suspension, extruded-aluminium frame and acrylic body, ROS stack on top. Built at a size where tolerances and welding actually matter.</p>
+            <p>Mecanum wheels, sprung suspension, extruded-aluminium frame and acrylic body panels, ROS stack on top. Built at a size where tolerances and welding matter.</p>
           </div>
         </div>
         <div class="card card-case" data-reveal data-delay="0.16">
@@ -347,6 +100,57 @@
           </div>
         </div>
       </div>
+      <div class="proof-foot" data-reveal>
+        <p>Our GraftSense Port Dev Kit is used in lab courses at 10 universities and maker clubs at 25 primary schools. Our City Smart kit series ships with customer-specific branding, silkscreen and packaging.</p>
+        <p class="sponsors">Our projects are hardware-sponsored by <b>DFRobot</b>, <b>Freenove</b>, <b>Waveshare</b>, <b>LILYGO</b> and <b>M5Stack</b>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <div class="container">
+      <div class="section-head" data-reveal>
+        <div class="eyebrow">How it works</div>
+        <h2>From sketch to finished product</h2>
+      </div>
+      <div class="steps">
+        <div class="step" data-reveal>
+          <div class="step-num">Step 01</div>
+          <h3>Send us what you have</h3>
+          <p>A napkin sketch, a specification document, Gerber files, a competitor's product — whatever describes what you need built. If all you have is an idea, that works too.</p>
+        </div>
+        <div class="step" data-reveal data-delay="0.08">
+          <div class="step-num">Step 02</div>
+          <h3>DFM review and quote</h3>
+          <p>We return a DFM review, bill of materials and quote. A simple two-layer board prototype: a few hundred dollars. Complex work quoted after a call. DFM review is free when we build it.</p>
+        </div>
+        <div class="step" data-reveal data-delay="0.16">
+          <div class="step-num">Step 03</div>
+          <h3>Prototype, approve, produce</h3>
+          <p>We build prototypes, you sign off, then we run production and inspect on the partner line. No minimum order — a single unit is a job we take.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-mist" id="benches">
+    <div class="container">
+      <div class="bench-grid" data-reveal>
+        <img src="assets/img/f-debug-bench.jpg" alt="Our engineers at the electronics benches in Shenzhen" loading="lazy">
+        <img src="assets/img/f-instruments.jpg" alt="Test instrument benches" loading="lazy">
+        <img src="assets/img/f-molds.jpg" alt="Injection mold workshop" loading="lazy">
+        <img src="assets/img/f-operator.jpg" alt="Technician fitting prototype parts" loading="lazy">
+        <img src="assets/img/f-cmm.jpg" alt="Coordinate measuring machine" loading="lazy">
+        <img src="assets/img/f-molding.jpg" alt="Injection molding machine" loading="lazy">
+      </div>
+      <p class="bench-cap">Our engineering benches and partner lines in Shenzhen. Not stock photos.</p>
+    </div>
+  </section>
+
+  <section class="section founder" id="founder">
+    <div class="founder-box" data-reveal>
+      <div class="founder-mark" aria-hidden="true">CW</div>
+      <p><b>Chris Wu</b> is a repeat hardware founder. His previous company reached $300K ARR and went through MiraclePlus, the old YC China. He leads Anvol's engineering team and reads every message himself.</p>
     </div>
   </section>
 
@@ -356,7 +160,7 @@
         <div>
           <div class="eyebrow">For the supply chain</div>
           <h2>Work with us, not around us</h2>
-          <p class="case-note">We build hardware. You sell parts, run tests, make cables, or ship products. When your work touches ours, here is how we fit together.</p>
+          <p class="section-note">We build hardware. You sell parts, run tests, make cables, or ship products. When your work touches ours, here is how we fit together.</p>
         </div>
         <a class="text-link" href="#contact">Start with an NDA <span class="arrow">→</span></a>
       </div>
@@ -384,45 +188,29 @@
     <div class="container faq-grid">
       <div data-reveal>
         <div class="eyebrow">FAQ</div>
-        <h2>Questions we get<br>before the first call</h2>
+        <h2>Questions we get before the first call</h2>
         <p class="faq-note">Something not covered? <a href="#contact">Ask us directly →</a></p>
       </div>
       <div class="accordion" data-reveal data-delay="0.08" id="accordion">
         <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="true">What do I actually have to do?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>Tell us what your people keep asking you for, then post it when there is something to show them. You do not design, quote, source, inspect or ship anything — our engineers do that, in Shenzhen, and you sign off at each step.</p></div></div>
+          <button type="button" class="acc-btn" aria-expanded="true">What exactly does Anvol do — a factory, a broker or an engineering firm?<span class="acc-icon">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner"><p>We are an engineering firm with our own hardware team in Shenzhen. Our engineers design the board, firmware and enclosure, source the components, then coordinate and inspect production on partner factory lines. We are not a factory and not a broker — we do the engineering and manage the build.</p></div></div>
         </div>
         <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="false">I've never made a physical product. Is that a problem?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>No — that is who this is for. Most of what we build starts as a sketch, a photo or a sentence. We turn it into drawings, a bill of materials and a sample you can hold, and we explain each decision in plain words before you approve it.</p></div></div>
+          <button type="button" class="acc-btn" aria-expanded="false">Can you source components, including older or hard-to-find chips?<span class="acc-icon">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner"><p>Yes. Component sourcing is part of what we do, including older and hard-to-find chips. We source in Shenzhen and provide a full bill of materials with the quote.</p></div></div>
         </div>
         <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="false">What happens on the 20-minute call?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>We ask what your people ask you for, what you have already tried, and what stopped you. If there is a product in it, we tell you what it would take — in plain numbers — before you decide anything. No slides, no pitch.</p></div></div>
+          <button type="button" class="acc-btn" aria-expanded="false">Is there a minimum order?<span class="acc-icon">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner"><p>No. A single prototype unit is a job we take. There is no minimum order quantity for prototyping or production.</p></div></div>
         </div>
         <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="false">Who owns the design and the product?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>You do. We sign a bilingual NDA before we look at any file, and a separate NNN agreement with every factory we approach. Tooling and drawings stay registered to you, not to the factory, and your name goes on the product.</p></div></div>
+          <button type="button" class="acc-btn" aria-expanded="false">Who owns the design?<span class="acc-icon">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner"><p>You do. We sign an NDA before we open any file. The design, drawings and tooling belong to you.</p></div></div>
         </div>
         <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="false">How do contracts and payments work?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>Two ways, and we tell you which one fits before you commit. <strong>Managed:</strong> you contract and pay the factory directly, we invoice a separate management fee, and you see every line of the factory quote. <strong>Turnkey:</strong> you contract with our US company in USD, we buy from the factory and invoice you one landed price. Either way terms are milestone-based — for example 30% at tooling, 70% before shipment.</p></div></div>
-        </div>
-        <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="false">How small can a first run be?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>Typical first runs are 500–2,000 units. For simpler mechanical parts we can start lower; for custom electronics the component MOQs usually set the floor, and we tell you where that lands before you commit.</p></div></div>
-        </div>
-        <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="false">How long does it take?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>Functional samples in two to three weeks, iterated until the spec is settled — most projects run two or three rounds. Production scheduling depends on the product, and you get the date in writing before anything is ordered.</p></div></div>
-        </div>
-        <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="false">Which product categories do you cover?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>Robotics, industrial IoT, test and measurement instruments, consumer electronics and smart home — the categories our own products sit in. If your product needs a process we haven't run before, we'll tell you that instead of quoting it.</p></div></div>
-        </div>
-        <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="false">How do you handle quality control and shipping?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>We run in-line and pre-shipment inspections ourselves, on site, with photo reports against an agreed AQL. We then handle export documents and freight booking. Shipping terms are your call: FOB Shenzhen, where you clear customs and stay the importer of record, or delivered to your door, where we do.</p></div></div>
+          <button type="button" class="acc-btn" aria-expanded="false">How do contracts and payment work?<span class="acc-icon">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner"><p>Two options. One: you contract and pay the partner factory directly, and Anvol invoices a separate management fee — you see the factory quote line by line. Two: contract with Anvol's US entity and pay one price in USD. Both use milestone-based payments. We put the delivery date in writing before anything is ordered.</p></div></div>
         </div>
       </div>
     </div>
@@ -430,39 +218,34 @@
 
   <section class="contact" id="contact">
     <div class="container contact-grid">
-      <div data-reveal data-cta>
-        <h2 class="contact-title">Something people<br>keep asking for?<br>Let's talk.</h2>
-        <p class="contact-sub">Twenty minutes, no pitch. We'll ask three things:</p>
-        <ul class="contact-list">
-          <li>What your people ask you to make</li>
-          <li>What you've tried — or what stopped you</li>
-          <li>What it would take to be worth doing</li>
-        </ul>
+      <div data-reveal>
+        <h2 class="contact-title">Tell us what you need built</h2>
+        <p class="contact-sub">Describe the product or send files. We come back with a DFM review and quote. Chris reads and answers every message himself.</p>
         <div class="contact-info">
           <div>
             <div class="info-label">Email</div>
             <a class="info-value" href="mailto:chris@anvol.dev">chris@anvol.dev</a>
           </div>
           <div>
-            <div class="info-label">Based in</div>
-            <div class="info-value">San Francisco, US · Shenzhen, CN</div>
+            <div class="info-label">30-minute call</div>
+            <a class="info-value" href="https://calendly.com/chris-anvol/30min" target="_blank" rel="noopener">calendly.com/chris-anvol</a>
           </div>
           <div>
-            <div class="info-label">Billing</div>
-            <div class="info-value">US company · invoiced in USD</div>
+            <div class="info-label">Engineering</div>
+            <div class="info-value">Shenzhen, CN</div>
           </div>
         </div>
       </div>
       <form class="form-card" data-reveal data-delay="0.12" id="quote-form" novalidate>
         <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-row">
-          <label>Name<input type="text" name="name" placeholder="Sam Rivera" required></label>
-          <label>Email<input type="email" name="email" placeholder="sam@example.com" required></label>
+          <label>Name<input type="text" name="name" placeholder="Your name" required></label>
+          <label>Email<input type="email" name="email" placeholder="you@company.com" required></label>
         </div>
-        <label>Your channel, store or company<input type="text" name="link" placeholder="youtube.com/@… · yourstore.com · company name"></label>
-        <label>What do people ask you to make?<textarea rows="4" name="message" placeholder="The thing they keep asking about — one sentence is fine" required></textarea></label>
-        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Book 20 minutes <span class="arrow">→</span></button>
-        <p class="form-note" id="form-note">Chris reads every one and replies personally.</p>
+        <label>Company or product link (optional)<input type="text" name="link" placeholder="yourcompany.com"></label>
+        <label>What do you need built?<textarea rows="4" name="message" placeholder="What do you need built?" required></textarea></label>
+        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Send message <span class="arrow">→</span></button>
+        <p class="form-note" id="form-note">Or email chris@anvol.dev, or book a 30-minute call.</p>
       </form>
     </div>
   </section>
@@ -474,22 +257,15 @@
     <div class="footer-grid">
       <div>
         <a class="brand" href="#top">
-          <span class="brand-mark"></span>
+          <img class="brand-mark" src="assets/img/anvol-mark.svg" alt="" width="28" height="28">
           <span class="brand-name">anvol</span>
         </a>
-        <p class="footer-tag">A US company with production in Shenzhen — we design and build our own hardware, and we build yours the same way.</p>
+        <p class="footer-tag">Hardware engineering and production from Shenzhen, contracts and invoices from San Francisco.</p>
       </div>
       <div class="footer-col">
-        <div class="footer-head">What we handle</div>
-        <a href="#handle">Circuit &amp; firmware</a>
-        <a href="#handle">Enclosure &amp; molds</a>
-        <a href="#handle">Sampling &amp; testing</a>
-        <a href="#handle">Production &amp; shipping</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-head">Company</div>
-        <a href="#why">Why us</a>
-        <a href="#cases">Our own hardware</a>
+        <div class="footer-head">Site</div>
+        <a href="#cases">Our hardware</a>
+        <a href="#how">How it works</a>
         <a href="#partners">Partners</a>
         <a href="#faq">FAQ</a>
         <a href="#contact">Contact</a>
@@ -498,7 +274,7 @@
         <div class="footer-head">Contact</div>
         <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
         <span>2261 Market Street STE 82014<br>San Francisco, CA 94114, USA</span>
-        <span>Production in Shenzhen, CN</span>
+        <span>Engineering in Shenzhen, CN</span>
       </div>
     </div>
     <div class="footer-bottom">

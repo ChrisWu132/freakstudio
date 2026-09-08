@@ -15,8 +15,8 @@ python -m http.server 8000
 
 - `index.html` — single landing page, semantic HTML
 - `css/style.css` — custom properties, responsive at 1024px / 768px breakpoints
-- `js/main.js` — GSAP 3 + ScrollTrigger (CDN): hero line reveal, scroll reveals, stat count-ups, process line scrub-draw, parallax, testimonial wipe; FAQ accordion; contact form AJAX
-- `assets/img/` — 6 AI-generated images (regenerate with the prompts in `IMAGE-PROMPTS.md`)
+- `js/main.js` — nav shadow, mobile menu, FAQ accordion, contact form AJAX; GSAP 3 + ScrollTrigger (CDN) only for light scroll reveals. Native scroll, no pinned sections (2026-09-08)
+- `assets/img/` — real photos only: `case-*.jpg` our own products, `f-*.jpg` our benches and partner lines in Shenzhen, `anvol-mark.svg` the logo (source in `../brand/`). The AI-generated images were removed 2026-09-08; `IMAGE-PROMPTS.md` is history
 - `original-export/` — untouched Figma Make export this page was rebuilt from
 
 ## Email collection (contact form)
@@ -34,8 +34,7 @@ The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend
       only `chris@anvol.dev` — so both links point there now (2026-08-05). Cloudflare Email Routing is
       NOT an option here: the MX already points at Google Workspace and redirecting it would take the
       real mailbox down. To get `hello@` back, add it as an alias on chris@ in the Workspace admin.
-- [ ] Replace placeholder stats (120+ factories / 300+ projects / 22% / 15 countries) with real numbers
-- [ ] Replace the testimonial (name, quote, avatar) with a real client — the current avatar is AI-generated
-- [ ] Case-study copy is illustrative — replace with real projects
-- [ ] Certification badges (ISO 9001 / 13485 / IATF 16949 / IPC-A-610 / RoHS·CE·FCC) — confirm they match what your partner factories actually hold before taking real traffic
-- [ ] Add real Privacy / Terms pages (footer links currently point at #faq)
+- [x] Placeholder stats, AI testimonial, illustrative case studies and unverified certification badges were all
+      removed on 2026-09-08 rather than replaced. Rule since then: the page only says what a document we hold
+      supports (same rule as the cold-email bodies, see `../../outreach/data/regen/evidence-sheet.md`). The
+      copy was written by Opus 4.6 from a brief; the brief's fact list is the only source of claims.
