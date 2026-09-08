@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>anvol — you have the people, we build the product</title>
 <meta name="description" content="For creators, indie developers and small businesses whose people already ask “where can I buy that?” — anvol designs, engineers and manufactures it, with our own engineers on the factory floor in Shenzhen. US company. It starts with a 20-minute conversation.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' rx='3' fill='%2300A0DF'/%3E%3C/svg%3E">
+<link rel="icon" href="assets/img/anvol-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
@@ -17,18 +17,18 @@
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a class="brand" href="#top" aria-label="anvol home">
-      <span class="brand-mark"></span>
+      <img class="brand-mark" src="assets/img/anvol-mark.svg" alt="" width="28" height="28">
       <span class="brand-name">anvol</span>
     </a>
-    <nav class="nav-links" aria-label="Main">
+    <nav class="nav-links" id="nav-links" aria-label="Main">
       <a href="#loop">How it works</a>
-      <a href="#handle">What we handle</a>
-      <a href="#why">Why us</a>
       <a href="#cases">Our hardware</a>
-      <a href="#partners">Partners</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <a class="btn btn-primary btn-nav" href="#contact">Let's talk <span class="arrow">→</span></a>
+    <div class="nav-right">
+      <a class="btn btn-primary btn-nav" href="#contact">Let's talk <span class="arrow">→</span></a>
+      <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+    </div>
   </div>
 </header>
 
@@ -56,7 +56,7 @@
       </div>
     </div>
     <div class="hero-media" data-hero-img>
-      <img src="assets/img/img-01-hero.png" alt="SMT electronics assembly line with a technician inspecting a PCB panel" width="720" height="560">
+      <img src="assets/img/f-debug-bench.jpg" alt="Our engineers at the debug bench in Shenzhen — instruments, parts bins and boards under test" width="720" height="560">
     </div>
   </section>
 
@@ -108,15 +108,15 @@
     </div>
   </section>
 
-  <!-- ============ MANIFESTO (pinned two-beat word reveal) ============ -->
+  <!-- ============ MANIFESTO ============ -->
   <section class="manifesto" id="manifesto">
     <div class="stage">
-      <div class="mline" id="mline1">Making a product used to mean finding a factory, hiring an engineer, and learning what tooling is.</div>
-      <div class="mline" id="mline2" style="opacity:0">Now it means <em>one conversation</em> about what your people keep asking for.</div>
+      <div class="mline" id="mline1" data-reveal>Making a product used to mean finding a factory, hiring an engineer, and learning what tooling is.</div>
+      <div class="mline" id="mline2" data-reveal data-delay=".15">Now it means <em>one conversation</em> about what your people keep asking for.</div>
     </div>
   </section>
 
-  <!-- ============ THE WHOLE LAUNCH, ONE CONVERSATION (pinned beats) ============ -->
+  <!-- ============ THE WHOLE LAUNCH, ONE CONVERSATION ============ -->
   <section class="loopchat" id="loop">
     <div class="stage">
       <div class="head">
@@ -124,14 +124,9 @@
         <h2>The whole launch, <em>one conversation.</em></h2>
       </div>
       <div class="stagegrid">
-        <div class="stagepro" id="stagepro">
-          <figure class="plate"><img src="assets/img/case-logic-analyzer.jpg" alt="A finished product in its retail box — one we designed and built ourselves"></figure>
-          <figcaption class="platecap">one of ours · board, enclosure, firmware, retail box</figcaption>
-        </div>
-
         <div class="beatstage" id="beatstage">
 
-          <div class="beat">
+          <div class="beat" data-reveal>
             <div class="bk">01 · you tell us</div>
             <div class="m-user">
               <span class="bub">people keep asking if they can buy the thing I made</span>
@@ -139,7 +134,7 @@
             </div>
           </div>
 
-          <div class="beat">
+          <div class="beat" data-reveal>
             <div class="bk">02 · we draw it up</div>
             <div class="m-build">
               <img src="assets/img/case-logic-analyzer.jpg" alt="">
@@ -151,7 +146,7 @@
             </div>
           </div>
 
-          <div class="beat">
+          <div class="beat" data-reveal>
             <div class="bk">03 · you post it</div>
             <div class="m-post">
               <span class="bub">should this exist? tell me if you'd want one</span>
@@ -160,7 +155,7 @@
             </div>
           </div>
 
-          <div class="beat">
+          <div class="beat" data-reveal>
             <div class="bk">04 · your people answer</div>
             <div class="m-wants">
               <span class="wantpill"><span class="h">♥</span> mia wants one</span>
@@ -180,7 +175,7 @@
             </div>
           </div>
 
-          <div class="beat">
+          <div class="beat" data-reveal>
             <div class="bk">05 · it ships</div>
             <div class="m-slip" id="mslip">
               <div class="s-top">
@@ -196,7 +191,7 @@
             <div class="bfoot" id="bfoot">Sam never opened a factory and never learned CAD. He told us what his people wanted; we did the rest.</div>
           </div>
 
-          <div class="beat beat-coda">
+          <div class="beat beat-coda" data-reveal>
             <div class="m-user">
               <span class="bub">it's on my desk right now — and on theirs.</span>
               <div class="att">sam · never touched a soldering iron</div>
@@ -514,8 +509,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="js/vendor/lenis.min.js"></script>
-<script src="js/loop.js"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

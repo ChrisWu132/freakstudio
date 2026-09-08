@@ -46,11 +46,17 @@ a:hover .arrow{transform:translateX(4px)}
 .nav.scrolled{box-shadow:0 1px 20px rgba(17,20,24,.08);border-bottom-color:var(--line)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 80px;height:76px;display:flex;align-items:center;justify-content:space-between;gap:48px}
 .brand{display:flex;align-items:center;gap:10px}
-.brand-mark{width:16px;height:16px;background:var(--accent);border-radius:3px}
+.brand-mark{width:28px;height:28px}
 .brand-name{font-family:var(--font-head);font-weight:700;font-size:19px;letter-spacing:-.02em;color:var(--ink)}
 .nav-links{display:flex;align-items:center;gap:34px}
 .nav-links a{color:var(--ink);font-size:15px;font-weight:500}
 .nav-links a:hover{color:var(--accent)}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-toggle{display:none;width:40px;height:40px;border:1px solid var(--line);border-radius:6px;background:#fff;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:6px}
+.nav-toggle span{display:block;width:18px;height:2px;background:var(--ink);transition:transform .25s ease}
+.menu-open .nav-toggle span:first-child{transform:translateY(4px) rotate(45deg)}
+.menu-open .nav-toggle span:last-child{transform:translateY(-4px) rotate(-45deg)}
+section[id]{scroll-margin-top:76px}
 
 /* ---------- hero ---------- */
 .hero{max-width:1280px;margin:0 auto;padding:96px 80px 104px;display:grid;grid-template-columns:1.05fr .95fr;gap:72px;align-items:center}
@@ -224,7 +230,11 @@ a.info-value:hover{color:#fff}
 }
 
 @media (max-width:768px){
-  .nav-links{display:none}
+  .nav-links{display:none;position:absolute;top:76px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;background:#fff;border-bottom:1px solid var(--line)}
+  .nav-links a{padding:16px 20px;border-top:1px solid var(--line);font-size:16px}
+  .menu-open .nav-links{display:flex}
+  .nav-toggle{display:flex}
+  .btn-nav{padding:10px 14px}
   .container,.container-narrow,.nav-inner,.trustbar-inner{padding-left:20px;padding-right:20px}
   .hero{padding:48px 20px 56px}
   .hero-notes{flex-direction:column;align-items:flex-start;gap:10px}

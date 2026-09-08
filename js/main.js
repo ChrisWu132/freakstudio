@@ -1,11 +1,9 @@
-/* anvol — GSAP + ScrollTrigger + Lenis animations */
+/* anvol — GSAP + ScrollTrigger animations (native scroll, no smooth-scroll library, no pinned sections) */
 (function () {
   "use strict";
 
   var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var small = window.matchMedia("(max-width: 760px)").matches;
   var hasGsap = typeof gsap !== "undefined";
-  var NAV_H = 76;
 
   /* ---------- nav shadow ---------- */
   var nav = document.getElementById("nav");
@@ -14,6 +12,20 @@
   }
   window.addEventListener("scroll", onScroll, { passive: true });
   onScroll();
+
+  /* ---------- mobile menu ---------- */
+  var toggle = document.getElementById("nav-toggle");
+  var links = document.getElementById("nav-links");
+  if (toggle && links) {
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("menu-open");
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    links.addEventListener("click", function () {
+      nav.classList.remove("menu-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  }
 
   /* ---------- FAQ accordion ---------- */
   document.querySelectorAll(".acc-btn").forEach(function (btn) {
@@ -77,28 +89,6 @@
   gsap.registerPlugin(ScrollTrigger);
   var EASE = "power3.out";
 
-  /* smooth scroll (Lenis) — pinned sections scrub off its scroll events */
-  var lenis = null;
-  if (typeof Lenis !== "undefined") {
-    lenis = new Lenis({ lerp: 0.11 });
-    lenis.on("scroll", ScrollTrigger.update);
-    gsap.ticker.add(function (t) { lenis.raf(t * 1000); });
-    gsap.ticker.lagSmoothing(0);
-  }
-  function goTo(target) {
-    if (lenis) lenis.scrollTo(target, { offset: -NAV_H });
-    else target.scrollIntoView({ behavior: "smooth" });
-  }
-  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
-    a.addEventListener("click", function (e) {
-      var id = a.getAttribute("href").slice(1);
-      var target = id ? document.getElementById(id) : null;
-      if (!target) return;
-      e.preventDefault();
-      goTo(target);
-    });
-  });
-
   /* hero entrance */
   var heroTl = gsap.timeline({ defaults: { ease: EASE } });
   heroTl
@@ -139,41 +129,6 @@
       scrollTrigger: { trigger: el, start: "top 92%", once: true }
     });
   });
-
-  /* manifesto: pinned two-beat word reveal */
-  function wrapWords(el) {
-    el.innerHTML = el.innerHTML.split(/(<[^>]+>)/g).map(function (tok) {
-      if (tok.charAt(0) === "<") return tok;
-      return tok.split(/( +)/).map(function (w) {
-        return /^ *$/.test(w) ? w : '<span class="wrd">' + w + "</span>";
-      }).join("");
-    }).join("");
-    return el.querySelectorAll(".wrd");
-  }
-  var m1 = document.getElementById("mline1");
-  var m2 = document.getElementById("mline2");
-  if (m1 && m2) {
-    var w1 = wrapWords(m1);
-    var w2 = wrapWords(m2);
-    if (!small) {
-      gsap.timeline({
-        scrollTrigger: { trigger: "#manifesto .stage", start: "top " + NAV_H + "px", end: "+=1800", scrub: 0.6, pin: true, anticipatePin: 1 }
-      })
-        .to(w1, { opacity: 1, stagger: 0.06, duration: 0.8, ease: "none" })
-        .to("#mline1", { opacity: 0, y: -50, duration: 1, ease: "power2.in" }, "+=.6")
-        .to("#mline2", { opacity: 1, duration: 0.01 }, "-=.3")
-        .to(w2, { opacity: 1, stagger: 0.12, duration: 0.8, ease: "none" })
-        .to({}, { duration: 0.8 });
-    } else {
-      gsap.to(w1, { opacity: 1, stagger: 0.04, duration: 0.5, scrollTrigger: { trigger: m1, start: "top 85%" } });
-      gsap.to(w2, { opacity: 1, stagger: 0.06, duration: 0.5, scrollTrigger: { trigger: m2, start: "top 85%" } });
-    }
-  }
-
-  /* the whole launch: one beat on stage at a time (loop.js) */
-  if (typeof anvolLoopSection === "function" && document.querySelector(".loopchat")) {
-    anvolLoopSection(reduced, small, NAV_H);
-  }
 
   /* we handle the rest: autoplay carousel + stamps land row by row */
   var hvImgs = document.querySelectorAll(".hv-img");

@@ -1,6 +1,5 @@
-/* anvol — launch page additions: manifesto, the pinned loop, "we handle the rest".
-   Motion patterns ported from the blockless landing (GSAP ScrollTrigger + Lenis),
-   restyled with anvol's own tokens. style.css stays untouched. */
+/* anvol — launch page additions: manifesto, "the whole launch" story, "we handle the rest".
+   Plain scrolling page: no smooth-scroll library, no pinned stages. */
 :root{
   --ease:cubic-bezier(.16,1,.3,1);
   --spring:cubic-bezier(.34,1.56,.64,1);
@@ -13,32 +12,22 @@ h2 em{font-style:normal;color:var(--accent)}
 .hero{grid-template-columns:1.15fr .85fr}
 .hero-title{font-size:clamp(32px,3.9vw,56px)}
 
-/* ---------- manifesto (pinned two beats) ---------- */
-.manifesto{position:relative;background:var(--mist)}
-.manifesto .stage{height:calc(100vh - var(--nav-h));display:grid;place-items:center;overflow:hidden;padding:0 clamp(20px,8vw,120px)}
-.mline{position:absolute;left:clamp(20px,8vw,120px);right:clamp(20px,8vw,120px);text-align:center;font-family:var(--font-head);font-weight:600;font-size:clamp(30px,4.6vw,64px);line-height:1.14;letter-spacing:-.03em}
+/* ---------- manifesto ---------- */
+.manifesto{background:var(--mist)}
+.manifesto .stage{max-width:1000px;margin:0 auto;padding:120px clamp(20px,8vw,120px);display:flex;flex-direction:column;gap:36px}
+.mline{text-align:center;font-family:var(--font-head);font-weight:600;font-size:clamp(28px,3.6vw,48px);line-height:1.14;letter-spacing:-.03em}
 .mline em{font-style:normal;color:var(--accent)}
-.mline .wrd{opacity:.12;display:inline-block}
+#mline1{color:var(--ink-faint)}
 
-/* ---------- the whole launch, one conversation (pinned) ---------- */
-.loopchat{position:relative;background:#fff}
-.loopchat .stage{height:calc(100vh - var(--nav-h));overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:56px 24px 24px}
-.loopchat .head{text-align:center;margin-bottom:18px;flex:0 0 auto}
+/* ---------- the whole launch, one conversation ---------- */
+.loopchat{background:#fff}
+.loopchat .stage{max-width:1280px;margin:0 auto;padding:120px 80px}
+.loopchat .head{text-align:center;margin-bottom:72px}
 .loopchat .head .eyebrow{margin-bottom:12px}
 .loopchat h2{font-size:clamp(30px,4vw,48px)}
-.stagegrid{flex:1 1 auto;min-height:0;width:min(94vw,1216px);display:flex;align-items:center;gap:clamp(32px,5vw,88px)}
-.stagepro{flex:1;display:none;place-items:center;opacity:0;text-align:center}
-.pinmode .stagepro{display:grid}
-.stagepro .plate{width:min(40vh,420px);border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 40px 90px -34px rgba(17,20,24,.35),0 0 0 1px var(--line);margin:0}
-.stagepro .plate img{display:block;width:100%;height:auto}
-.platecap{margin-top:14px;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-faint)}
-.beatstage{flex:1.2;align-self:stretch;position:relative;min-width:0}
-.pinmode .beatstage{max-width:640px}
-.beat{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px;opacity:0}
-.pinmode .beat{pointer-events:none}
-.pinmode.beat1 .stagepro{display:none}
-.pinmode.beat1 .stagegrid{justify-content:center}
-.pinmode.beat1 .beatstage{max-width:768px}
+.stagegrid{display:flex;justify-content:center}
+.beatstage{width:min(100%,720px);display:flex;flex-direction:column;gap:80px}
+.beat{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:26px}
 .bk{font-family:var(--font-mono);font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:var(--ink)}
 .bk::after{content:'';display:block;width:38px;height:2px;background:var(--accent);margin:12px auto 0}
 .m-user,.m-post{text-align:center;max-width:94%}
@@ -47,32 +36,31 @@ h2 em{font-style:normal;color:var(--accent)}
 .m-post .postnote{margin-top:18px;font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
 .m-build{display:flex;gap:20px;align-items:center;max-width:94%;background:#fff;border-radius:10px;padding:20px 24px;box-shadow:0 14px 34px -18px rgba(17,20,24,.35),0 0 0 1px var(--line);position:relative}
 .m-build img{width:128px;border-radius:8px;display:block}
-.pinmode .m-build img{display:none}
 .m-build .nm{font-family:var(--font-head);font-weight:700;font-size:34px;line-height:1;letter-spacing:-.03em}
 .m-build .sp{margin-top:10px;font-family:var(--font-mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
 .m-build .stamp{position:absolute;top:-15px;right:16px;rotate:3deg;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;background:var(--ink);color:#fff;border-radius:5px;padding:6px 11px}
 .m-wants{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;max-width:94%}
-.wantpill{font-weight:600;font-size:17px;background:#fff;border-radius:99px;padding:11px 22px;box-shadow:0 10px 24px -12px rgba(17,20,24,.32),0 0 0 1px var(--line);opacity:0;transform:scale(.5)}
+.wantpill{font-weight:600;font-size:17px;background:#fff;border-radius:99px;padding:11px 22px;box-shadow:0 10px 24px -12px rgba(17,20,24,.32),0 0 0 1px var(--line)}
 .wantpill .h{color:var(--accent)}
 .m-journey{width:100%;position:relative;background:#fff;border-radius:10px;padding:17px 21px 19px;box-shadow:0 16px 36px -18px rgba(17,20,24,.35),0 0 0 1px var(--line)}
 .m-journey .jt{font-family:var(--font-mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft)}
 .m-journey .jline{margin-top:18px;height:4px;border-radius:2px;background:var(--line);overflow:hidden}
-.m-journey .jfill{display:block;height:100%;width:100%;background:var(--accent);transform:scaleX(0);transform-origin:left center}
+.m-journey .jfill{display:block;height:100%;width:100%;background:var(--accent)}
 .m-journey .jstops{margin-top:14px;display:flex;justify-content:space-between;gap:8px}
-.m-journey .stop{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);position:relative;padding-top:14px;opacity:.55}
+.m-journey .stop{font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);position:relative;padding-top:14px;--dotbg:var(--accent);--dotbc:var(--accent)}
 .m-journey .stop::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:8px;height:8px;border-radius:50%;background:var(--dotbg,var(--mist));border:1.5px solid var(--dotbc,rgba(17,20,24,.38))}
-.m-journey .jstamp{position:absolute;top:-16px;right:16px;rotate:3deg;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ok);border:1.5px solid var(--ok);border-radius:5px;padding:6px 11px;background:#fff;opacity:0;transform:scale(.5)}
+.m-journey .jstamp{position:absolute;top:-16px;right:16px;rotate:3deg;font-family:var(--font-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ok);border:1.5px solid var(--ok);border-radius:5px;padding:6px 11px;background:#fff}
 .m-slip{max-width:94%;min-width:416px;border-radius:10px;overflow:hidden;rotate:-1deg;box-shadow:0 18px 40px -18px rgba(17,20,24,.4),0 0 0 1px rgba(17,20,24,.12)}
 .m-slip .s-top{background:var(--mist);padding:22px 27px;position:relative}
 .m-slip .s-top::before{content:'';position:absolute;top:0;bottom:0;left:50%;width:38px;transform:translateX(-50%);background:rgba(0,160,223,.18)}
 .m-slip .to{position:relative;font-family:var(--font-mono);font-size:15px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
 .m-slip .sub{position:relative;margin-top:9px;font-size:17px;color:var(--ink-soft)}
 .m-slip .s-bot{background:#fff;padding:16px 27px 19px;position:relative;font-family:var(--font-mono);font-size:14px;letter-spacing:.06em;color:var(--ink-soft);border-top:2px dashed rgba(17,20,24,.28)}
-.m-slip .ri{display:flex;justify-content:space-between;gap:38px;padding:6px 6px;margin:0 -6px;border-radius:6px;opacity:0}
+.m-slip .ri{display:flex;justify-content:space-between;gap:38px;padding:6px 6px;margin:0 -6px;border-radius:6px}
 .m-slip .ri b{color:var(--ok);font-weight:600}
 .m-slip .rf{margin-top:10px;padding-top:10px;border-top:1px dashed rgba(17,20,24,.25);font-size:12px;color:var(--ink-faint)}
 .m-slip .rf b{color:var(--ink);font-weight:600}
-.bfoot{margin-top:6px;text-align:center;font-size:17px;line-height:1.5;color:var(--ink-soft);opacity:0;max-width:520px}
+.bfoot{margin-top:6px;text-align:center;font-size:17px;line-height:1.5;color:var(--ink-soft);max-width:520px}
 .beat-coda .say{margin-top:6px}
 
 /* ---------- we handle the rest ---------- */
@@ -107,14 +95,10 @@ h2 em{font-style:normal;color:var(--accent)}
   .hrow .ph{display:block}
 }
 @media (max-width:760px){
-  .manifesto .stage{height:auto;min-height:60vh;padding:64px 20px}
-  .mline{position:static;font-size:clamp(26px,7vw,34px)}
-  .mline .wrd{opacity:1}
-  #mline2{opacity:1!important;margin-top:28px}
-  .loopchat .stage{height:auto;padding:64px 20px 56px}
-  .beatstage{display:flex;flex-direction:column;gap:72px}
-  .beat{position:static;opacity:0}
-  .stagegrid{width:100%}
+  .manifesto .stage{padding:64px 20px}
+  .mline{font-size:clamp(26px,7vw,34px)}
+  .loopchat .stage{padding:64px 20px 56px}
+  .beatstage{gap:56px}
   .m-build{flex-direction:column;align-items:flex-start}
   .m-build img{width:100%}
   .m-build .stamp{position:static;order:-1;align-self:flex-start;rotate:-2deg}
@@ -125,13 +109,6 @@ h2 em{font-style:normal;color:var(--accent)}
   .hero-cta .btn{flex:1 1 100%}
 }
 @media (prefers-reduced-motion:reduce){
-  .manifesto .stage,.loopchat .stage{height:auto;padding-top:64px;padding-bottom:56px}
-  .mline{position:static}
-  #mline2{opacity:1!important;margin-top:28px}
-  .beatstage{display:flex;flex-direction:column;gap:72px}
-  .beat{position:static}
-  .beat,.wantpill,.m-slip .ri,.bfoot,.mline .wrd,.jstamp,.hrow,.hrow .stamp2,.stagepro{opacity:1!important;transform:none!important}
-  .m-journey .jfill{transform:none!important}
-  .m-journey .stop{opacity:1;color:var(--ink);--dotbg:var(--accent);--dotbc:var(--accent)}
+  .hrow,.hrow .stamp2{opacity:1!important;transform:none!important}
   .hrow .it{color:var(--ink-faint);text-decoration:line-through}
 }
