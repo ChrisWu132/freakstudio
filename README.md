@@ -48,6 +48,6 @@ The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend
 
 ## Sales Desk and form verification
 
-`sales-desk/` is the bilingual outreach service page; its page-specific CSS and language switch live in `css/sales-desk.css` and `js/sales-desk.js`. The 2026-09-17 review removed unsupported performance comparisons and outdated infrastructure promises. The sample thread is explicitly fictional.
+`/sales-desk/` redirects to https://anvolworks.com/. The active bilingual outreach page lives in `../salesdesk-site/` (HammerMail repository), deployed to the separate `anvol-sales-desk` Pages project. Do not maintain an older copy in this site.
 
 Run `node --test test/contact-form.test.cjs`. A rejected JSON response must preserve the visitor's input and show the fallback email address. Native email validation runs before any network request. Local desktop/mobile rendering, language switching and FAQ expansion were checked without submitting a real inquiry.
