@@ -48,7 +48,8 @@
     var NOTE_DEFAULT = note.textContent;
     form.addEventListener("submit", function (e) {
       e.preventDefault();
-      if (!form.name.value.trim() || !form.email.value.trim() || !form.message.value.trim()) {
+      if (!form.checkValidity()) {
+        form.reportValidity();
         note.textContent = "Please fill in your name, email and what you need built.";
         note.className = "form-note err";
         return;
@@ -64,12 +65,13 @@
           email: form.email.value,
           link: form.link.value,
           message: form.message.value,
-          _subject: "New project enquiry — anvol.dev"
+          _subject: "New project enquiry: anvol.dev"
         })
       })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
-        .then(function () {
-          note.textContent = "Thanks — Chris will reply from chris@anvol.dev.";
+        .then(function (result) {
+          if (result.success !== true && result.success !== "true") throw new Error("Form submission rejected");
+          note.textContent = "Thanks. Chris will reply from chris@anvol.dev.";
           note.className = "form-note ok";
           form.reset();
         })
@@ -86,7 +88,7 @@
   }
 
   /* ---------- scroll reveals ---------- */
-  if (!hasGsap || reduced) return;
+  if (!hasGsap || typeof ScrollTrigger === "undefined" || reduced) return;
   gsap.registerPlugin(ScrollTrigger);
   gsap.utils.toArray("[data-reveal]").forEach(function (el) {
     gsap.from(el, {

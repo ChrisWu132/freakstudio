@@ -1,6 +1,6 @@
 # anvol — landing page
 
-Marketing site for anvol, a contract-manufacturing partner with entities in the US and China. Static site: no build step, no framework — HTML + CSS + GSAP.
+Marketing site for Anvol, a US company that turns working prototypes into repeatable small-batch production in Shenzhen. Static site: no build step, no framework, just HTML, CSS and GSAP.
 
 ## Run locally
 
@@ -45,3 +45,9 @@ The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend
       removed on 2026-09-08 rather than replaced. Rule since then: the page only says what a document we hold
       supports (same rule as the cold-email bodies, see `../../outreach/data/regen/evidence-sheet.md`). The
       copy was written by Opus 4.6 from a brief; the brief's fact list is the only source of claims.
+
+## Sales Desk and form verification
+
+`sales-desk/` is the bilingual outreach service page; its page-specific CSS and language switch live in `css/sales-desk.css` and `js/sales-desk.js`. The 2026-09-17 review removed unsupported performance comparisons and outdated infrastructure promises. The sample thread is explicitly fictional.
+
+Run `node --test test/contact-form.test.cjs`. A rejected JSON response must preserve the visitor's input and show the fallback email address. Native email validation runs before any network request. Local desktop/mobile rendering, language switching and FAQ expansion were checked without submitting a real inquiry.

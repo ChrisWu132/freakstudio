@@ -3,13 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>anvol — we design and build your hardware</title>
-<meta name="description" content="Anvol is an outsourced hardware engineering and manufacturing team. Our engineers in Shenzhen design your board, firmware and enclosure, source parts, prototype and run production on partner factory lines. Send what you have and get back a DFM review and quote.">
+<title>Anvol | Small-batch hardware development and production</title>
+<meta name="description" content="Anvol turns rough hardware prototypes into repeatable small-batch production. Our Shenzhen team closes engineering gaps, sources parts, builds prototypes and manages production.">
 <link rel="icon" href="assets/img/anvol-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20260908b">
+<link rel="stylesheet" href="css/style.css?v=20260917">
 </head>
 <body>
 
@@ -36,32 +36,60 @@
 
   <section class="hero">
     <div class="hero-copy">
-      <div class="eyebrow">Hardware engineering &amp; manufacturing</div>
-      <h1 class="hero-title">We design and build your hardware</h1>
-      <p class="hero-sub">Our engineers in Shenzhen design your board, firmware and enclosure, source parts, prototype it and run production on partner factory lines. Send whatever you have — a sketch, a spec, a sample — and get back a DFM review and quote.</p>
+      <div class="eyebrow">Small-batch hardware development &amp; production</div>
+      <h1 class="hero-title">Prototype to repeatable production</h1>
+      <p class="hero-sub">Bring a sketch, dev-board prototype, or partial design. We resolve the gaps, source parts, build prototypes, and run small batches.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">Talk to an engineer <span class="arrow">→</span></a>
         <a class="text-link" href="#cases">See what we've built <span class="arrow">→</span></a>
       </div>
     </div>
     <div class="hero-media">
-      <img src="assets/img/f-debug-bench.jpg" alt="Our engineers at the debug bench in Shenzhen — instruments, parts bins and boards under test" width="720" height="560">
+      <img src="assets/img/f-debug-bench.jpg" alt="Our engineers at the debug bench in Shenzhen with instruments, parts bins and boards under test" width="720" height="560">
     </div>
   </section>
 
-  <section class="section section-mist" id="cases">
+  <section class="section section-mist" id="fit">
+    <div class="container split-section">
+      <div class="split-intro" data-reveal>
+        <div class="eyebrow">The gap we close</div>
+        <h2>Working once is not the finish line</h2>
+        <p class="section-note">Early hardware rarely arrives with finished drawings, a locked BOM, and factory-ready instructions. We take responsibility for the missing decisions.</p>
+      </div>
+      <div class="uncertainty-list" data-reveal data-delay="0.08">
+        <article class="uncertainty-item">
+          <h3>Incomplete design</h3>
+          <p>We close gaps across the board, firmware, enclosure, drawings, and production files.</p>
+        </article>
+        <article class="uncertainty-item">
+          <h3>Uncertain parts</h3>
+          <p>We find suppliers, identify practical substitutes, and turn scattered purchases into a controlled BOM.</p>
+        </article>
+        <article class="uncertainty-item">
+          <h3>A product still changing</h3>
+          <p>We build a small number, test what fails, revise the design, and repeat before committing further.</p>
+        </article>
+        <article class="uncertainty-item">
+          <h3>A first real batch</h3>
+          <p>We coordinate assembly, inspection, packaging, and delivery so the approved prototype can be built again.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="cases">
     <div class="container">
       <div class="section-head" data-reveal>
         <div class="eyebrow">Built by us</div>
         <h2>Products we designed and shipped ourselves</h2>
-        <p class="section-note">These are not client projects. Every product below was designed, prototyped and manufactured by our team — board layout, firmware, enclosure, sourcing, assembly, packaging.</p>
+        <p class="section-note">These are not client projects. Our team took each one through board layout, firmware, enclosure, sourcing, assembly, packaging, and production.</p>
       </div>
       <div class="card-grid card-grid-3">
         <div class="card card-case" data-reveal>
           <div class="case-media"><img src="assets/img/case-logic-analyzer.jpg" alt="24-channel 100 MHz logic analyzer with a set of coloured test hooks" width="404" height="230" loading="lazy"></div>
           <div class="case-body">
             <h3>24-channel logic analyzer</h3>
-            <p>100 MHz sampling, 3.3–5 V input, sigrok/PulseView compatible. Our board, enclosure, silkscreen and retail carton — designed and produced in house.</p>
+            <p>100 MHz sampling, 3.3-5 V input, sigrok/PulseView compatible. We designed and produced the board, enclosure, silkscreen, and retail carton.</p>
           </div>
         </div>
         <div class="card card-case" data-reveal data-delay="0.08">
@@ -96,7 +124,7 @@
           <div class="case-media"><img src="assets/img/case-wheel-legged.jpg" alt="Wheel-legged inspection robot with linkage legs and hub motors on a factory floor" width="404" height="230" loading="lazy"></div>
           <div class="case-body">
             <h3>Wheel-legged inspection robot</h3>
-            <p>Wheeled drive with leg-linkage posture control — ride height, shoulder shake, jump — plus a WiFi FPV camera for remote inspection.</p>
+            <p>Wheeled drive with leg-linkage posture control for ride height, shoulder shake, and jump, plus a WiFi FPV camera for remote inspection.</p>
           </div>
         </div>
       </div>
@@ -107,27 +135,47 @@
     </div>
   </section>
 
-  <section class="section" id="how">
+  <section class="section section-mist" id="how">
     <div class="container">
       <div class="section-head" data-reveal>
         <div class="eyebrow">How it works</div>
-        <h2>From sketch to finished product</h2>
+        <h2>A build process made for change</h2>
       </div>
       <div class="steps">
         <div class="step" data-reveal>
-          <div class="step-num">Step 01</div>
           <h3>Send us what you have</h3>
-          <p>A napkin sketch, a specification document, Gerber files, a competitor's product — whatever describes what you need built. If all you have is an idea, that works too.</p>
+          <p>Start with a sketch, development-board prototype, specification, Gerber files, or a physical sample.</p>
         </div>
         <div class="step" data-reveal data-delay="0.08">
-          <div class="step-num">Step 02</div>
-          <h3>DFM review and quote</h3>
-          <p>We return a DFM review, bill of materials and quote. A simple two-layer board prototype: a few hundred dollars. Complex work quoted after a call. DFM review is free when we build it.</p>
+          <h3>Close the engineering gaps</h3>
+          <p>We identify what is missing, resolve manufacturability issues, prepare the BOM, and quote the next build.</p>
         </div>
         <div class="step" data-reveal data-delay="0.16">
-          <div class="step-num">Step 03</div>
-          <h3>Prototype, approve, produce</h3>
-          <p>We build prototypes, you sign off, then we run production and inspect on the partner line. No minimum order — a single unit is a job we take.</p>
+          <h3>Build, test, and revise</h3>
+          <p>We build the prototype, test the result with you, and revise the design before production.</p>
+        </div>
+        <div class="step" data-reveal data-delay="0.24">
+          <h3>Run the small batch</h3>
+          <p>After approval, we coordinate production, inspection, packaging, and delivery on partner lines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="network">
+    <div class="container network-grid">
+      <div data-reveal>
+        <div class="eyebrow">Why Shenzhen matters</div>
+        <h2>One accountable team across the whole build</h2>
+        <p class="section-note">The advantage is not one factory. It is the speed of finding the right supplier, process, or substitute across a dense manufacturing network.</p>
+      </div>
+      <div class="network-body" data-reveal data-delay="0.08">
+        <p>You work with one Anvol engineering lead while we coordinate the specialists behind the product: electronics, cables, machining, molding, batteries, finishes, packaging, testing, and logistics.</p>
+        <div class="network-points">
+          <div><strong>Find</strong><span>Qualified suppliers for each process</span></div>
+          <div><strong>Substitute</strong><span>Practical alternatives when a part blocks the build</span></div>
+          <div><strong>Coordinate</strong><span>Engineering changes across different vendors</span></div>
+          <div><strong>Integrate</strong><span>One finished, inspected product instead of loose parts</span></div>
         </div>
       </div>
     </div>
@@ -168,7 +216,7 @@
         <div class="card" data-reveal>
           <div class="card-icon"></div>
           <h3>Referral</h3>
-          <p>Your customer picks a component and then hits an engineering wall. Send it to us. We handle schematic, PCB, firmware, prototype, pilot run. Your account stays yours. Confidentiality is default. Referral terms agreed before we start.</p>
+          <p>Your customer picks a component and then hits an engineering wall. Send it to us. We handle schematic, PCB, firmware, prototype, and pilot run. Your account stays yours. Confidentiality is default. Referral terms are agreed before we start.</p>
         </div>
         <div class="card" data-reveal data-delay="0.08">
           <div class="card-icon"></div>
@@ -193,8 +241,12 @@
       </div>
       <div class="accordion" data-reveal data-delay="0.08" id="accordion">
         <div class="acc-item">
-          <button type="button" class="acc-btn" aria-expanded="true">What exactly does Anvol do — a factory, a broker or an engineering firm?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>We are an engineering firm with our own hardware team in Shenzhen. Our engineers design the board, firmware and enclosure, source the components, then coordinate and inspect production on partner factory lines. We are not a factory and not a broker — we do the engineering and manage the build.</p></div></div>
+          <button type="button" class="acc-btn" aria-expanded="true">What exactly does Anvol do?<span class="acc-icon">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner"><p>Anvol is a hardware development and small-batch production team. Our engineers close the design gaps, then coordinate and inspect specialized partner lines. You work with one accountable team from prototype through production.</p></div></div>
+        </div>
+        <div class="acc-item">
+          <button type="button" class="acc-btn" aria-expanded="false">What if my design is not production-ready?<span class="acc-icon">+</span></button>
+          <div class="acc-body"><div class="acc-body-inner"><p>That is a normal starting point. Send the sketch, development-board prototype, partial files, or physical sample you have. We identify what is missing and propose the next practical build step.</p></div></div>
         </div>
         <div class="acc-item">
           <button type="button" class="acc-btn" aria-expanded="false">Can you source components, including older or hard-to-find chips?<span class="acc-icon">+</span></button>
@@ -202,7 +254,7 @@
         </div>
         <div class="acc-item">
           <button type="button" class="acc-btn" aria-expanded="false">Is there a minimum order?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>No. A single prototype unit is a job we take. There is no minimum order quantity for prototyping or production.</p></div></div>
+          <div class="acc-body"><div class="acc-body-inner"><p>No. We can start with a single prototype, revise it with you, and continue into small-batch production after approval.</p></div></div>
         </div>
         <div class="acc-item">
           <button type="button" class="acc-btn" aria-expanded="false">Who owns the design?<span class="acc-icon">+</span></button>
@@ -210,7 +262,7 @@
         </div>
         <div class="acc-item">
           <button type="button" class="acc-btn" aria-expanded="false">How do contracts and payment work?<span class="acc-icon">+</span></button>
-          <div class="acc-body"><div class="acc-body-inner"><p>Two options. One: you contract and pay the partner factory directly, and Anvol invoices a separate management fee — you see the factory quote line by line. Two: contract with Anvol's US entity and pay one price in USD. Both use milestone-based payments. We put the delivery date in writing before anything is ordered.</p></div></div>
+          <div class="acc-body"><div class="acc-body-inner"><p>Two options. You can contract and pay the partner factory directly while Anvol invoices a separate management fee, with the factory quote visible line by line. Or you can contract with Anvol's US entity and pay one price in USD. Both use milestone-based payments.</p></div></div>
         </div>
       </div>
     </div>
@@ -219,8 +271,8 @@
   <section class="contact" id="contact">
     <div class="container contact-grid">
       <div data-reveal>
-        <h2 class="contact-title">Tell us what you need built</h2>
-        <p class="contact-sub">Describe the product or send files. We come back with a DFM review and quote. Chris reads and answers every message himself.</p>
+        <h2 class="contact-title">Show us what works today</h2>
+        <p class="contact-sub">Send a sketch, prototype, partial design, or production problem. We will identify the next practical build step.</p>
         <div class="contact-info">
           <div>
             <div class="info-label">Email</div>
@@ -260,7 +312,7 @@
           <img class="brand-mark" src="assets/img/anvol-mark.svg" alt="" width="28" height="28">
           <span class="brand-name">anvol</span>
         </a>
-        <p class="footer-tag">Hardware engineering and production from Shenzhen, contracts and invoices from San Francisco.</p>
+        <p class="footer-tag">Small-batch hardware development and production in Shenzhen, with contracts and invoices from San Francisco.</p>
       </div>
       <div class="footer-col">
         <div class="footer-head">Site</div>
@@ -285,6 +337,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="js/main.js?v=20260908b"></script>
+<script src="js/main.js?v=20260917"></script>
 </body>
 </html>
