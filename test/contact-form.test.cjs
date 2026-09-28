@@ -4,13 +4,13 @@ const { readFileSync } = require('node:fs');
 const { join } = require('node:path');
 const vm = require('node:vm');
 
-function fixture(result, valid = true) {
-  let submit, resets = 0, requests = 0, reported = 0;
+function fixture(result, valid = true, files = [], uploadOk = true) {
+  let submit, resets = 0, requests = 0, reported = 0, sent = null;
   const button = { innerHTML: 'Send', disabled: false };
   const note = { textContent: 'Contact us', className: 'form-note' };
   const form = {
     name: { value: 'Test' }, email: { value: 'test@example.com' },
-    message: { value: 'A project' }, link: { value: '' }, _honey: { value: '' },
+    message: { value: 'A project' }, link: { value: '' }, _honey: { value: '' }, files: { files },
     checkValidity: () => valid, reportValidity: () => reported++,
     reset: () => resets++, addEventListener: (_, fn) => { submit = fn; },
   };
@@ -20,9 +20,13 @@ function fixture(result, valid = true) {
       getElementById: (id) => ({ 'quote-form': form, 'submit-btn': button, 'form-note': note })[id],
       querySelectorAll: () => [],
     },
-    fetch: async () => { requests++; return { ok: true, json: async () => result }; },
+    FormData: class { append() {} },
+    fetch: async (url, init) => {
+      if (url === '/api/upload') return { ok: uploadOk, status: uploadOk ? 200 : 500, json: async () => ({ url: 'https://anvol.dev/files/k/a.pdf' }) };
+      requests++; sent = JSON.parse(init.body); return { ok: true, json: async () => result };
+    },
   });
-  return { submit: () => submit({ preventDefault() {} }), button, note,
+  return { submit: () => submit({ preventDefault() {} }), button, note, sent: () => sent,
     counts: () => ({ resets, requests, reported }) };
 }
 
@@ -44,4 +48,25 @@ test('confirmed success resets the form', async () => {
 test('invalid email triggers native validation without submitting', () => {
   const f = fixture({}, false); f.submit();
   assert.deepEqual(f.counts(), { resets: 0, requests: 0, reported: 1 });
+});
+
+test('attachment links go into the email', async () => {
+  const f = fixture({ success: 'true' }, true, [{ size: 1000 }]); f.submit();
+  await new Promise(setImmediate);
+  assert.equal(f.sent().attachments, 'https://anvol.dev/files/k/a.pdf');
+  assert.equal(f.counts().resets, 1);
+});
+
+test('failed upload sends nothing and keeps input', async () => {
+  const f = fixture({ success: 'true' }, true, [{ size: 1000 }], false); f.submit();
+  await new Promise(setImmediate);
+  assert.equal(f.counts().requests, 0);
+  assert.equal(f.counts().resets, 0);
+  assert.equal(f.note.className, 'form-note err');
+});
+
+test('oversized file is refused before any request', () => {
+  const f = fixture({ success: 'true' }, true, [{ size: 21 * 1024 * 1024 }]); f.submit();
+  assert.equal(f.counts().requests, 0);
+  assert.equal(f.note.className, 'form-note err');
 });

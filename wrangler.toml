@@ -1,0 +1,8 @@
+name = "freakstudio"
+pages_build_output_dir = "."
+compatibility_date = "2026-08-06"
+
+# Quote-form attachments (drawings, BOM, photos). Links go into the FormSubmit email only.
+[[r2_buckets]]
+binding = "ATTACHMENTS"
+bucket_name = "anvol-quote-attachments"

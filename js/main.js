@@ -41,7 +41,16 @@
   /* ---------- contact form (FormSubmit AJAX) ---------- */
   /* chris@anvol.dev is the business inbox the reply pipeline reads (activated 2026-09-27). */
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/chris@anvol.dev";
+  var MAX_FILES = 5;
+  var MAX_FILE_BYTES = 20 * 1024 * 1024;
   var form = document.getElementById("quote-form");
+  function uploadFile(file) {
+    var data = new FormData();
+    data.append("file", file);
+    return fetch("/api/upload", { method: "POST", body: data })
+      .then(function (r) { if (!r.ok) throw new Error("Upload failed: " + r.status); return r.json(); })
+      .then(function (result) { return result.url; });
+  }
   if (form) {
     var btn = document.getElementById("submit-btn");
     var note = document.getElementById("form-note");
@@ -56,21 +65,33 @@
         return;
       }
       if (form._honey.value) return; /* bot */
+      var files = Array.prototype.slice.call(form.files.files);
+      if (files.length > MAX_FILES || files.some(function (f) { return f.size > MAX_FILE_BYTES; })) {
+        note.textContent = "Up to 5 files, 20 MB each. Larger files: email chris@anvol.dev.";
+        note.className = "form-note err";
+        return;
+      }
       btn.disabled = true;
-      btn.textContent = "Sending…";
-      fetch(FORM_ENDPOINT, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: form.name.value,
-          email: form.email.value,
-          link: form.link.value,
-          message: form.message.value,
-          _subject: "New project enquiry: anvol.dev",
-          /* Zisheng's personal Gmail gets a copy as the alert; enquiries once sat unread for days (2026-09-27). */
-          _cc: "a413liqingshui@gmail.com"
+      btn.textContent = files.length ? "Uploading files…" : "Sending…";
+      /* Files go to our own R2 (functions/api/upload.js); the email carries their links. */
+      Promise.all(files.map(uploadFile))
+        .then(function (urls) {
+          btn.textContent = "Sending…";
+          return fetch(FORM_ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({
+              name: form.name.value,
+              email: form.email.value,
+              link: form.link.value,
+              message: form.message.value,
+              attachments: urls.length ? urls.join("\n") : "none",
+              _subject: "New project enquiry: anvol.dev",
+              /* Zisheng's personal Gmail gets a copy as the alert; enquiries once sat unread for days (2026-09-27). */
+              _cc: "a413liqingshui@gmail.com"
+            })
+          });
         })
-      })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function (result) {
           if (result.success !== true && result.success !== "true") throw new Error("Form submission rejected");

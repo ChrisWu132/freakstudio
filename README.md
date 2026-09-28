@@ -33,6 +33,7 @@ The form posts to [FormSubmit](https://formsubmit.co) — no account, no backend
 - Endpoint is set in `js/main.js` (`FORM_ENDPOINT`): `chris@anvol.dev`, activated 2026-09-27, with `_cc` to Zisheng's personal Gmail. The old random alias delivered only to Chris's personal Gmail, which no pipeline reads; three enquiries sat there unanswered for up to ten days.
 - To change the destination address later, point `FORM_ENDPOINT` at the new address, submit once, click the activation link FormSubmit emails you, then swap in the new alias it gives you.
 - Spam protection: honeypot field `_honey` is already wired.
+- Attachments (2026-09-28): FormSubmit's AJAX endpoint carries no files, so `js/main.js` first posts each file to `functions/api/upload.js`, which stores it in the R2 bucket `anvol-quote-attachments` (binding in `wrangler.toml`), and the email's `attachments` field carries the `anvol.dev/files/...` links. Downloads are always served as `application/octet-stream` attachments so an uploaded HTML file never runs on anvol.dev. Limits: 5 files, 20 MB each, enforced in both places. Anyone holding a link can download it; the key contains a random UUID. `compatibility_date` is capped by the local wrangler's workerd, so raise it only after updating wrangler.
 
 ## Before launch checklist
 
