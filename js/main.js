@@ -39,7 +39,8 @@
   });
 
   /* ---------- contact form (FormSubmit AJAX) ---------- */
-  var FORM_ENDPOINT = "https://formsubmit.co/ajax/e18b2a98f7d6ed1df42fe37b8c24eb5d";
+  /* chris@anvol.dev is the business inbox the reply pipeline reads (activated 2026-09-27). */
+  var FORM_ENDPOINT = "https://formsubmit.co/ajax/chris@anvol.dev";
   var form = document.getElementById("quote-form");
   if (form) {
     var btn = document.getElementById("submit-btn");
@@ -65,13 +66,15 @@
           email: form.email.value,
           link: form.link.value,
           message: form.message.value,
-          _subject: "New project enquiry: anvol.dev"
+          _subject: "New project enquiry: anvol.dev",
+          /* Zisheng's personal Gmail gets a copy as the alert; enquiries once sat unread for days (2026-09-27). */
+          _cc: "a413liqingshui@gmail.com"
         })
       })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function (result) {
           if (result.success !== true && result.success !== "true") throw new Error("Form submission rejected");
-          note.textContent = "Thanks. Chris will reply from chris@anvol.dev.";
+          note.textContent = "Thanks. We'll reply by email.";
           note.className = "form-note ok";
           form.reset();
         })
