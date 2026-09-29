@@ -87,8 +87,8 @@
               message: form.message.value,
               attachments: urls.length ? urls.join("\n") : "none",
               _subject: "New project enquiry: anvol.dev",
-              /* Zisheng's personal Gmail gets a copy as the alert; enquiries once sat unread for days (2026-09-27). */
-              _cc: "a413liqingshui@gmail.com"
+              /* Zisheng's Anvol box gets a copy as the alert; enquiries once sat unread for days (2026-09-27, moved off his Gmail 09-29). */
+              _cc: "zisheng@getanvol.com"
             })
           });
         })
