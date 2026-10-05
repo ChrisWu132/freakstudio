@@ -1,4 +1,4 @@
-/* Serves quote-form attachments. Always a download, never rendered on anvol.dev:
+/* Serves quote-form attachments. Always a download, never rendered on our site:
    visitors choose the bytes, so an uploaded HTML page must not run on our origin. */
 export async function onRequestGet({ params, env }) {
   const object = await env.ATTACHMENTS.get(params.path.join("/"));

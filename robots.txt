@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://anvol.dev/sitemap.xml
+Sitemap: https://anvolsupply.com/sitemap.xml
