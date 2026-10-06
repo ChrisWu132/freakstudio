@@ -24,7 +24,9 @@ python -m http.server 8000
 `npx wrangler pages deploy . --project-name=freakstudio --commit-dirty=true` from this directory. Pages serves css/js with a
 4-hour browser cache, so **bump the `?v=` on the two asset links in `index.html` every time `style.css` or `main.js`
 changes** — otherwise returning visitors get the new HTML with the old stylesheet (seen 2026-09-08: black circle step
-numbers and unstyled photo grid). Then open anvol.dev and check it, not the preview URL.
+numbers and unstyled photo grid). Then open anvolsupply.com and check it, not the preview URL.
+
+Domain (2026-10-05): this site is **anvolsupply.com** (+ www). anvol.dev moved to the Anvol product (blockless-app); old `anvol.dev/files/...` attachment links are redirected here by a Cloudflare rule on the anvol.dev zone.
 
 ## Email collection (contact form)
 
