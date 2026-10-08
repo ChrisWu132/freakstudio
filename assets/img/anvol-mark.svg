@@ -1,1 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 300 300"><defs><mask id="strike"><rect width="300" height="300" fill="#fff"/><rect x="10" y="156" width="280" height="24" fill="#000" transform="rotate(-14 150 168)"/></mask></defs><path d="M40 118 L98 92 L238 92 L238 126 L192 136 L184 196 L226 206 L226 248 L96 248 L96 206 L138 196 L130 136 L96 126 Z" fill="#111111" mask="url(#strike)"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <!-- Anvol mark, shape A (2026-09-22), static copy for img/favicon use. Source: research/anvol-repositioning-2026-09-22/design/anvol-mark.svg -->
+  <path d="M5 5H22L27 9.5L22 14H19V19H23L25 27H7L9 19H13V14H5Z" fill="#191713"/>
+  <circle cx="10" cy="9.5" r="2.3" fill="#F3F1EC"/>
+  <circle cx="16.5" cy="9.5" r="2.3" fill="#F3F1EC"/>
+</svg>

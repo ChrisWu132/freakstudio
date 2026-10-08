@@ -86,7 +86,7 @@
               link: form.link.value,
               message: form.message.value,
               attachments: urls.length ? urls.join("\n") : "none",
-              _subject: "New project enquiry: anvolsupply.com",
+              _subject: "New project enquiry: anvol.dev",
               /* Zisheng's Anvol box gets a copy as the alert; enquiries once sat unread for days (2026-09-27, moved off his Gmail 09-29). */
               _cc: "zisheng@getanvol.com"
             })

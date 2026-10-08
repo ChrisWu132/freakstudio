@@ -1,6 +1,6 @@
 # anvol — landing page
 
-Marketing site for Anvol, a US company that turns working prototypes into repeatable small-batch production in Shenzhen. Static site: no build step, no framework, just HTML, CSS and GSAP.
+Marketing site for Anvol, a US company that turns working prototypes into repeatable small-batch production in Shenzhen. Static site: no build step, no framework, just HTML and CSS.
 
 ## Run locally
 
@@ -13,10 +13,10 @@ python -m http.server 8000
 
 ## Stack
 
-- `index.html` — single landing page, semantic HTML
-- `css/style.css` — custom properties, responsive at 1024px / 768px breakpoints
-- `js/main.js` — nav shadow, mobile menu, FAQ accordion, contact form AJAX; GSAP 3 + ScrollTrigger (CDN) only for light scroll reveals. Native scroll, no pinned sections (2026-09-08)
-- `assets/img/` — real photos only: `case-*.jpg` our own products, `f-*.jpg` our benches and partner lines in Shenzhen, `anvol-mark.svg` the logo (source in `../brand/`). The AI-generated images were removed 2026-09-08; `IMAGE-PROMPTS.md` is history
+- `index.html` — single landing page, semantic HTML. Rebuilt 2026-10-08: quote form in the hero, then sponsors line, builds with real prices, capabilities, process, Shenzhen photos, founder, FAQ, closing CTA. Sections follow what PCBWay / Fictiv / Xometry / MacroFab / china-pcba all have; client testimonials are left out because we have no nameable clients yet
+- `css/style.css` — the Anvol visual system shared with block-less.com (`blockless-app` `landing.css`: bone/ink/rust, Instrument Serif + Instrument Sans). Responsive at 960px / 640px. No scroll animations
+- `js/main.js` — nav shadow, mobile menu, FAQ accordion, contact form AJAX. GSAP is no longer loaded, so the reveal block at the end is a no-op
+- `assets/img/` — `*-t4-flatlay.jpg` are our real products cut out onto a generated wood-table backdrop (same images as block-less.com, recipe in `research/anvol-repositioning-2026-09-22/design/retouch3.mjs`); `f-*.jpg` our benches and partner lines in Shenzhen, unedited; `anvol-mark.svg` is the Anvol character (shape A, 2026-09-22), a static copy of the design source. The older `case-*.jpg` stay for links that may point at them; `IMAGE-PROMPTS.md` is history
 - `original-export/` — untouched Figma Make export this page was rebuilt from
 
 ## Deploying
@@ -24,9 +24,9 @@ python -m http.server 8000
 `npx wrangler pages deploy . --project-name=freakstudio --commit-dirty=true` from this directory. Pages serves css/js with a
 4-hour browser cache, so **bump the `?v=` on the two asset links in `index.html` every time `style.css` or `main.js`
 changes** — otherwise returning visitors get the new HTML with the old stylesheet (seen 2026-09-08: black circle step
-numbers and unstyled photo grid). Then open anvolsupply.com and check it, not the preview URL.
+numbers and unstyled photo grid). Then open anvol.dev and check it, not the preview URL.
 
-Domain (2026-10-05): this site is **anvolsupply.com** (+ www). anvol.dev moved to the Anvol product (blockless-app); old `anvol.dev/files/...` attachment links are redirected here by a Cloudflare rule on the anvol.dev zone.
+Domain (2026-10-08): the canonical domain is **anvol.dev** again (Chris, 2026-10-08). anvolsupply.com (+ www) serves the same Pages project. The 10-05 plan to move anvol.dev to blockless-app was dropped.
 
 ## Email collection (contact form)
 
