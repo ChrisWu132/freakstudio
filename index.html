@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261008f">
+<link rel="stylesheet" href="css/style.css?v=20261009a">
 </head>
 <body>
 
@@ -30,7 +30,7 @@
       <span class="brand-name">anvol</span>
     </a>
     <nav class="nav-links" id="nav-links" aria-label="Main">
-      <a href="#builds">Builds &amp; prices</a>
+      <a href="#builds">Costs</a>
       <a href="#how">How it works</a>
       <a href="#faq">FAQ</a>
     </nav>
@@ -50,17 +50,18 @@
     </div>
 
     <form class="quote-card" id="quote-form" novalidate>
-      <h2>Get a quote</h2>
+      <h2>What do you want built?</h2>
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <div class="form-row">
-        <label>Name<input type="text" name="name" placeholder="Your name" required></label>
-        <label>Email<input type="email" name="email" placeholder="you@company.com" required></label>
-      </div>
-      <label>What do you need built?<textarea rows="3" name="message" placeholder="What it does, what works today, how many you need" required></textarea></label>
-      <label>Company or product link (optional)<input type="text" name="link" placeholder="yourcompany.com"></label>
+      <label>What it does, what works today, how many you need<textarea rows="3" name="message" placeholder="A handheld sensor that logs soil moisture, about 50 units. I have an ESP32 prototype on a breadboard." required></textarea></label>
       <label>Files (optional): drawings, BOM, photos. Up to 5 files, 20 MB each<input type="file" name="files" multiple></label>
+      <div class="form-row">
+        <label>Email<input type="email" name="email" placeholder="you@company.com" required></label>
+        <label>WhatsApp (optional)<input type="tel" name="whatsapp" placeholder="+1 555 123 4567"></label>
+      </div>
+      <label class="optin"><input type="checkbox" name="whatsapp_ok"> OK to message me on WhatsApp about this</label>
       <button type="submit" class="btn btn-block" id="submit-btn">Send</button>
-      <p class="form-note" id="form-note">Or email chris@anvol.dev, or book a 30-minute call.</p>
+      <p class="form-note" id="form-note">We reply on WhatsApp, or by email if you leave no number.</p>
+      <p class="form-alt">Prefer to message us now? <a href="https://wa.me/13237193730?text=Hi%20Anvol%2C%20I%27d%20like%20to%20build%20something" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
     </form>
   </section>
 
@@ -119,7 +120,7 @@
     <div class="container">
       <h2>How it <em>works.</em></h2>
       <ol class="steps">
-        <li><h3>Send what you have</h3><p>A sketch, dev-board prototype, Gerber files, or a physical sample. We sign an NDA first.</p></li>
+        <li><h3>Send what you have</h3><p>A sketch, dev-board prototype, Gerber files, or a physical sample. We sign an NDA first, then talk it through with you on WhatsApp or email.</p></li>
         <li><h3>We close the gaps</h3><p>We find what is missing, fix manufacturability, prepare the BOM, and quote the build.</p></li>
         <li><h3>Build and revise</h3><p>We build a small number, test with you, and revise before committing further.</p></li>
         <li><h3>Run the batch</h3><p>After approval we run assembly, inspection and packaging on partner lines.</p></li>
@@ -129,20 +130,32 @@
 
   <section class="section section-paper" id="shenzhen">
     <div class="container">
-      <h2>Our benches in <em>Shenzhen.</em></h2>
+      <h2>Our benches in <em>Shenzhen,</em> and the people you talk to.</h2>
       <div class="photo-row">
         <img src="assets/img/f-debug-bench.jpg" alt="Our engineers at the electronics benches in Shenzhen" loading="lazy">
         <img src="assets/img/f-cmm.jpg" alt="Coordinate measuring machine" loading="lazy">
         <img src="assets/img/f-molding.jpg" alt="Injection molding machine on a partner line" loading="lazy">
       </div>
       <p class="photo-cap">Our engineering benches and partner lines. Not stock photos.</p>
-    </div>
-  </section>
-
-  <section class="section" id="team">
-    <div class="container founder">
-      <blockquote>Chris Wu leads Anvol's engineering team and reads every message himself.</blockquote>
-      <p>Repeat hardware founder. His previous company reached $300K ARR and went through MiraclePlus, the old YC China.</p>
+      <div class="team" id="team">
+        <div class="person">
+          <img src="assets/img/team-zisheng.jpg" alt="Zisheng Li" width="640" height="800" loading="lazy">
+          <div>
+            <h3>Zisheng Li</h3>
+            <p class="person-role">Engineering lead, Shenzhen</p>
+            <p>Embedded systems. 20+ hardware products shipped, including the logic analyzer, tracked robot and line-following car above.</p>
+          </div>
+        </div>
+        <div class="person">
+          <img src="assets/img/team-chris.jpg" alt="Chris Wu" width="640" height="800" loading="lazy">
+          <div>
+            <h3>Chris Wu</h3>
+            <p class="person-role">Founder, Los Angeles</p>
+            <p>Repeat hardware founder. His previous company reached $300K ARR and went through MiraclePlus, the old YC China.</p>
+            <p class="person-links"><a href="https://www.linkedin.com/in/chris-wu1" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://chris-wu.com" target="_blank" rel="noopener">chris-wu.com</a></p>
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -198,6 +211,6 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=20261008d"></script>
+<script src="js/main.js?v=20261009a"></script>
 </body>
 </html>

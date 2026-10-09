@@ -60,7 +60,7 @@
       e.preventDefault();
       if (!form.checkValidity()) {
         form.reportValidity();
-        note.textContent = "Please fill in your name, email and what you need built.";
+        note.textContent = "Please fill in what you need built and your email.";
         note.className = "form-note err";
         return;
       }
@@ -81,9 +81,10 @@
             method: "POST",
             headers: { "Content-Type": "application/json", Accept: "application/json" },
             body: JSON.stringify({
-              name: form.name.value,
               email: form.email.value,
-              link: form.link.value,
+              whatsapp: form.whatsapp.value || "none",
+              /* Only message on WhatsApp when this is "yes" (WhatsApp requires explicit opt-in). */
+              whatsapp_ok: form.whatsapp_ok.checked ? "yes" : "no",
               message: form.message.value,
               attachments: urls.length ? urls.join("\n") : "none",
               _subject: "New project enquiry: anvol.dev",
@@ -95,7 +96,9 @@
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function (result) {
           if (result.success !== true && result.success !== "true") throw new Error("Form submission rejected");
-          note.textContent = "Thanks. We'll reply by email.";
+          note.textContent = form.whatsapp.value && form.whatsapp_ok.checked
+            ? "Received. We'll message you on WhatsApp."
+            : "Received. We'll reply by email.";
           note.className = "form-note ok";
           form.reset();
         })
