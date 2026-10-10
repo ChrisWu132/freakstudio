@@ -1,5 +1,5 @@
 name = "freakstudio"
-pages_build_output_dir = "."
+pages_build_output_dir = "dist"
 compatibility_date = "2026-08-06"
 
 # Quote-form attachments (drawings, BOM, photos). Links go into the FormSubmit email only.

@@ -21,7 +21,7 @@ python -m http.server 8000
 
 ## Deploying
 
-`npx wrangler pages deploy . --project-name=freakstudio --commit-dirty=true` from this directory. Pages serves css/js with a
+`node deploy.mjs`. It copies only the public files (the `PUBLIC` list in `deploy.mjs`) into `dist/` and deploys that, because Pages publishes every file in the upload directory: deploying `.` exposed this README, `wrangler.toml`, `test/` and `original-export/` until 2026-10-10. A new public file or folder has to be added to that list. Pages serves css/js with a
 4-hour browser cache, so **bump the `?v=` on the two asset links in `index.html` every time `style.css` or `main.js`
 changes** — otherwise returning visitors get the new HTML with the old stylesheet (seen 2026-09-08: black circle step
 numbers and unstyled photo grid). Then open anvol.dev and check it, not the preview URL.
