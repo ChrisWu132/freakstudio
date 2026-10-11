@@ -85,6 +85,13 @@ section[id]{scroll-margin-top:var(--nav-h)}
 .build-foot{margin-top:40px;padding-top:24px;border-top:1px solid var(--line);font-size:15px;line-height:1.6;color:var(--ink-soft)}
 .build-foot a{white-space:nowrap}
 
+/* ---------- more builds ---------- */
+.work-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 24px;margin-top:48px}
+.work img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:12px;margin-bottom:14px}
+.work h3{font-size:16px}
+.work p{margin-top:4px;font-size:14px;line-height:1.5;color:var(--ink-soft)}
+.work .work-time{margin-top:6px;color:var(--ink-faint)}
+
 /* ---------- capabilities ---------- */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:start}
 .cap-list{list-style:none;columns:2;column-gap:32px}
@@ -137,7 +144,7 @@ section[id]{scroll-margin-top:var(--nav-h)}
 /* ---------- responsive ---------- */
 @media (max-width:960px){
   .hero{grid-template-columns:1fr;gap:48px;padding-top:56px}
-  .build-grid,.steps{grid-template-columns:1fr 1fr}
+  .build-grid,.steps,.work-grid{grid-template-columns:1fr 1fr}
   .split,.faq-wrap,.team{grid-template-columns:1fr;gap:32px}
 }
 
