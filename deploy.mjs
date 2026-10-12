@@ -4,7 +4,8 @@ import { cpSync, rmSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 
 process.chdir(import.meta.dirname);
-const PUBLIC = ["index.html", "404.html", "robots.txt", "sitemap.xml", "_redirects", "assets", "css", "js"];
+const PUBLIC = ["index.html", "404.html", "robots.txt", "sitemap.xml", "_redirects", "assets", "css", "js",
+  "services", "cases", "costs", "how-it-works", "about"];
 rmSync("dist", { recursive: true, force: true });
 for (const p of PUBLIC) cpSync(p, `dist/${p}`, { recursive: true });
 

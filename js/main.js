@@ -38,6 +38,14 @@
     });
   });
 
+  /* ---------- stage cards preselect the form's stage ---------- */
+  document.querySelectorAll("[data-stage]").forEach(function (card) {
+    card.addEventListener("click", function () {
+      var select = document.getElementById("stage");
+      if (select) select.value = card.getAttribute("data-stage");
+    });
+  });
+
   /* ---------- contact form (FormSubmit AJAX) ---------- */
   /* chris@anvol.dev is the business inbox the reply pipeline reads (activated 2026-09-27). */
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/chris@anvol.dev";
@@ -56,6 +64,29 @@
     var note = document.getElementById("form-note");
     var BTN_LABEL = btn.innerHTML;
     var NOTE_DEFAULT = note.textContent;
+    /* After a confirmed send, show back what we received and the next step instead of only "thanks". */
+    var received = document.getElementById("received");
+    function showReceived() {
+      if (!received) return;
+      var stage = form.stage.options[form.stage.selectedIndex];
+      var items = [
+        ["Your stage", form.stage.value ? stage.text : "Not given"],
+        ["Quantity / date", (form.quantity.value || "Quantity not given") + " · " + (form.target_date.value || "date not given")],
+        ["What you sent", form.message.value.slice(0, 280)],
+        ["Next step", "Zisheng Li, our engineering lead, reviews it, lists what is missing and suggests the next build step."]
+      ];
+      var dl = received.querySelector("dl");
+      dl.textContent = "";
+      items.forEach(function (pair) {
+        var dt = document.createElement("dt"); dt.textContent = pair[0];
+        var dd = document.createElement("dd"); dd.textContent = pair[1];
+        dl.appendChild(dt); dl.appendChild(dd);
+      });
+      received.hidden = false;
+      /* The received block carries its own WhatsApp link; one is enough. */
+      var alt = form.querySelector(".form-alt");
+      if (alt) alt.hidden = true;
+    }
     form.addEventListener("submit", function (e) {
       e.preventDefault();
       if (!form.checkValidity()) {
@@ -85,6 +116,9 @@
               whatsapp: form.whatsapp.value || "none",
               /* Only message on WhatsApp when this is "yes" (WhatsApp requires explicit opt-in). */
               whatsapp_ok: form.whatsapp_ok.checked ? "yes" : "no",
+              stage: form.stage.value || "not given",
+              quantity: form.quantity.value || "not given",
+              target_date: form.target_date.value || "not given",
               message: form.message.value,
               attachments: urls.length ? urls.join("\n") : "none",
               _subject: "New project enquiry: anvol.dev",
@@ -100,6 +134,7 @@
             ? "Received. We'll message you on WhatsApp."
             : "Received. We'll reply by email.";
           note.className = "form-note ok";
+          showReceived();
           form.reset();
         })
         .catch(function () {

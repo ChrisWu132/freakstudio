@@ -61,8 +61,8 @@ section[id]{scroll-margin-top:var(--nav-h)}
 .quote-card label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;margin-bottom:14px}
 .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .form-row label{min-width:0}
-.quote-card input,.quote-card textarea{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-family:inherit;font-size:15px;font-weight:400;color:var(--ink);background:#fff;outline:none;resize:vertical}
-.quote-card input:focus,.quote-card textarea:focus{border-color:var(--ink)}
+.quote-card input,.quote-card textarea,.quote-card select{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-family:inherit;font-size:15px;font-weight:400;color:var(--ink);background:#fff;outline:none;resize:vertical}
+.quote-card input:focus,.quote-card textarea:focus,.quote-card select:focus{border-color:var(--ink)}
 .quote-card input[type=file]{border:0;padding:0;background:transparent;font-size:13px}
 .quote-card label.optin{flex-direction:row;align-items:center;gap:8px;font-weight:400;font-size:14px;color:var(--ink-soft)}
 .quote-card input[type=checkbox]{width:auto}
@@ -70,12 +70,49 @@ section[id]{scroll-margin-top:var(--nav-h)}
 .form-alt{margin-top:6px;font-size:13px;color:var(--ink-faint);text-align:center}
 .form-alt a{white-space:nowrap;text-underline-offset:3px}
 .form-note.ok{color:#1F7A46;font-weight:600}
+.received{margin-top:14px;padding-top:14px;border-top:1px solid var(--line);font-size:14px;line-height:1.6;color:var(--ink-soft)}
+.received dt{font-weight:600;color:var(--ink);margin-top:8px}
+.received a{text-underline-offset:3px}
 .form-note.err{color:var(--rust);font-weight:600}
 .hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
 
 /* ---------- trust strip ---------- */
 .trust{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 40px;text-align:center;font-size:15px;color:var(--ink-faint)}
 .trust b{color:var(--ink);font-weight:600}
+
+/* ---------- stage entry + service cards ---------- */
+.stage-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+.stage{display:flex;flex-direction:column;gap:10px;padding:24px;border:1px solid var(--line);border-radius:12px;background:var(--paper);text-decoration:none}
+.stage:hover{border-color:var(--ink)}
+.stage p{font-size:15px;line-height:1.55;color:var(--ink-soft);flex:1}
+.stage span{font-size:14px;font-weight:600}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 32px;margin-top:56px}
+.svc{border-top:1px solid var(--ink);padding-top:20px}
+.svc h3{margin-bottom:10px}
+.svc h3 a{text-decoration:none}
+.svc dt{margin-top:12px;font-size:13px;font-weight:600;color:var(--ink-faint)}
+.svc dd{margin-top:4px;font-size:15px;line-height:1.55;color:var(--ink-soft)}
+.more{margin-top:40px;font-size:15px}
+.more a{text-underline-offset:3px}
+
+/* ---------- inner pages ---------- */
+.page-head{max-width:1120px;margin:0 auto;padding:88px 40px 24px}
+.page-head h1{font-size:clamp(42px,5vw,64px);line-height:1.02;margin-bottom:20px}
+.page-head h1 em{font-style:italic}
+.page-head p{font-size:19px;line-height:1.55;color:var(--ink-soft);max-width:36em}
+.page-head .btn{margin-top:28px}
+.rows{margin-top:48px;border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:.8fr 2fr;gap:40px;padding:36px 0;border-bottom:1px solid var(--line)}
+.row h2,.row h3{font-size:26px;font-family:var(--serif);font-weight:400}
+.row dl{display:grid;grid-template-columns:150px 1fr;gap:10px 24px;font-size:15px;line-height:1.55}
+.row dt{font-weight:600}
+.row dd{color:var(--ink-soft)}
+.plain{margin-top:16px;padding-left:20px;font-size:16px;line-height:1.8;color:var(--ink-soft)}
+.cost-table{width:100%;border-collapse:collapse;margin-top:40px;font-size:15px}
+.cost-table th,.cost-table td{text-align:left;padding:14px 12px;border-bottom:1px solid var(--line)}
+.cost-table th{font-weight:600}
+.cost-table td.num,.cost-table th.num{text-align:right;white-space:nowrap}
+.table-wrap{overflow-x:auto}
 
 /* ---------- builds + prices ---------- */
 .build-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:56px}
@@ -144,8 +181,9 @@ section[id]{scroll-margin-top:var(--nav-h)}
 /* ---------- responsive ---------- */
 @media (max-width:960px){
   .hero{grid-template-columns:1fr;gap:48px;padding-top:56px}
-  .build-grid,.steps,.work-grid{grid-template-columns:1fr 1fr}
-  .split,.faq-wrap,.team{grid-template-columns:1fr;gap:32px}
+  .build-grid,.steps,.work-grid,.stage-grid,.svc-grid{grid-template-columns:1fr 1fr}
+  .split,.faq-wrap,.team,.row{grid-template-columns:1fr;gap:32px}
+  .row{gap:16px}
 }
 
 @media (max-width:640px){
@@ -158,7 +196,10 @@ section[id]{scroll-margin-top:var(--nav-h)}
   .nav .btn{margin-left:auto}
   .section{padding:72px 0}
   .quote-card{padding:20px 16px}
-  .form-row,.build-grid,.steps{grid-template-columns:1fr}
+  .form-row,.build-grid,.steps,.stage-grid,.svc-grid{grid-template-columns:1fr}
+  .page-head{padding:56px 16px 16px}
+  .row dl{grid-template-columns:1fr;gap:2px}
+  .row dd{margin-bottom:10px}
   .cap-list{columns:1}
   .photo-row{grid-template-columns:1fr 1fr}
   .photo-row img:last-child{display:none}

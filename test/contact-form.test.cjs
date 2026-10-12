@@ -11,6 +11,8 @@ function fixture(result, valid = true, files = [], uploadOk = true) {
   const form = {
     email: { value: 'test@example.com' }, whatsapp: { value: '+1 555 123 4567' }, whatsapp_ok: { checked: true },
     message: { value: 'A project' }, _honey: { value: '' }, files: { files },
+    stage: { value: 'working_prototype', selectedIndex: 3, options: [, , , { text: 'I have a working prototype' }] },
+    quantity: { value: '50' }, target_date: { value: '' },
     checkValidity: () => valid, reportValidity: () => reported++,
     reset: () => resets++, addEventListener: (_, fn) => { submit = fn; },
   };
@@ -63,6 +65,14 @@ test('WhatsApp number and consent go into the email', async () => {
   assert.equal(f.sent().whatsapp, '+1 555 123 4567');
   assert.equal(f.sent().whatsapp_ok, 'yes');
   assert.equal(f.sent().email, 'test@example.com');
+});
+
+test('stage, quantity and target date go into the email', async () => {
+  const f = fixture({ success: 'true' }); f.submit();
+  await new Promise(setImmediate);
+  assert.equal(f.sent().stage, 'working_prototype');
+  assert.equal(f.sent().quantity, '50');
+  assert.equal(f.sent().target_date, 'not given');
 });
 
 test('failed upload sends nothing and keeps input', async () => {

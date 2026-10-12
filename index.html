@@ -3,38 +3,40 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Anvol | Small-batch hardware development and production</title>
-<meta name="description" content="Anvol turns rough hardware prototypes into repeatable small-batch production. Our Shenzhen team closes engineering gaps, sources parts, builds prototypes and manages production. No minimum order.">
+<title>Anvol | From the first sketch to a repeatable small batch</title>
+<meta name="description" content="Anvol helps overseas teams turn hardware ideas, development boards and early prototypes into tested products and small production runs. Shenzhen engineering, US entity, no minimum order.">
 <link rel="canonical" href="https://anvol.dev/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://anvol.dev/">
-<meta property="og:title" content="Anvol | Small-batch hardware development and production">
-<meta property="og:description" content="Bring a sketch, dev-board prototype, or partial design. We resolve the gaps, source parts, build prototypes, and run small batches.">
+<meta property="og:title" content="Anvol | From the first sketch to a repeatable small batch">
+<meta property="og:description" content="Bring an idea, development board, partial PCB, working prototype, CAD or BOM. We close the engineering gaps, build and test the product, and run the small batch.">
 <meta property="og:image" content="https://anvol.dev/assets/img/og-anvol-dev.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Anvol","legalName":"Anvol, Inc.","url":"https://anvol.dev/","sameAs":["https://block-less.com/","https://www.linkedin.com/company/anvol/"],"email":"chris@anvol.dev","description":"Anvol turns rough hardware prototypes into repeatable small-batch production: a Shenzhen team that closes engineering gaps, sources parts, builds prototypes and manages production. Anvol's AI hardware cofounder, also called Anvol, is at block-less.com (Blockless)."}</script>
-<link rel="icon" href="assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=20261011a">
+<link rel="stylesheet" href="/css/style.css?v=20261012a">
 </head>
 <body>
 
 <header class="nav" id="nav">
   <div class="nav-inner">
-    <a class="brand" href="#top" aria-label="anvol home">
-      <img class="brand-mark" src="assets/img/anvol-mark.svg" alt="" width="26" height="26">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
       <span class="brand-name">anvol</span>
     </a>
     <nav class="nav-links" id="nav-links" aria-label="Main">
-      <a href="#builds">Costs</a>
-      <a href="#how">How it works</a>
-      <a href="#faq">FAQ</a>
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/about/">About</a>
     </nav>
-    <a class="btn" href="#quote">Get a quote</a>
+    <a class="btn" href="/#quote">Review my project</a>
     <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
   </div>
 </header>
@@ -43,17 +45,30 @@
 
   <section class="hero" id="quote">
     <div>
-      <h1 class="hero-title">From working prototype to <em>repeatable production.</em></h1>
-      <p class="hero-sub">Bring a sketch, dev-board prototype, or partial design. Our engineers in Shenzhen close the gaps, source parts, build prototypes, and run small batches.</p>
-      <p class="hero-facts">No minimum order · NDA before we open any file · Pay in USD to our US entity</p>
-      <p class="hero-alt">No design yet? <a href="https://block-less.com/">Describe your idea to Anvol, our AI hardware partner →</a></p>
+      <h1 class="hero-title">From the first sketch to <em>a repeatable small batch.</em></h1>
+      <p class="hero-sub">We help overseas teams turn incomplete hardware ideas, development boards, and early prototypes into tested products and small production runs.</p>
+      <p class="hero-facts">Shenzhen engineering team · NDA before we open any file · Pay in USD to our US entity · No minimum order</p>
+      <p class="hero-alt">Want to start from a sentence instead of a specification? <a href="https://block-less.com/">Explore Blockless →</a></p>
     </div>
 
     <form class="quote-card" id="quote-form" novalidate>
-      <h2>What do you want built?</h2>
+      <h2>Review my project</h2>
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-      <label>What it does, what works today, how many you need<textarea rows="3" name="message" placeholder="A handheld sensor that logs soil moisture, about 50 units. I have an ESP32 prototype on a breadboard." required></textarea></label>
-      <label>Files (optional): drawings, BOM, photos. Up to 5 files, 20 MB each<input type="file" name="files" multiple></label>
+      <label>Where are you today?
+        <select name="stage" id="stage">
+          <option value="">Choose one (optional)</option>
+          <option value="idea">I have an idea or sketch</option>
+          <option value="partial_design">I have a development board or partial design</option>
+          <option value="working_prototype">I have a working prototype</option>
+          <option value="repeat_batch">I need a repeat batch</option>
+        </select>
+      </label>
+      <label>What it does, what works today, what help you need<textarea rows="3" name="message" placeholder="A handheld sensor that logs soil moisture. I have an ESP32 prototype on a breadboard and need a real board and enclosure." required></textarea></label>
+      <div class="form-row">
+        <label>Quantity (optional)<input type="text" name="quantity" placeholder="e.g. 50"></label>
+        <label>Needed by (optional)<input type="text" name="target_date" placeholder="e.g. March 2027"></label>
+      </div>
+      <label>Files (optional): CAD, PCB, BOM, photos. Up to 5 files, 20 MB each<input type="file" name="files" multiple></label>
       <div class="form-row">
         <label>Email<input type="email" name="email" placeholder="you@company.com" required></label>
         <label>WhatsApp (optional)<input type="tel" name="whatsapp" placeholder="+1 555 123 4567"></label>
@@ -61,11 +76,57 @@
       <label class="optin"><input type="checkbox" name="whatsapp_ok"> OK to message me on WhatsApp about this</label>
       <button type="submit" class="btn btn-block" id="submit-btn">Send</button>
       <p class="form-note" id="form-note">We reply on WhatsApp, or by email if you leave no number.</p>
+      <div class="received" id="received" hidden>
+        <dl></dl>
+        <p>Want to talk now? <a href="https://wa.me/8618536203904" target="_blank" rel="noopener">WhatsApp Zisheng, our engineering lead</a></p>
+      </div>
       <p class="form-alt">Prefer to message us now? <a href="https://wa.me/13237193730?text=Hi%20Anvol%2C%20I%27d%20like%20to%20build%20something" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
     </form>
   </section>
 
-  <p class="trust">Hardware-sponsored by <b>DFRobot</b>, <b>Freenove</b>, <b>Waveshare</b>, <b>LILYGO</b> and <b>M5Stack</b> · Our dev kit is used in <b>10 universities</b> and <b>25 schools</b></p>
+  <section class="section section-paper" id="start">
+    <div class="container">
+      <h2>Start with <em>what you have.</em></h2>
+      <p class="section-note">We work with hardware startups, product teams that have a prototype but no full engineering team, software, AI and robotics teams moving into hardware, and university and research labs.</p>
+      <div class="stage-grid">
+        <a class="stage" href="#quote" data-stage="idea"><h3>I have an idea or sketch</h3><p>You need feasibility, architecture, and a first prototype plan.</p><span>Review the project →</span></a>
+        <a class="stage" href="#quote" data-stage="partial_design"><h3>I have a development board or partial design</h3><p>You need a custom PCB, firmware, enclosure, sourcing, or integration.</p><span>Improve the prototype →</span></a>
+        <a class="stage" href="#quote" data-stage="working_prototype"><h3>I have a working prototype</h3><p>You need testing, DFM, documentation, or a pilot batch.</p><span>Prepare for production →</span></a>
+        <a class="stage" href="#quote" data-stage="repeat_batch"><h3>I need a repeat batch</h3><p>You need procurement, assembly, inspection, packaging, and repeatable delivery.</p><span>Plan a production run →</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <div class="container">
+      <h2>What we can <em>own.</em></h2>
+      <div class="svc-grid">
+        <div class="svc"><h3><a href="/services/project-evaluation/">Product definition &amp; feasibility</a></h3><dl><dt>For</dt><dd>An idea or sketch with open questions.</dd><dt>Deliverables</dt><dd>Project summary, risk list, prototype plan, rough cost range.</dd></dl></div>
+        <div class="svc"><h3><a href="/services/#electrical">Electrical engineering &amp; PCB</a></h3><dl><dt>For</dt><dd>A dev-board prototype that needs its own board.</dd><dt>Deliverables</dt><dd>Schematic, PCB files, Gerbers, sourced BOM.</dd></dl></div>
+        <div class="svc"><h3><a href="/services/#firmware">Firmware &amp; embedded systems</a></h3><dl><dt>For</dt><dd>Hardware that needs code it can ship with.</dd><dt>Deliverables</dt><dd>Firmware source, factory test program, protocol notes.</dd></dl></div>
+        <div class="svc"><h3><a href="/services/#enclosure">Enclosure &amp; product integration</a></h3><dl><dt>For</dt><dd>Working boards that need a product body.</dd><dt>Deliverables</dt><dd>CAD, printed or machined enclosures, assembled units.</dd></dl></div>
+        <div class="svc"><h3><a href="/services/#testing">Testing &amp; manufacturing readiness</a></h3><dl><dt>For</dt><dd>A working prototype heading toward a batch.</dd><dt>Deliverables</dt><dd>Test checklist, test report, production files.</dd></dl></div>
+        <div class="svc"><h3><a href="/services/#batch">Pilot &amp; small-batch production</a></h3><dl><dt>For</dt><dd>A validated design you need more units of.</dd><dt>Deliverables</dt><dd>Tested units, batch records, packed shipment.</dd></dl></div>
+      </div>
+      <p class="more"><a href="/services/">What each service covers and excludes →</a></p>
+    </div>
+  </section>
+
+  <section class="section section-paper" id="how">
+    <div class="container">
+      <h2>How a project <em>moves.</em></h2>
+      <ol class="steps">
+        <li><h3>Project brief</h3><p>You send what you have: idea, board, files or a sample.</p></li>
+        <li><h3>NDA and review</h3><p>We sign an NDA, then read every file you sent.</p></li>
+        <li><h3>Feasibility and risks</h3><p>We list what is missing and what could block the build.</p></li>
+        <li><h3>Scope and estimate</h3><p>A written scope and quote. A deposit starts the work.</p></li>
+        <li><h3>Engineering and prototype</h3><p>PCB, firmware and enclosure, built into first units.</p></li>
+        <li><h3>Validation and pilot</h3><p>We test with you and revise before a pilot batch.</p></li>
+        <li><h3>Production and handover</h3><p>Repeat batches, plus the files you need to own the design.</p></li>
+      </ol>
+      <p class="more"><a href="/how-it-works/">Inputs, outputs and payment points for each step →</a></p>
+    </div>
+  </section>
 
   <section class="section" id="builds">
     <div class="container">
@@ -73,25 +134,25 @@
       <p class="section-note">Devices our team designed and delivered, with the real development fee and per-unit price.</p>
       <div class="build-grid">
         <article class="build">
-          <img src="assets/img/case-logic-analyzer-t4-flatlay.jpg" alt="24-channel logic analyzer with coloured test hooks" width="1200" height="900" loading="lazy">
+          <img src="/assets/img/case-logic-analyzer-t4-flatlay.jpg" alt="24-channel logic analyzer with coloured test hooks" width="1200" height="900" loading="lazy">
           <h3>24-channel logic analyzer</h3>
           <div class="build-price">$1,100</div>
           <p>15 units at $20 each, plus $800 development.</p>
         </article>
         <article class="build">
-          <img src="assets/img/case-line-follower-t4-flatlay.jpg" alt="Four-wheel robot car with a lidar and a custom control board" width="1200" height="900" loading="lazy">
+          <img src="/assets/img/case-line-follower-t4-flatlay.jpg" alt="Four-wheel robot car with a lidar and a custom control board" width="1200" height="900" loading="lazy">
           <h3>Lidar line-following car</h3>
           <div class="build-price">$6,500</div>
           <p>10 units at $150 each, plus $5,000 development.</p>
         </article>
         <article class="build">
-          <img src="assets/img/case-tracked-robot-t4-flatlay.jpg" alt="Swing-arm tracked robot chassis with PTZ camera" width="1200" height="900" loading="lazy">
+          <img src="/assets/img/case-tracked-robot-t4-flatlay.jpg" alt="Swing-arm tracked robot chassis with PTZ camera" width="1200" height="900" loading="lazy">
           <h3>Swing-arm tracked robot</h3>
           <div class="build-price">$30,000</div>
           <p>4 units at $5,000 each, plus $10,000 development.</p>
         </article>
       </div>
-      <p class="build-foot">Totals exclude certification (FCC/CE, quoted separately) and shipping. <a href="https://github.com/ChrisWu132/hardware-prototype-costs" target="_blank" rel="noopener">Full cost data →</a></p>
+      <p class="build-foot">Totals exclude certification (FCC/CE, quoted separately) and shipping. These are past projects, not fixed prices. <a href="/costs/">How costs break down →</a></p>
     </div>
   </section>
 
@@ -100,102 +161,46 @@
       <h2>Built something <em>like yours?</em></h2>
       <div class="work-grid">
         <article class="work">
-          <img src="assets/img/work-desk-companion.jpg" alt="Orange 3D-printed desk companion with a small screen face" width="800" height="600" loading="lazy">
+          <img src="/assets/img/work-desk-companion.jpg" alt="Orange 3D-printed desk companion with a small screen face" width="800" height="600" loading="lazy">
           <h3>Desk AI companion</h3>
           <p>Shows an AI coding agent's status by screen and voice.</p>
           <p class="work-time">15&nbsp;days to develop</p>
         </article>
         <article class="work">
-          <img src="assets/img/work-voice-assistant.jpg" alt="Pink handheld voice assistant with a speaker grille and display" width="690" height="517" loading="lazy">
+          <img src="/assets/img/work-voice-assistant.jpg" alt="Pink handheld voice assistant with a speaker grille and display" width="690" height="517" loading="lazy">
           <h3>Handheld voice assistant</h3>
           <p>Talks with an LLM over Wi-Fi, with a screen and speaker.</p>
           <p class="work-time">10&nbsp;days to develop</p>
         </article>
         <article class="work">
-          <img src="assets/img/work-smart-planter.jpg" alt="Planter with a small screen device clipped to the pot" width="525" height="393" loading="lazy">
+          <img src="/assets/img/work-smart-planter.jpg" alt="Planter with a small screen device clipped to the pot" width="525" height="393" loading="lazy">
           <h3>Talking smart planter</h3>
           <p>Reads soil moisture and chats about the plant.</p>
           <p class="work-time">15&nbsp;days to develop</p>
         </article>
         <article class="work">
-          <img src="assets/img/work-teaching-kit.jpg" alt="Mecanum-wheel car with a robotic arm" width="740" height="555" loading="lazy">
+          <img src="/assets/img/work-teaching-kit.jpg" alt="Mecanum-wheel car with a robotic arm" width="740" height="555" loading="lazy">
           <h3>Robot-arm car teaching kit</h3>
           <p>Car, arm, handheld controller and a 5&#8209;lesson course.</p>
           <p class="work-time">15&nbsp;days to develop</p>
         </article>
-        <article class="work">
-          <img src="assets/img/work-quadruped.jpg" alt="Pink and white four-legged robot" width="584" height="438" loading="lazy">
-          <h3>Voice-controlled quadruped</h3>
-          <p>Walks, turns and sits on offline voice commands.</p>
-          <p class="work-time">20&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="assets/img/work-ros2-robot.jpg" alt="Mecanum-wheel robot with a lidar, depth camera and touchscreen" width="790" height="592" loading="lazy">
-          <h3>ROS2 mapping robot</h3>
-          <p>Maps a room with lidar and a depth camera, then navigates it.</p>
-          <p class="work-time">18&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="assets/img/work-delivery-robot.jpg" alt="Black four-wheel cargo robot for indoor delivery" width="645" height="483" loading="lazy">
-          <h3>Indoor delivery robot</h3>
-          <p>Carries 200 kg and follows a wristband.</p>
-          <p class="work-time">1&nbsp;month to develop</p>
-        </article>
-        <article class="work">
-          <img src="assets/img/work-underwater-rov.jpg" alt="White underwater ROV with a gripper arm" width="595" height="446" loading="lazy">
-          <h3>Underwater ROV</h3>
-          <p>Dives to 50 m for 3 hours, with a gripper arm.</p>
-          <p class="work-time">2&nbsp;months to develop</p>
-        </article>
       </div>
+      <p class="more"><a href="/cases/">All builds →</a></p>
     </div>
   </section>
 
-  <section class="section section-paper" id="capabilities">
-    <div class="container split">
-      <div>
-        <h2>One team across <em>the whole build.</em></h2>
-        <p class="section-note">You work with one Anvol engineering lead. Behind them we coordinate the specialists your product needs, and find a qualified supplier or a practical substitute when a part blocks the build.</p>
-      </div>
-      <ul class="cap-list">
-        <li>Board design &amp; firmware</li>
-        <li>PCB assembly</li>
-        <li>Component sourcing</li>
-        <li>Cables &amp; harnesses</li>
-        <li>CNC machining</li>
-        <li>Injection molding</li>
-        <li>Batteries &amp; finishes</li>
-        <li>Testing &amp; inspection</li>
-        <li>Final assembly</li>
-        <li>Packaging</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section" id="how">
-    <div class="container">
-      <h2>How it <em>works.</em></h2>
-      <ol class="steps">
-        <li><h3>Send what you have</h3><p>A sketch, dev-board prototype, Gerber files, or a physical sample. We sign an NDA first, then talk it through with you on WhatsApp or email.</p></li>
-        <li><h3>We close the gaps</h3><p>We find what is missing, fix manufacturability, prepare the BOM, and quote the build.</p></li>
-        <li><h3>Build and revise</h3><p>We build a small number, test with you, and revise before committing further.</p></li>
-        <li><h3>Run the batch</h3><p>After approval we run assembly, inspection and packaging on partner lines.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section class="section section-paper" id="shenzhen">
+  <section class="section" id="shenzhen">
     <div class="container">
       <h2>Our benches in <em>Shenzhen,</em> and the people you talk to.</h2>
       <div class="photo-row">
-        <img src="assets/img/f-debug-bench.jpg" alt="Our engineers at the electronics benches in Shenzhen" loading="lazy">
-        <img src="assets/img/f-cmm.jpg" alt="Coordinate measuring machine" loading="lazy">
-        <img src="assets/img/f-molding.jpg" alt="Injection molding machine on a partner line" loading="lazy">
+        <img src="/assets/img/f-debug-bench.jpg" alt="Our engineers at the electronics benches in Shenzhen" loading="lazy">
+        <img src="/assets/img/f-cmm.jpg" alt="Coordinate measuring machine" loading="lazy">
+        <img src="/assets/img/f-molding.jpg" alt="Injection molding machine on a partner line" loading="lazy">
       </div>
-      <p class="photo-cap">Our engineering benches and partner lines. Not stock photos.</p>
+      <p class="photo-cap">Electronics benches, measurement and molding on partner lines. Not stock photos.</p>
       <div class="team" id="team">
         <div class="person">
-          <img src="assets/img/team-zisheng.jpg" alt="Zisheng Li" width="640" height="800" loading="lazy">
+          <img src="/assets/img/team-zisheng.jpg" alt="Zisheng Li" width="640" height="800" loading="lazy">
           <div>
             <h3>Zisheng Li</h3>
             <p class="person-role">Engineering lead, Shenzhen</p>
@@ -203,7 +208,7 @@
           </div>
         </div>
         <div class="person">
-          <img src="assets/img/team-chris.jpg" alt="Chris Wu" width="640" height="800" loading="lazy">
+          <img src="/assets/img/team-chris.jpg" alt="Chris Wu" width="640" height="800" loading="lazy">
           <div>
             <h3>Chris Wu</h3>
             <p class="person-role">Founder, Los Angeles</p>
@@ -246,7 +251,7 @@
   <section class="section closing">
     <div class="container">
       <h2>Show us what works <em>today.</em></h2>
-      <a class="btn" href="#quote">Get a quote</a>
+      <a class="btn" href="#quote">Review my project</a>
       <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://calendly.com/chris-anvol/30min" target="_blank" rel="noopener">Book a 30-minute call</a></p>
     </div>
   </section>
@@ -255,18 +260,21 @@
 
 <footer class="footer">
   <div class="container footer-grid">
-    <a class="brand" href="#top">
-      <img class="brand-mark" src="assets/img/anvol-mark.svg" alt="" width="26" height="26">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
       <span class="brand-name">anvol</span>
     </a>
     <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
     <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
       <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
-      <a href="https://block-less.com/">block-less.com</a>
+      <a href="https://block-less.com/">Blockless</a>
     </div>
   </div>
 </footer>
 
-<script src="js/main.js?v=20261011a"></script>
+<script src="/js/main.js?v=20261012a"></script>
 </body>
 </html>

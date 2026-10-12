@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://anvolsupply.com/</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://anvol.dev/</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://anvol.dev/services/</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://anvol.dev/services/project-evaluation/</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://anvol.dev/cases/</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://anvol.dev/costs/</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://anvol.dev/how-it-works/</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://anvol.dev/about/</loc><lastmod>2026-10-12</lastmod></url>
 </urlset>
