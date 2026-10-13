@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can you upgrade the processor without redesigning your prototype? | Anvol</title>
+<meta name="description" content="Changing from a Pico module to a custom board, or upgrading RP2040 to RP2350, calls for separate checks of the package, power circuit, firmware and finished interaction.">
+<link rel="canonical" href="https://anvol.dev/insights/upgrade-the-processor-without-redesigning-the-board/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anvol.dev/insights/upgrade-the-processor-without-redesigning-the-board/">
+<meta property="og:title" content="Can you upgrade the processor without redesigning your prototype? | Anvol">
+<meta property="og:description" content="Changing from a Pico module to a custom board, or upgrading RP2040 to RP2350, calls for separate checks of the package, power circuit, firmware and finished interaction.">
+<meta property="og:image" content="https://anvol.dev/assets/img/og-anvol-dev.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Can you upgrade the processor without redesigning your prototype?", "description": "Changing from a Pico module to a custom board, or upgrading RP2040 to RP2350, calls for separate checks of the package, power circuit, firmware and finished interaction.", "image": "https://anvol.dev/assets/img/og-anvol-dev.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://anvol.dev/insights/upgrade-the-processor-without-redesigning-the-board/", "articleSection": "PCB and electronics", "author": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/"}, "publisher": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/", "logo": {"@type": "ImageObject", "url": "https://anvol.dev/assets/img/anvol-mark.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}, {"@type": "ListItem", "position": 3, "name": "Can you upgrade the processor without redesigning your prototype?", "item": "https://anvol.dev/insights/upgrade-the-processor-without-redesigning-the-board/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head article-head">
+    <h1>Can you upgrade the processor without redesigning your prototype?</h1>
+  </header>
+  <article class="article">
+<p>Your prototype works, but the next version needs more memory or more connections. A newer processor looks like an easy upgrade. If your team is using a plug-in development board, changing it may be a manageable experiment. If the processor is soldered onto your own circuit board, the same decision can require a new board design.</p>
+<p>Before agreeing to the change, ask what is being replaced: the complete module, the chip, or the software running on it. “Compatible” needs an object. A connector can fit while the firmware needs updating; a familiar chip name can hide a different arrangement of power pins.</p>
+<p>The move from RP2040 to RP2350 makes this distinction concrete. Raspberry Pi describes the <a href="https://www.raspberrypi.com/products/raspberry-pi-pico-2/" rel="noopener">Pico 2 board as hardware- and software-compatible with Pico 1</a>. Its <a href="https://datasheets.raspberrypi.com/rp2350/hardware-design-with-rp2350.pdf" rel="noopener">chip design guide</a>, however, explicitly rules out replacing a bare RP2040 directly with an RP2350A. These statements refer to different parts of the product.</p>
+<figure><img src="fig-1.svg" alt="Replacing a complete module and replacing its bare processor are different changes" width="1000" height="490" loading="lazy"><figcaption>New explanatory illustration. The shapes represent two levels of a design, not exact footprints or an approved replacement procedure.</figcaption></figure>
+<h2>Start with the board you actually have</h2>
+<p>For a team building an interactive exhibit or a handheld controller, the first useful document is a picture of the current assembly with the intended replacement marked. Is the Pico attached through headers? Is it soldered to a carrier board? Or has an engineer already built a custom board around the processor? Those choices determine what can stay in place and what needs reviewing.</p>
+<p>At chip level, the official guide gives a simple reason to stop before attempting a swap. RP2040 uses a 56-pin package; RP2350A uses a 60-pin package. Both have a 7 × 7 mm body, but the copper connection pattern is different. Similar dimensions do not make the chips interchangeable.</p>
+<p>At module level, check the particular manufacturer's board, rather than extending a claim about the official Pico to every board containing the same processor. Connector positions, exposed signals, supply connections and onboard components are part of that module's design. Ask for a marked comparison against the carrier and enclosure you already have.</p>
+<h2>The power circuit is part of the upgrade</h2>
+<p>RP2350 power pins fall into separate groups: IOVDD supplies the digital I/O, DVDD supplies the chip's digital core, and VREG_VIN is the input to its on-chip regulator. Those are different functions even when a development board makes them invisible to the person plugging in USB.</p>
+<p>For an RP2350 custom board, do not interpret “on-chip regulator” as “no external power circuit needed.” Raspberry Pi's design guide explains that the normal switching-regulator arrangement requires external components and careful layout. It specifically recommends following its component choices and layout.</p>
+<p>This matters when a designer asks whether the electronics can fit a smaller enclosure. Moving the regulator components merely to clear a mounting hole can affect the circuit the team is relying on. Have the engineer assess that change against the current reference design, then verify the resulting board under its intended operating loads. A board that starts once is only the beginning of that check.</p>
+<p>A real migration account shows the choice involved. In an <a href="https://forum.buspirate.com/t/rp2350-bus-pirate-5xl-and-6/529" rel="noopener">August 8, 2024 Bus Pirate development post</a>, the developer described trying both the RP2350's switching arrangement and an external core regulator, then choosing the latter for that board. A follow-up described reworking the processor area. This is the developer's reported experience with a particular product, not a general recommendation to copy its power circuit or an Anvol test result.</p>
+<h2>Keep the working behaviour, not just the source file</h2>
+<p>Once the hardware route is clear, identify the firmware built for the proposed board. Keep the old working unit and its software intact as a comparison. For MicroPython, record the interpreter build, application files and drivers. For a compiled application, record the target board and build configuration as well as the source revision.</p>
+<p>A Chinese-language <a href="https://wiki.seeedstudio.com/cn/XIAO_RP2350_Pin_Multiplexing/" rel="noopener">Seeed XIAO RP2350 pin-multiplexing guide</a> contains a version-specific note about a pin-definition fix for the Arduino board package, referring to versions 4.2.0 and 4.2.1. That is a historical software-support example, not a claim that today's releases still need the workaround. It shows why “the code uploaded” and “each connection behaves correctly” deserve separate checks.</p>
+<p>Choose a short sequence that represents the actual product: start from power off, read the attached sensor, update the display, accept a control input, and perform the intended output action. Compare the old and new assemblies using the same peripherals and power source. Record what changed. These are proposed migration checks, not a completed experiment.</p>
+<h2>Decide what the extra capability is worth</h2>
+<p>An upgrade is useful when it removes a specific limitation. Define that limitation before the redesign: perhaps the application cannot hold the required screen buffer, or the product needs additional independent interfaces. Then define the smallest demonstration that would show the new design solves it. “Newer chip” is not an acceptance criterion.</p>
+<p>For an early user trial, keeping the proven module can leave more time to test the interaction. For a later custom board, migrating the processor may make sense, but the work includes the surrounding circuit, firmware and finished assembly. Ask for those activities to appear in the plan, alongside any enclosure or connector changes. Do not turn a successful module experiment into an assumption that the custom board is already validated.</p>
+<p>If your team is weighing a processor upgrade before its next prototype revision, <a href="/#quote">discuss the integration plan with Anvol</a>. Bring the current board files or module details, the working software version, and the limitation you need to remove. That gives the review a concrete question: what can be reused, and what must be redesigned and tested?</p>
+<p class="note"><em>The illustration is new explanatory artwork, not a record of a completed migration. Public references checked October 10, 2026.</em></p>
+<p class="related">Related service: <a href="/services/#electrical">Electrical engineering &amp; PCB</a> · <a href="/insights/#pcb-electronics">More on pcb and electronics</a></p>
+  </article>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>

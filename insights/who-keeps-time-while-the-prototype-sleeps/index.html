@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who keeps time while your prototype sleeps? | Anvol</title>
+<meta name="description" content="A timer cannot wake a prototype if its time source stops. Understand the RP2040 wake-clock choices before designing a periodically updated battery device.">
+<link rel="canonical" href="https://anvol.dev/insights/who-keeps-time-while-the-prototype-sleeps/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anvol.dev/insights/who-keeps-time-while-the-prototype-sleeps/">
+<meta property="og:title" content="Who keeps time while your prototype sleeps? | Anvol">
+<meta property="og:description" content="A timer cannot wake a prototype if its time source stops. Understand the RP2040 wake-clock choices before designing a periodically updated battery device.">
+<meta property="og:image" content="https://anvol.dev/assets/img/og-anvol-dev.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Who keeps time while your prototype sleeps?", "description": "A timer cannot wake a prototype if its time source stops. Understand the RP2040 wake-clock choices before designing a periodically updated battery device.", "image": "https://anvol.dev/assets/img/og-anvol-dev.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://anvol.dev/insights/who-keeps-time-while-the-prototype-sleeps/", "articleSection": "PCB and electronics", "author": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/"}, "publisher": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/", "logo": {"@type": "ImageObject", "url": "https://anvol.dev/assets/img/anvol-mark.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}, {"@type": "ListItem", "position": 3, "name": "Who keeps time while your prototype sleeps?", "item": "https://anvol.dev/insights/who-keeps-time-while-the-prototype-sleeps/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head article-head">
+    <h1>Who keeps time while your prototype sleeps?</h1>
+  </header>
+  <article class="article">
+<p>Your battery display only needs a new reading every few minutes. Sleeping between updates sounds straightforward: set a timer, stop the processor and wake when the interval ends. But if the chosen sleep mode also stops the clock that measures the interval, the timer cannot finish its job.</p>
+<p>For a team building a periodic sensor, an e-paper display or a scheduled installation, this is a hardware decision as well as a software setting. Something must remain able to measure time and deliver a wake event. Establish that path before assuming a lower-power mode will preserve the behaviour of the desk prototype.</p>
+<p>The RP2040 gives a useful example: its sleep and dormant modes have different clock requirements. This article follows that distinction; it does not claim that every command called “deep sleep” selects the same hardware state on every board.</p>
+<figure><img src="fig-1.svg" alt="An active time source must continue counting while the processor sleeps so an alarm can trigger a wake-up" width="1000" height="370" loading="lazy"><figcaption>New conceptual illustration. Each link needs to remain functional in the selected power state.</figcaption></figure>
+<h2>Start with what must remain running</h2>
+<p>A clock in this context is a repeating electrical signal, not the date displayed on a screen. The RTC, or real-time clock peripheral, counts that signal to advance its time. Configuring an alarm tells it what time to match; it does not create an independent source of ticks.</p>
+<p>The <a href="https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf" rel="noopener">RP2040 datasheet, section 4.8.5.5</a>, describes keeping the RTC clock and wake logic active in sleep mode. For dormant operation using the internal RTC alarm, the reference must instead come from outside the chip through a GPIO clock input.</p>
+<p>The same subsection describes moving execution away from the phase-locked loops, stopping those loops and preparing the alarm before entering dormant mode. These are clock-system responsibilities, not a generic Python recipe. This article contains no measured wake sequence, and it should not be read as proof that an arbitrary MicroPython build implements that whole sequence.</p>
+<h2>Two external signals can do different jobs</h2>
+<p>One arrangement supplies a continuing clock signal to the RP2040's internal RTC. That RTC still keeps the time and decides when its alarm should wake the chip. The external source must remain powered and suitable for the clock input throughout the waiting period.</p>
+<p>A different arrangement gives an external RTC the entire timing job. When its alarm occurs, it changes an output connected to a suitable processor wake input. In this arrangement the external device sends the event; it does not need to feed a continuous reference into the RP2040's internal RTC. Reading an external RTC over I2C alone does not provide that physical wake connection.</p>
+<p>The choice changes the wiring, software and power budget. In either case, identify the signal, its voltage levels and its behaviour while the main processor rests. A board that successfully returns the date over I2C has passed a communication check, not a dormant-wake test.</p>
+<figure><img src="fig-2.svg" alt="Comparison of an external reference feeding the internal RTC and an external RTC alarm feeding a wake GPIO" width="1000" height="510" loading="lazy"><figcaption>New architecture comparison. These are signal roles, not complete wiring diagrams or validated circuits.</figcaption></figure>
+<h2>Learn from a working example without inheriting its assumptions</h2>
+<p>In a <a href="https://ghubcoder.github.io/posts/waking-the-pico-external-trigger/" rel="noopener">July 26, 2021 project write-up</a>, ghubcoder describes a Pico waking from a DS3231 alarm output connected to a GPIO. The code clears the alarm flag and restores the system clocks after waking. That is a useful illustration of the external-alarm arrangement, distinct from supplying the internal RTC with a clock.</p>
+<p>The author also encountered an integration problem when changing how the RTC module was powered: its pull-up network affected communication and the alarm line. The article describes modifications to that particular module. Do not apply those modifications blindly to another board; obtain its circuit and check the intended power arrangement. Nor should the project's estimated battery life be treated as a result for your assembled product.</p>
+<p>Software naming deserves the same care. <a href="https://learn.adafruit.com/deep-sleep-with-circuitpython/rp2040-sleep" rel="noopener">Adafruit's RP2040 CircuitPython sleep guide</a>, whose page was last edited May 28, 2025, explains how timed wake changes the available sleep behaviour on that platform. This supports checking the implementation behind the API. Its examples and consumption figures do not establish the behaviour of a different MicroPython firmware or a different board.</p>
+<h2>Test the clock path, then the complete cycle</h2>
+<p>First confirm that the chosen time source continues running in the intended resting state. Next confirm that its alarm or wake signal reaches the processor. Finally, confirm that the resumed application produces the next useful reading or display update. Keeping these observations separate helps locate a fault without treating every missed update as a broken sensor.</p>
+<p>Run repeated cycles using the product's intended supply arrangement. Include the external timing device and its supporting circuit in the power measurement. Check that the alarm is acknowledged or rearmed appropriately and that the next waiting interval behaves as intended. One successful wake does not establish a repeatable scheduler.</p>
+<p>Also define what should happen if power is lost or the time becomes invalid. A fixed elapsed interval and a calendar appointment are different requirements: “take another sample in five minutes” is not identical to “act at 09:00 local time.” An RTC and a wake input supply mechanisms; the application still needs the scheduling policy.</p>
+<h2>Choose the next board revision with evidence</h2>
+<p>For an early prototype, a mode that keeps the required timing path alive may be an appropriate starting point. If the measured whole-device energy use does not meet the requirement, compare an external clock or external alarm arrangement with the additional circuitry and firmware it needs. No option is automatically better merely because its sleep state has a more impressive name.</p>
+<p>Before changing the PCB, ask for the selected power state, the circuit that keeps time, the wake signal and a repeated-cycle result. Those four items connect the battery target to something the team can actually test.</p>
+<p>If your display or sensor must wake itself periodically, <a href="/#quote">discuss its timing and power requirements with Anvol</a>. Bring the board and firmware versions, intended update interval and a complete-cycle power trace if available. They help decide whether the next change belongs in the firmware, the clock circuit or the surrounding board.</p>
+<p class="note"><em>Both figures here are new explanatory illustrations. The linked DS3231 project is third-party work; no additional hardware, battery-life or wake-reliability test was performed for this article. Sources checked October 10, 2026.</em></p>
+<p class="related">Related service: <a href="/services/#electrical">Electrical engineering &amp; PCB</a> · <a href="/insights/#pcb-electronics">More on pcb and electronics</a></p>
+  </article>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>

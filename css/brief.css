@@ -1,0 +1,29 @@
+/* /brief/ only: the step-by-step project brief. Inputs reuse .quote-card from style.css. */
+.brief{max-width:720px;margin:0 auto;padding:72px 40px 112px}
+.brief-head h1{font-size:clamp(40px,5vw,56px);line-height:1.02;margin-bottom:16px}
+.brief-head h1 em{font-style:italic}
+.brief-head p{font-size:17px;line-height:1.55;color:var(--ink-soft);margin-bottom:32px}
+.brief .quote-card{scroll-margin-top:calc(var(--nav-h) + 16px)}
+.brief [hidden]{display:none}  /* .btn sets display, which would otherwise beat the hidden attribute */
+.brief fieldset{border:0;min-width:0}
+.brief legend{font-family:var(--serif);font-size:30px;line-height:1.1;margin-bottom:20px;padding:0}
+.choices{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;margin-bottom:14px}
+.choices.one-col{grid-template-columns:1fr}
+.choices-title{grid-column:1/-1;font-size:13px;font-weight:600;margin-bottom:4px}
+.quote-card .choices label{flex-direction:row;align-items:center;gap:10px;margin:0;padding:7px 0;font-size:15px;font-weight:400}
+.quote-card .choices input{width:auto;margin:0}
+.brief-nav{display:flex;align-items:center;gap:16px;margin-top:8px}
+.brief-nav .count{margin-left:auto;font-size:13px;color:var(--ink-faint)}
+.brief-nav .back{background:none;border:0;padding:0;font-family:inherit;font-size:15px;color:var(--ink-soft);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.brief-nav .btn{min-width:120px}
+.brief-done h2{font-size:30px;margin-bottom:8px}
+.brief-sum dt{margin-top:18px;font-size:13px;font-weight:600}
+.brief-sum dd{margin-top:6px;font-size:15px;line-height:1.55;color:var(--ink-soft)}
+.brief-sum ul{padding-left:18px}
+.brief-sum li+li{margin-top:4px}
+.brief-done .form-alt{margin-top:24px}
+
+@media (max-width:640px){
+  .brief{padding:40px 16px 72px}
+  .brief legend{font-size:26px}
+}

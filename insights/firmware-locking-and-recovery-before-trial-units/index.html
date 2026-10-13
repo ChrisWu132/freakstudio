@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Before you lock the firmware, decide how the prototype will be repaired | Anvol</title>
+<meta name="description" content="Before enabling permanent firmware protections on an RP2350 prototype, agree how approved updates, recovery and service will work and how the final state will be verified.">
+<link rel="canonical" href="https://anvol.dev/insights/firmware-locking-and-recovery-before-trial-units/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anvol.dev/insights/firmware-locking-and-recovery-before-trial-units/">
+<meta property="og:title" content="Before you lock the firmware, decide how the prototype will be repaired | Anvol">
+<meta property="og:description" content="Before enabling permanent firmware protections on an RP2350 prototype, agree how approved updates, recovery and service will work and how the final state will be verified.">
+<meta property="og:image" content="https://anvol.dev/insights/firmware-locking-and-recovery-before-trial-units/fig-1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Before you lock the firmware, decide how the prototype will be repaired", "description": "Before enabling permanent firmware protections on an RP2350 prototype, agree how approved updates, recovery and service will work and how the final state will be verified.", "image": "https://anvol.dev/insights/firmware-locking-and-recovery-before-trial-units/fig-1.webp", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://anvol.dev/insights/firmware-locking-and-recovery-before-trial-units/", "articleSection": "Manufacturing and supply chain", "author": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/"}, "publisher": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/", "logo": {"@type": "ImageObject", "url": "https://anvol.dev/assets/img/anvol-mark.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}, {"@type": "ListItem", "position": 3, "name": "Before you lock the firmware, decide how the prototype will be repaired", "item": "https://anvol.dev/insights/firmware-locking-and-recovery-before-trial-units/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head article-head">
+    <h1>Before you lock the firmware, decide how the prototype will be repaired</h1>
+  </header>
+  <article class="article">
+<p>Your connected prototype is nearly ready to leave the workshop. Someone suggests enabling secure boot so it will only run approved firmware. That can be a useful protection, but it raises a practical question: when a user returns the device with a failed update, how will your team get it working again?</p>
+<p>For a small team preparing its first trial units, firmware protection and future service belong in the same plan. Decide who can issue an update, how a device accepts it, and what remains possible when the normal application will not start. A successful programming session answers only part of that.</p>
+<p>The RP2350's one-time programmable memory and boot process make a useful example. Below, we use them to decide what to verify before making permanent configuration changes.</p>
+<figure><img src="fig-1.webp" alt="Concept showing signed releases, protected signing material and a planned service route" width="1200" height="760" loading="lazy"><figcaption>AI-generated planning illustration. The device is generic; the available update and service paths depend on the actual configuration.</figcaption></figure>
+<h2>Be clear about what you want to protect</h2>
+<p>Start with the concern in ordinary language. Are you preventing unauthorised firmware from running, protecting confidential code, or controlling service access? These goals are related, but they are not the same feature. Raspberry Pi's <a href="https://pip-assets.raspberrypi.com/categories/1260-security/documents/RP-009377-WP-1-Understanding%20RP2350_s%20security%20features.pdf" rel="noopener">RP2350 security whitepaper</a>, released November 20, 2025, distinguishes signed boot, encrypted boot and isolation between trusted and untrusted software.</p>
+<p>For an application running MicroPython, include the interpreter, application files and console in that conversation. Ask what protects each one and how an authorised person changes it. The presence of a signed binary should not end the review of the software the product actually runs.</p>
+<p>Also record which chip revision is fitted. In a <a href="https://www.raspberrypi.com/news/everything-is-better-with-lasers/" rel="noopener">September 18, 2026 manufacturer update</a>, Raspberry Pi described laboratory research that re-enabled debug access on an RP2350-A4 using a destructive physical attack. That is not evidence of an ordinary remote compromise. It is a current reminder to define the access and equipment your protection needs to withstand, rather than describing a device as simply “unhackable.”</p>
+<h2>Treat permanent settings differently from a firmware file</h2>
+<p>The RP2350 stores security configuration in OTP: one-time programmable memory. Programming its bits is irreversible; it is not another file you can restore from a backup. The official whitepaper also distinguishes permanent permission locks from locks that last until reset. Copying a configuration without understanding that distinction can leave the next engineer with fewer options than expected.</p>
+<p>Before provisioning trial units, write down the intended end state. Which firmware is accepted? Which debug and boot interfaces remain available? What update route is expected to survive? Who controls the signing material? Keep that record separate from secret key contents; a general handover document does not need to contain the private keys.</p>
+<p>Use an engineering unit for the complete procedure first. Keep an unmodified development unit available for ordinary debugging, and identify which device is in which state. This prevents a locked test unit from being mistaken for a blank board during a later repair attempt.</p>
+<h2>Check the result on the device</h2>
+<p>A configuration screen showing a selected option is not enough. In a <a href="https://github.com/polhenarejos/pico-fido/discussions/209" rel="noopener">pico-fido discussion opened December 2, 2025</a>, a user reported selecting secure-boot settings but still being able to run an unsigned test image. Later comments discussed a possible software fix; the visible thread does not provide a confirmed retest. The useful lesson is the user's verification step, not a claim about every current release.</p>
+<p>A <a href="https://github.com/Lumingtianze/boku_no_key/issues/1" rel="noopener">Chinese-language issue dated January 12, 2026</a> describes a related difficulty: a configuration tool could not read the secure-boot state. An unreadable status should remain an unknown in the handover, rather than being recorded as “enabled.” These are separate project reports, not tests we performed.</p>
+<p>Plan both acceptance and rejection checks. An approved new version should run. An image outside the chosen policy should not run. The team should also know what happens after an interrupted update and which service operations remain possible. Define the expected result first, then record the observed result on the final configuration.</p>
+<h2>Recovery must work under the policy you will actually ship</h2>
+<p>A recovery demonstration performed before locking is not a demonstration of recovery afterwards. Repeat it with the intended restrictions in place on the engineering unit. Include the failure your users might encounter—for example, losing power during an update—and document whether recovery is automatic, requires a service tool, or requires replacing the board.</p>
+<p>If you prevent older firmware from running, the familiar instruction “install the previous working version” may no longer be valid. Agree on an allowed recovery image and version policy. The person supporting the product should be able to identify both the running build and the update they are authorised to install, without guessing from filenames.</p>
+<p>The handover should name a release owner and a service owner, even if they are initially the same person. Keep the approved build process and access to signing material under deliberate control. Test that the team can create and deliver a subsequent allowed release; retaining one working image is not the same as retaining the ability to fix it.</p>
+<p>The outcome is a clear decision before the trial batch: the selected protections have a stated purpose, their actual state has been checked, and the remaining update and service route has been demonstrated. Anything not yet tested stays on the engineering list. A lock icon in a tool should not become the final evidence.</p>
+<p>If you are preparing a prototype for users and need to coordinate firmware, access and service requirements, <a href="/#quote">discuss the integration handover with Anvol</a>. Bring the board revision, software build and proposed update route. Specialist security validation may need its own scope; this planning article is not a certification or a completed security assessment.</p>
+<p class="note"><em>The illustration is a new explanatory concept. Public references checked October 10, 2026; no device was provisioned or locked for this article.</em></p>
+<p class="related">Related service: <a href="/services/#testing">Testing &amp; manufacturing readiness</a> · <a href="/insights/#manufacturing-supply-chain">More on manufacturing and supply chain</a></p>
+  </article>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>

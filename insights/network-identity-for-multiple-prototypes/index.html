@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your Ethernet prototypes work separately. Will they work on the same network? | Anvol</title>
+<meta name="description" content="Prepare multiple Ethernet prototypes for the same network: separate shared firmware from per-unit MAC identity, check IP conflicts and test updates without cloning identities.">
+<link rel="canonical" href="https://anvol.dev/insights/network-identity-for-multiple-prototypes/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anvol.dev/insights/network-identity-for-multiple-prototypes/">
+<meta property="og:title" content="Your Ethernet prototypes work separately. Will they work on the same network? | Anvol">
+<meta property="og:description" content="Prepare multiple Ethernet prototypes for the same network: separate shared firmware from per-unit MAC identity, check IP conflicts and test updates without cloning identities.">
+<meta property="og:image" content="https://anvol.dev/insights/network-identity-for-multiple-prototypes/fig-1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Your Ethernet prototypes work separately. Will they work on the same network?", "description": "Prepare multiple Ethernet prototypes for the same network: separate shared firmware from per-unit MAC identity, check IP conflicts and test updates without cloning identities.", "image": "https://anvol.dev/insights/network-identity-for-multiple-prototypes/fig-1.webp", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://anvol.dev/insights/network-identity-for-multiple-prototypes/", "articleSection": "Manufacturing and supply chain", "author": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/"}, "publisher": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/", "logo": {"@type": "ImageObject", "url": "https://anvol.dev/assets/img/anvol-mark.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}, {"@type": "ListItem", "position": 3, "name": "Your Ethernet prototypes work separately. Will they work on the same network?", "item": "https://anvol.dev/insights/network-identity-for-multiple-prototypes/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head article-head">
+    <h1>Your Ethernet prototypes work separately. Will they work on the same network?</h1>
+  </header>
+  <article class="article">
+<p>The first unit connects to the dashboard. So does the second—until you plug them in together. For a team preparing several trial devices, that is a reason to inspect what was copied with the firmware. Each unit needs a network identity that remains distinct from the others, even when every unit runs the same program.</p>
+<p>A MAC address identifies an Ethernet interface on the local network. An IP address serves a different purpose in sending traffic across IP networks. Changing one does not automatically fix a duplicate of the other. Before debugging your cloud service, record both addresses from both running devices.</p>
+<p>An Ethernet frame carries separate source and destination addresses. Below, we use that to plan the step from one working prototype to several distinguishable units.</p>
+<h2>Find out where each unit gets its address</h2>
+<p>Some boards have an assigned address supplied with the hardware; other designs expect firmware to provide one. Do not infer either behavior from the presence of an Ethernet socket or a W5500 chip. Check the board documentation and the actual startup code, then read back the address that the interface is using.</p>
+<p>WIZnet's <a href="https://github.com/Wiznet/ioLibrary_Driver/blob/master/Ethernet/W5500/w5500.h" rel="noopener">official W5500 driver</a> exposes <code>setSHAR</code> and <code>getSHAR</code> for the six-byte source hardware address. That tells you where this chip's active address is configured. It does not prove that a particular board has stored a unique address elsewhere or that your firmware loads it correctly.</p>
+<p>The practical handover problem is longstanding. In an <a href="https://forum.arduino.cc/t/mac-addresses/116379" rel="noopener">Arduino discussion dated August 16, 2012</a>, a developer preparing several boards asked how to avoid manually typing the printed address into every sketch. The follow-up chose a utility to store it in EEPROM. That is a reported plan, not a verified production process, but it captures the decision: separate the shared application from each unit's identity.</p>
+<div class="table-wrap"><table class="cost-table">
+<thead>
+<tr>
+<th>Item</th>
+<th>Shared across units?</th>
+<th>What to record</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Application firmware</td>
+<td>Usually yes</td>
+<td>Exact build or version</td>
+</tr>
+<tr>
+<td>Unit identifier</td>
+<td>No</td>
+<td>Which physical unit the record describes</td>
+</tr>
+<tr>
+<td>Active Ethernet MAC</td>
+<td>Must be distinct on the same local segment</td>
+<td>Assigned value and where it is stored</td>
+</tr>
+<tr>
+<td>IP configuration</td>
+<td>Policy may be shared; simultaneous addresses must not clash</td>
+<td>DHCP result or approved static settings</td>
+</tr>
+</tbody>
+</table></div>
+<p class="note"><em>Suggested build record. This is a template, not a log from manufactured units.</em></p>
+<h2>Choose a method that survives the next firmware update</h2>
+<p>If your board already provides an assigned MAC address, preserve and load it as intended. Otherwise, choose an address-allocation method with the person responsible for the target network. Locally administered addresses are an option for a controlled environment, but “local” does not mean that duplication is harmless. <a href="https://datatracker.ietf.org/doc/html/rfc9542#section-2.1.1" rel="noopener">RFC 9542, section 2.1.1</a> explains the local/global and individual/group bits; they are not arbitrary digits to ignore when inventing an address.</p>
+<p>Keep the per-unit record outside the portion of the image that you blindly clone, or provide an explicit provisioning step after flashing. Reading a hardware identifier can be part of that design, but shortening an identifier or hashing it is not, by itself, proof that the resulting addresses cannot collide. Record how duplicates will be detected.</p>
+<p>Also decide what a factory reset means. Does it clear Wi-Fi or IP settings while keeping the unit's identity? Does reflashing erase the identity store? A small trial batch needs clear answers before devices leave the bench; it does not need an elaborate fleet platform to maintain a simple, checked registry.</p>
+<figure><img src="fig-1.webp" alt="A shared application loaded into two units with distinct identity records" width="1200" height="800" loading="lazy"><figcaption>AI-generated concept: identical application code, separate per-unit records. The enclosures are illustrative, not photographs of Anvol hardware.</figcaption></figure>
+<h2>Test the group, not just each board on its own</h2>
+<p>Start with two labeled units and a test network you control. Boot unit A, record its active MAC and IP address, and confirm its application response. Repeat for B. Then connect both at once and verify that each response can be traced to the intended physical unit. A dashboard showing two identical names is not enough evidence.</p>
+<p>If communication becomes intermittent only when both are connected, compare their active identities first. On a managed switch, a MAC address appearing on different ports can produce a flapping report; duplicate addresses are one possible cause, alongside network topology problems. Use the switch evidence to narrow the investigation rather than treating the symptom as proof of a faulty Ethernet module. <a href="https://www.cisco.com/c/en/us/support/docs/lan-switching/spanning-tree-protocol-stp-8021d/221722-troubleshoot-mac-flaps-loop-on-cisco-cat.html" rel="noopener">Cisco's MAC-flap troubleshooting guide</a>.</p>
+<p>Next, restart the units separately, restart them together and repeat after the firmware-update procedure you intend to use. Check that each MAC stays assigned to the same unit, that simultaneous IP addresses do not conflict, and that the application still identifies the correct device. These are proposed acceptance checks, not results from tested units.</p>
+<h2>Keep the network context in the handover</h2>
+<p>For a customer trial, hand over the identity list together with the expected network arrangement and reset/update behavior. That makes it possible to answer “Which box stopped responding?” without unplugging every device. It also separates an address conflict from a DHCP, cabling or application problem.</p>
+<p>If you are preparing several connected prototypes for user testing, <a href="/#quote">discuss the integration with Anvol</a>. Bring the board details, firmware startup configuration and the results of a two-unit test; those are the concrete inputs needed to review how the next units should be configured.</p>
+<p class="related">Related service: <a href="/services/#batch">Pilot &amp; small-batch production</a> · <a href="/insights/#manufacturing-supply-chain">More on manufacturing and supply chain</a></p>
+  </article>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>

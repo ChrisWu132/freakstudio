@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detailed project brief | Anvol</title>
+<meta name="description" content="Tell Anvol about your hardware project step by step: stage, requirements, quantities, markets and files. You get a project summary and a list of what is still missing.">
+<link rel="canonical" href="https://anvol.dev/brief/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anvol.dev/brief/">
+<meta property="og:title" content="Detailed project brief | Anvol">
+<meta property="og:description" content="Tell Anvol about your hardware project step by step. You get a project summary and a list of what is still missing.">
+<meta property="og:image" content="https://anvol.dev/assets/img/og-anvol-dev.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+<link rel="stylesheet" href="/css/brief.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main class="brief">
+  <header class="brief-head">
+    <h1>Detailed project <em>brief.</em></h1>
+    <p>Seven short steps. Skip anything you don't know yet. Your answers stay in this browser until you send them.</p>
+  </header>
+
+  <form class="quote-card" id="brief-form" novalidate>
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <fieldset data-step="1">
+      <legend>Who you are</legend>
+      <label>Email<input type="email" name="email" placeholder="you@company.com" autocomplete="email" required></label>
+      <label>WhatsApp (optional)<input type="tel" name="whatsapp" placeholder="+1 555 123 4567" autocomplete="tel"></label>
+      <label class="optin"><input type="checkbox" name="whatsapp_ok"> OK to message me on WhatsApp about this</label>
+      <div class="form-row">
+        <label>Name<input type="text" name="name" autocomplete="name"></label>
+        <label>Company<input type="text" name="company" autocomplete="organization"></label>
+      </div>
+      <div class="form-row">
+        <label>Country<input type="text" name="country" autocomplete="country-name"></label>
+        <label>Website<input type="text" name="website" placeholder="company.com"></label>
+      </div>
+      <div class="form-row">
+        <label>Who buys it
+          <select name="business_type">
+            <option value="">Choose one</option>
+            <option value="B2B">Businesses (B2B)</option>
+            <option value="B2C">Consumers (B2C)</option>
+            <option value="B2B and B2C">Both</option>
+          </select>
+        </label>
+        <label>Product category<input type="text" name="product_category" placeholder="e.g. robotics, audio, lab tool"></label>
+      </div>
+    </fieldset>
+
+    <fieldset data-step="2" hidden>
+      <legend>Where the project is</legend>
+      <div class="choices one-col" role="radiogroup" aria-labelledby="stage-title">
+        <p class="choices-title" id="stage-title">Current stage</p>
+        <label><input type="radio" name="current_stage" value="idea"> Idea</label>
+        <label><input type="radio" name="current_stage" value="dev_board"> Development board</label>
+        <label><input type="radio" name="current_stage" value="partial_design"> Partial design</label>
+        <label><input type="radio" name="current_stage" value="working_prototype"> Working prototype</label>
+        <label><input type="radio" name="current_stage" value="pilot_batch"> Pilot batch</label>
+        <label><input type="radio" name="current_stage" value="existing_production"> Existing production</label>
+        <label><input type="radio" name="current_stage" value="design_revision"> Design revision</label>
+      </div>
+      <label>What works today<textarea rows="3" name="what_works_today" placeholder="ESP32 dev board reads the sensor and posts over Wi-Fi; no custom PCB yet."></textarea></label>
+      <label>What you need from us<textarea rows="2" name="what_help_is_needed" placeholder="Custom PCB, enclosure and 20 test units."></textarea></label>
+    </fieldset>
+
+    <fieldset data-step="3" hidden>
+      <legend>What it has to do</legend>
+      <label>Main function<textarea rows="3" name="product_description" placeholder="A handheld meter that logs soil moisture and syncs to a phone." required></textarea></label>
+      <div class="choices" role="group" aria-labelledby="feat-title">
+        <p class="choices-title" id="feat-title">It includes</p>
+        <label><input type="checkbox" name="features" value="Sensors"> Sensors</label>
+        <label><input type="checkbox" name="features" value="Display"> Display</label>
+        <label><input type="checkbox" name="features" value="Audio"> Audio</label>
+        <label><input type="checkbox" name="features" value="Camera"> Camera</label>
+        <label><input type="checkbox" name="features" value="Motors"> Motors</label>
+        <label><input type="checkbox" name="features" value="Battery"> Battery</label>
+        <label><input type="checkbox" name="features" value="BLE / Wi-Fi"> BLE / Wi-Fi</label>
+        <label><input type="checkbox" name="features" value="USB"> USB</label>
+        <label><input type="checkbox" name="features" value="Ethernet"> Ethernet</label>
+        <label><input type="checkbox" name="features" value="GPIO"> GPIO</label>
+      </div>
+      <label>Details (which sensors, screen size, battery life)<textarea rows="2" name="feature_details"></textarea></label>
+      <label>Where it is used<input type="text" name="environment" placeholder="e.g. outdoors, -10 to 45 °C"></label>
+    </fieldset>
+
+    <fieldset data-step="4" hidden>
+      <legend>Size and build</legend>
+      <div class="form-row">
+        <label>Target size<input type="text" name="size" placeholder="e.g. 80 × 50 × 20 mm"></label>
+        <label>Weight<input type="text" name="weight" placeholder="e.g. under 150 g"></label>
+      </div>
+      <label>Material<input type="text" name="material" placeholder="e.g. ABS, aluminium"></label>
+      <div class="choices" role="group" aria-labelledby="proc-title">
+        <p class="choices-title" id="proc-title">Build method</p>
+        <label><input type="checkbox" name="processes" value="3D printing"> 3D printing</label>
+        <label><input type="checkbox" name="processes" value="CNC"> CNC</label>
+        <label><input type="checkbox" name="processes" value="Injection molding"> Injection molding</label>
+      </div>
+      <div class="form-row">
+        <label>Water resistance<input type="text" name="waterproof" placeholder="e.g. IP67, splash only"></label>
+        <label>Drop<input type="text" name="drop" placeholder="e.g. 1.5 m onto concrete"></label>
+      </div>
+      <label>Assembly constraints<textarea rows="2" name="assembly_constraints" placeholder="e.g. must open for battery swap"></textarea></label>
+    </fieldset>
+
+    <fieldset data-step="5" hidden>
+      <legend>Quantities and money</legend>
+      <div class="form-row">
+        <label>Prototype units<input type="text" name="prototype_qty" placeholder="e.g. 3"></label>
+        <label>Pilot units<input type="text" name="pilot_qty" placeholder="e.g. 50"></label>
+      </div>
+      <div class="form-row">
+        <label>Yearly volume<input type="text" name="annual_volume" placeholder="e.g. 2,000"></label>
+        <label>Needed by<input type="text" name="target_date" placeholder="e.g. March 2027"></label>
+      </div>
+      <div class="form-row">
+        <label>Target unit cost<input type="text" name="target_unit_cost" placeholder="e.g. $40"></label>
+        <label>Target retail price<input type="text" name="target_retail_price" placeholder="e.g. $129"></label>
+      </div>
+      <label>Budget for this phase
+        <select name="budget_range">
+          <option value="">Choose one</option>
+          <option>Under $5,000</option>
+          <option>$5,000 to $20,000</option>
+          <option>$20,000 to $50,000</option>
+          <option>$50,000 to $150,000</option>
+          <option>Over $150,000</option>
+          <option>Not sure yet</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset data-step="6" hidden>
+      <legend>Where it ships</legend>
+      <label>Markets it will sell in<input type="text" name="target_market" placeholder="e.g. US, EU"></label>
+      <div class="choices" role="group" aria-labelledby="cert-title">
+        <p class="choices-title" id="cert-title">Certifications you expect</p>
+        <label><input type="checkbox" name="certification_requirements" value="CE"> CE</label>
+        <label><input type="checkbox" name="certification_requirements" value="FCC"> FCC</label>
+        <label><input type="checkbox" name="certification_requirements" value="UL"> UL</label>
+        <label><input type="checkbox" name="certification_requirements" value="RoHS"> RoHS</label>
+        <label><input type="checkbox" name="certification_requirements" value="Wireless certification"> Wireless</label>
+        <label><input type="checkbox" name="certification_requirements" value="Battery transport (UN38.3)"> Battery transport</label>
+      </div>
+      <label>Packaging<input type="text" name="packaging" placeholder="e.g. retail box, bulk tray"></label>
+      <label>Final destination<input type="text" name="destination" placeholder="e.g. warehouse in Texas"></label>
+    </fieldset>
+
+    <fieldset data-step="7" hidden>
+      <legend>Files</legend>
+      <div class="choices" role="group" aria-labelledby="have-title">
+        <p class="choices-title" id="have-title">What you already have</p>
+        <label><input type="checkbox" name="files_available" value="Schematic"> Schematic</label>
+        <label><input type="checkbox" name="files_available" value="PCB"> PCB</label>
+        <label><input type="checkbox" name="files_available" value="Gerber"> Gerber</label>
+        <label><input type="checkbox" name="files_available" value="BOM"> BOM</label>
+        <label><input type="checkbox" name="files_available" value="CAD"> CAD</label>
+        <label><input type="checkbox" name="files_available" value="Firmware"> Firmware</label>
+        <label><input type="checkbox" name="files_available" value="Photos"> Photos</label>
+        <label><input type="checkbox" name="files_available" value="Test report"> Test report</label>
+        <label><input type="checkbox" name="files_available" value="Supplier information"> Supplier information</label>
+      </div>
+      <label>Upload (PDF, ZIP, Gerber, BOM, CAD, images). Up to 5 files, 20 MB each<input type="file" name="files" multiple></label>
+      <label>Links (video, Drive, GitHub)<textarea rows="2" name="file_links" placeholder="One per line"></textarea></label>
+    </fieldset>
+
+    <div class="brief-nav">
+      <button type="button" class="back" id="brief-back" hidden>Back</button>
+      <span class="count" id="brief-count">1 / 7</span>
+      <button type="button" class="btn" id="brief-next">Next</button>
+      <button type="submit" class="btn" id="brief-send" hidden>Send</button>
+    </div>
+    <p class="form-note" id="brief-note">We sign an NDA before we open any file.</p>
+  </form>
+
+  <section class="quote-card brief-done" id="brief-done" hidden>
+    <h2>We have your brief.</h2>
+    <dl class="brief-sum">
+      <dt>Current stage</dt><dd id="sum-stage"></dd>
+      <dt>What you told us</dt><dd><ul id="sum-have"></ul></dd>
+      <dt>Still missing</dt><dd><ul id="sum-missing"></ul></dd>
+      <dt>Next step</dt><dd id="sum-next"></dd>
+    </dl>
+    <p class="form-alt">Want to talk now? <a href="https://wa.me/13237193730?text=Hi%20Anvol%2C%20I%20just%20sent%20a%20project%20brief" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+<script src="/js/brief-summary.js?v=20261013a"></script>
+<script src="/js/brief.js?v=20261013b"></script>
+</body>
+</html>

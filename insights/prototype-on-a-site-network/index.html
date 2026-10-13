@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your prototype works on your desk. Why can&#x27;t the app find it at the site? | Anvol</title>
+<meta name="description" content="A device that works on the bench can disappear from an app on a segmented site network. Separate discovery, routing and application access before changing the prototype or the site&#x27;s rules.">
+<link rel="canonical" href="https://anvol.dev/insights/prototype-on-a-site-network/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anvol.dev/insights/prototype-on-a-site-network/">
+<meta property="og:title" content="Your prototype works on your desk. Why can&#x27;t the app find it at the site? | Anvol">
+<meta property="og:description" content="A device that works on the bench can disappear from an app on a segmented site network. Separate discovery, routing and application access before changing the prototype or the site&#x27;s rules.">
+<meta property="og:image" content="https://anvol.dev/insights/prototype-on-a-site-network/fig-1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Your prototype works on your desk. Why can't the app find it at the site?", "description": "A device that works on the bench can disappear from an app on a segmented site network. Separate discovery, routing and application access before changing the prototype or the site's rules.", "image": "https://anvol.dev/insights/prototype-on-a-site-network/fig-1.webp", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://anvol.dev/insights/prototype-on-a-site-network/", "articleSection": "Prototype planning", "author": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/"}, "publisher": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/", "logo": {"@type": "ImageObject", "url": "https://anvol.dev/assets/img/anvol-mark.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}, {"@type": "ListItem", "position": 3, "name": "Your prototype works on your desk. Why can't the app find it at the site?", "item": "https://anvol.dev/insights/prototype-on-a-site-network/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head article-head">
+    <h1>Your prototype works on your desk. Why can&#x27;t the app find it at the site?</h1>
+  </header>
+  <article class="article">
+<p>You bring a working connected prototype to a gallery, office, or shared workshop. It powers up and connects to the network, but the control app on your phone shows an empty device list. Back at the desk, the same board and app found each other immediately.</p>
+<p>Before changing the hardware, find out whether the phone and device are on networks that are allowed to discover and communicate with each other. A site may deliberately separate staff, guests, and connected equipment. An Ethernet cable and a working internet connection do not tell you whether the local path your app needs is available.</p>
+<p>Sites often make this separation with VLANs: logical network groups that can share physical switches.</p>
+<h2>A shared switch does not mean one shared network</h2>
+<p>On a small desk setup, the phone and prototype may effectively live in the same local network. At a site, a managed switch can place connected devices into different VLANs. Cable location alone is a poor guide: logical groups can span multiple switches, while neighbouring devices can belong to different groups.</p>
+<p>Communication across those groups depends on the routing and access policies in the installation. The site administrator might allow a device to contact an external server while blocking a visitor's phone from reaching it directly. That can be intentional, rather than evidence that either the board or the network is broken.</p>
+<p>Describe the expected interaction before requesting a change. For an illustrative exhibition controller, the requirement might be “the staff tablet can find and control this installation, but visitors cannot.” That is more useful than asking someone to remove network isolation until the demo works.</p>
+<h2>Finding a device and controlling it are separate steps</h2>
+<p>Many apps first discover a service, then open a connection to use it. If the first step fails, the device may never appear in a list even when a direct connection could work. If the second fails, the device may appear but ignore the user's action or report a connection error.</p>
+<p>For software that uses mDNS, the local scope matters. <a href="https://www.rfc-editor.org/rfc/rfc6762" rel="noopener">RFC 6762</a> defines Multicast DNS for name lookup on the local link. Moving the app and device into different VLANs can therefore remove a discovery path that existed on the bench. Cross-network discovery may need a deliberately configured proxy or reflector; ordinary IP connectivity alone does not establish that it is present.</p>
+<p>First confirm the protocol your application actually uses. A <a href="https://www.reddit.com/r/HomeNetworking/comments/1wtkrz0/asymmetric_mdns_or_correct_config_between/" rel="noopener">recent HomeNetworking discussion</a> about internal and IoT VLANs included exactly this uncertainty: replies asked whether the devices used mDNS or a different discovery mechanism. The visible discussion does not establish a completed fix. Turning on an mDNS feature cannot be assumed to fix every app with an empty device list.</p>
+<figure><img src="fig-1.webp" alt="Discovery and application connections cross different checks" width="1200" height="800" loading="lazy"><figcaption>AI-generated conceptual illustration. Discovery information and application traffic may require different handling. The arrows describe an intended path, not a captured exchange or a tested router configuration.</figcaption></figure>
+<h2>Choose a setup method the site can support</h2>
+<p>An automatic device list is convenient, but it becomes a dependency when there is no other way to configure the app. A <a href="https://www.v2ex.com/t/797091" rel="noopener">Chinese developer's 2021 account of building an mDNS reflector</a> describes the same practical difficulty: separating IoT equipment can break discovery, and some applications offer no place to enter an address manually. It is an individual implementation account, not evidence that every site should install that tool.</p>
+<p>For your own prototype, decide what the trial requires. If automatic discovery is essential, document its protocol and service names so the network owner can assess support. If a configured hostname or address is a suitable alternative, make it an intentional setup path and test it. Do not quietly depend on a remembered address that becomes wrong after a lease or network change.</p>
+<div class="table-wrap"><table class="cost-table">
+<thead>
+<tr>
+<th>Setup approach</th>
+<th>What it helps with</th>
+<th>What remains to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>App and device on an approved common local network</td>
+<td>Reduces cross-network discovery complications</td>
+<td>Client isolation, app behaviour, and site permission still matter</td>
+</tr>
+<tr>
+<td>Selective discovery across network groups</td>
+<td>Preserves the site's grouping while exposing required services</td>
+<td>Supported discovery protocol, selected networks, and application traffic rules</td>
+</tr>
+<tr>
+<td>Explicit endpoint configuration</td>
+<td>Can avoid reliance on an automatic device list</td>
+<td>Stable endpoint management, authentication, and permitted communication</td>
+</tr>
+</tbody>
+</table></div>
+<p>For example, <a href="https://help.ui.com/hc/en-us/articles/12648701398807-UniFi-Gateway-Multicast-DNS-mDNS-Proxy" rel="noopener">Ubiquiti's current mDNS proxy documentation</a> describes choosing networks and services for forwarding. That is a product-specific capability, not a universal router setting. Let the site's administrator decide whether and how the intended service should be exposed.</p>
+<h2>Bring a connection description, not just a working board</h2>
+<p>Before the visit, give the person responsible for the site a short description of the intended trial. Include where the device connects, which phone or tablet controls it, whether it needs internet access, and how the app finds it. Add the application protocols and ports if they are known. If they are not known, identifying them is a concrete task for the integration team before deployment.</p>
+<p>At the site, compare the steps separately. Confirm the device's address and assigned network with the administrator. Check discovery from the intended controller, then test the actual action the user needs. A successful ping is not an application test; a visible name is not proof that control is permitted. Record the app and firmware versions alongside the network arrangement so that a later change can be investigated.</p>
+<p>Run the test from the user's real position as well. A developer's laptop may have different permissions from a staff tablet or a guest phone. If the trial requires one group to operate the prototype and another group to remain excluded, test both outcomes. These are proposed deployment checks, not results from a tested site.</p>
+<h2>Make a failed connection understandable to the user</h2>
+<p>An empty list leaves people guessing whether the product is off, disconnected, or broken. Where the application allows it, distinguish “no device discovered” from “device found, connection failed.” Show an appropriate next step, such as checking the assigned network or contacting the trial coordinator, rather than encouraging users to alter the site's router.</p>
+<p>For a small trial, the deliverable is a repeatable setup that the next person can follow: a documented network arrangement, a supported discovery or configuration method, and a tested control path. That lets participants judge the intended interaction instead of spending the session troubleshooting an invisible device.</p>
+<p>If your prototype is ready for a site trial, bring its connection diagram, app behaviour, and the site's known network constraints to <a href="/#quote">Anvol's project contact</a>. Those details help identify the integration work needed before the first participant tries it.</p>
+<p class="related">Related service: <a href="/services/#testing">Testing &amp; manufacturing readiness</a> · <a href="/insights/#prototype-planning">More on prototype planning</a></p>
+  </article>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>

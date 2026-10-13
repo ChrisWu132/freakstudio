@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The power is off. Why does your prototype still seem partly alive? | Anvol</title>
+<meta name="description" content="A switched-off board can still receive energy through a connected signal. Check power states and interface behavior before treating a prototype as fully off.">
+<link rel="canonical" href="https://anvol.dev/insights/when-off-is-not-unpowered/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anvol.dev/insights/when-off-is-not-unpowered/">
+<meta property="og:title" content="The power is off. Why does your prototype still seem partly alive? | Anvol">
+<meta property="og:description" content="A switched-off board can still receive energy through a connected signal. Check power states and interface behavior before treating a prototype as fully off.">
+<meta property="og:image" content="https://anvol.dev/assets/img/og-anvol-dev.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The power is off. Why does your prototype still seem partly alive?", "description": "A switched-off board can still receive energy through a connected signal. Check power states and interface behavior before treating a prototype as fully off.", "image": "https://anvol.dev/assets/img/og-anvol-dev.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://anvol.dev/insights/when-off-is-not-unpowered/", "articleSection": "PCB and electronics", "author": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/"}, "publisher": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/", "logo": {"@type": "ImageObject", "url": "https://anvol.dev/assets/img/anvol-mark.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}, {"@type": "ListItem", "position": 3, "name": "The power is off. Why does your prototype still seem partly alive?", "item": "https://anvol.dev/insights/when-off-is-not-unpowered/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head article-head">
+    <h1>The power is off. Why does your prototype still seem partly alive?</h1>
+  </header>
+  <article class="article">
+<p>You switch off one board in a two-board prototype, but an indicator still glows faintly. Or the device restarts differently when a USB programming adapter is connected. It is tempting to blame the shutdown code. First, check whether the board has actually lost every source of electrical power.</p>
+<p>A connected signal can sometimes carry energy into an otherwise unpowered device. Engineers call this back-powering. It matters when a sensor, display, controller or test adapter has a separate supply: turning off the main power connection does not necessarily disconnect the signals between them.</p>
+<p>For a team preparing user trials, the useful question is not simply “does the switch work?” It is “what stays powered in each state, and what can cross into the part we intended to turn off?” A small connection map can make that question much easier to answer.</p>
+<figure><img src="fig-1.svg" alt="A powered board connected by a signal to a board whose main supply is off" width="600" height="610" loading="lazy"><figcaption>New conceptual illustration. The arrow marks a possible energy path to investigate, not a measured fault or a recommended wiring arrangement.</figcaption></figure>
+<h2>Follow the connections that remain after shutdown</h2>
+<p>List the things that can stay on: a USB adapter attached to a laptop, a separately powered sensor, or a display with its own supply. Then list their signal connections to the switched board. Include pull-ups connected to a supply that remains active. A connection that carries only information during normal operation may behave differently when the receiving device loses power.</p>
+<p>Texas Instruments describes one such mechanism in its <a href="https://www.ti.com/lit/an/slaa689b/slaa689b.pdf" rel="noopener">MSP microcontroller application report, revised August 2021</a>. Voltage applied to a GPIO while the main supply is absent can feed the device through its protection structures. TI warns that this is not an intended powering scheme. That explanation applies to the devices covered by the report; it is not proof that every chip has an identical internal circuit.</p>
+<p>Nor does a voltage reading alone tell you how much current the path can supply. Ask the engineer to distinguish a brief discharge of stored energy, a small leakage path and sustained back-powering. Record the relevant rail voltage, current and timing using a suitable test setup. A faint LED is a clue, not a diagnosis.</p>
+<h2>“Both are 3.3 V” only describes one power state</h2>
+<p>Pin voltage limits, such as those in <a href="https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf" rel="noopener">RP2040 datasheet Table 622</a>, are expressed relative to the I/O supply. When a receiving supply changes, a signal that was acceptable during normal operation may no longer be acceptable. Check the fitted chip, pin type and current datasheet. Absolute maximum ratings are stress limits; they are not recommended operating voltages or a promise that damage happens at one exact threshold.</p>
+<p>This is also why selecting an interface by its normal HIGH and LOW levels is incomplete. A part may work between two powered 3.3 V boards yet behave differently when either supply is zero, floating or rising. The intended operating states belong in the interface requirements from the start.</p>
+<h2>Look for a supported power-off behavior</h2>
+<p>In a <a href="https://e2echina.ti.com/support/logic/f/logic-forum/795902/txs0102-uart-io" rel="noopener">Chinese TI support question</a>, a developer described two 3.3 V UART domains, one always powered and the other turned off during sleep. The response pointed to partial-power-down protection and its leakage specification. This is closely related to the integration problem, but it does not make that particular translator a universal solution.</p>
+<p>The relevant term in many logic-device datasheets is <strong>Ioff</strong>. TI's <a href="https://e2e.ti.com/support/logic-group/logic/f/logic-forum/755848/faq-what-does-partial-power-down-or-ioff-mean-in-the-datasheet" rel="noopener">explanation of partial power down</a> describes a high-impedance condition with a specified maximum leakage when the supply is held at zero. Read the actual device's conditions, including enable pins, allowed input voltage and supply sequencing. A disconnected supply is not automatically held at zero.</p>
+<p>Possible design changes include coordinating the power domains, deliberately isolating the relevant signals, or choosing an interface with documented behavior for the required off state. The engineer needs to evaluate the real circuit. Setting an output to an input in firmware may be part of a plan, but it cannot by itself guarantee behavior before the program starts, during reset, or after power disappears.</p>
+<h2>Include startup, not just the final off state</h2>
+<p>Power sequencing can create a similar issue for only a short interval. An <a href="https://forum.monolithicpower.cn/t/topic/7744" rel="noopener">August 19, 2026 MPS community teardown</a> raised exactly this concern: could a button signal reach the microcontroller before its supply had started? The author posed it as an open design question. The post is useful context, not a verified failure report or evidence of an October trend.</p>
+<p>For your prototype, agree on a small set of repeatable checks: both boards powered, either board powered alone, normal shutdown, and the actual startup order. Include the programming adapter if it will be used during service. Define what counts as off for the product: acceptable standby current, which functions remain available, and how it should restart. These criteria depend on the design; there is no single current limit to copy into every project.</p>
+<p>Use those results to decide whether the issue belongs in firmware sequencing, interface circuitry or the power arrangement. A prototype that works only when every cable is connected in one undocumented order is difficult to hand to someone else. If you need help integrating separately working boards, <a href="/#quote">discuss the prototype with Anvol</a>. Bring the board revisions, connection diagram and the power sequence that produces the unexpected behavior.</p>
+<p class="related">Related service: <a href="/services/#electrical">Electrical engineering &amp; PCB</a> · <a href="/insights/#pcb-electronics">More on pcb and electronics</a></p>
+  </article>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The serial test passed. Can your prototype talk to the real device? | Anvol</title>
+<meta name="description" content="A passing serial loopback test covers a particular return path. Separate internal checks, connector checks and a real device exchange before accepting a prototype interface.">
+<link rel="canonical" href="https://anvol.dev/insights/what-a-serial-loopback-test-proves/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anvol.dev/insights/what-a-serial-loopback-test-proves/">
+<meta property="og:title" content="The serial test passed. Can your prototype talk to the real device? | Anvol">
+<meta property="og:description" content="A passing serial loopback test covers a particular return path. Separate internal checks, connector checks and a real device exchange before accepting a prototype interface.">
+<meta property="og:image" content="https://anvol.dev/assets/img/og-anvol-dev.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "The serial test passed. Can your prototype talk to the real device?", "description": "A passing serial loopback test covers a particular return path. Separate internal checks, connector checks and a real device exchange before accepting a prototype interface.", "image": "https://anvol.dev/assets/img/og-anvol-dev.png", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://anvol.dev/insights/what-a-serial-loopback-test-proves/", "articleSection": "PCB and electronics", "author": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/"}, "publisher": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/", "logo": {"@type": "ImageObject", "url": "https://anvol.dev/assets/img/anvol-mark.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}, {"@type": "ListItem", "position": 3, "name": "The serial test passed. Can your prototype talk to the real device?", "item": "https://anvol.dev/insights/what-a-serial-loopback-test-proves/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head article-head">
+    <h1>The serial test passed. Can your prototype talk to the real device?</h1>
+  </header>
+  <article class="article">
+<p>Your engineer sends you a screenshot saying “loopback passed.” The prototype still cannot get a reading from the instrument it is meant to connect to. Those results can both be true: a loopback test sends data along a path that returns to its sender, and that path may stop well before the cable or instrument.</p>
+<p>For a team preparing a custom controller or a small batch of connected prototypes, the useful question is where the data turned around. A self-test inside the chip, a jumper at a connector and a reply from the real device establish different things. Ask for that boundary alongside the pass result.</p>
+<p>The checks below are a proposed way to review an interface; they are not tests performed for this article.</p>
+<figure><img src="fig-1.svg" alt="Three serial test boundaries: inside the UART, at a defined connector, and through the actual device." width="600" height="740" loading="lazy"><figcaption>New explanatory diagram. It shows what each test includes, not which pins to join or a set of completed test results.</figcaption></figure>
+<h2>An internal return path can leave the outside world untested</h2>
+<p>UART is the microcontroller hardware that sends and receives serial data. In an internal loopback mode, its transmitted stream is routed back to its own receiving path. The <a href="https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf" rel="noopener">RP2040 datasheet</a> describes enabling this using the LBE field of the UARTCR register.</p>
+<p>A successful comparison is useful evidence about the configured internal path and the software exercising it. It does not establish that the intended receive pin, connector, cable and remote device all work together. Even the test configuration matters: register names and setup sequences from another chip are not portable instructions for your board.</p>
+<p>A <a href="https://community.renesas.com/mcu/ra/f/forum/58946/technical-support-uart-rx-isr-issue-on-r7fa2l1ab3cfp-ra2l1" rel="noopener">Renesas support discussion</a>, reviewed on October 10, 2026, describes this distinction directly. A developer reported successful internal loopback but unreliable reception between two custom boards. The replies asked about configuration and receive errors; the author reported overflow events. The visible discussion does not document a completed repair. It is a concrete reason to investigate the external exchange separately, not proof that your fault has the same cause.</p>
+<h2>Move the test boundary deliberately</h2>
+<p>An external loopback can include more of the physical path, but only as far as the point where the signal returns. A connection at the board header leaves an outgoing cable untested. A suitable return connection at the far end of that cable includes it. Record the exact location with a photograph or marked connection drawing so another person knows what was exercised.</p>
+<p>Have the engineer choose the connection for the actual electrical interface. Logic-level UART, RS-232 and RS-485 are different arrangements; a generic instruction to join two named pins is not enough. Disconnect the remote device where the chosen procedure requires it, and avoid creating a connection between competing outputs. This article is a test-planning guide, not a universal loopback-plug recipe.</p>
+<p>The record should include the board revision, port, serial format, test pattern, byte counts, error counts and duration. A few returned characters are a useful first check, but they do not establish performance under the intended workload. A local transmitter and receiver may also share a timing error that another device will not tolerate. Where timing is in doubt, compare the signal against an independent measurement or a known-working peer.</p>
+<h2>Make sure “pass” describes the intended path</h2>
+<p>A recent Chinese engineering account illustrates why comparing two equal values is not always sufficient. In <a href="https://www.eet-china.com/mp/a523974.html" rel="noopener">a September 10, 2026 post by 路科验证</a>, a UART simulation reported matching transmitted and received bytes even though a configuration check failed. The author traced the apparent success to access to a configuration register instead of the intended transmit and receive registers. That was a chip-verification simulation, not a test of this MicroPython board, and its addresses should not be copied here.</p>
+<p>At the application level, check for other users of the port as well. In <a href="https://www.toradex.cn/blog/tracing-spurious-uart-data-to-a-hidden-getty" rel="noopener">Toradex's September 30, 2026 investigation</a>, a Linux serial test encountered unexpected traffic associated with a login service on the same UART. The engineering account reports a board-configuration correction. This is a separate Linux example, not a claim that MicroPython runs that service.</p>
+<p>Together, these cases suggest a useful review question: what evidence shows that these bytes came through the path you meant to test? Preserve unexpected output and failed setup checks. Do not reduce the handover to the final green line or hide an unexplained difference by clearing data until the test passes.</p>
+<h2>Finish with an operation the product actually needs</h2>
+<p>After the lower-level checks, restore normal communication mode, remove the test connection and connect the intended device. Use a documented, non-destructive query with a recognizable response. A returned copy of the request is not necessarily the instrument's answer; compare the received bytes with its protocol documentation.</p>
+<p>Then exercise the conditions the user will encounter: a reply arriving late, the device restarting, and the cable being disconnected and restored. The prototype should distinguish a fresh reading from an old value and a failed exchange. These are proposed integration checks, not recorded outcomes.</p>
+<p>The acceptance record can now say something specific: which internal check passed, which physical path was exercised and which real operation worked. If the last step fails, the earlier results still help narrow the investigation without overstating what is ready. <a href="/#quote">Contact Anvol</a> with the connection drawing, interface manual and raw exchange if you need help completing that integration.</p>
+<p class="related">Related service: <a href="/services/#testing">Testing &amp; manufacturing readiness</a> · <a href="/insights/#pcb-electronics">More on pcb and electronics</a></p>
+  </article>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>

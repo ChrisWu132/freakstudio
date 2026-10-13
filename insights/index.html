@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Insights | Anvol hardware engineering notes</title>
+<meta name="description" content="Engineering notes for teams taking a working hardware prototype to user trials and a small batch: PCB and power, enclosure, firmware handover and manufacturing readiness.">
+<link rel="canonical" href="https://anvol.dev/insights/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://anvol.dev/insights/">
+<meta property="og:title" content="Insights | Anvol hardware engineering notes">
+<meta property="og:description" content="Engineering notes for teams taking a working hardware prototype to user trials and a small batch: PCB and power, enclosure, firmware handover and manufacturing readiness.">
+<meta property="og:image" content="https://anvol.dev/assets/img/og-anvol-dev.png">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head">
+    <h1>Before the next build, <em>check these.</em></h1>
+    <p>Engineering notes for teams taking a working prototype to user trials and a small batch.</p>
+  </header>
+  <section class="section" style="padding-top:24px">
+    <div class="container">
+      <div class="rows">
+        <div class="row" id="prototype-planning"><h2>Prototype planning</h2>
+        <ul class="insight-list">
+          <li><a href="/insights/build-the-whole-device-before-a-small-batch/">Before you order a small batch, build the whole device</a><p>Before ordering a small batch, build one complete unit: check how the board fits, where the cable goes, how it assembles and opens, and what the next build is for.</p></li>
+          <li><a href="/insights/prototype-https-after-a-cold-start/">HTTPS fails after unplugging the prototype. Check time and trust before the next trial.</a><p>Prepare a connected prototype for cold starts and certificate renewal: distinguish time, server identity and trust configuration before a user trial.</p></li>
+          <li><a href="/insights/prototype-on-a-site-network/">Your prototype works on your desk. Why can&#x27;t the app find it at the site?</a><p>A device that works on the bench can disappear from an app on a segmented site network. Separate discovery, routing and application access before changing the prototype or the site&#x27;s rules.</p></li>
+        </ul></div>
+        <div class="row" id="pcb-electronics"><h2>PCB and electronics</h2>
+        <ul class="insight-list">
+          <li><a href="/insights/upgrade-the-processor-without-redesigning-the-board/">Can you upgrade the processor without redesigning your prototype?</a><p>Changing from a Pico module to a custom board, or upgrading RP2040 to RP2350, calls for separate checks of the package, power circuit, firmware and finished interaction.</p></li>
+          <li><a href="/insights/when-off-is-not-unpowered/">The power is off. Why does your prototype still seem partly alive?</a><p>A switched-off board can still receive energy through a connected signal. Check power states and interface behavior before treating a prototype as fully off.</p></li>
+          <li><a href="/insights/who-keeps-time-while-the-prototype-sleeps/">Who keeps time while your prototype sleeps?</a><p>A timer cannot wake a prototype if its time source stops. Understand the RP2040 wake-clock choices before designing a periodically updated battery device.</p></li>
+          <li><a href="/insights/recover-a-stuck-i2c-sensor-bus/">Why restarting the controller may not recover your sensor bus</a><p>A controller restart may leave a sensor holding I2C low. Plan bounded recovery, reset scope and a fresh-data check before enclosing the prototype.</p></li>
+          <li><a href="/insights/what-a-serial-loopback-test-proves/">The serial test passed. Can your prototype talk to the real device?</a><p>A passing serial loopback test covers a particular return path. Separate internal checks, connector checks and a real device exchange before accepting a prototype interface.</p></li>
+          <li><a href="/insights/usb-keyboard-or-midi-controller-without-a-computer/">Can your prototype use a USB keyboard or MIDI controller without a computer?</a><p>A USB socket does not establish that a prototype can read a keyboard or MIDI controller. Plan the host role, peripheral power and supported interface before committing the design.</p></li>
+        </ul></div>
+        <div class="row" id="mechanical-enclosure"><h2>Mechanical and enclosure</h2>
+        <ul class="insight-list">
+          <li><a href="/insights/debug-access-before-closing-the-enclosure/">Plan debug access before closing your prototype enclosure</a><p>Before enclosing a working prototype, make sure the intended debugger can still be connected, identified and used on the assembled unit.</p></li>
+          <li><a href="/insights/chip-temperature-sensor-vs-room-temperature/">Can the temperature sensor already inside your chip measure the room?</a><p>The RP2040 internal temperature reading describes the chip, not automatically the room. Decide what the product needs to measure before treating a smooth number as an accurate result.</p></li>
+        </ul></div>
+        <div class="row" id="manufacturing-supply-chain"><h2>Manufacturing and supply chain</h2>
+        <ul class="insight-list">
+          <li><a href="/insights/firmware-locking-and-recovery-before-trial-units/">Before you lock the firmware, decide how the prototype will be repaired</a><p>Before enabling permanent firmware protections on an RP2350 prototype, agree how approved updates, recovery and service will work and how the final state will be verified.</p></li>
+          <li><a href="/insights/network-identity-for-multiple-prototypes/">Your Ethernet prototypes work separately. Will they work on the same network?</a><p>Prepare multiple Ethernet prototypes for the same network: separate shared firmware from per-unit MAC identity, check IP conflicts and test updates without cloning identities.</p></li>
+        </ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>

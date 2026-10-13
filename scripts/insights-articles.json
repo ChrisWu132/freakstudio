@@ -1,0 +1,374 @@
+{
+  "source_root": "C:/Users/Haipeng Wu/Desktop/1/anvol/research/anvol-articles-2026-10",
+  "date": "2026-10-13",
+  "categories": [
+    [
+      "prototype-planning",
+      "Prototype planning"
+    ],
+    [
+      "pcb-electronics",
+      "PCB and electronics"
+    ],
+    [
+      "mechanical-enclosure",
+      "Mechanical and enclosure"
+    ],
+    [
+      "manufacturing-supply-chain",
+      "Manufacturing and supply chain"
+    ]
+  ],
+  "forbidden": [
+    "WIZnet tutorial",
+    "WIZnet board",
+    "WIZnet teaching",
+    "FreakStudio",
+    "source figure",
+    "gallery.html",
+    "source tutorial",
+    "original figure",
+    "anvol.dev/#contact",
+    "Original source",
+    "source material",
+    "source guide"
+  ],
+  "articles": [
+    {
+      "slug": "build-the-whole-device-before-a-small-batch",
+      "src": "Anvol文章第一批导出_2026-10-07/20260930-global-enclosure-trial-01/article.en.md",
+      "category": "prototype-planning",
+      "service": [
+        "/services/project-evaluation/",
+        "Project evaluation"
+      ],
+      "description": "Before ordering a small batch, build one complete unit: check how the board fits, where the cable goes, how it assembles and opens, and what the next build is for.",
+      "keep": [
+        "fa5574fd",
+        "5b210b52"
+      ]
+    },
+    {
+      "slug": "prototype-https-after-a-cold-start",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/210-https-after-a-cold-start/article.en.md",
+      "category": "prototype-planning",
+      "service": [
+        "/services/#firmware",
+        "Firmware & embedded systems"
+      ],
+      "keep": [
+        "c57555eb"
+      ],
+      "replace": [
+        [
+          "The WIZnet teaching material introduces TLS alongside its networking fundamentals, but its HTTP client demonstration uses plain HTTP. That demonstration proves an exchange of test data; it does not prove server identity checking.",
+          "A demonstration over plain HTTP proves an exchange of test data; it does not prove server identity checking."
+        ],
+        [
+          "*This article combines the WIZnet tutorial's networking background with public documentation and a reported MicroPython issue. The selected theory section contains no original photographs or experimental TLS results. Both illustrations are new explanatory artwork;",
+          "*This article is based on public documentation and a reported MicroPython issue. The illustration is new explanatory artwork;"
+        ]
+      ]
+    },
+    {
+      "slug": "prototype-on-a-site-network",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/207-prototype-on-a-site-network/article.en.md",
+      "category": "prototype-planning",
+      "service": [
+        "/services/#testing",
+        "Testing & manufacturing readiness"
+      ],
+      "keep": [
+        "a9e45f4f"
+      ],
+      "replace": [
+        [
+          "The original Ethernet tutorial introduces this separation through VLANs—logical network groups that can share physical switches. Its diagram is a useful way to explain the deployment question to a project team. It is a teaching illustration, not a record of a prototype tested on a customer's network.",
+          "Sites often make this separation with VLANs: logical network groups that can share physical switches."
+        ],
+        [
+          "The original diagram shows why cable location alone is a poor guide:",
+          "Cable location alone is a poor guide:"
+        ],
+        [
+          "These are proposed deployment checks; the source tutorial contains no results for this setup.",
+          "These are proposed deployment checks, not results from a tested site."
+        ]
+      ],
+      "drop": [
+        "The original bilingual teaching figure"
+      ]
+    },
+    {
+      "slug": "upgrade-the-processor-without-redesigning-the-board",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/226-upgrading-the-chip-without-reusing-the-wrong-board/article.en.md",
+      "category": "pcb-electronics",
+      "service": [
+        "/services/#electrical",
+        "Electrical engineering & PCB"
+      ],
+      "keep": [
+        "76d6d7ba"
+      ],
+      "replace": [
+        [
+          "The original WIZnet board tutorial introduces processor power using the annotated pin reference below. It helps separate the supply for digital I/O from the supply for the chip's core and the input to its regulator.",
+          "RP2350 power pins fall into separate groups: IOVDD supplies the digital I/O, DVDD supplies the chip's digital core, and VREG_VIN is the input to its on-chip regulator."
+        ],
+        [
+          " The tutorial's accompanying description of two independent core LDOs does not match that design and should not be used as wiring instructions.",
+          ""
+        ],
+        [
+          "These are proposed migration checks; the source tutorial does not document this experiment.",
+          "These are proposed migration checks, not a completed experiment."
+        ],
+        [
+          "*Original pin illustration: WIZnet MicroPython board guide, power-system section, with its annotations retained. The selected source is instructional material, not a record of a completed migration. Public references checked October 10, 2026. [View the original figure and English companion](gallery.html).*",
+          "*The illustration is new explanatory artwork, not a record of a completed migration. Public references checked October 10, 2026.*"
+        ]
+      ],
+      "drop": [
+        "The Chinese annotations identify IOVDD"
+      ]
+    },
+    {
+      "slug": "when-off-is-not-unpowered",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/217-when-off-is-not-unpowered/article.en.md",
+      "category": "pcb-electronics",
+      "service": [
+        "/services/#electrical",
+        "Electrical engineering & PCB"
+      ],
+      "keep": [
+        "81c0f360"
+      ],
+      "replace": [
+        [
+          "The values match [RP2040 datasheet Table 622](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf). The tutorial places them under an EVB-Pico2 heading, so do not assume they specify an RP2350-based board. Check the fitted chip, pin type and current datasheet.",
+          "Pin voltage limits, such as those in [RP2040 datasheet Table 622](https://datasheets.raspberrypi.com/rp2040/rp2040-datasheet.pdf), are expressed relative to the I/O supply. When a receiving supply changes, a signal that was acceptable during normal operation may no longer be acceptable. Check the fitted chip, pin type and current datasheet."
+        ]
+      ],
+      "drop": [
+        "The GPIO tutorial contains a useful voltage-limit table",
+        "This English table matches RP2040 datasheet Table 622"
+      ]
+    },
+    {
+      "slug": "who-keeps-time-while-the-prototype-sleeps",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/234-who-keeps-time-while-the-prototype-sleeps/article.en.md",
+      "category": "pcb-electronics",
+      "service": [
+        "/services/#electrical",
+        "Electrical engineering & PCB"
+      ],
+      "keep": [
+        "51539f6a",
+        "72e78299"
+      ],
+      "replace": [
+        [
+          "The RP2040 RTC tutorial gives a useful example. Its sleep and dormant modes",
+          "The RP2040 gives a useful example: its sleep and dormant modes"
+        ],
+        [
+          " The source tutorial preserves this important condition in its wake-up subsection.",
+          ""
+        ],
+        [
+          "The selected section contains no measured wake sequence, and it should not be presented as proof",
+          "This article contains no measured wake sequence, and it should not be read as proof"
+        ],
+        [
+          "*The source wake-up subsection contains no original figures or physical test results. Both figures",
+          "*Both figures"
+        ]
+      ]
+    },
+    {
+      "slug": "recover-a-stuck-i2c-sensor-bus",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/193-recovering-a-stuck-sensor-bus/article.en.md",
+      "category": "pcb-electronics",
+      "service": [
+        "/services/#electrical",
+        "Electrical engineering & PCB"
+      ],
+      "keep": [
+        "6f61f465"
+      ],
+      "replace": [
+        [
+          "this is not a measurement from the source project.",
+          "this is not a measurement."
+        ],
+        [
+          "The source tutorial's bus-clear section makes a useful distinction.",
+          "The standard bus-clear procedure makes a useful distinction."
+        ],
+        [
+          "These are proposed checks; the source section contains no recorded recovery experiment.",
+          "These are proposed checks, not a recorded recovery experiment."
+        ]
+      ]
+    },
+    {
+      "slug": "what-a-serial-loopback-test-proves",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/221-what-a-serial-loopback-test-proves/article.en.md",
+      "category": "pcb-electronics",
+      "service": [
+        "/services/#testing",
+        "Testing & manufacturing readiness"
+      ],
+      "keep": [
+        "f1000f95"
+      ],
+      "replace": [
+        [
+          "This article uses the WIZnet tutorial's internal-UART-loopback reference to explain those boundaries. The source supplies a register description, not a recorded loopback experiment. The checks below are a proposed way to review an interface; they are not additional tests performed on the source board.",
+          "The checks below are a proposed way to review an interface; they are not tests performed for this article."
+        ],
+        [
+          " The original reference figure is retained below.",
+          ""
+        ],
+        [
+          "These are proposed integration checks, not outcomes shown in the source register reference.",
+          "These are proposed integration checks, not recorded outcomes."
+        ]
+      ],
+      "drop": [
+        "Original English reference figure retained."
+      ]
+    },
+    {
+      "slug": "usb-keyboard-or-midi-controller-without-a-computer",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/231-connecting-a-usb-controller-without-a-computer/article.en.md",
+      "category": "pcb-electronics",
+      "service": [
+        "/services/#electrical",
+        "Electrical engineering & PCB"
+      ],
+      "keep": [
+        "3b031e5b"
+      ],
+      "replace": [
+        [
+          "The source tutorial explains a USB system as a host with connected functions, optionally reached through hubs.",
+          "A USB system consists of a host with connected functions, optionally reached through hubs."
+        ],
+        [
+          "*The original USB-system diagram is retained above. The two additional diagrams explain design choices; they are not records of a built host interface. The selected source section contains no host implementation experiment, and no hardware compatibility test was performed for this article.",
+          "*The diagram explains a design choice; it is not a record of a built host interface. No hardware compatibility test was performed for this article."
+        ]
+      ],
+      "drop": [
+        "The original English diagram distinguishes the host"
+      ]
+    },
+    {
+      "slug": "debug-access-before-closing-the-enclosure",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/219-debug-access-after-assembly/article.en.md",
+      "category": "mechanical-enclosure",
+      "service": [
+        "/services/#enclosure",
+        "Enclosure & product integration"
+      ],
+      "keep": [
+        "f0361bf6"
+      ],
+      "replace": [
+        [
+          "not failures demonstrated by the source tutorial.",
+          "not failures shown in the Seeed tutorial above."
+        ]
+      ]
+    },
+    {
+      "slug": "chip-temperature-sensor-vs-room-temperature",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/232-can-the-chip-temperature-sensor-measure-the-room/article.en.md",
+      "category": "mechanical-enclosure",
+      "service": [
+        "/services/#enclosure",
+        "Enclosure & product integration"
+      ],
+      "keep": [
+        "c7864aca",
+        "f30b83a3"
+      ],
+      "replace": [
+        [
+          "## What the original tutorial actually converts",
+          "## What the chip sensor actually converts"
+        ],
+        [
+          "The RP2040 section in the source material describes a temperature-sensitive junction connected to ADC channel 4.",
+          "On the RP2040, a temperature-sensitive junction is connected to ADC channel 4."
+        ],
+        [
+          " The selected source section describes the mechanism and calculation, not a completed calibration experiment.",
+          ""
+        ],
+        [
+          "The source also highlights sensitivity to the ADC reference voltage",
+          "The result is also sensitive to the ADC reference voltage"
+        ],
+        [
+          "*The selected internal-temperature section contains no original figures or physical test. Both diagrams",
+          "*Both diagrams"
+        ]
+      ]
+    },
+    {
+      "slug": "firmware-locking-and-recovery-before-trial-units",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/215-firmware-locking-and-recovery/article.en.md",
+      "category": "manufacturing-supply-chain",
+      "service": [
+        "/services/#testing",
+        "Testing & manufacturing readiness"
+      ],
+      "keep": [
+        "156c93c1"
+      ],
+      "replace": [
+        [
+          "The WIZnet board guide introduces the RP2350's one-time programmable memory and boot process. It does not demonstrate a secured product or a recovery procedure. We use that introduction as a starting point for deciding what to verify before making permanent configuration changes.",
+          "The RP2350's one-time programmable memory and boot process make a useful example. Below, we use them to decide what to verify before making permanent configuration changes."
+        ],
+        [
+          "These are separate project reports, not tests of the WIZnet tutorial hardware.",
+          "These are separate project reports, not tests we performed."
+        ],
+        [
+          "*The selected OTP and boot sections of the source guide contain no original figures or provisioning experiment. Illustrations here are new explanatory concepts.",
+          "*The illustration is a new explanatory concept."
+        ]
+      ]
+    },
+    {
+      "slug": "network-identity-for-multiple-prototypes",
+      "src": "Anvol-104-articles-20261010/Anvol-104-articles-20261010/articles/201-identities-for-multiple-prototypes/article.en.md",
+      "category": "manufacturing-supply-chain",
+      "service": [
+        "/services/#batch",
+        "Pilot & small-batch production"
+      ],
+      "keep": [
+        "b2e613b2"
+      ],
+      "replace": [
+        [
+          "The MAC section of FreakStudio's WIZnet MicroPython tutorial provides the useful starting point: an Ethernet frame carries separate source and destination addresses. Its diagrams explain the format; they do not demonstrate provisioning or testing a batch of devices. Here we use that reference to plan the step from one working prototype to several distinguishable units.",
+          "An Ethernet frame carries separate source and destination addresses. Below, we use that to plan the step from one working prototype to several distinguishable units."
+        ],
+        [
+          "These are proposed acceptance checks; the source material does not contain their results.",
+          "These are proposed acceptance checks, not results from tested units."
+        ]
+      ],
+      "drop": [
+        "The Chinese notes identify destination",
+        "The source also includes a tagged-frame diagram"
+      ]
+    }
+  ]
+}

@@ -46,9 +46,26 @@
     });
   });
 
+  /* ---------- traffic source: kept from the first page of the visit, sent with every form ---------- */
+  var SOURCE_KEY = "anvol-source";
+  var source = null;
+  try { source = JSON.parse(window.sessionStorage.getItem(SOURCE_KEY)); }
+  catch (err) { source = null; }
+  if (!source) {
+    var params = new URLSearchParams(window.location.search);
+    source = { landing_page: window.location.pathname, referrer: document.referrer || "direct" };
+    ["utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content"].forEach(function (k) {
+      source[k] = params.get(k) || "none";
+    });
+    try { window.sessionStorage.setItem(SOURCE_KEY, JSON.stringify(source)); }
+    catch (err) { source.source_note = "storage blocked, source is from this page only"; }
+  }
+
   /* ---------- contact form (FormSubmit AJAX) ---------- */
   /* chris@anvol.dev is the business inbox the reply pipeline reads (activated 2026-09-27). */
   var FORM_ENDPOINT = "https://formsubmit.co/ajax/chris@anvol.dev";
+  /* Zisheng's Anvol box gets a copy as the alert; enquiries once sat unread for days (2026-09-27, moved off his Gmail 09-29). */
+  var FORM_CC = "zisheng@getanvol.com";
   var MAX_FILES = 5;
   var MAX_FILE_BYTES = 20 * 1024 * 1024;
   var form = document.getElementById("quote-form");
@@ -59,6 +76,13 @@
       .then(function (r) { if (!r.ok) throw new Error("Upload failed: " + r.status); return r.json(); })
       .then(function (result) { return result.url; });
   }
+  function withSource(payload) {
+    Object.keys(source).forEach(function (k) { payload[k] = source[k]; });
+    return payload;
+  }
+  /* js/brief.js (the /brief/ page) sends through the same endpoint, upload and source. */
+  window.anvolForms = { endpoint: FORM_ENDPOINT, cc: FORM_CC, uploadFile: uploadFile, withSource: withSource,
+    maxFiles: MAX_FILES, maxFileBytes: MAX_FILE_BYTES };
   if (form) {
     var btn = document.getElementById("submit-btn");
     var note = document.getElementById("form-note");
@@ -111,7 +135,7 @@
           return fetch(FORM_ENDPOINT, {
             method: "POST",
             headers: { "Content-Type": "application/json", Accept: "application/json" },
-            body: JSON.stringify({
+            body: JSON.stringify(withSource({
               email: form.email.value,
               whatsapp: form.whatsapp.value || "none",
               /* Only message on WhatsApp when this is "yes" (WhatsApp requires explicit opt-in). */
@@ -122,9 +146,8 @@
               message: form.message.value,
               attachments: urls.length ? urls.join("\n") : "none",
               _subject: "New project enquiry: anvol.dev",
-              /* Zisheng's Anvol box gets a copy as the alert; enquiries once sat unread for days (2026-09-27, moved off his Gmail 09-29). */
-              _cc: "zisheng@getanvol.com"
-            })
+              _cc: FORM_CC
+            }))
           });
         })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })

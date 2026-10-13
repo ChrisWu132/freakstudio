@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why restarting the controller may not recover your sensor bus | Anvol</title>
+<meta name="description" content="A controller restart may leave a sensor holding I2C low. Plan bounded recovery, reset scope and a fresh-data check before enclosing the prototype.">
+<link rel="canonical" href="https://anvol.dev/insights/recover-a-stuck-i2c-sensor-bus/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anvol.dev/insights/recover-a-stuck-i2c-sensor-bus/">
+<meta property="og:title" content="Why restarting the controller may not recover your sensor bus | Anvol">
+<meta property="og:description" content="A controller restart may leave a sensor holding I2C low. Plan bounded recovery, reset scope and a fresh-data check before enclosing the prototype.">
+<meta property="og:image" content="https://anvol.dev/insights/recover-a-stuck-i2c-sensor-bus/fig-1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "Why restarting the controller may not recover your sensor bus", "description": "A controller restart may leave a sensor holding I2C low. Plan bounded recovery, reset scope and a fresh-data check before enclosing the prototype.", "image": "https://anvol.dev/insights/recover-a-stuck-i2c-sensor-bus/fig-1.webp", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://anvol.dev/insights/recover-a-stuck-i2c-sensor-bus/", "articleSection": "PCB and electronics", "author": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/"}, "publisher": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/", "logo": {"@type": "ImageObject", "url": "https://anvol.dev/assets/img/anvol-mark.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}, {"@type": "ListItem", "position": 3, "name": "Why restarting the controller may not recover your sensor bus", "item": "https://anvol.dev/insights/recover-a-stuck-i2c-sensor-bus/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head article-head">
+    <h1>Why restarting the controller may not recover your sensor bus</h1>
+  </header>
+  <article class="article">
+<p>Your sensor prototype has stopped updating. The screen still works, so you restart the controller. It boots normally, but the readings remain frozen. Pulling out the power cable brings them back. Before you hand an enclosed logger or interactive device to someone else, that difference deserves an explanation.</p>
+<p>One possibility is a stuck I2C bus—the two shared wires that connect the controller to its sensors. Restarting the controller does not necessarily restart a separately powered sensor. A device still holding one of those wires low can prevent communication from starting again.</p>
+<p>This is a recovery-design problem, not proof that your sensor is faulty. A <a href="https://www.reddit.com/r/embedded/comments/1qxneyn/random_locking_of_i2c_bus/" rel="noopener">public embedded-development discussion</a> describes intermittent lockups that persisted through firmware changes. The replies offer several possible causes, without establishing one diagnosis for the original setup. Your own failure needs a capture, too.</p>
+<figure><img src="fig-1.webp" alt="Controller reset leaves a separately powered sensor unchanged" width="1200" height="800" loading="lazy"><figcaption>AI-generated concept diagram. A controller reset and a sensor power cycle affect different parts of the system; this is not a measurement.</figcaption></figure>
+<h2>First find out what actually restarted</h2>
+<p>Make a small reset map before changing code. Does the reset button affect only the controller? Does the sensor have a reset input? Does the watchdog restart the processor while the sensor supply stays on? A power LED cannot answer those questions; use the schematic and the relevant device documentation.</p>
+<p>The standard bus-clear procedure makes a useful distinction. If the clock line, SCL, is held low, it calls for hardware reset or power cycling of the affected devices. If the data line, SDA, is held low, it describes sending nine clock pulses before escalating. This follows <a href="https://www.nxp.com/docs/en/user-guide/UM10204.pdf" rel="noopener">NXP's I2C specification, section 3.1.16</a>. It is a recovery attempt, not a guarantee that every fault can be cleared in software.</p>
+<p>For example, an interrupted transfer may leave a target waiting for the rest of the clock sequence. But a shorted wire will not be repaired by extra clocks. Capture SDA, SCL and the reset event so the engineer can distinguish a transfer left unfinished from a line that cannot rise. A brief legitimate clock stretch is also different from a line stuck indefinitely.</p>
+<h2>Give recovery a limit—and a way to escalate</h2>
+<p>The application should stop waiting after a defined timeout and record which operation failed. The timeout must fit the actual device and transaction; copying one number across every sensor can create false failures. If several tasks share the bus, one owner should coordinate recovery so another task does not start a transfer halfway through it.</p>
+<p>When SCL can rise but SDA remains low, a supported bus-clear routine may help. The controller implementation matters: some peripherals provide recovery support; others require carefully switching the pins to GPIO. Do not force a push-pull high output against a device holding the line low. Use the electrical behavior required by the bus and verify that the clock really rises.</p>
+<p>If the bus remains blocked, use a documented reset or power-cycle path. <a href="https://www.ti.com/lit/an/scpa069/scpa069.pdf" rel="noopener">TI's stuck-bus application note</a> explains why disturbances can leave devices out of step, and describes both software recovery and hardware isolation approaches. Recovery should restore service while the underlying cause is investigated; a rising recovery count is not evidence of a healthy design.</p>
+<h2>Decide whether the sensor can really be powered off</h2>
+<p>A switch in the sensor supply may give an enclosed prototype a recovery option it otherwise lacks. Before adding one, check the rest of the circuit. Signals and pull-ups connected to another live rail may feed an unpowered device through its pins. Turning off one supply does not by itself prove that the sensor has reached the conditions required for a power-on reset.</p>
+<p>Also decide what shares that supply or reset line. Recovering one sensor might restart the display, lose another device's configuration, or interrupt an output. List those effects explicitly. For a larger system, separating a troublesome branch may be more appropriate than resetting everything, but that is a hardware decision to validate against the actual design.</p>
+<p>A software reset command is only useful if the target supports it and communication still works. It cannot be the sole escape route from a bus that cannot carry the command. This is why recovery needs consideration before the enclosure and wiring are finalized, even when the first bench demonstration appears reliable.</p>
+<h2>Test what the user will see after a failure</h2>
+<p>Plan a controlled test with the engineer: interrupt a transfer with a controller reset while the sensor remains powered, then observe the restart. Repeat with the intended reset and supply controls. Do not deliberately short signals or interrupt power in ways the hardware has not been designed to tolerate. These are proposed checks, not a recorded recovery experiment.</p>
+<p>Record the initial bus state, attempted recovery, elapsed time, first valid new sample and any lost configuration. The test should also reach the failure limit. If recovery cannot finish, the interface should say the sensor is unavailable instead of continuing to display an old value as current. A successful register read alone does not prove that a fresh measurement has been taken.</p>
+<p>The useful handover is therefore more than “it restarts.” It explains which parts restart, what happens when recovery fails, and what the user sees. If your prototype only recovers when someone unplugs it, <a href="/#quote">discuss the integration problem with Anvol</a> and bring the wiring diagram, module details and one recorded failure sequence.</p>
+<p class="related">Related service: <a href="/services/#electrical">Electrical engineering &amp; PCB</a> · <a href="/insights/#pcb-electronics">More on pcb and electronics</a></p>
+  </article>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>

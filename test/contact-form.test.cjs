@@ -4,7 +4,12 @@ const { readFileSync } = require('node:fs');
 const { join } = require('node:path');
 const vm = require('node:vm');
 
-function fixture(result, valid = true, files = [], uploadOk = true) {
+function memoryStorage(initial = {}) {
+  const data = { ...initial };
+  return { data, getItem: (k) => (k in data ? data[k] : null), setItem: (k, v) => { data[k] = String(v); } };
+}
+
+function fixture(result, valid = true, files = [], uploadOk = true, env = {}) {
   let submit, resets = 0, requests = 0, reported = 0, sent = null;
   const button = { innerHTML: 'Send', disabled: false };
   const note = { textContent: 'Contact us', className: 'form-note' };
@@ -17,11 +22,15 @@ function fixture(result, valid = true, files = [], uploadOk = true) {
     reset: () => resets++, addEventListener: (_, fn) => { submit = fn; },
   };
   vm.runInNewContext(readFileSync(join(__dirname, '../js/main.js'), 'utf8'), {
-    window: { matchMedia: () => ({ matches: false }), addEventListener() {}, scrollY: 0 },
+    window: { matchMedia: () => ({ matches: false }), addEventListener() {}, scrollY: 0,
+      location: { search: env.search || '', pathname: env.pathname || '/' },
+      sessionStorage: env.storage || memoryStorage() },
     document: {
+      referrer: env.referrer || '',
       getElementById: (id) => ({ 'quote-form': form, 'submit-btn': button, 'form-note': note })[id],
       querySelectorAll: () => [],
     },
+    URLSearchParams,
     FormData: class { append() {} },
     fetch: async (url, init) => {
       if (url === '/api/upload') return { ok: uploadOk, status: uploadOk ? 200 : 500, json: async () => ({ url: 'https://anvol.dev/files/k/a.pdf' }) };
@@ -65,6 +74,7 @@ test('WhatsApp number and consent go into the email', async () => {
   assert.equal(f.sent().whatsapp, '+1 555 123 4567');
   assert.equal(f.sent().whatsapp_ok, 'yes');
   assert.equal(f.sent().email, 'test@example.com');
+  assert.equal(f.sent()._cc, 'zisheng@getanvol.com');
 });
 
 test('stage, quantity and target date go into the email', async () => {
@@ -87,4 +97,42 @@ test('oversized file is refused before any request', () => {
   const f = fixture({ success: 'true' }, true, [{ size: 21 * 1024 * 1024 }]); f.submit();
   assert.equal(f.counts().requests, 0);
   assert.equal(f.note.className, 'form-note err');
+});
+
+test('UTM, referrer and landing page go into the email', async () => {
+  const f = fixture({ success: 'true' }, true, [], true, {
+    search: '?utm_source=linkedin&utm_medium=post&utm_campaign=oct', pathname: '/cases/', referrer: 'https://www.linkedin.com/' });
+  f.submit();
+  await new Promise(setImmediate);
+  assert.equal(f.sent().utm_source, 'linkedin');
+  assert.equal(f.sent().utm_medium, 'post');
+  assert.equal(f.sent().utm_campaign, 'oct');
+  assert.equal(f.sent().utm_term, 'none');
+  assert.equal(f.sent().landing_page, '/cases/');
+  assert.equal(f.sent().referrer, 'https://www.linkedin.com/');
+});
+
+test('the first page of the visit wins over the page the form is on', async () => {
+  const first = JSON.stringify({ landing_page: '/costs/', referrer: 'https://google.com/', utm_source: 'google' });
+  const f = fixture({ success: 'true' }, true, [], true, {
+    search: '?utm_source=other', pathname: '/', storage: memoryStorage({ 'anvol-source': first }) });
+  f.submit();
+  await new Promise(setImmediate);
+  assert.equal(f.sent().landing_page, '/costs/');
+  assert.equal(f.sent().utm_source, 'google');
+});
+
+test('new visit stores its source for later pages', () => {
+  const storage = memoryStorage();
+  fixture({ success: 'true' }, true, [], true, { search: '?utm_source=x', pathname: '/brief/', storage });
+  assert.equal(JSON.parse(storage.data['anvol-source']).utm_source, 'x');
+});
+
+test('blocked storage still sends the source of this page', async () => {
+  const storage = { getItem() { throw new Error('SecurityError'); }, setItem() { throw new Error('SecurityError'); } };
+  const f = fixture({ success: 'true' }, true, [], true, { search: '?utm_source=x', storage });
+  f.submit();
+  await new Promise(setImmediate);
+  assert.equal(f.sent().utm_source, 'x');
+  assert.equal(f.sent().referrer, 'direct');
 });

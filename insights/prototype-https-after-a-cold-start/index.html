@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HTTPS fails after unplugging the prototype. Check time and trust before the next trial. | Anvol</title>
+<meta name="description" content="Prepare a connected prototype for cold starts and certificate renewal: distinguish time, server identity and trust configuration before a user trial.">
+<link rel="canonical" href="https://anvol.dev/insights/prototype-https-after-a-cold-start/">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://anvol.dev/insights/prototype-https-after-a-cold-start/">
+<meta property="og:title" content="HTTPS fails after unplugging the prototype. Check time and trust before the next trial. | Anvol">
+<meta property="og:description" content="Prepare a connected prototype for cold starts and certificate renewal: distinguish time, server identity and trust configuration before a user trial.">
+<meta property="og:image" content="https://anvol.dev/insights/prototype-https-after-a-cold-start/fig-1.webp">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "HTTPS fails after unplugging the prototype. Check time and trust before the next trial.", "description": "Prepare a connected prototype for cold starts and certificate renewal: distinguish time, server identity and trust configuration before a user trial.", "image": "https://anvol.dev/insights/prototype-https-after-a-cold-start/fig-1.webp", "datePublished": "2026-10-13", "dateModified": "2026-10-13", "mainEntityOfPage": "https://anvol.dev/insights/prototype-https-after-a-cold-start/", "articleSection": "Prototype planning", "author": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/"}, "publisher": {"@type": "Organization", "name": "Anvol", "url": "https://anvol.dev/", "logo": {"@type": "ImageObject", "url": "https://anvol.dev/assets/img/anvol-mark.svg"}}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"}, {"@type": "ListItem", "position": 2, "name": "Insights", "item": "https://anvol.dev/insights/"}, {"@type": "ListItem", "position": 3, "name": "HTTPS fails after unplugging the prototype. Check time and trust before the next trial.", "item": "https://anvol.dev/insights/prototype-https-after-a-cold-start/"}]}</script>
+<link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013b">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="/" aria-label="anvol home">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/services/">Services</a>
+      <a href="/cases/">Cases</a>
+      <a href="/costs/">Costs</a>
+      <a href="/how-it-works/">How it works</a>
+      <a href="/quality/">Quality</a>
+      <a href="/insights/">Insights</a>
+      <a href="/about/">About</a>
+    </nav>
+    <a class="btn" href="/#quote">Review my project</a>
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Menu" aria-controls="nav-links" aria-expanded="false"><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+
+  <header class="page-head article-head">
+    <h1>HTTPS fails after unplugging the prototype. Check time and trust before the next trial.</h1>
+  </header>
+  <article class="article">
+<p>A connected display can work perfectly while attached to a developer's computer, then stop reaching its online service when powered from a wall adapter. If the network connects but the secure request fails, the missing piece may be the device's clock or certificate configuration. Repeating the request indefinitely will not repair either.</p>
+<p>This matters before lending a prototype to someone who cannot open a terminal and fix it. It also matters beyond the first successful connection: the service's certificate will eventually change. On <a href="https://letsencrypt.org/2026/10/07/64-day-certs" rel="noopener">October 7, 2026, Let's Encrypt announced</a> that its default certificate lifetime will become 64 days on February 10, 2027. For a team using that service, renewal and deployment deserve a named owner during the trial.</p>
+<p>A demonstration over plain HTTP proves an exchange of test data; it does not prove server identity checking. Here is how to turn that gap into a small, useful integration test.</p>
+<figure><img src="fig-1.webp" alt="Network reachability, valid device time, TLS identity checks and an application request shown as separate stages" width="1200" height="800" loading="lazy"><figcaption>AI-generated explanatory diagram. The sequence is a planning aid for a certificate-based HTTPS client, not a recording of a working board. Failed verification does not lead to sending the application request.</figcaption></figure>
+<h2>Reproduce the start your user will actually perform</h2>
+<p>In an <a href="https://github.com/micropython/micropython/issues/9071" rel="noopener">August 18, 2022 MicroPython issue</a>, a Pico W developer reported that a TLS connection worked from Thonny but failed when the board started on its own. A maintainer suggested checking the RTC. The author reported success after adding network time synchronization on August 19. This is a documented outcome for that setup, not a diagnosis of every TLS error.</p>
+<p>A server certificate has a period during which it is valid. If a board believes it is years in the past, a currently valid certificate may appear not yet valid. The certificate's signed validity interval is part of the <a href="https://www.rfc-editor.org/rfc/rfc5280" rel="noopener">X.509 certificate model</a>. Setting the clock is therefore more than making a timestamp look tidy.</p>
+<p>For your trial, disconnect the development tools and perform a genuine power-on. Capture the device's date and time immediately before the secure connection attempt. Compare that run with the working bench run. Record the actual date, not only a message saying “time updated.” If time acquisition fails, decide what the device should show and which local functions can continue.</p>
+<h2>Keep the server's name separate from its network address</h2>
+<p>Another common shortcut is replacing a service hostname with an IP address after a DNS problem. That may get packets to a server while changing the identity the client is trying to verify. The intended name and the certificate must agree; reaching the same machine is not the whole check. <a href="https://datatracker.ietf.org/doc/html/rfc9525" rel="noopener">RFC 9525</a> distinguishes DNS-name and IP-address identities. A certificate for one does not automatically establish the other.</p>
+<p>The practical support record should include the configured hostname, whether it resolved, the connection stage and the error returned. A failure before an HTTP response is different from an HTTP error sent by the application. Keep tokens and private keys out of that record.</p>
+<p>This confusion also appears in a <a href="https://www.v2ex.com/t/1063038" rel="noopener">Chinese V2EX discussion from August 6, 2024</a>: the questioner could tolerate a browser warning on an internal service but found that programmatic API requests failed certificate checks. A browser action is not a configuration for the embedded client. The team still needs to define which issuer it trusts and which service identity it expects.</p>
+<h2>Confirm what the actual firmware verifies</h2>
+<p>The <a href="https://docs.micropython.org/en/latest/library/ssl.html" rel="noopener">MicroPython TLS documentation</a> describes <code>CERT_REQUIRED</code>, trusted CA certificates and <code>server_hostname</code>. It notes that correct device time is required for certificate validation and that supported options vary by implementation. On mbedTLS-based ports, <code>CERT_OPTIONAL</code> does not perform the validation that its name might suggest; <code>CERT_REQUIRED</code> is the relevant mode.</p>
+<p>Do not infer the behaviour of an old <code>urequests</code> example from the latest documentation. Record the board firmware, installed request library and the configuration actually used. A request that succeeds with verification disabled has demonstrated connectivity, not that the intended server has been authenticated.</p>
+<p>Ask the engineer to show both an accepted connection to the intended test service and a deliberately rejected connection under a controlled mismatch. Then repeat the valid case after a cold start. This gives the non-specialist owner something concrete to review: the device connects when its prerequisites are satisfied, and a failed identity check produces understandable behaviour rather than silently continuing.</p>
+<h2>Plan for the certificate to change while the prototype is away</h2>
+<p>The Let's Encrypt announcement concerns certificates issued by that authority; it is not a 64-day expiration rule for every device credential or root certificate. A client that correctly validates the service's certificate chain and identity does not automatically need reflashing at each ordinary server-certificate renewal. Test that assumption with your chosen service and client, rather than leaving it implicit.</p>
+<p>If the implementation instead depends on one exact certificate or public key, its rotation behaviour needs explicit review. Likewise, the device needs a maintainable route for future changes to the trust material it uses. The server operator's renewal automation and the firmware team's update mechanism solve related but different problems.</p>
+<p>Before a trial, agree on three ownership questions: who renews and deploys the service certificate, who can update the prototype's configuration or firmware, and who sees a failed connection while the device is with a user. A short handover note with those names is more useful than a single “HTTPS works” screenshot.</p>
+<h2>Make the failed connection understandable</h2>
+<p>For an information display, a reasonable trial behaviour might be to retain the last value, show that it is stale and record the reason a refresh failed. For a sensor uploader, it might be to retain unsent records within a defined limit. These are proposed behaviours; the right choice depends on what the user is relying on.</p>
+<p>Exercise the valid startup, unavailable time source, wrong service identity and a renewed server certificate in a controlled test environment. Keep the other prototype functions running and note what the user sees. The result should establish the intended handover behaviour, without claiming a complete security assessment from a handful of connection tests.</p>
+<p>If your prototype reaches the network but cannot reliably use its service outside the development setup, <a href="/#quote">discuss the integration with Anvol</a>. Bring the firmware and library versions, a redacted failure log and the expected behaviour when the service is unavailable.</p>
+<p class="note"><em>This article is based on public documentation and a reported MicroPython issue. The illustration is new explanatory artwork; no new board test is claimed. References checked October 10, 2026.</em></p>
+<p class="related">Related service: <a href="/services/#firmware">Firmware &amp; embedded systems</a> · <a href="/insights/#prototype-planning">More on prototype planning</a></p>
+  </article>
+
+  <section class="section closing">
+    <div class="container">
+      <h2>Have a similar <em>project?</em></h2>
+      <a class="btn" href="/#quote">Review my project</a>
+      <p>Or email <a href="mailto:chris@anvol.dev">chris@anvol.dev</a> · <a href="https://wa.me/13237193730" target="_blank" rel="noopener">WhatsApp +1 (323) 719-3730</a></p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer-grid">
+    <a class="brand" href="/">
+      <img class="brand-mark" src="/assets/img/anvol-mark.svg" alt="" width="26" height="26">
+      <span class="brand-name">anvol</span>
+    </a>
+    <span>Anvol, Inc. · 2261 Market Street STE 82014, San Francisco, CA 94114 · Engineering in Shenzhen</span>
+    <div class="footer-links">
+      <a href="/services/">Services</a>
+      <a href="/costs/">Costs</a>
+      <a href="/about/">About</a>
+      <a href="mailto:chris@anvol.dev">chris@anvol.dev</a>
+      <a href="https://block-less.com/">Blockless</a>
+    </div>
+  </div>
+</footer>
+
+<script src="/js/main.js?v=20261013b"></script>
+</body>
+</html>
