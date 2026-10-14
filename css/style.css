@@ -271,3 +271,13 @@ a.build:hover h3{color:var(--accent)}
 .page-strip img{width:100%;height:260px;object-fit:cover;border-radius:6px}
 .gallery-head{font-size:22px;letter-spacing:-.01em;margin:56px 0 0}
 @media (max-width:640px){.page-strip{grid-template-columns:1fr 1fr}.page-strip img{height:140px}.page-strip img:nth-child(3){display:none}}
+/* partner-factory equipment (small originals, shown near native size) and certificates */
+.equip-head{font-size:16px;font-weight:700;margin:32px 0 0}
+.equip-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px;margin-top:12px}
+.equip-grid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.equip-grid figcaption{margin-top:6px;font-size:13px;line-height:1.4;color:var(--ink-soft)}
+.cert-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:20px}
+.cert-grid img{width:100%;height:auto;aspect-ratio:5/7;object-fit:contain;background:var(--panel);border-radius:6px}
+.cert-grid figcaption{margin-top:8px;font-size:13px;line-height:1.5;color:var(--ink-soft)}
+@media (max-width:960px){.equip-grid{grid-template-columns:repeat(4,1fr)}.cert-grid{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:640px){.equip-grid{grid-template-columns:repeat(3,1fr)}.cert-grid{grid-template-columns:1fr 1fr}}
