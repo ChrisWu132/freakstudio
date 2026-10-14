@@ -1,6 +1,8 @@
 /* Serves quote-form attachments. Always a download, never rendered on our site:
    visitors choose the bytes, so an uploaded HTML page must not run on our origin. */
 export async function onRequestGet({ params, env }) {
+  /* Bare /files/ has no path segments; it lists nothing. */
+  if (!params.path) return new Response("Not found", { status: 404 });
   const object = await env.ATTACHMENTS.get(params.path.join("/"));
   if (!object) return new Response("Not found", { status: 404 });
   return new Response(object.body, {

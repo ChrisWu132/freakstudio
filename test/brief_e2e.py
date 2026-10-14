@@ -125,24 +125,25 @@ def test_brief(base, browser, shots, width):
     ctx.close()
 
 
-def test_upload_failure_keeps_answers(base, browser):
+def test_upload_failure_still_sends_brief(base, browser):
     ctx = browser.new_context()
     page = ctx.new_page()
     sent = []
-    page.route("https://formsubmit.co/**", lambda r: (sent.append(1), r.fulfill(status=200, body="{}")))
+    page.route("https://formsubmit.co/**", lambda r: (sent.append(json.loads(r.request.post_data)),
+                                                      r.fulfill(status=200, body='{"success":"true"}')))
     page.route("**/api/upload", lambda r: r.fulfill(status=500, body="{}"))
     page.goto(f"{base}/brief/")
     page.evaluate("""localStorage.setItem('anvol-brief', JSON.stringify({step: 6,
-        fields: {email: 'x@example.com', product_description: 'Thing'}}))""")
+        fields: {email: 'x@example.com', product_description: 'Thing', whatsapp_ok: 'yes'}}))""")
     page.reload()
     assert visible_step(page) == "7"
     page.set_input_files("input[name=files]", files=[{"name": "a.zip", "mimeType": "application/zip", "buffer": b"PK"}])
     page.click("#brief-send")
-    page.wait_for_selector("#brief-note.err")
-    assert "didn't upload" in page.inner_text("#brief-note")
-    assert sent == [], "email sent although the upload failed"
-    assert page.is_hidden("#brief-done")
-    assert "x@example.com" in page.evaluate("localStorage.getItem('anvol-brief')")
+    page.wait_for_selector("#brief-done", state="visible")
+    assert len(sent) == 1, "a failed upload must not stop the brief"
+    assert sent[0]["attachments"] == "none" and sent[0]["attachments_failed"] == "a.zip", sent[0]
+    assert sent[0]["whatsapp_ok"] == "no", "consent without a number must not be sent as yes"
+    assert "a.zip" in page.inner_text("#sum-missing")
     ctx.close()
 
 
@@ -190,7 +191,7 @@ def main():
         browser = pw.chromium.launch()
         cases = [("brief 390px", lambda: test_brief(base, browser, shots, 390)),
                  ("brief 1440px", lambda: test_brief(base, browser, shots, 1440)),
-                 ("upload failure keeps answers", lambda: test_upload_failure_keeps_answers(base, browser)),
+                 ("upload failure still sends brief", lambda: test_upload_failure_still_sends_brief(base, browser)),
                  ("send jumps to missing required", lambda: test_send_jumps_to_missing_required(base, browser)),
                  ("homepage source + brief link", lambda: test_homepage_form_carries_source_and_brief_link(base, browser))]
         for name, fn in cases:

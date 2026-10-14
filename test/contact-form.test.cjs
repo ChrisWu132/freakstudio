@@ -33,11 +33,14 @@ function fixture(result, valid = true, files = [], uploadOk = true, env = {}) {
     URLSearchParams,
     FormData: class { append() {} },
     fetch: async (url, init) => {
-      if (url === '/api/upload') return { ok: uploadOk, status: uploadOk ? 200 : 500, json: async () => ({ url: 'https://anvol.dev/files/k/a.pdf' }) };
+      if (url === '/api/upload') {
+        const ok = Array.isArray(uploadOk) ? uploadOk.shift() : uploadOk; /* array: one answer per upload, in order */
+        return { ok, status: ok ? 200 : 500, json: async () => ({ url: 'https://anvol.dev/files/k/a.pdf' }) };
+      }
       requests++; sent = JSON.parse(init.body); return { ok: true, json: async () => result };
     },
   });
-  return { submit: () => submit({ preventDefault() {} }), button, note, sent: () => sent,
+  return { submit: () => submit({ preventDefault() {} }), form, button, note, sent: () => sent,
     counts: () => ({ resets, requests, reported }) };
 }
 
@@ -85,12 +88,31 @@ test('stage, quantity and target date go into the email', async () => {
   assert.equal(f.sent().target_date, 'not given');
 });
 
-test('failed upload sends nothing and keeps input', async () => {
-  const f = fixture({ success: 'true' }, true, [{ size: 1000 }], false); f.submit();
+test('a failed upload still sends the enquiry and names the file that did not arrive', async () => {
+  const f = fixture({ success: 'true' }, true, [{ size: 1000, name: 'ok.pdf' }, { size: 1000, name: 'board.zip' }], [true, false]);
+  f.submit();
   await new Promise(setImmediate);
-  assert.equal(f.counts().requests, 0);
-  assert.equal(f.counts().resets, 0);
+  assert.equal(f.counts().requests, 1);
+  assert.equal(f.sent().attachments, 'https://anvol.dev/files/k/a.pdf');
+  assert.equal(f.sent().attachments_failed, 'board.zip');
+  assert.match(f.note.textContent, /board\.zip/);
   assert.equal(f.note.className, 'form-note err');
+});
+
+test('no attachments_failed field when every upload worked', async () => {
+  const f = fixture({ success: 'true' }, true, [{ size: 1000, name: 'ok.pdf' }]); f.submit();
+  await new Promise(setImmediate);
+  assert.equal('attachments_failed' in f.sent(), false);
+  assert.equal(f.note.className, 'form-note ok');
+});
+
+test('WhatsApp consent without a number is sent as no', async () => {
+  const f = fixture({ success: 'true' });
+  f.form.whatsapp.value = '  ';
+  f.submit();
+  await new Promise(setImmediate);
+  assert.equal(f.sent().whatsapp_ok, 'no');
+  assert.equal(f.note.textContent, "Received. We'll reply by email.");
 });
 
 test('oversized file is refused before any request', () => {

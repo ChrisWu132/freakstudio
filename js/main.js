@@ -133,35 +133,44 @@
       }
       btn.disabled = true;
       btn.textContent = files.length ? "Uploading files…" : "Sending…";
-      /* Files go to our own R2 (functions/api/upload.js); the email carries their links. */
-      Promise.all(files.map(uploadFile))
-        .then(function (urls) {
+      /* Files go to our own R2 (functions/api/upload.js); the email carries their links. A file that
+         fails must not cost us the enquiry: it is sent anyway and names the files that didn't arrive. */
+      var failed = [];
+      /* Only message on WhatsApp when this is "yes": WhatsApp requires opt-in, and there must be a number. */
+      var whatsappOk = !!form.whatsapp.value.trim() && form.whatsapp_ok.checked;
+      Promise.allSettled(files.map(uploadFile))
+        .then(function (results) {
+          var urls = [];
+          results.forEach(function (r, i) {
+            if (r.status === "fulfilled") urls.push(r.value);
+            else failed.push(files[i].name);
+          });
           btn.textContent = "Sending…";
+          var payload = {
+            email: form.email.value,
+            whatsapp: form.whatsapp.value || "none",
+            whatsapp_ok: whatsappOk ? "yes" : "no",
+            stage: form.stage.value || "not given",
+            quantity: form.quantity.value || "not given",
+            target_date: form.target_date.value || "not given",
+            message: form.message.value,
+            attachments: urls.length ? urls.join("\n") : "none",
+            _subject: subjectFor("New project enquiry: anvol.dev", form.email.value),
+            _cc: FORM_CC
+          };
+          if (failed.length) payload.attachments_failed = failed.join("\n");
           return fetch(FORM_ENDPOINT, {
             method: "POST",
             headers: { "Content-Type": "application/json", Accept: "application/json" },
-            body: JSON.stringify(withSource({
-              email: form.email.value,
-              whatsapp: form.whatsapp.value || "none",
-              /* Only message on WhatsApp when this is "yes" (WhatsApp requires explicit opt-in). */
-              whatsapp_ok: form.whatsapp_ok.checked ? "yes" : "no",
-              stage: form.stage.value || "not given",
-              quantity: form.quantity.value || "not given",
-              target_date: form.target_date.value || "not given",
-              message: form.message.value,
-              attachments: urls.length ? urls.join("\n") : "none",
-              _subject: subjectFor("New project enquiry: anvol.dev", form.email.value),
-              _cc: FORM_CC
-            }))
+            body: JSON.stringify(withSource(payload))
           });
         })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function (result) {
           if (result.success !== true && result.success !== "true") throw new Error("Form submission rejected");
-          note.textContent = form.whatsapp.value && form.whatsapp_ok.checked
-            ? "Received. We'll message you on WhatsApp."
-            : "Received. We'll reply by email.";
-          note.className = "form-note ok";
+          note.textContent = (whatsappOk ? "Received. We'll message you on WhatsApp." : "Received. We'll reply by email.") +
+            (failed.length ? " These files didn't upload, please email them to chris@anvol.dev: " + failed.join(", ") : "");
+          note.className = failed.length ? "form-note err" : "form-note ok";
           showReceived();
           form.reset();
         })

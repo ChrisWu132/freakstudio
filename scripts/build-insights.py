@@ -22,8 +22,8 @@ ROOT = Path(CFG["source_root"])
 DATE = CFG["date"]
 BASE = "https://anvol.dev"
 OG_DEFAULT = BASE + "/assets/img/og-anvol-dev.png"
-CSS_V = "20261014a"
-JS_V = "20261014a"
+CSS_V = "20261014b"
+JS_V = "20261014b"
 HASH = re.compile(r"[0-9a-f]{64}")
 LINKS = {"https://anvol.dev/#contact": "/#quote", "https://anvol.dev/#how": "/how-it-works/"}
 

@@ -136,10 +136,18 @@
     send.disabled = true;
     send.textContent = files.length ? "Uploading files…" : "Sending…";
     var fields = collect();
+    /* Consent to WhatsApp means nothing without a number. */
+    if (!fields.whatsapp) fields.whatsapp_ok = "no";
     var summary;
-    Promise.all(files.map(forms.uploadFile))
-      .catch(function (e2) { throw new Error("upload: " + e2.message); })
-      .then(function (urls) {
+    /* A file that fails must not cost us the brief: it is sent anyway and names the files that didn't arrive. */
+    var failed = [];
+    Promise.allSettled(files.map(forms.uploadFile))
+      .then(function (results) {
+        var urls = [];
+        results.forEach(function (r, i) {
+          if (r.status === "fulfilled") urls.push(r.value);
+          else failed.push(files[i].name);
+        });
         send.textContent = "Sending…";
         fields.attachments = urls;
         summary = window.anvolBriefSummary.summarize(fields);
@@ -147,6 +155,7 @@
         Object.keys(fields).forEach(function (k) { payload[k] = text(fields[k]); });
         if (!fields.whatsapp) payload.whatsapp = "none";
         payload.attachments = urls.length ? urls.join("\n") : "none";
+        if (failed.length) payload.attachments_failed = failed.join("\n");
         payload.summary = summary.text;
         payload._subject = forms.subjectFor("New project brief: anvol.dev", fields.email);
         payload._cc = forms.cc;
@@ -160,12 +169,12 @@
       .then(function (result) {
         if (result.success !== true && result.success !== "true") throw new Error("Form submission rejected");
         forget();
+        if (failed.length) summary.missing.push({ label: "Files that didn't upload: " + failed.join(", "),
+          why: "Please email them to chris@anvol.dev." });
         showSummary(summary);
       })
-      .catch(function (e3) {
-        err(String(e3.message).indexOf("upload") === 0
-          ? "A file didn't upload. Your answers are kept; try again, or put a link instead."
-          : "Something went wrong. Your answers are kept; try again or email chris@anvol.dev.");
+      .catch(function () {
+        err("Something went wrong. Your answers are kept; try again or email chris@anvol.dev.");
       })
       .finally(function () { send.disabled = false; send.textContent = "Send"; });
   });
