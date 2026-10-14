@@ -16,8 +16,8 @@
 <link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261013b">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013c">
 </head>
 <body>
 
@@ -66,54 +66,91 @@
     <div class="container">
       <h2>With <em>development time.</em></h2>
       <div class="work-grid">
-        <article class="work">
-          <img src="/assets/img/work-desk-companion.jpg" alt="Orange 3D-printed desk companion with a small screen face" width="800" height="600" loading="lazy">
+<!-- work-grid:start -->
+        <a class="work" href="/cases/desk-ai-companion/">
+          <img src="/assets/img/work/desk-ai-companion-1.jpg" alt="Hand holding an orange 3D-printed character with white glasses and blue headphones in front of a computer monitor and keyboard" width="974" height="1208" loading="lazy">
           <h3>Desk AI companion</h3>
-          <p>Shows an AI coding agent's status by screen and voice.</p>
-          <p class="work-time">15&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-voice-assistant.jpg" alt="Pink handheld voice assistant with a speaker grille and display" width="690" height="517" loading="lazy">
-          <h3>Handheld voice assistant</h3>
-          <p>Talks with an LLM over Wi-Fi, with a screen and speaker.</p>
-          <p class="work-time">10&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-smart-planter.jpg" alt="Planter with a small screen device clipped to the pot" width="525" height="393" loading="lazy">
-          <h3>Talking smart planter</h3>
-          <p>Reads soil moisture and chats about the plant.</p>
-          <p class="work-time">15&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-teaching-kit.jpg" alt="Mecanum-wheel car with a robotic arm" width="740" height="555" loading="lazy">
-          <h3>Robot-arm car teaching kit</h3>
-          <p>Car, arm, handheld controller and a 5&#8209;lesson course.</p>
-          <p class="work-time">15&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-quadruped.jpg" alt="Pink and white four-legged robot" width="584" height="438" loading="lazy">
-          <h3>Voice-controlled quadruped</h3>
-          <p>Walks, turns and sits on offline voice commands.</p>
-          <p class="work-time">20&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-ros2-robot.jpg" alt="Mecanum-wheel robot with a lidar, depth camera and touchscreen" width="790" height="592" loading="lazy">
-          <h3>ROS2 mapping robot</h3>
-          <p>Maps a room with lidar and a depth camera, then navigates it.</p>
-          <p class="work-time">18&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-delivery-robot.jpg" alt="Black four-wheel cargo robot for indoor delivery" width="645" height="483" loading="lazy">
-          <h3>Indoor delivery robot</h3>
-          <p>Carries 200 kg and follows a wristband.</p>
-          <p class="work-time">1&nbsp;month to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-underwater-rov.jpg" alt="White underwater ROV with a gripper arm" width="595" height="446" loading="lazy">
-          <h3>Underwater ROV</h3>
-          <p>Dives to 50 m for 3 hours, with a gripper arm.</p>
-          <p class="work-time">2&nbsp;months to develop</p>
-        </article>
+          <p>A desk character that shows what your AI coding agent is doing.</p>
+          <p class="work-stack">BLE 5.0 · LVGL screen · MicroPython</p>
+          <p class="work-time">Development: about 15 days</p>
+        </a>
+        <a class="work" href="/cases/hexapod-robot/">
+          <img src="/assets/img/work/hexapod-robot-1.jpg" alt="Red 3D-printed six-legged robot with a black body cover standing on a tiled floor next to a cardboard box" width="990" height="588" loading="lazy">
+          <h3>Bionic Hexapod Robot</h3>
+          <p>A six-legged walking robot with 18 servos, driven from a phone app.</p>
+          <p class="work-stack">STM32F407 · 18 servos · MPU6050 IMU</p>
+          <p class="work-time">Development: 20 days</p>
+        </a>
+        <a class="work" href="/cases/indoor-delivery-robot/">
+          <img src="/assets/img/work/indoor-delivery-robot-1.jpg" alt="Black aluminium-frame cargo robot on a lab floor, a hand in the foreground pointing a handheld remote at it, benches with test instruments and a potted plant behind" width="899" height="585" loading="lazy">
+          <h3>Indoor Delivery Robot</h3>
+          <p>A 200 kg cargo cart that follows you or drives by remote.</p>
+          <p class="work-stack">ESP32 · UWB follow · ultrasonic avoidance</p>
+          <p class="work-time">Development: 1 month</p>
+        </a>
+        <a class="work" href="/cases/pixelsky-led-board/">
+          <img src="/assets/img/work/pixelsky-led-board-1.jpg" alt="Hands holding a lit LED panel showing a red pixel heart shape in front of a screen displaying the same shape in an editor" width="415" height="427" loading="lazy">
+          <h3>PixelSky AI pixel light board</h3>
+          <p>An LED pixel board you draw on in a browser, with AI-made animations.</p>
+          <p class="work-stack">ESP32 · 16×8 RGB matrix · MicroPython</p>
+          <p class="work-time">Development: about 10 days</p>
+        </a>
+        <a class="work" href="/cases/pottedbaby-smart-planter/">
+          <img src="/assets/img/work/pottedbaby-smart-planter-1.jpg" alt="A small potted pine tree in a grey ceramic pot on a white office table, with a square device clipped into the pot rim" width="525" height="707" loading="lazy">
+          <h3>PottedBaby AI smart planter</h3>
+          <p>A planter add-on that senses the soil and lets the plant talk back.</p>
+          <p class="work-stack">ESP32-C3 · soil sensor · OLED face</p>
+          <p class="work-time">Development: about 15 days</p>
+        </a>
+        <a class="work" href="/cases/ros2-omni-robot/">
+          <img src="/assets/img/work/ros2-omni-robot-1.jpg" alt="Front view of a mecanum-wheel robot on a tiled floor; a touchscreen on the front shows a mapping program with a grid, and a black depth camera sits on top" width="790" height="788" loading="lazy">
+          <h3>ROS2 Omnidirectional Robot</h3>
+          <p>A mecanum-wheel robot that maps rooms and navigates them on its own with ROS2.</p>
+          <p class="work-stack">Raspberry Pi 4B · ROS2 · LiDAR + depth camera</p>
+          <p class="work-time">Development: 18 days</p>
+        </a>
+        <a class="work" href="/cases/voice-robot-dog/">
+          <img src="/assets/img/work/voice-robot-dog-1.jpg" alt="Small white 3D-printed quadruped robot with an OLED face, a green strap and many servo wires, on a blue workbench mat" width="618" height="768" loading="lazy">
+          <h3>Offline voice-controlled robot dog</h3>
+          <p>A small four-legged robot that obeys spoken commands without internet.</p>
+          <p class="work-stack">Custom servo board · offline voice · OLED face</p>
+          <p class="work-time">Development: 10 days</p>
+        </a>
+        <a class="work" href="/cases/robot-dog-8dof/">
+          <img src="/assets/img/work/robot-dog-8dof-1.jpg" alt="Small orange-and-grey 3D-printed quadruped robot standing on a dark grey surface, &#x27;FreakStudio&#x27; embossed on the side of its body" width="846" height="606" loading="lazy">
+          <h3>Small Dynamic Robot Dog</h3>
+          <p>A small 8-joint robot dog with its own programming tool for classrooms.</p>
+          <p class="work-stack">8-DOF legs · IMU balance · own IDE</p>
+          <p class="work-time">Development: 30 days</p>
+        </a>
+        <a class="work" href="/cases/ai-voice-companion/">
+          <img src="/assets/img/work/ai-voice-companion-1.jpg" alt="Hand holding a pink 3D-printed rectangular device with a small screen, a microphone hole and a speaker grille, over a cluttered workbench" width="690" height="714" loading="lazy">
+          <h3>AI voice companion</h3>
+          <p>A pocket device you talk to; it answers by voice and on screen.</p>
+          <p class="work-stack">Wi‑Fi · LLM voice · screen + speaker</p>
+          <p class="work-time">Development: about 10 days</p>
+        </a>
+        <a class="work" href="/cases/graftsense-module-kit/">
+          <img src="/assets/img/work/graftsense-module-kit-1.jpg" alt="Close-up of many small white sensor modules with blue, black and green components on a glossy black surface" width="1005" height="550" loading="lazy">
+          <h3>GraftSense sensor module kit</h3>
+          <p>Plug-and-play sensor modules and controller boards for classrooms and fast prototypes.</p>
+          <p class="work-stack">300+ modules · Grove · Raspberry Pi Pico</p>
+        </a>
+        <a class="work" href="/cases/ros-inspection-robot/">
+          <img src="/assets/img/work/ros-inspection-robot-1.jpg" alt="Two large flat-deck robots with blue and yellow acrylic side panels on aluminium frames, mecanum wheels and spring suspension, parked on a dark marble floor in a lobby, a lidar puck on the deck" width="726" height="363" loading="lazy">
+          <h3>Large ROS Inspection Robot</h3>
+          <p>A large autonomous patrol robot that maps a building and drives itself.</p>
+          <p class="work-stack">ROS · SLAM · 360° lidar</p>
+          <p class="work-time">Development: 1 month</p>
+        </a>
+        <a class="work" href="/cases/flat-frame-rov/">
+          <img src="/assets/img/work/flat-frame-rov-1.jpg" alt="White flat-frame ROV seen from above on a grey carpet, next to a foam case holding the gripper, yellow tether cable and a small clear parts box" width="480" height="315" loading="lazy">
+          <h3>Flat-Frame Underwater ROV</h3>
+          <p>A light, tethered underwater robot with a gripper for inspection and sampling.</p>
+          <p class="work-stack">RK3566 Linux · thruster control · depth sensor</p>
+          <p class="work-time">Development: 2 months</p>
+        </a>
+<!-- work-grid:end -->
       </div>
     </div>
   </section>
@@ -145,6 +182,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=20261013b"></script>
+<script src="/js/main.js?v=20261013c"></script>
 </body>
 </html>

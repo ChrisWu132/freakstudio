@@ -18,8 +18,8 @@
 <link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261013b">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013c">
 </head>
 <body>
 
@@ -87,6 +87,14 @@
     </form>
   </section>
 
+  <div class="bench-strip" aria-label="Work in progress on our benches in Shenzhen">
+    <img src="/assets/img/work/hexapod-robot-3.jpg" alt="Hands wiring servo leads on a hexapod robot build" loading="lazy">
+    <img src="/assets/img/work/pixelsky-led-board-4.jpg" alt="Soldering a connector onto an LED pixel board" loading="lazy">
+    <img src="/assets/img/work/tracked-robot-1.jpg" alt="Operator driving a tracked robot with a handheld transmitter on an office floor" loading="lazy">
+    <img src="/assets/img/work/desk-ai-companion-1.jpg" alt="Orange 3D-printed desk companion held in front of a monitor" loading="lazy">
+    <img src="/assets/img/work/indoor-delivery-robot-1.jpg" alt="Indoor delivery cart driven by remote in the electronics lab" loading="lazy">
+  </div>
+
   <section class="section section-paper" id="start">
     <div class="container">
       <h2>Start with <em>what you have.</em></h2>
@@ -137,19 +145,19 @@
       <p class="section-note">Devices our team designed and delivered, with the real development fee and per-unit price.</p>
       <div class="build-grid">
         <article class="build">
-          <img src="/assets/img/case-logic-analyzer-t4-flatlay.jpg" alt="24-channel logic analyzer with coloured test hooks" width="1200" height="900" loading="lazy">
+          <img src="/assets/img/case-logic-analyzer.jpg" alt="24-channel logic analyzer with coloured test hooks" width="1000" height="610" loading="lazy">
           <h3>24-channel logic analyzer</h3>
           <div class="build-price">$1,100</div>
           <p>15 units at $20 each, plus $800 development.</p>
         </article>
         <article class="build">
-          <img src="/assets/img/case-line-follower-t4-flatlay.jpg" alt="Four-wheel robot car with a lidar and a custom control board" width="1200" height="900" loading="lazy">
+          <img src="/assets/img/case-line-follower.jpg" alt="Four-wheel robot car with a lidar and a custom control board" width="1000" height="594" loading="lazy">
           <h3>Lidar line-following car</h3>
           <div class="build-price">$6,500</div>
           <p>10 units at $150 each, plus $5,000 development.</p>
         </article>
         <article class="build">
-          <img src="/assets/img/case-tracked-robot-t4-flatlay.jpg" alt="Swing-arm tracked robot chassis with PTZ camera" width="1200" height="900" loading="lazy">
+          <img src="/assets/img/case-tracked-robot.jpg" alt="Swing-arm tracked robot chassis with PTZ camera" width="861" height="750" loading="lazy">
           <h3>Swing-arm tracked robot</h3>
           <div class="build-price">$30,000</div>
           <p>4 units at $5,000 each, plus $10,000 development.</p>
@@ -163,30 +171,36 @@
     <div class="container">
       <h2>Built something <em>like yours?</em></h2>
       <div class="work-grid">
-        <article class="work">
-          <img src="/assets/img/work-desk-companion.jpg" alt="Orange 3D-printed desk companion with a small screen face" width="800" height="600" loading="lazy">
+<!-- work-grid:start -->
+        <a class="work" href="/cases/desk-ai-companion/">
+          <img src="/assets/img/work/desk-ai-companion-1.jpg" alt="Hand holding an orange 3D-printed character with white glasses and blue headphones in front of a computer monitor and keyboard" width="974" height="1208" loading="lazy">
           <h3>Desk AI companion</h3>
-          <p>Shows an AI coding agent's status by screen and voice.</p>
-          <p class="work-time">15&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-voice-assistant.jpg" alt="Pink handheld voice assistant with a speaker grille and display" width="690" height="517" loading="lazy">
-          <h3>Handheld voice assistant</h3>
-          <p>Talks with an LLM over Wi-Fi, with a screen and speaker.</p>
-          <p class="work-time">10&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-smart-planter.jpg" alt="Planter with a small screen device clipped to the pot" width="525" height="393" loading="lazy">
-          <h3>Talking smart planter</h3>
-          <p>Reads soil moisture and chats about the plant.</p>
-          <p class="work-time">15&nbsp;days to develop</p>
-        </article>
-        <article class="work">
-          <img src="/assets/img/work-teaching-kit.jpg" alt="Mecanum-wheel car with a robotic arm" width="740" height="555" loading="lazy">
-          <h3>Robot-arm car teaching kit</h3>
-          <p>Car, arm, handheld controller and a 5&#8209;lesson course.</p>
-          <p class="work-time">15&nbsp;days to develop</p>
-        </article>
+          <p>A desk character that shows what your AI coding agent is doing.</p>
+          <p class="work-stack">BLE 5.0 · LVGL screen · MicroPython</p>
+          <p class="work-time">Development: about 15 days</p>
+        </a>
+        <a class="work" href="/cases/hexapod-robot/">
+          <img src="/assets/img/work/hexapod-robot-1.jpg" alt="Red 3D-printed six-legged robot with a black body cover standing on a tiled floor next to a cardboard box" width="990" height="588" loading="lazy">
+          <h3>Bionic Hexapod Robot</h3>
+          <p>A six-legged walking robot with 18 servos, driven from a phone app.</p>
+          <p class="work-stack">STM32F407 · 18 servos · MPU6050 IMU</p>
+          <p class="work-time">Development: 20 days</p>
+        </a>
+        <a class="work" href="/cases/indoor-delivery-robot/">
+          <img src="/assets/img/work/indoor-delivery-robot-1.jpg" alt="Black aluminium-frame cargo robot on a lab floor, a hand in the foreground pointing a handheld remote at it, benches with test instruments and a potted plant behind" width="899" height="585" loading="lazy">
+          <h3>Indoor Delivery Robot</h3>
+          <p>A 200 kg cargo cart that follows you or drives by remote.</p>
+          <p class="work-stack">ESP32 · UWB follow · ultrasonic avoidance</p>
+          <p class="work-time">Development: 1 month</p>
+        </a>
+        <a class="work" href="/cases/pixelsky-led-board/">
+          <img src="/assets/img/work/pixelsky-led-board-1.jpg" alt="Hands holding a lit LED panel showing a red pixel heart shape in front of a screen displaying the same shape in an editor" width="415" height="427" loading="lazy">
+          <h3>PixelSky AI pixel light board</h3>
+          <p>An LED pixel board you draw on in a browser, with AI-made animations.</p>
+          <p class="work-stack">ESP32 · 16×8 RGB matrix · MicroPython</p>
+          <p class="work-time">Development: about 10 days</p>
+        </a>
+<!-- work-grid:end -->
       </div>
       <p class="more"><a href="/cases/">All builds →</a></p>
     </div>
@@ -278,6 +292,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=20261013b"></script>
+<script src="/js/main.js?v=20261013c"></script>
 </body>
 </html>

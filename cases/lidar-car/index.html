@@ -10,14 +10,14 @@
 <meta property="og:url" content="https://anvol.dev/cases/lidar-car/">
 <meta property="og:title" content="Lidar line-following car: 10 units for $6,500 | Anvol">
 <meta property="og:description" content="A lidar line-following robot car our engineers in Shenzhen designed and built: a one-time $5,000 development fee plus 10 cars at $150, $6,500 delivered.">
-<meta property="og:image" content="https://anvol.dev/assets/img/case-line-follower-t4-flatlay.jpg">
+<meta property="og:image" content="https://anvol.dev/assets/img/case-line-follower.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Anvol","item":"https://anvol.dev/"},{"@type":"ListItem","position":2,"name":"Cases","item":"https://anvol.dev/cases/"},{"@type":"ListItem","position":3,"name":"Lidar line-following car","item":"https://anvol.dev/cases/lidar-car/"}]}</script>
 <link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261013b">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=20261013c">
 </head>
 <body>
 
@@ -49,10 +49,20 @@
   </header>
   <section class="section" style="padding-top:24px">
     <div class="container">
-      <figure class="case-photo">
-        <img src="/assets/img/case-line-follower-t4-flatlay.jpg" alt="Four-wheel robot car with a lidar and a custom control board with a small screen" width="1200" height="896">
-        <figcaption class="photo-cap">The car from above: the lidar on the chassis plate, the control board below it.</figcaption>
-      </figure>
+<!-- work:start -->
+<figure class="case-photo">
+  <img src="/assets/img/case-line-follower.jpg" alt="Robot car chassis with lidar, a custom control board with a small OLED screen and wiring" width="1000" height="594">
+  <figcaption class="photo-cap">The control board on the chassis: OLED screen, motor drivers and sensor connectors.</figcaption>
+</figure>
+<div class="case-gallery">
+  <figure><img src="/assets/img/work/lidar-car-1.jpg" alt="Top view of a four-wheel rover with a black lidar unit on the front and a controller board with a small OLED screen at the back, on a beige surface" width="825" height="955" loading="lazy"><figcaption>Rover with lidar and controller board</figcaption></figure>
+</div>
+<div class="rows">
+  <div class="row"><h2>Tech stack</h2><dl><dt>Main controller</dt><dd>STM32F103RCT6</dd><dt>Sensors</dt><dd>Lidar, line-tracking sensors, MPU6050 IMU, wheel encoders, ultrasonic sensor port</dd><dt>Drive</dt><dd>4-wheel chassis, DC motors with dual encoded motor-driver ports</dd><dt>Control</dt><dd>PID closed-loop speed control; modes for manual/app control, lidar avoidance, lidar follow, wall following, CCD and electromagnetic line tracking</dd><dt>Wireless</dt><dd>Bluetooth module for app / remote control</dd><dt>Power</dt><dd>6–16 V DC input, 5 V 5 A output, voltage monitor</dd><dt>Interfaces</dt><dd>Display port, buzzer, SWD debug, USB download, reserved serial port</dd></dl></div>
+  <div class="row"><h2>What we built</h2><ul class="plain case-text"><li>Device-side software: embedded control, drivers and application logic</li><li>Controller board architecture: sensors, motor drive and power design</li><li>Chassis selection, mechanical installation and calibration</li><li>PID motor tuning for closed-loop speed control</li><li>Lidar data acquisition and processing</li><li>Obstacle-avoidance algorithm with real-time perception and path planning</li><li>Multi-sensor line-following algorithm</li><li>Motor driver design with encoder feedback and protection</li><li>Functional testing, performance tuning and demo</li></ul></div>
+  <div class="row"><h2>Development time</h2><p class="section-note case-text">1 month</p></div>
+</div>
+<!-- work:end -->
       <div class="rows">
         <div class="row"><h2>What it cost</h2><div><dl><dt>Development fee</dt><dd>$5,000, one time</dd><dt>10 cars at $150</dt><dd>$1,500</dd><dt>Total, delivered</dt><dd><b>$6,500</b></dd></dl><p class="section-note">Development was about 77% of the total. Spread over ten cars, it added $500 to each one on top of its $150.</p></div></div>
         <div class="row"><h2>Kit or custom build?</h2><p class="section-note case-text">If you need ten cars for a class and an existing kit does the job, buy the kit: the design already exists, so you pay only for parts. This number is for a custom-designed car.</p></div>
@@ -90,6 +100,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=20261013b"></script>
+<script src="/js/main.js?v=20261013c"></script>
 </body>
 </html>

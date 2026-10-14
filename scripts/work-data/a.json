@@ -1,0 +1,546 @@
+[
+  {
+    "slug": "graftsense-module-kit",
+    "name": "GraftSense sensor module kit",
+    "category": "Education kit",
+    "one_liner": "Plug-and-play sensor modules and controller boards for classrooms and fast prototypes.",
+    "intro": "GraftSense is a modular hardware kit of sensor modules, expansion boards and learning resources for STEM teaching and rapid prototyping. Modules share a Grove-style connector, so students and engineers can plug sensors into a controller board and get a working demo quickly. The team ships individual modules, 20–30 module kits, course materials and documentation.",
+    "tech_stack": [
+      {
+        "label": "Module library",
+        "value": "300+ sensor, display, motor-driver and expansion modules"
+      },
+      {
+        "label": "Interface",
+        "value": "Grove / multi-interface connectors"
+      },
+      {
+        "label": "Controller boards",
+        "value": "GraftPort expansion boards for Raspberry Pi Pico (RP2040), incl. an Ethernet version"
+      },
+      {
+        "label": "Firmware",
+        "value": "MicroPython and Arduino"
+      },
+      {
+        "label": "Design files",
+        "value": "Schematic, PCB layout and user docs per module"
+      }
+    ],
+    "scope": [
+      "Custom PCB design for each module",
+      "Sensor selection and integration",
+      "Embedded firmware in MicroPython and Arduino",
+      "Technical documentation and teaching materials",
+      "Sample code, testing and application support",
+      "Kit structure planning and supply-chain coordination"
+    ],
+    "dev_time": null,
+    "photos": [
+      {
+        "file": "/assets/img/work/graftsense-module-kit-1.jpg",
+        "alt": "Close-up of many small white sensor modules with blue, black and green components on a glossy black surface",
+        "caption": "A batch of sensor modules"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-2.jpg",
+        "alt": "Top view of sensor modules laid out in rows on a black surface, including gas sensors and a small OLED module",
+        "caption": "Gas, display and input modules laid out"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-3.jpg",
+        "alt": "Sensor modules, USB cables, a small battery and coloured jumper wires arranged on a black surface",
+        "caption": "Modules with cables and battery, as packed in a kit"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-4.jpg",
+        "alt": "PCB layout screenshot of a small module board with RELOAD, BOOT and RST buttons and an Ethernet jack footprint",
+        "caption": "Design file: PCB layout of one module"
+      }
+    ],
+    "source_pages": [
+      1,
+      2,
+      3
+    ],
+    "flags": [
+      "Pages are out of order in the PDF: p2 is 01/03, p1 is 02/03, p3 is 03/03.",
+      "All module photos are studio shots on a black reflective surface, not messy-environment shots; no better option in this section.",
+      "Rejected p3 photo of packed kits in clear boxes (real environment, good shot) because the box stickers carry QR codes and 'FreakStudio' branding; usable if QR codes are acceptable.",
+      "Rejected p3 diptych of acrylic-case student builds on a desk (real environment) because each half is only ~300px wide.",
+      "Rejected p1 project collage (Chinese captions baked in), p2 3D renders of modules/boards, p2 and p3 Feishu doc / schematic / BIPES screenshots (Chinese UI text), p3 CAD render of enclosure.",
+      "'Raspberry Pi Pico (RP2040)' and 'GraftPort' are read from board silkscreen and the schematic screenshot in the slide images, not from slide body text.",
+      "Slide also lists per-module fee, BOM and packaging cost; all omitted per owner rule."
+    ],
+    "card_stack": "300+ modules · Grove · Raspberry Pi Pico"
+  },
+  {
+    "slug": "pottedbaby-smart-planter",
+    "name": "PottedBaby AI smart planter",
+    "category": "AI device",
+    "one_liner": "A planter add-on that senses the soil and lets the plant talk back.",
+    "intro": "PottedBaby is a compact device that sits in a flower pot, reads soil temperature and moisture, and gives the plant a face and a voice. It shows expressions on a small OLED screen, reacts when someone walks by, and holds spoken AI conversations. It was built as a smart-planter prototype for STEM education, maker projects and interactive desktop products.",
+    "tech_stack": [
+      {
+        "label": "Main controller",
+        "value": "ESP32-C3 SuperMini"
+      },
+      {
+        "label": "Sensors",
+        "value": "Soil temperature and moisture sensor (Modbus), PIR motion sensor"
+      },
+      {
+        "label": "Display",
+        "value": "OLED expression display"
+      },
+      {
+        "label": "Audio",
+        "value": "Microphone and speaker with MAX98357A amplifier"
+      },
+      {
+        "label": "Power",
+        "value": "Rechargeable battery with charge module and power switch"
+      },
+      {
+        "label": "Software",
+        "value": "MicroPython firmware with on-device async scheduling; ASR / LLM / TTS voice dialogue"
+      }
+    ],
+    "scope": [
+      "Product definition",
+      "Hardware and PCB design",
+      "3D enclosure and front-panel design",
+      "Embedded firmware: sensor handling, Modbus parsing, AI dialogue workflow",
+      "ASR / LLM / TTS integration",
+      "Prototype build and validation",
+      "Small-batch production preparation"
+    ],
+    "dev_time": "about 15 days",
+    "photos": [
+      {
+        "file": "/assets/img/work/pottedbaby-smart-planter-1.jpg",
+        "alt": "A small potted pine tree in a grey ceramic pot on a white office table, with a square device clipped into the pot rim",
+        "caption": "PottedBaby in a real pot on an office table"
+      },
+      {
+        "file": "/assets/img/work/pottedbaby-smart-planter-2.jpg",
+        "alt": "Close-up of the square device in the pot showing a small screen, a round motion sensor and a cartoon plant label",
+        "caption": "Screen, motion sensor and front panel"
+      },
+      {
+        "file": "/assets/img/work/pottedbaby-smart-planter-3.jpg",
+        "alt": "Red PCB layout with dimension lines, showing footprints labelled OLED, PIR, MIC, MSE and IMP",
+        "caption": "Design file: 60 x 60 mm PCB layout"
+      }
+    ],
+    "source_pages": [
+      4,
+      5
+    ],
+    "flags": [
+      "Device front label reads 'FreakStudio' and 'Plant Baby' (team brand, visible in photos 1 and 2); slide calls the product PottedBaby.",
+      "ESP32-C3 SuperMini and MAX98357A are read from the schematic screenshot on p5, not slide body text.",
+      "Slide links to a public GitHub repo FreakStudioCN/PottedBaby (screenshot); not used.",
+      "Rejected: p4 small lit-screen close-up (264x332, too small, duplicate angle); p5 dimension drawing on transparent background, schematic (Chinese labels), 3D enclosure render, GitHub screenshot.",
+      "Slide footer shows www.anvol.com; not in any saved image.",
+      "Slide lists development cost, BOM cost per unit and reference quantity; omitted per owner rule."
+    ],
+    "card_stack": "ESP32-C3 · soil sensor · OLED face"
+  },
+  {
+    "slug": "desk-ai-companion",
+    "name": "Desk AI companion",
+    "category": "AI device",
+    "one_liner": "A desk character that shows what your AI coding agent is doing.",
+    "intro": "A small character-shaped desk device that connects to a computer over Bluetooth and shows the live status of an AI coding agent on its screen, with voice alerts when tasks change. It was built for developers, educators and makers, and comes with swappable 3D-printed accessories such as glasses, ears and hats. A second variant in a white enclosure was also prototyped.",
+    "tech_stack": [
+      {
+        "label": "Connectivity",
+        "value": "BLE 5.0"
+      },
+      {
+        "label": "Screen UI",
+        "value": "LVGL"
+      },
+      {
+        "label": "Firmware",
+        "value": "MicroPython / Arduino-style embedded firmware"
+      },
+      {
+        "label": "Protocol",
+        "value": "Custom protocol encoding and decoding"
+      },
+      {
+        "label": "Audio",
+        "value": "Microphone input, speaker output, voice playback"
+      },
+      {
+        "label": "Power",
+        "value": "Li-ion battery with charging and protection"
+      },
+      {
+        "label": "Desktop side",
+        "value": "Desktop daemon / tool integration"
+      }
+    ],
+    "scope": [
+      "Hardware design and PCB",
+      "Power management and battery charging",
+      "Embedded firmware development",
+      "UI / UX design for the screen",
+      "Enclosure modelling and swappable accessory parts",
+      "Desktop daemon integration",
+      "Prototype assembly, system testing and tuning"
+    ],
+    "dev_time": "about 15 days",
+    "photos": [
+      {
+        "file": "/assets/img/work/desk-ai-companion-1.jpg",
+        "alt": "Hand holding an orange 3D-printed character with white glasses and blue headphones in front of a computer monitor and keyboard",
+        "caption": "The orange companion at a desk"
+      },
+      {
+        "file": "/assets/img/work/desk-ai-companion-2.jpg",
+        "alt": "Small screen showing Sessions and Config tabs, a pixel character, a BLE indicator and the status 'S1: Idle'",
+        "caption": "Screen UI showing a session status over BLE"
+      },
+      {
+        "file": "/assets/img/work/desk-ai-companion-3.jpg",
+        "alt": "Hand holding the orange 3D-printed character above a green cutting mat",
+        "caption": "Printed enclosure on the workbench"
+      },
+      {
+        "file": "/assets/img/work/desk-ai-companion-4.jpg",
+        "alt": "Hand holding a white square box with black glasses and a yellow moustache, a red light glowing, in front of a monitor",
+        "caption": "White-enclosure variant"
+      }
+    ],
+    "source_pages": [
+      6,
+      7,
+      8
+    ],
+    "flags": [
+      "Renamed from 'Claude Code Companion' per instruction; all Claude/Claude Code wording removed.",
+      "Rejected p6 and p7 photos showing the terminal of the coding agent (agent UI and 'bypass permissions' text visible), p7 collages with Chinese subtitles, p7 accessory renders with Chinese labels, p8 composites of assembly shots (each panel ~300px), p8 schematic/PCB (silkscreen reads 'claude-knock').",
+      "p8 white variant: schematic shows WizFi360-EVB-Pico (RP2040 + Wi-Fi), vibration sensor, vibration motor and a 3 W speaker, i.e. a different controller than the BLE orange unit. Not put in tech_stack; mention only if wanted.",
+      "Photo 4 has a monitor in the background with blurred Chinese text; nothing legible as a trademark.",
+      "Slide lists development cost and BOM cost; omitted per owner rule."
+    ],
+    "card_stack": "BLE 5.0 · LVGL screen · MicroPython"
+  },
+  {
+    "slug": "pixelsky-led-board",
+    "name": "PixelSky AI pixel light board",
+    "category": "Lighting",
+    "one_liner": "An LED pixel board you draw on in a browser, with AI-made animations.",
+    "intro": "PixelSky is a pixel LED board paired with a browser-based editor. Users draw or generate animations with AI from text or images, preview them live, and push them to the board, which can also show the time and weather. The team built the whole stack: custom LED matrix PCB, ESP32 runtime, web editor and enclosure.",
+    "tech_stack": [
+      {
+        "label": "Main controller",
+        "value": "ESP32"
+      },
+      {
+        "label": "Display",
+        "value": "Custom 16 x 8 RGB LED matrix PCB with light grid and diffuser"
+      },
+      {
+        "label": "Device firmware",
+        "value": "MicroPython on ESP32"
+      },
+      {
+        "label": "Web app",
+        "value": "React web editor (local-first) with real-time preview"
+      },
+      {
+        "label": "AI",
+        "value": "AI animation generation from text or images to LED"
+      },
+      {
+        "label": "Output",
+        "value": "Export to JSON and device code"
+      }
+    ],
+    "scope": [
+      "LED matrix PCB design",
+      "Power and control integration",
+      "ESP32 MicroPython device-side code",
+      "React web editor and helper/service tools",
+      "3D enclosure, light grid, diffuser and acrylic panel",
+      "Prototype assembly and validation"
+    ],
+    "dev_time": "about 10 days",
+    "photos": [
+      {
+        "file": "/assets/img/work/pixelsky-led-board-1.jpg",
+        "alt": "Hands holding a lit LED panel showing a red pixel heart shape in front of a screen displaying the same shape in an editor",
+        "caption": "Drawing in the web editor, shown on the board"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-2.jpg",
+        "alt": "Hand plugging a USB cable into a green LED matrix board with rows of white LEDs lit",
+        "caption": "Bare LED matrix board powered up"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-3.jpg",
+        "alt": "About thirty green LED matrix PCBs laid out in rows on a carpet",
+        "caption": "A batch of LED matrix boards"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-4.jpg",
+        "alt": "Hand soldering a component onto a green PCB on a blue anti-static mat",
+        "caption": "Hand-soldering a controller board"
+      }
+    ],
+    "source_pages": [
+      9,
+      10
+    ],
+    "flags": [
+      "All four photos are crops of single frames out of one multi-photo collage on p9/p10 (no background removal). They are low-res (415–730px wide).",
+      "Photo 4 shows partial silkscreen ('...V1.1.2', 'ds'); the full board silkscreen reads 'FreakStudio' and 'SparkMinds 创智实验室' (possibly a third-party lab brand); that text is not legible in the crop.",
+      "'16 x 8' is from the web editor screenshot label on the slide; LED type not stated.",
+      "Rejected: PCB layout renders (mirrored 'FreakStudio / SparkMinds 创智实验室' silkscreen), web editor screenshots (Chinese UI), clock-display and other collage frames (duplicates).",
+      "Slide lists development cost, BOM cost and quantity; omitted per owner rule."
+    ],
+    "card_stack": "ESP32 · 16×8 RGB matrix · MicroPython"
+  },
+  {
+    "slug": "chengxiaozhi-maker-kits",
+    "name": "ChengXiaoZhi youth maker kits",
+    "category": "Education kit",
+    "one_liner": "Six small sensor kits in acrylic cases for youth STEAM classes and gifts.",
+    "intro": "ChengXiaoZhi is a series of six creative electronics kits for youth STEAM education and corporate gifts. Each kit runs on a Raspberry Pi RP2040, pairs a practical sensor with local processing and a display, and comes in a clear acrylic case with 120 minutes of teaching material. Name, logo, PCB silkscreen and packaging can be customized.",
+    "tech_stack": [
+      {
+        "label": "Main controller",
+        "value": "Raspberry Pi RP2040"
+      },
+      {
+        "label": "Kit 1 – UV detector",
+        "value": "GUVA-S12SD UV sensor, 7-segment display"
+      },
+      {
+        "label": "Kit 2 – Health monitor",
+        "value": "Body temperature, heart rate and SpO2 sensing, OLED display"
+      },
+      {
+        "label": "Kit 3 – Touch & sound",
+        "value": "Vibration sensor, MP3 module"
+      },
+      {
+        "label": "Kit 4 – Audio visualizer",
+        "value": "MAX9814 microphone, 16-LED bar"
+      },
+      {
+        "label": "Kit 5 – Light balance",
+        "value": "Ambient light sensor, 16-segment LED bar"
+      },
+      {
+        "label": "Kit 6 – Plant care",
+        "value": "Soil moisture sensor, LED indicator, buzzer"
+      }
+    ],
+    "scope": [
+      "Hardware design: schematic, PCB, component selection",
+      "Firmware for sensors, local processing and displays",
+      "Acrylic case and structural design",
+      "Assembly guide and tutorial video",
+      "120-minute teaching materials per kit",
+      "Logo, colour and packaging customization"
+    ],
+    "dev_time": "about 30 days for 6 kits (about 10 days per kit)",
+    "photos": [],
+    "source_pages": [
+      13
+    ],
+    "flags": [
+      "NO PHOTOS SAVED: every kit photo shows PCB silkscreen 'FreakStudio X GXCVU' plus '城小智' branding. GXCVU / 城小智 looks like a co-brand with a school (possibly Guangxi City Vocational University) — treated as a third-party / school mark per rules. Best candidates if the owner clears it: scratchpad pdfwork-a/imgs/p13_2_x89_477x354.png (UV kit), p13_3_x90_588x336.png (health kit), p13_4_x91_612x375.png (touch & sound kit); all are studio shots on black, ~350px tall.",
+      "Possibly made with or for that school; the slide does not say 'client', so the text does not either.",
+      "Rejected p13 video frame (Chinese subtitle and player UI baked in) and p13 plant-care photo (large 'FreakStudio' plaque).",
+      "p13 holds two slides side by side (01/02 and 02/02).",
+      "Slide lists total development cost and per-set price; omitted per owner rule."
+    ]
+  },
+  {
+    "slug": "logic-analyzer",
+    "name": "24-channel logic analyzer",
+    "category": "Instrument",
+    "one_liner": "A compact 24-channel, 100 MHz debugging tool for engineers, makers and classrooms.",
+    "intro": "A pocket-size logic analyzer for debugging digital circuits and embedded projects. It samples 24 channels in real time at up to 100 MHz, accepts 3.3–5 V logic levels, and works with open-source firmware and PulseView software. The team reused a proven open firmware and focused on the hardware, enclosure, packaging and testing so it is ready for batch production.",
+    "tech_stack": [
+      {
+        "label": "Channels",
+        "value": "24, real-time sampling up to 100 MHz"
+      },
+      {
+        "label": "Logic levels",
+        "value": "3.3 V – 5 V"
+      },
+      {
+        "label": "Firmware",
+        "value": "Open-source firmware (reused)"
+      },
+      {
+        "label": "Software",
+        "value": "PulseView / sigrok"
+      },
+      {
+        "label": "Connection",
+        "value": "Micro-USB to PC (USB-A cable)"
+      },
+      {
+        "label": "In the box",
+        "value": "Analyzer unit, 30 test hooks, USB cable, user guide"
+      }
+    ],
+    "scope": [
+      "Main controller, power supply and protection circuits",
+      "Enclosure design",
+      "Packaging design",
+      "Functional testing and validation"
+    ],
+    "dev_time": "3 days",
+    "photos": [
+      {
+        "file": "/assets/img/case-logic-analyzer.jpg",
+        "alt": "24-channel logic analyzer in a clear case, with a bundle of coloured test hooks",
+        "caption": "The analyzer and its test hooks. The panel is marked for 3.3 V to 5 V logic levels."
+      }
+    ],
+    "source_pages": [
+      15
+    ],
+    "flags": [
+      "NO PHOTOS SAVED. The only in-environment photos (unit on a wooden desk with USB cable; close-up of pin header) have red Chinese/English annotation arrows and labels baked in. The white-background shots (unit + test hooks, unit + kraft box) are background-removed cutouts (background is pure #FFFFFF), so rejected per the 'no cutouts' rule. The hero image on the slide is part of the slide background with text over it.",
+      "If the partner can send the original desk photo without annotations, it would be the right lead image.",
+      "Unit and box carry the 'FreakStudio' eagle logo (team brand).",
+      "Slide lists development cost and unit BOM; omitted per owner rule.",
+      "Lead photo is the existing white-background product shot; the PDF desk photo has red annotation arrows. Need a clean desk photo from Zisheng."
+    ]
+  },
+  {
+    "slug": "ai-voice-companion",
+    "name": "AI voice companion",
+    "category": "AI device",
+    "one_liner": "A pocket device you talk to; it answers by voice and on screen.",
+    "intro": "A compact, battery-powered AI device for voice conversation with on-screen feedback. After a one-time Wi‑Fi setup from a phone browser, the user presses the side button or wheel, speaks, and the device answers through its speaker and display. It handles music, stories, information queries and smart control, using existing cloud speech and language services.",
+    "tech_stack": [
+      {
+        "label": "Connectivity",
+        "value": "Wi‑Fi with browser-based setup, cloud connection"
+      },
+      {
+        "label": "Display",
+        "value": "Display module for status and responses"
+      },
+      {
+        "label": "Audio",
+        "value": "Microphone and speaker"
+      },
+      {
+        "label": "Controls",
+        "value": "Side wheel and button"
+      },
+      {
+        "label": "Power",
+        "value": "Battery-powered, portable"
+      },
+      {
+        "label": "AI services",
+        "value": "Existing ASR / LLM / TTS backend"
+      }
+    ],
+    "scope": [
+      "Embedded hardware design",
+      "Firmware and application logic",
+      "UI / display interaction flow",
+      "Custom enclosure design and assembly validation",
+      "Integration with existing ASR / LLM / TTS backend services"
+    ],
+    "dev_time": "about 10 days",
+    "photos": [
+      {
+        "file": "/assets/img/work/ai-voice-companion-1.jpg",
+        "alt": "Hand holding a pink 3D-printed rectangular device with a small screen, a microphone hole and a speaker grille, over a cluttered workbench",
+        "caption": "Prototype in hand at the workbench"
+      }
+    ],
+    "source_pages": [
+      16
+    ],
+    "flags": [
+      "Slide title is 'AI Voice Interaction Robot', but the device is a handheld box, not a robot; renamed 'AI voice companion'. Check whether the owner prefers the original name.",
+      "Main controller is not stated on the slide.",
+      "Rejected side-view photo (blue arrow and circle annotation baked in).",
+      "Slide lists hardware/software design fee, full-project fee and unit BOM; omitted per owner rule."
+    ],
+    "card_stack": "Wi‑Fi · LLM voice · screen + speaker"
+  },
+  {
+    "slug": "voice-robot-dog",
+    "name": "Offline voice-controlled robot dog",
+    "category": "Robotics",
+    "one_liner": "A small four-legged robot that obeys spoken commands without internet.",
+    "intro": "A compact four-legged robot that wakes up and follows voice commands offline, with no cloud connection. It walks using several servos, shows expressions on an OLED face and talks back through a built-in speaker. The prototype combines a 3D-printed body, a custom controller board and embedded firmware, aimed at educational robotics kits and STEM demos.",
+    "tech_stack": [
+      {
+        "label": "Controller",
+        "value": "Custom controller board with servo interfaces"
+      },
+      {
+        "label": "Voice",
+        "value": "Offline voice module: wake word and command control"
+      },
+      {
+        "label": "Motion",
+        "value": "Multiple servos for quadruped walking"
+      },
+      {
+        "label": "Display",
+        "value": "OLED expression display"
+      },
+      {
+        "label": "Audio",
+        "value": "Integrated microphone and speaker"
+      },
+      {
+        "label": "Structure",
+        "value": "Compact 3D-printed frame"
+      }
+    ],
+    "scope": [
+      "Mechanical design",
+      "PCB design",
+      "Servo interface design",
+      "Offline voice module integration",
+      "Microphone and speaker integration",
+      "Device-side embedded software"
+    ],
+    "dev_time": "10 days",
+    "photos": [
+      {
+        "file": "/assets/img/work/voice-robot-dog-1.jpg",
+        "alt": "Small white 3D-printed quadruped robot with an OLED face, a green strap and many servo wires, on a blue workbench mat",
+        "caption": "Prototype on the workbench, OLED face showing an expression"
+      },
+      {
+        "file": "/assets/img/work/voice-robot-dog-2.jpg",
+        "alt": "Front view of the small robot with two blue eyes on its OLED screen, on a blue mat with test equipment behind",
+        "caption": "Front view on the bench"
+      }
+    ],
+    "source_pages": [
+      17
+    ],
+    "flags": [
+      "Photo 1: the green velcro strap shows a partial third-party brand print ('…HE 山泽'); small but legible. Rejected the other side view (p17 middle photo) where the strap brand 'SAMZHE 山泽' is clearly readable.",
+      "Photo 2 is low-res (246x398).",
+      "Voice module and MCU part numbers are not stated.",
+      "Slide lists development cost, unit BOM and 10 prototype units; cost omitted per owner rule.",
+      "Pages 11-12 (F450 quadcopter, two versions with contradictory numbers) skipped entirely per instruction.",
+      "Page 14 (Dancing Swing Light, heart-shaped LED PCB, 2-day circuit-only job) left out of this file: the PCB silkscreen is vulgar/NSFW (censored profanity, nude silhouettes, \"NSFW\"), so every image is unusable and the project is a poor fit for the site."
+    ],
+    "card_stack": "Custom servo board · offline voice · OLED face"
+  }
+]

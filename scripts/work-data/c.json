@@ -1,0 +1,380 @@
+[
+  {
+    "slug": "tracked-robot",
+    "name": "Articulated Track Robot",
+    "category": "Inspection",
+    "one_liner": "A rugged tracked robot that climbs obstacles and streams video over 4G.",
+    "intro": "A tracked robot with articulated track modules, designed for industrial inspection, hazardous-environment reconnaissance and special-scenario exploration. It combines a pan-tilt HD camera with 4G remote control, so an operator can drive it and see what it sees from a distance, without anyone entering the space.",
+    "tech_stack": [
+      {
+        "label": "Chassis",
+        "value": "Articulated tracked chassis, independent left/right tracks, swing-arm track modules, custom metal structure"
+      },
+      {
+        "label": "Drive",
+        "value": "High-torque motors and rugged drive system"
+      },
+      {
+        "label": "Main controller",
+        "value": "Embedded controller board (motion control, I/O, communication)"
+      },
+      {
+        "label": "Camera",
+        "value": "Pan-tilt (PTZ) camera, 360° view, auxiliary lighting"
+      },
+      {
+        "label": "Link",
+        "value": "4G low-latency wireless link for remote control, HD video and telemetry"
+      },
+      {
+        "label": "Power & safety",
+        "value": "Power management, emergency stop, fault detection and alarm reporting"
+      },
+      {
+        "label": "Operator software",
+        "value": "PC / mobile control interface with live video, telemetry and status (battery, temperature, signal)"
+      }
+    ],
+    "scope": [
+      "Mechanical design of the articulated chassis, plus manufacturing and assembly",
+      "Hardware design: motor control, power system, main controller, sensors, 4G communication, video transmission",
+      "Embedded software: real-time motion control and motor coordination, swing-arm and PTZ camera control, sensor monitoring",
+      "Remote control software for PC and mobile: driving, camera operation, telemetry, manual and assisted modes"
+    ],
+    "dev_time": null,
+    "photos": [
+      {
+        "file": "/assets/img/work/tracked-robot-1.jpg",
+        "alt": "Black tracked robot with raised front track arms on a tiled office floor, an operator's hands holding a handheld radio transmitter in the foreground, a second tracked robot behind it",
+        "caption": "Driven by handheld transmitter on the office floor."
+      },
+      {
+        "file": "/assets/img/work/tracked-robot-2.jpg",
+        "alt": "Black tracked robot with both swing-arm track modules lifted, PTZ camera dome, two antennas and a red emergency-stop button on its electronics box, tiled floor",
+        "caption": "Swing-arm track modules raised for obstacle crossing."
+      },
+      {
+        "file": "/assets/img/work/tracked-robot-3.jpg",
+        "alt": "Black tracked robot on a tiled floor seen from above at an angle, showing the electronics box, antenna, PTZ camera dome and front track module",
+        "caption": "Metal chassis, electronics box and PTZ camera."
+      },
+      {
+        "file": "/assets/img/work/tracked-robot-4.jpg",
+        "alt": "Front view of the black tracked robot on a tiled floor, PTZ camera dome with two side lights mounted above the front panel",
+        "caption": "Front view: PTZ camera and auxiliary lights."
+      }
+    ],
+    "source_pages": [
+      35,
+      36,
+      37
+    ],
+    "flags": [
+      "No development time stated on any of pages 35-37; dev_time left null.",
+      "tracked-robot-3.jpg is the same photo already on the site as assets/img/case-tracked-robot.jpg (merge target).",
+      "tracked-robot-1/-2 are video frames (~800 px wide); another tracked robot with an orange strap sits in the background (strap text illegible).",
+      "Rejected p37 images x223/x224: purple display boards with Chinese slogans visible behind the robot.",
+      "Rejected p36 x218/x219: duplicates of p35 shots (one mirrored).",
+      "Slide says 'IP-rated structure design' without a rating; not used.",
+      "Slide wording 'articulated arm' read as the swing-arm track modules (p36 lists 'tracks, swing arms'); no separate manipulator is visible in any photo."
+    ]
+  },
+  {
+    "slug": "flat-frame-rov",
+    "name": "Flat-Frame Underwater ROV",
+    "category": "Underwater",
+    "one_liner": "A light, tethered underwater robot with a gripper for inspection and sampling.",
+    "intro": "A lightweight flat-frame underwater robot for inspection, research, rescue and demo use. A PETG frame holds a clear acrylic electronics chamber, multiple thrusters for omnidirectional movement and a single-axis waterproof gripper for simple grabbing and sampling. An operator drives it from a ground-station app with live video.",
+    "tech_stack": [
+      {
+        "label": "Main controller",
+        "value": "RK3566 running Linux"
+      },
+      {
+        "label": "Motion control",
+        "value": "Custom motion-control board with PWM thruster drive, current monitoring and protection"
+      },
+      {
+        "label": "Sensors",
+        "value": "MS5837 depth/pressure sensor"
+      },
+      {
+        "label": "Camera",
+        "value": "1080p / 30 fps underwater camera with live video and recording"
+      },
+      {
+        "label": "Structure",
+        "value": "PETG frame, transparent acrylic pressure chamber, approx. 400 × 325 × 170 mm"
+      },
+      {
+        "label": "Performance",
+        "value": "Max operating depth 50 m, endurance up to 3 hours"
+      },
+      {
+        "label": "Ground station",
+        "value": "Qt-based software for Windows and Linux; UDP command and telemetry; 4G remote control and video"
+      }
+    ],
+    "scope": [
+      "Mechanical design and assembly engineering",
+      "Hardware and PCB design",
+      "Embedded device-side software (manual and assisted cruise modes)",
+      "Remote-control terminal and UI",
+      "Machining, integration and system bring-up"
+    ],
+    "dev_time": "2 months",
+    "photos": [
+      {
+        "file": "/assets/img/work/flat-frame-rov-1.jpg",
+        "alt": "White flat-frame ROV seen from above on a grey carpet, next to a foam case holding the gripper, yellow tether cable and a small clear parts box",
+        "caption": "ROV with its gripper and tether, packed in foam."
+      }
+    ],
+    "source_pages": [
+      38,
+      39
+    ],
+    "flags": [
+      "Only one usable photo, and it is small (480 × 315), cropped out of a 4-photo composite on p38 (x230). The other three photos in that composite are cut-outs on pure white; rejected as cut-outs.",
+      "The site already shows this vehicle as assets/img/work-underwater-rov.jpg and case-underwater-rov.jpg (both cut-outs from the same composite); possible merge target.",
+      "Rejected p39 x234/x235: they show an ORANGE-shelled ROV, not the white PETG flat-frame vehicle. Likely a different project; owner to confirm. x235 also carries red Chinese annotation text.",
+      "Rejected p39 x236: PCB layout render (CAD), not a photo. Rejected p39 x237: app screenshot plus a Chinese gamepad manual."
+    ],
+    "card_stack": "RK3566 Linux · thruster control · depth sensor"
+  },
+  {
+    "slug": "ros-inspection-robot",
+    "name": "Large ROS Inspection Robot",
+    "category": "Inspection",
+    "one_liner": "A large autonomous patrol robot that maps a building and drives itself.",
+    "intro": "A ROS-based autonomous mobile inspection robot for campuses, factories, exhibition halls and other wide, flat indoor spaces. It builds a map with 360° lidar, plans its own patrol routes and avoids obstacles, and can also be driven remotely over 4G with live video. The open deck takes add-on payloads such as cameras, robotic arm modules or gas sensors.",
+    "tech_stack": [
+      {
+        "label": "Software",
+        "value": "ROS navigation and mission execution; SLAM mapping, localization, path planning, obstacle avoidance"
+      },
+      {
+        "label": "Sensing",
+        "value": "360° lidar"
+      },
+      {
+        "label": "Chassis",
+        "value": "Large omnidirectional mobile platform with independent spring suspension"
+      },
+      {
+        "label": "Link",
+        "value": "4G remote control and live camera video"
+      },
+      {
+        "label": "Expansion",
+        "value": "Interfaces for cameras, robotic arm modules, gas sensors and other payloads; multi-robot coordination support"
+      }
+    ],
+    "scope": [
+      "Mechanical design and structural integration",
+      "Control hardware and power system design",
+      "Embedded device-side software",
+      "Remote control terminal / monitoring interface"
+    ],
+    "dev_time": "1 month",
+    "photos": [
+      {
+        "file": "/assets/img/work/ros-inspection-robot-1.jpg",
+        "alt": "Two large flat-deck robots with blue and yellow acrylic side panels on aluminium frames, mecanum wheels and spring suspension, parked on a dark marble floor in a lobby, a lidar puck on the deck",
+        "caption": "Two units in a lobby: lidar on deck, spring-suspended wheels."
+      }
+    ],
+    "source_pages": [
+      40
+    ],
+    "flags": [
+      "Slide title is 'Ultra-Large ROS Inspection Robot'; renamed 'Large ROS Inspection Robot' for plain English.",
+      "The site already has this robot as assets/img/case-ros-platform.jpg (same scene, slightly larger crop); possible merge target.",
+      "Rejected p40 x241: tighter crop of the same photo. Only one distinct photo exists for this project.",
+      "Slide gives no main-controller model, battery or speed; tech_stack covers only what the slide states."
+    ],
+    "card_stack": "ROS · SLAM · 360° lidar"
+  },
+  {
+    "slug": "eight-thruster-rov",
+    "name": "Eight-Thruster Underwater ROV with Manipulator",
+    "category": "Underwater",
+    "one_liner": "A tethered eight-thruster underwater robot with a gripper arm for inspection and sampling.",
+    "intro": "A remote-operated underwater vehicle for inspection, object handling, scientific research and environmental monitoring. Eight thrusters give it full six-axis control, and a multi-joint arm at the front grasps and samples. The modular design accepts sonar, water samplers and other tools.",
+    "tech_stack": [
+      {
+        "label": "Main controller",
+        "value": "STM32 / Pixhawk / industrial PC (slide lists all three)"
+      },
+      {
+        "label": "Propulsion",
+        "value": "8 thrusters, 8 ESCs; surge, sway, heave, roll, pitch and yaw control"
+      },
+      {
+        "label": "Manipulator",
+        "value": "4–6 DOF arm (servo / actuator control)"
+      },
+      {
+        "label": "Sensors",
+        "value": "IMU and depth sensor; optional sonar, USBL or vision positioning"
+      },
+      {
+        "label": "Camera",
+        "value": "1080p camera with high-power LED lighting"
+      },
+      {
+        "label": "Link",
+        "value": "Tether with surface 4G gateway for real-time video, control and data"
+      },
+      {
+        "label": "Ground station",
+        "value": "Based on QGroundControl or custom software: live video, recording, sensor display, mission planning and logging"
+      }
+    ],
+    "scope": [],
+    "dev_time": "2 months",
+    "photos": [],
+    "source_pages": [
+      43
+    ],
+    "flags": [
+      "NO PHOTOS. Page 43 is a 2-in-1 infographic whose underwater scenes and hero image look AI-generated (stock-style reefs; misspelling 'Manipulater'). Rejected.",
+      "The only real-looking photos (x258, two views of a blue-float, carbon-tube ROV) are cut-outs on pure white. Rejected under the cut-out rule. Kept as a candidate in the scratchpad only: pdfwork-c/candidates/eight-thruster-rov-cutout.jpg. Owner to decide whether a cut-out is acceptable when nothing else exists.",
+      "Owner to confirm this is a real team build; the slide's presentation is the most AI-looking in this range.",
+      "The slide has no development-scope list; scope left empty rather than invented.",
+      "A spec table (≈600×400×350 mm, ≈15 kg, 0–100 m, ≈1.5 m/s, 24 V/40 Ah, 2–4 h) exists only in the hidden background layer, covered by the photo overlay in the visible slide. Not used.",
+      "Main controller listed as three alternatives ('STM32 / Pixhawk / Industrial PC'), so the actual board is unknown."
+    ]
+  },
+  {
+    "slug": "esp32-underwater-robot",
+    "name": "ESP32 Underwater Robot with Gripper",
+    "category": "Underwater",
+    "one_liner": "A compact underwater robot with HD video and a front gripper.",
+    "intro": "A compact underwater robot built around an ESP32 control platform. It combines multi-thruster motion control, HD video, depth sensing, IMU-based attitude estimation and a front robotic gripper. It is suited to underwater inspection, sample collection, environmental monitoring and teaching or research.",
+    "tech_stack": [
+      {
+        "label": "Main controller",
+        "value": "ESP32"
+      },
+      {
+        "label": "Propulsion",
+        "value": "Multiple thrusters with tuned motion control"
+      },
+      {
+        "label": "Sensors",
+        "value": "Depth sensor + IMU (attitude estimation), multi-sensor fusion"
+      },
+      {
+        "label": "Camera",
+        "value": "1080p camera video, with underwater image enhancement"
+      },
+      {
+        "label": "Manipulator",
+        "value": "Front robotic gripper"
+      },
+      {
+        "label": "Link",
+        "value": "4G remote-control link with camera video; ground-station interface"
+      }
+    ],
+    "scope": [
+      "Mechanical design and assembly",
+      "Electronics and control hardware design",
+      "Embedded firmware / device-side software",
+      "Remote control terminal and ground-station interface",
+      "Motion control and motor tuning",
+      "Multi-sensor fusion and underwater image enhancement",
+      "Data transmission and camera video link"
+    ],
+    "dev_time": "2 months",
+    "photos": [],
+    "source_pages": [
+      44
+    ],
+    "flags": [
+      "NO PHOTOS. Both product images on p44 sit in the slide background (x261, no separate embedded image) and look like 3D renders or AI images: perfectly clean gradient backdrop, no real-world wear. Rejected.",
+      "Owner to supply a real photo of this vehicle, or drop the project from the site."
+    ]
+  },
+  {
+    "slug": "indoor-delivery-robot",
+    "name": "Indoor Delivery Robot",
+    "category": "Logistics",
+    "one_liner": "A 200 kg cargo cart that follows you or drives by remote.",
+    "intro": "An indoor delivery robot for moving materials in factories, warehouses, labs and other indoor spaces. It follows a person wearing a UWB tag at a set distance, or can be driven with a handheld remote. Ultrasonic sensors stop it from running into obstacles, and it carries up to 200 kg in a lidded aluminium-frame box on four air-filled wheels.",
+    "tech_stack": [
+      {
+        "label": "Main controller",
+        "value": "ESP32 running FreeRTOS"
+      },
+      {
+        "label": "Positioning",
+        "value": "UWB modules front and rear (UART); follow distance 1–7 m, adjustable"
+      },
+      {
+        "label": "Obstacle sensing",
+        "value": "4 ultrasonic sensors (RS485) and 6-axis IMU, multi-sensor fusion"
+      },
+      {
+        "label": "Camera",
+        "value": "1080p camera with video streaming and recording"
+      },
+      {
+        "label": "Drive",
+        "value": "4WD differential drive, in-place turning, 10-inch air-filled tires, PID / S-curve motor control"
+      },
+      {
+        "label": "Power",
+        "value": "24 V 20 Ah battery with BMS; ≈4 h charge; up to 15 km per charge"
+      },
+      {
+        "label": "Load & speed",
+        "value": "≤200 kg payload, ≈30 kg empty, up to 5 km/h, ≤10° slope, 5 cm obstacles"
+      },
+      {
+        "label": "Remote",
+        "value": "Handheld remote, ≤40 m range; optional 4G remote monitoring"
+      }
+    ],
+    "scope": [
+      "Mechanical design: aluminium-frame body, lidded cargo box, 4WD chassis",
+      "Control hardware: ESP32 main board, motor drivers, power and BMS, sensor wiring",
+      "Embedded software: UWB follow algorithm, remote control, obstacle-avoidance logic, motor control",
+      "Status display (voltage, distance, sensor data) and video streaming"
+    ],
+    "dev_time": "1 month",
+    "photos": [
+      {
+        "file": "/assets/img/work/indoor-delivery-robot-1.jpg",
+        "alt": "Black aluminium-frame cargo robot on a lab floor, a hand in the foreground pointing a handheld remote at it, benches with test instruments and a potted plant behind",
+        "caption": "Driven by handheld remote in the electronics lab."
+      },
+      {
+        "file": "/assets/img/work/indoor-delivery-robot-2.jpg",
+        "alt": "Two black box-shaped delivery robots with chunky air-filled wheels on a tiled floor, a small tracked robot in the background",
+        "caption": "Two units on the floor."
+      },
+      {
+        "file": "/assets/img/work/indoor-delivery-robot-3.jpg",
+        "alt": "Black box-shaped delivery robot with a split lid and four air-filled wheels on a tiled floor, cardboard boxes and lab benches behind",
+        "caption": "Aluminium frame, split lid, 10-inch air-filled tires."
+      }
+    ],
+    "source_pages": [
+      45,
+      46
+    ],
+    "flags": [
+      "Pages 45 and 46 are two versions of the same project (2-slide scans each); facts merged and checked for consistency (both say 1 month and the same specs).",
+      "indoor-delivery-robot-3.jpg is the same photo already on the site as assets/img/work-delivery-robot.jpg; possible merge target.",
+      "The thin blue line graphics in photos 2 and 3 are on the lab wall in the real scene (they also show behind the person in p45 x266), not slide overlays. Owner may still want to check.",
+      "Photo 1: the remote's brand mark is a blurry, illegible blob. Rejected p46 x272: close-up where the 'hotRC' brand logo on the remote is legible (third-party logo).",
+      "Rejected p45 x266: a person holding the lid open, with part of his face and a New York Yankees 'NY' logo on his shirt visible.",
+      "Rejected p45 x267: small duplicate of p46 x271. Rejected p46 operation-mode thumbnails and hardware-component tiles: baked into the slide background with text.",
+      "The architecture lists a 'Robotic Arm (Servo / Gripper)', but no arm appears in any photo, so it is left out of tech_stack; owner to confirm.",
+      "Slide typos fixed: 'transpottation', 'wareheuses', 'aviodance', 'positioing'."
+    ],
+    "card_stack": "ESP32 · UWB follow · ultrasonic avoidance"
+  }
+]

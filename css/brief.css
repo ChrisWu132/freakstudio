@@ -1,12 +1,12 @@
 /* /brief/ only: the step-by-step project brief. Inputs reuse .quote-card from style.css. */
 .brief{max-width:720px;margin:0 auto;padding:72px 40px 112px}
 .brief-head h1{font-size:clamp(40px,5vw,56px);line-height:1.02;margin-bottom:16px}
-.brief-head h1 em{font-style:italic}
+.brief-head h1 em{font-style:normal;color:var(--accent)}
 .brief-head p{font-size:17px;line-height:1.55;color:var(--ink-soft);margin-bottom:32px}
 .brief .quote-card{scroll-margin-top:calc(var(--nav-h) + 16px)}
 .brief [hidden]{display:none}  /* .btn sets display, which would otherwise beat the hidden attribute */
 .brief fieldset{border:0;min-width:0}
-.brief legend{font-family:var(--serif);font-size:30px;line-height:1.1;margin-bottom:20px;padding:0}
+.brief legend{font-family:var(--sans);font-weight:700;font-size:26px;line-height:1.1;margin-bottom:20px;padding:0}
 .choices{display:grid;grid-template-columns:1fr 1fr;gap:0 16px;margin-bottom:14px}
 .choices.one-col{grid-template-columns:1fr}
 .choices-title{grid-column:1/-1;font-size:13px;font-weight:600;margin-bottom:4px}
