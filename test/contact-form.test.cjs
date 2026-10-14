@@ -136,3 +136,9 @@ test('blocked storage still sends the source of this page', async () => {
   assert.equal(f.sent().utm_source, 'x');
   assert.equal(f.sent().referrer, 'direct');
 });
+
+test('subject carries sender and time so Gmail keeps each enquiry in its own thread', async () => {
+  const f = fixture({ success: 'true' }); f.submit();
+  await new Promise(setImmediate);
+  assert.match(f.sent()._subject, /^New project enquiry: anvol\.dev · test@example\.com · \d{4}-\d\d-\d\d \d\d:\d\d UTC$/);
+});

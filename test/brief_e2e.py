@@ -107,10 +107,11 @@ def test_brief(base, browser, shots, width):
               "features": "Sensors, Battery", "files_available": "BOM", "attachments": UPLOAD_URL,
               "company": "not given", "certification_requirements": "none",
               "utm_source": "test_src", "utm_campaign": "c1", "utm_medium": "none", "landing_page": "/brief/",
-              "referrer": "direct", "_cc": "zisheng@getanvol.com", "_subject": "New project brief: anvol.dev"}
+              "referrer": "direct", "_cc": "zisheng@getanvol.com"}
     for k, v in expect.items():
         assert p.get(k) == v, f"payload {k}={p.get(k)!r}, expected {v!r}"
     assert "_honey" not in p and "files" not in p
+    assert p["_subject"].startswith("New project brief: anvol.dev · buyer@example.com · "), p["_subject"]
     assert "Current stage: Working prototype" in p["summary"]
     assert "- Target size:" in p["summary"] and "- Main function:" not in p["summary"].split("Missing")[1]
 

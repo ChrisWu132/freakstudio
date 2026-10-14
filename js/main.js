@@ -80,9 +80,14 @@
     Object.keys(source).forEach(function (k) { payload[k] = source[k]; });
     return payload;
   }
+  /* Gmail threads mails with the same subject and sender, so a fixed subject piled every enquiry into
+     one conversation (2026-10-14). Sender + UTC minute keeps each submission its own thread. */
+  function subjectFor(base, email) {
+    return base + " · " + email + " · " + new Date().toISOString().slice(0, 16).replace("T", " ") + " UTC";
+  }
   /* js/brief.js (the /brief/ page) sends through the same endpoint, upload and source. */
   window.anvolForms = { endpoint: FORM_ENDPOINT, cc: FORM_CC, uploadFile: uploadFile, withSource: withSource,
-    maxFiles: MAX_FILES, maxFileBytes: MAX_FILE_BYTES };
+    subjectFor: subjectFor, maxFiles: MAX_FILES, maxFileBytes: MAX_FILE_BYTES };
   if (form) {
     var btn = document.getElementById("submit-btn");
     var note = document.getElementById("form-note");
@@ -145,7 +150,7 @@
               target_date: form.target_date.value || "not given",
               message: form.message.value,
               attachments: urls.length ? urls.join("\n") : "none",
-              _subject: "New project enquiry: anvol.dev",
+              _subject: subjectFor("New project enquiry: anvol.dev", form.email.value),
               _cc: FORM_CC
             }))
           });

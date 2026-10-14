@@ -148,7 +148,7 @@
         if (!fields.whatsapp) payload.whatsapp = "none";
         payload.attachments = urls.length ? urls.join("\n") : "none";
         payload.summary = summary.text;
-        payload._subject = "New project brief: anvol.dev";
+        payload._subject = forms.subjectFor("New project brief: anvol.dev", fields.email);
         payload._cc = forms.cc;
         return fetch(forms.endpoint, {
           method: "POST",
