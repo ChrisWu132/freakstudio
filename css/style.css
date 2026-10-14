@@ -52,8 +52,6 @@ section[id]{scroll-margin-top:var(--nav-h)}
 .hero-title{font-size:clamp(46px,5.6vw,76px);line-height:1;margin-bottom:24px}
 .hero-sub{font-size:19px;line-height:1.55;color:var(--ink-soft);max-width:30em;margin-bottom:28px}
 .hero-facts{font-size:15px;color:var(--ink-faint);margin-bottom:12px}
-.hero-alt{font-size:15px;color:var(--ink-faint)}
-.hero-alt a{text-underline-offset:3px}
 
 .quote-card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:28px}
 .quote-card h2{font-size:30px;margin-bottom:18px}
