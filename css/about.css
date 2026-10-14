@@ -1,0 +1,10 @@
+/* About page only: event photo grid and award certificate thumbnails */
+.event-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:28px}
+.event-grid figure,.award-grid figure{margin:0;min-width:0}
+.event-grid img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
+.event-grid figcaption{margin-top:6px;font-size:13px;line-height:1.4;color:var(--ink-faint)}
+.award-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:start}
+.award-grid img{display:block;width:100%;height:auto;aspect-ratio:5/7;object-fit:contain;background:var(--panel);border-radius:4px}
+.award-grid figcaption{margin-top:8px;font-size:13px;line-height:1.45;color:var(--ink-soft)}
+.award-grid figcaption strong{color:var(--ink);font-weight:600}
+@media (max-width:960px){.event-grid,.award-grid{grid-template-columns:1fr 1fr}}

@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261014b">
+<link rel="stylesheet" href="/css/style.css?v=20261014c">
 </head>
 <body>
 
@@ -28,6 +28,7 @@
       <span class="brand-name">anvol</span>
     </a>
     <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/what-we-build/">What we build</a>
       <a href="/services/">Services</a>
       <a href="/cases/">Cases</a>
       <a href="/costs/">Costs</a>
@@ -56,7 +57,9 @@
 <div class="rows">
   <div class="row"><h2>Tech stack</h2><dl><dt>Main controller</dt><dd>ESP32 running FreeRTOS</dd><dt>Positioning</dt><dd>UWB modules front and rear (UART); follow distance 1–7 m, adjustable</dd><dt>Obstacle sensing</dt><dd>4 ultrasonic sensors (RS485) and 6-axis IMU, multi-sensor fusion</dd><dt>Camera</dt><dd>1080p camera with video streaming and recording</dd><dt>Drive</dt><dd>4WD differential drive, in-place turning, 10-inch air-filled tires, PID / S-curve motor control</dd><dt>Power</dt><dd>24 V 20 Ah battery with BMS; ≈4 h charge; up to 15 km per charge</dd><dt>Load &amp; speed</dt><dd>≤200 kg payload, ≈30 kg empty, up to 5 km/h, ≤10° slope, 5 cm obstacles</dd><dt>Remote</dt><dd>Handheld remote, ≤40 m range; optional 4G remote monitoring</dd></dl></div>
   <div class="row"><h2>What we built</h2><ul class="plain case-text"><li>Mechanical design: aluminium-frame body, lidded cargo box, 4WD chassis</li><li>Control hardware: ESP32 main board, motor drivers, power and BMS, sensor wiring</li><li>Embedded software: UWB follow algorithm, remote control, obstacle-avoidance logic, motor control</li><li>Status display (voltage, distance, sensor data) and video streaming</li></ul></div>
-  <div class="row"><h2>Development time</h2><p class="section-note case-text">1 month</p></div>
+  <div class="row"><h2>Commercial reference</h2><div><dl><dt>Development time</dt><dd>1 month</dd><dt>Development fee</dt><dd>USD 20,000</dd><dt>Per unit</dt><dd>USD 2,500 (including assembly)</dd><dt>Quantity basis</dt><dd>4 sets</dd></dl><p class="section-note">Reference figures from our engineers for a similar build. Not a past invoice and not a fixed quote; a written quote follows a review of your files.</p></div></div>
+  <div class="row"><h2>Start a similar project</h2><ol class="plain case-text"><li>Send what you have: sketches, a reference product, files or a written idea.</li><li>We review it and list the gaps and open questions.</li><li>You get a written scope and quote.</li></ol></div>
+  <div class="row"><h2>Related services</h2><ul class="plain case-text"><li><a href="/services/hardware-engineering-prototype/">Hardware engineering and prototypes</a></li><li><a href="/services/firmware-embedded/">Firmware and embedded systems</a></li></ul></div>
 </div>
 <h2 class="gallery-head">Photos and design files</h2>
 <div class="case-gallery">
@@ -95,6 +98,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=20261014b"></script>
+<script src="/js/main.js?v=20261014c"></script>
 </body>
 </html>

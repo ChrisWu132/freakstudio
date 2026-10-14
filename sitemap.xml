@@ -1,58 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://anvol.dev/</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/services/</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://anvol.dev/services/project-evaluation/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/what-we-build/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/what-we-build/idea-to-prototype/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/what-we-build/prototype-to-pilot/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/what-we-build/pilot-to-repeat-batch/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/what-we-build/hardware-platforms/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/services/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/services/project-evaluation/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/services/hardware-engineering-prototype/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/services/pcb-pcba-sourcing/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/services/firmware-embedded/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/services/enclosure-integration/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/services/testing-quality/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/services/pilot-small-batch/</loc><lastmod>2026-10-14</lastmod></url>
+  <url><loc>https://anvol.dev/services/fulfillment/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://anvol.dev/cases/</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://anvol.dev/cases/logic-analyzer/</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://anvol.dev/cases/lidar-car/</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://anvol.dev/cases/tracked-robot/</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/ai-voice-companion//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/desk-ai-companion//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/flat-frame-rov//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/graftsense-module-kit//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/hexapod-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/indoor-delivery-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/lidar-car//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/logic-analyzer//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/pixelsky-led-board//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/pottedbaby-smart-planter//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/robot-dog-8dof//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/ros-inspection-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/ros2-omni-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/tracked-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/voice-robot-dog//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/chengxiaozhi-maker-kits//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/eight-thruster-rov//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/f450-quadcopter//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/gel-blaster-tank//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/laser-weeding-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/mecanum-arm-kit//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/orange-shell-rov//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/project-play//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/rm-mecanum-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/rm-omni-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/rm-swerve-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/voice-quadruped-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/cases/wheel-leg-balancing-robot//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/costs/</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://anvol.dev/cases/ai-voice-companion/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/desk-ai-companion/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/flat-frame-rov/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/graftsense-module-kit/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/hexapod-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/indoor-delivery-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/lidar-car/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/logic-analyzer/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/pixelsky-led-board/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/pottedbaby-smart-planter/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/robot-dog-8dof/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/ros-inspection-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/ros2-omni-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/tracked-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/voice-robot-dog/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/chengxiaozhi-maker-kits/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/eight-thruster-rov/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/f450-quadcopter/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/gel-blaster-tank/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/laser-weeding-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/mecanum-arm-kit/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/orange-shell-rov/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/project-play/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/rm-mecanum-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/rm-omni-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/rm-swerve-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/voice-quadruped-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/cases/wheel-leg-balancing-robot/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/costs/</loc><lastmod>2026-10-14</lastmod></url>
   <url><loc>https://anvol.dev/how-it-works/</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://anvol.dev/quality/</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://anvol.dev/ip-and-handover/</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://anvol.dev/insights/</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/build-the-whole-device-before-a-small-batch//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/chip-temperature-sensor-vs-room-temperature//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/debug-access-before-closing-the-enclosure//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/firmware-locking-and-recovery-before-trial-units//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/network-identity-for-multiple-prototypes//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/prototype-https-after-a-cold-start//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/prototype-on-a-site-network//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/recover-a-stuck-i2c-sensor-bus//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/upgrade-the-processor-without-redesigning-the-board//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/usb-keyboard-or-midi-controller-without-a-computer//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/what-a-serial-loopback-test-proves//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/when-off-is-not-unpowered//</loc><lastmod>2026-10-13</lastmod></url>
-  <url><loc>https://anvol.dev/insights/who-keeps-time-while-the-prototype-sleeps//</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/build-the-whole-device-before-a-small-batch/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/chip-temperature-sensor-vs-room-temperature/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/debug-access-before-closing-the-enclosure/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/firmware-locking-and-recovery-before-trial-units/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/network-identity-for-multiple-prototypes/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/prototype-https-after-a-cold-start/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/prototype-on-a-site-network/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/recover-a-stuck-i2c-sensor-bus/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/upgrade-the-processor-without-redesigning-the-board/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/usb-keyboard-or-midi-controller-without-a-computer/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/what-a-serial-loopback-test-proves/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/when-off-is-not-unpowered/</loc><lastmod>2026-10-13</lastmod></url>
+  <url><loc>https://anvol.dev/insights/who-keeps-time-while-the-prototype-sleeps/</loc><lastmod>2026-10-13</lastmod></url>
   <url><loc>https://anvol.dev/about/</loc><lastmod>2026-10-12</lastmod></url>
   <url><loc>https://anvol.dev/brief/</loc><lastmod>2026-10-13</lastmod></url>
 </urlset>

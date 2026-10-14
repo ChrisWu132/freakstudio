@@ -35,7 +35,7 @@
       "Sample code, testing and application support",
       "Kit structure planning and supply-chain coordination"
     ],
-    "dev_time": null,
+    "dev_time": "~30 modules in 1 month",
     "photos": [
       {
         "file": "/assets/img/work/graftsense-module-kit-5.jpg",
@@ -123,9 +123,48 @@
       "Photo 7 (project collage) has Chinese captions baked in; photo 6 boxes carry FreakStudio stickers and small QR codes (not readable as URLs).",
       "Photo 15 shows the third-party open-source BIPES editor UI and logo.",
       "'Raspberry Pi Pico (RP2040)' and 'GraftPort' are read from board silkscreen and the schematic screenshot, not slide body text.",
-      "Nothing excluded except the full-slide backgrounds. Slide also lists per-module fee, BOM and packaging cost; all omitted."
+      "Nothing excluded except the full-slide backgrounds."
     ],
-    "card_stack": "300+ modules · Grove · Raspberry Pi Pico"
+    "card_stack": "300+ modules · Grove · Raspberry Pi Pico",
+    "commercial": {
+      "source_pages": [
+        3
+      ],
+      "dev_fee": [
+        "USD 40 / module (circuit + documentation)"
+      ],
+      "unit_label": "Module BOM",
+      "unit_cost": [
+        "USD 1–10 / module at 100 pcs (average ~USD 6)"
+      ],
+      "quantity": "1 kit = 20–30 modules; 20–30 kits for pilot teaching; 100–500+ kits supported",
+      "extra": [
+        [
+          "Packaging",
+          "~USD 3 / kit; at 500-kit scale, packaging box + stickers can be designed free of charge"
+        ]
+      ],
+      "included": [
+        "Circuit design, schematic, PCB, documentation and Arduino example code (per-module fee)"
+      ]
+    },
+    "card_line": "~30 modules / month · dev. fee USD 40 per module (reference)",
+    "start_similar": [
+      "Confirm target users and teaching / application scenarios",
+      "Provide a reference BOM and module list",
+      "Define the main controller platform and interface standards",
+      "Start with sample validation, then proceed to small-batch customization"
+    ],
+    "start_similar_page": 3,
+    "deliverables": [
+      "Tutorials, documents and code resources"
+    ],
+    "deliverables_page": 3,
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/pilot-small-batch/"
+    ]
   },
   {
     "slug": "pottedbaby-smart-planter",
@@ -220,9 +259,36 @@
       "ESP32-C3 SuperMini and MAX98357A are read from the schematic screenshot on p5, not slide body text.",
       "Photo 6 (front-panel drawing) has a baked-in checkerboard 'transparency' background from the source image.",
       "Photo 8 shows GitHub UI and the repo path FreakStudioCN/PottedBaby (no domain shown).",
-      "Slide footer shows www.anvol.com; not in any saved image. Development cost, BOM cost and reference quantity omitted."
+      "Slide footer shows www.anvol.com; not in any saved image."
     ],
-    "card_stack": "ESP32-C3 · soil sensor · OLED face"
+    "card_stack": "ESP32-C3 · soil sensor · OLED face",
+    "commercial": {
+      "source_pages": [
+        5
+      ],
+      "dev_fee": [
+        "around USD 1,500"
+      ],
+      "unit_label": "BOM per unit",
+      "unit_cost": [
+        "around USD 18 per unit"
+      ],
+      "quantity": "10 sets"
+    },
+    "card_line": "about 15 days · dev. fee ~USD 1,500 (reference)",
+    "start_similar": [
+      "Confirm the target scenario",
+      "Define sensor and AI requirements",
+      "Build a prototype",
+      "Validate and iterate",
+      "Move to small-batch production"
+    ],
+    "start_similar_page": 5,
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
+    ]
   },
   {
     "slug": "desk-ai-companion",
@@ -331,10 +397,43 @@
       "Renamed from the deck's original name per instruction; no trademark wording in shown fields.",
       "Excluded (trademark): p6 terminal photo and p7 frames showing the coding agent's terminal ('bypass permissions', welcome screen), the p7 scenario collage containing those frames, and the p8 PCB layout whose silkscreen carries the trademark name. Photo 10 is cropped above the schematic title block, which also carries that name.",
       "White variant (photos 2, 5, 10): schematic shows WizFi360-EVB-Pico (RP2040 + Wi-Fi), vibration sensor, vibration motor and a 3 W speaker, i.e. a different controller than the BLE orange unit. Not put in tech_stack.",
-      "Photo 8 includes a small screenshot-tool overlay from the source.",
-      "Development cost and BOM cost omitted."
+      "Photo 8 includes a small screenshot-tool overlay from the source."
     ],
-    "card_stack": "BLE 5.0 · LVGL screen · MicroPython"
+    "card_stack": "BLE 5.0 · LVGL screen · MicroPython",
+    "commercial": {
+      "source_pages": [
+        8
+      ],
+      "dev_fee": [
+        "around USD 2,000"
+      ],
+      "unit_label": "BOM per unit",
+      "unit_cost": [
+        "under USD 20 per unit (within 10 sets)"
+      ],
+      "quantity": "1–3 sets for validation",
+      "included": [
+        "Prototype build (hardware + enclosure)",
+        "Firmware + hardware integration",
+        "Enclosure optimization",
+        "Documentation support (schematics, BOM, assembly guide)",
+        "Small-batch production preparation"
+      ]
+    },
+    "card_line": "about 15 days · dev. fee ~USD 2,000 (reference)",
+    "start_similar": [
+      "Confirm the use case and target users",
+      "Define connectivity and UI needs",
+      "Finalize hardware functions",
+      "Make a sample for validation",
+      "Then move to small-batch production"
+    ],
+    "start_similar_page": 8,
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
+    ]
   },
   {
     "slug": "pixelsky-led-board",
@@ -452,9 +551,35 @@
       "Photos 1–9 are crops of single frames out of one multi-photo collage on p9/p10 (no background removal); low-res (415–730px wide).",
       "Board silkscreen carries 'FreakStudio' and 'SparkMinds 创智实验室' (photo 8 and the bottom PCB layout).",
       "'16 x 8' and 'XIAO ESP32-C3' are read from the web editor screenshot; LED type not stated.",
-      "Editor screenshots have Chinese UI text. Development cost, BOM cost and quantity omitted."
+      "Editor screenshots have Chinese UI text."
     ],
-    "card_stack": "ESP32 · 16×8 RGB matrix · MicroPython"
+    "card_stack": "ESP32 · 16×8 RGB matrix · MicroPython",
+    "commercial": {
+      "source_pages": [
+        10
+      ],
+      "dev_fee": [
+        "around USD 1,700 (including 10 prototype sets)"
+      ],
+      "unit_label": "BOM per unit",
+      "unit_cost": [
+        "around USD 10 per unit"
+      ],
+      "quantity": "10 sets"
+    },
+    "card_line": "about 10 days · dev. fee ~USD 1,700 (reference)",
+    "start_similar": [
+      "Share your idea",
+      "Discuss and plan",
+      "Develop and prototype",
+      "Validate and scale"
+    ],
+    "start_similar_page": 10,
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
+    ]
   },
   {
     "slug": "f450-quadcopter",
@@ -528,11 +653,31 @@
       12
     ],
     "flags": [
-      "Pages 11 and 12 are two versions of this case with contradictory development time and cost; no numbers from either are used (dev_time null). Component ratings (motor KV, ESC amps, prop size, cell count) also left out.",
-      "Excluded: p12 photos of a larger black industrial drone on grass beside a case and of a drone carrying a parcel (not an F450; look like stock/third-party footage); p11 'Typical applications' scenes and p12 component icons (stock/AI-style images); the p11 in-flight photo exists only inside the full-slide background image (~280x206).",
-      "Slide lists hardware-platform and algorithm-development prices; omitted."
+      "Pages 11 and 12 disagree on development time (p11: about 30 days; p12: ~10 days for the hardware platform). p12 also carries a block (~10 days, USD 1,700 incl. 10 prototype units, ~USD 10 BOM) identical to the PixelSky slide, likely a template copy. Only the fees both pages agree on are used (hardware platform from USD 6,000, algorithm from USD 10,000); dev_time left null. Component ratings (motor KV, ESC amps, prop size, cell count) also left out.",
+      "Excluded: p12 photos of a larger black industrial drone on grass beside a case and of a drone carrying a parcel (not an F450; look like stock/third-party footage); p11 'Typical applications' scenes and p12 component icons (stock/AI-style images); the p11 in-flight photo exists only inside the full-slide background image (~280x206)."
     ],
-    "card_stack": "APM flight controller · NEO-M8N GPS · Mission Planner"
+    "card_stack": "APM flight controller · NEO-M8N GPS · Mission Planner",
+    "commercial": {
+      "source_pages": [
+        11,
+        12
+      ],
+      "dev_fee": [
+        "Hardware platform: from USD 6,000 (including flight controller and frame, excluding Linux development board)",
+        "Algorithm development (e.g. auto cruise): from USD 10,000 (about 1 month)"
+      ],
+      "included": [
+        "Hardware design",
+        "Assembly & testing",
+        "10 sets of prototypes"
+      ]
+    },
+    "card_line": "dev. fee from USD 6,000 (reference)",
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/testing-quality/"
+    ]
   },
   {
     "slug": "chengxiaozhi-maker-kits",
@@ -622,9 +767,28 @@
     "flags": [
       "Boards carry 'FreakStudio X GXCVU' and 城小智 co-branding (cleared by owner 10-13). Possibly made with or for that school; the slide does not say so, and the text does not either.",
       "All six kit photos are studio shots on black; photo 7 is a frame from a tutorial video with Chinese subtitle and player UI.",
-      "p13 holds two slides side by side (01/02 and 02/02). Total development cost and per-set price omitted."
+      "p13 holds two slides side by side (01/02 and 02/02)."
     ],
-    "card_stack": "RP2040 · 6 sensor kits · acrylic cases"
+    "card_stack": "RP2040 · 6 sensor kits · acrylic cases",
+    "commercial": {
+      "source_pages": [
+        13
+      ],
+      "dev_fee": [
+        "USD 2,000 for 6 kits (includes teaching materials)"
+      ],
+      "unit_label": "Per set",
+      "unit_cost": [
+        "USD 25 / set (custom order with logo, color and packaging)"
+      ],
+      "quantity": "10 sets minimum"
+    },
+    "card_line": "about 30 days for 6 kits · dev. fee USD 2,000 (reference)",
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
+    ]
   },
   {
     "slug": "logic-analyzer",
@@ -694,7 +858,12 @@
       "Photos 1 and 3 (desk, pin header) have red Chinese/English annotations baked in. The existing site shot (case-logic-analyzer.jpg) and the packaging shot are background-removed product photos (pure white), allowed per owner 10-13. Lead changed from the existing product shot to the annotated desk photo per 'best in-environment first'; swap back if preferred.",
       "A clean desk photo without annotations from Zisheng would still be the best lead.",
       "Excluded: the deck's unit + test-hooks cutout (same shot as the existing, higher-res case-logic-analyzer.jpg); a unit-only front cutout (duplicate); the slide hero and a clean 'In Use' thumbnail exist only inside the full-slide background image (thumbnail ~577x153, too small).",
-      "Unit and box carry the 'FreakStudio' eagle logo (team brand). Development cost and unit BOM omitted."
+      "Unit and box carry the 'FreakStudio' eagle logo (team brand). Deck p15 figures (USD 500 development, about USD 15 BOM at 50 units) differ from the delivered numbers on the page ($800 development, 15 units at $20); delivered numbers kept, deck figures not shown."
+    ],
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/enclosure-integration/",
+      "/services/testing-quality/"
     ]
   },
   {
@@ -754,10 +923,28 @@
     ],
     "flags": [
       "Slide title is 'AI Voice Interaction Robot', but the device is a handheld box, not a robot; renamed 'AI voice companion'. Check whether the owner prefers the original name.",
-      "Main controller is not stated on the slide.",
-      "Slide lists hardware/software design fee, full-project fee and unit BOM; omitted per owner rule."
+      "Main controller is not stated on the slide."
     ],
-    "card_stack": "Wi‑Fi · LLM voice · screen + speaker"
+    "card_stack": "Wi‑Fi · LLM voice · screen + speaker",
+    "commercial": {
+      "source_pages": [
+        16
+      ],
+      "dev_fee": [
+        "USD 1,200: hardware + software design (using existing backend ASR / LLM / TTS)",
+        "USD 4,000: full project including local training and deployment of ASR / LLM / TTS models"
+      ],
+      "unit_label": "BOM per unit",
+      "unit_cost": [
+        "around USD 25 (including enclosure)"
+      ]
+    },
+    "card_line": "about 10 days · dev. fee from USD 1,200 (reference)",
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
+    ]
   },
   {
     "slug": "voice-robot-dog",
@@ -824,9 +1011,26 @@
       "Photos 1 and 2 show a third-party brand print on the velcro strap ('SAMZHE 山泽').",
       "Photo 2 is low-res (246x398).",
       "Voice module and MCU part numbers are not stated.",
-      "Slide lists development cost, unit BOM and 10 prototype units; cost omitted per owner rule.",
       "Page 14 (Dancing Swing Light) left out: the PCB silkscreen is vulgar/NSFW, so every image is unusable."
     ],
-    "card_stack": "Custom servo board · offline voice · OLED face"
+    "card_stack": "Custom servo board · offline voice · OLED face",
+    "commercial": {
+      "source_pages": [
+        17
+      ],
+      "dev_fee": [
+        "USD 2,000"
+      ],
+      "unit_label": "BOM per unit",
+      "unit_cost": [
+        "~USD 25"
+      ],
+      "quantity": "10 units (prototype)"
+    },
+    "card_line": "10 days · dev. fee USD 2,000 (reference)",
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/"
+    ]
   }
 ]

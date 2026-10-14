@@ -90,6 +90,7 @@
     var bad = invalidIn(steps[current]);
     if (bad) { bad.reportValidity(); err(bad.type === "email" ? "We need an email to reply to." : "Please fill in this field."); return; }
     clearErr();
+    window.anvolTrack("brief_step_complete", String(current + 1));
     show(current + 1);
     save();
     form.scrollIntoView({ block: "start" });
@@ -169,6 +170,7 @@
       .then(function (result) {
         if (result.success !== true && result.success !== "true") throw new Error("Form submission rejected");
         forget();
+        window.anvolTrack("brief_submit", failed.length ? "files failed" : "");
         if (failed.length) summary.missing.push({ label: "Files that didn't upload: " + failed.join(", "),
           why: "Please email them to chris@anvol.dev." });
         showSummary(summary);

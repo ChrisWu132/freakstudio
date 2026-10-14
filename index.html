@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261014b">
+<link rel="stylesheet" href="/css/style.css?v=20261014c">
 </head>
 <body>
 
@@ -30,6 +30,7 @@
       <span class="brand-name">anvol</span>
     </a>
     <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/what-we-build/">What we build</a>
       <a href="/services/">Services</a>
       <a href="/cases/">Cases</a>
       <a href="/costs/">Costs</a>
@@ -72,10 +73,15 @@
       </div>
       <label>Files (optional): CAD, PCB, BOM, photos. Up to 5 files, 20 MB each<input type="file" name="files" multiple accept=".step,.stp,.iges,.igs,.stl,.obj,.3mf,.f3d,.sldprt,.sldasm,.slddrw,.ipt,.iam,.x_t,.x_b,.dwg,.dxf,.3dm,.fcstd,.gbr,.gtl,.gbl,.gts,.gbs,.gto,.gbo,.gko,.drl,.kicad_pcb,.kicad_sch,.kicad_pro,.brd,.sch,.pcbdoc,.schdoc,.prjpcb,.csv,.xls,.xlsx,.ods,.txt,.pdf,.doc,.docx,.ppt,.pptx,.key,.rtf,.md,.jpg,.jpeg,.png,.heic,.heif,.webp,.gif,.bmp,.tif,.tiff,.svg,.mp4,.mov,.webm,.zip,.rar,.7z,.tar,.gz,.tgz"></label>
       <div class="form-row">
+        <label>Name (optional)<input type="text" name="name" autocomplete="name"></label>
+        <label>Company (optional)<input type="text" name="company" autocomplete="organization"></label>
+      </div>
+      <div class="form-row">
         <label>Email<input type="email" name="email" placeholder="you@company.com" required></label>
         <label>WhatsApp (optional)<input type="tel" name="whatsapp" placeholder="+1 555 123 4567"></label>
       </div>
       <label class="optin"><input type="checkbox" name="whatsapp_ok"> OK to message me on WhatsApp about this</label>
+      <label class="optin"><input type="checkbox" name="nda_required"> Send me an NDA before I share files</label>
       <button type="submit" class="btn btn-block" id="submit-btn">Send</button>
       <p class="form-note" id="form-note">We reply on WhatsApp, or by email if you leave no number.</p>
       <div class="received" id="received" hidden>
@@ -178,28 +184,28 @@
           <h3>Desk AI companion</h3>
           <p>A desk character that shows what your AI coding agent is doing.</p>
           <p class="work-stack">BLE 5.0 · LVGL screen · MicroPython</p>
-          <p class="work-time">Development: about 15 days</p>
+          <p class="work-time">About 15 days · dev. fee ~USD 2,000 (reference)</p>
         </a>
         <a class="work" href="/cases/hexapod-robot/">
           <img src="/assets/img/work/hexapod-robot-1.jpg" alt="Red 3D-printed six-legged robot with a black body cover standing on a tiled floor next to a cardboard box" width="990" height="588" loading="lazy">
           <h3>Bionic hexapod robot</h3>
           <p>A six-legged walking robot with 18 servos, driven from a phone app.</p>
           <p class="work-stack">STM32F407 · 18 servos · MPU6050 IMU</p>
-          <p class="work-time">Development: 20 days</p>
+          <p class="work-time">20 days · dev. fee USD 5,000 (reference)</p>
         </a>
         <a class="work" href="/cases/indoor-delivery-robot/">
           <img src="/assets/img/work/indoor-delivery-robot-1.jpg" alt="Black aluminium-frame cargo robot on a lab floor, a hand in the foreground pointing a handheld remote at it, benches with test instruments and a potted plant behind" width="899" height="585" loading="lazy">
           <h3>Indoor delivery robot</h3>
           <p>A 200 kg cargo cart that follows you or drives by remote.</p>
           <p class="work-stack">ESP32 · UWB follow · ultrasonic avoidance</p>
-          <p class="work-time">Development: 1 month</p>
+          <p class="work-time">1 month · dev. fee USD 20,000 (reference)</p>
         </a>
         <a class="work" href="/cases/pixelsky-led-board/">
           <img src="/assets/img/work/pixelsky-led-board-1.jpg" alt="Hands holding a lit LED panel showing a red pixel heart shape in front of a screen displaying the same shape in an editor" width="415" height="427" loading="lazy">
           <h3>PixelSky AI pixel light board</h3>
           <p>An LED pixel board you draw on in a browser, with AI-made animations.</p>
           <p class="work-stack">ESP32 · 16×8 RGB matrix · MicroPython</p>
-          <p class="work-time">Development: about 10 days</p>
+          <p class="work-time">About 10 days · dev. fee ~USD 1,700 (reference)</p>
         </a>
 <!-- work-grid:end -->
       </div>
@@ -215,7 +221,7 @@
         <img src="/assets/img/f-cmm.jpg" alt="Coordinate measuring machine" loading="lazy">
         <img src="/assets/img/f-molding.jpg" alt="Injection molding machine on a partner line" loading="lazy">
       </div>
-      <p class="photo-cap">Electronics benches, measurement and molding on partner lines. Not stock photos.</p>
+      <p class="photo-cap">Electronics benches, measurement and molding on partner lines. Not stock photos. <a href="/quality/#factories">Inside the partner factories, process by process →</a></p>
       <div class="team" id="team">
         <div class="person">
           <img src="/assets/img/team-zisheng.jpg" alt="Zisheng Li" width="640" height="800" loading="lazy">
@@ -293,6 +299,6 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=20261014b"></script>
+<script src="/js/main.js?v=20261014c"></script>
 </body>
 </html>

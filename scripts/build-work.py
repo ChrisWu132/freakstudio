@@ -1,9 +1,13 @@
-"""Build project pages from scripts/work-data/*.json (extracted from the partner's case deck).
+"""Build project pages from scripts/work-data/[a-z].json (extracted from the partner's case deck).
 
 - cases/<slug>/index.html for every project without a hand-written page
 - for the hand-written cost pages (logic-analyzer, lidar-car, tracked-robot): the block between
-  <!-- work:start --> and <!-- work:end --> (photos, tech stack, what we built)
+  <!-- work:start --> and <!-- work:end --> (photos, tech stack, what we built, reference figures, next steps)
 - the card grids between <!-- work-grid:start/end --> on cases/index.html (all) and index.html (first 4)
+
+Deck figures (`commercial`) are the engineers' REFERENCE numbers for a similar build, never a past invoice:
+the hand-written pages carry the DELIVERED totals and are not touched outside their work block.
+It also writes scripts/work-data/related-services.json ({slug: [service paths]}) for the services pages to link back.
 
 Rerun: python scripts/build-work.py
 """
@@ -26,7 +30,7 @@ def esc(s):
 
 def load_projects():
     projects = []
-    for path in sorted(glob.glob(os.path.join(ROOT, "scripts", "work-data", "*.json"))):
+    for path in sorted(glob.glob(os.path.join(ROOT, "scripts", "work-data", "[a-z].json"))):
         with open(path, encoding="utf-8") as f:
             projects.extend(json.load(f))
     order_path = os.path.join(ROOT, "scripts", "work-data", "order.txt")
@@ -75,20 +79,77 @@ def stack_line(p, n=3):
     return " · ".join(s for s in short if s)
 
 
+SERVICES = {
+    "/services/project-evaluation/": "Project evaluation",
+    "/services/hardware-engineering-prototype/": "Hardware engineering and prototypes",
+    "/services/pcb-pcba-sourcing/": "PCB, PCBA and component sourcing",
+    "/services/firmware-embedded/": "Firmware and embedded systems",
+    "/services/enclosure-integration/": "Enclosure design and integration",
+    "/services/testing-quality/": "Testing, quality and documentation",
+    "/services/pilot-small-batch/": "Pilot and small-batch assembly",
+    "/services/fulfillment/": "Packaging and shipping preparation",
+}
+REFERENCE_NOTE = ("Reference figures from our engineers for a similar build. Not a past invoice and not a fixed quote; "
+                  "a written quote follows a review of your files.")
+GENERIC_START = ["Send what you have: sketches, a reference product, files or a written idea.",
+                 "We review it and list the gaps and open questions.",
+                 "You get a written scope and quote."]
+
+
+def ul(items, tag="ul"):
+    return f'<{tag} class="plain case-text">' + "".join(f"<li>{esc(i)}</li>" for i in items) + f"</{tag}>"
+
+
+def row(title, body):
+    return f'  <div class="row"><h2>{title}</h2>{body}</div>'
+
+
+def commercial_row(p):
+    """Deck reference figures. On hand-written pages the development time is a delivered fact, so it stays
+    in its own row and the reference block only carries what the delivered price section does not."""
+    c = p.get("commercial")
+    own_time = p.get("dev_time") and (not c or p["slug"] in HAND_WRITTEN)
+    time_row = row("Development time", f'<p class="section-note case-text">{esc(p["dev_time"])}</p>') if own_time else ""
+    if not c:
+        return time_row
+    lines = []
+    if p.get("dev_time") and not own_time:
+        lines.append(("Development time", [p["dev_time"]]))
+    if c.get("dev_fee"):
+        lines.append((c.get("fee_label", "Development fee"), c["dev_fee"]))
+    if c.get("unit_cost"):
+        lines.append((c["unit_label"], c["unit_cost"]))
+    if c.get("quantity"):
+        lines.append(("Quantity basis", [c["quantity"]]))
+    for label, value in c.get("extra", []):
+        lines.append((label, [value]))
+    if c.get("included"):
+        lines.append(("Included", ["; ".join(c["included"])]))
+    if c.get("excluded"):
+        lines.append(("Not included", ["; ".join(c["excluded"])]))
+    dl = "".join(f"<dt>{esc(k)}</dt><dd>{'<br>'.join(esc(v) for v in vs)}</dd>" for k, vs in lines)
+    ref = row("Commercial reference", f'<div><dl>{dl}</dl><p class="section-note">{esc(REFERENCE_NOTE)}</p></div>')
+    return "\n".join(x for x in (time_row, ref) if x)
+
+
 def detail_block(p):
-    """Photos + tech stack + scope; used on generated pages and inside hand-written ones."""
+    """Photos + facts + reference figures + next steps; used on generated pages and inside hand-written ones."""
     photos = p["photos"]
     out = ['<figure class="case-photo">', "  " + photo_tag(photos[0], lazy=False),
            f'  <figcaption class="photo-cap">{esc(photos[0]["caption"])}</figcaption>', "</figure>"]
     rows = "".join(f"<dt>{esc(r['label'])}</dt><dd>{esc(r['value'])}</dd>" for r in p["tech_stack"])
-    scope = "".join(f"<li>{esc(s)}</li>" for s in p.get("scope") or [])
     out.append('<div class="rows">')
-    out.append(f'  <div class="row"><h2>Tech stack</h2><dl>{rows}</dl></div>')
-    if scope:
-        out.append(f'  <div class="row"><h2>What we built</h2><ul class="plain case-text">{scope}</ul></div>')
-    if p.get("dev_time"):
-        out.append(f'  <div class="row"><h2>Development time</h2><p class="section-note case-text">'
-                   f'{esc(p["dev_time"])}</p></div>')
+    out.append(row("Tech stack", f"<dl>{rows}</dl>"))
+    if p.get("scope"):
+        out.append(row("What we built", ul(p["scope"])))
+    if p.get("challenge"):
+        out.append(row("Main challenges", ul(p["challenge"])))
+    out.append(commercial_row(p))
+    out.append(row("Start a similar project", ul(p.get("start_similar") or GENERIC_START, "ol")))
+    if p.get("deliverables"):
+        out.append(row("Deliverables", ul(p["deliverables"])))
+    links = "".join(f'<li><a href="{s}">{esc(SERVICES[s])}</a></li>' for s in p["related_services"])
+    out.append(row("Related services", f'<ul class="plain case-text">{links}</ul>'))
     out.append("</div>")
     if len(photos) > 1:
         out.append('<h2 class="gallery-head">Photos and design files</h2>')
@@ -96,7 +157,7 @@ def detail_block(p):
         for ph in photos[1:]:
             out.append(f'  <figure>{photo_tag(ph)}<figcaption>{esc(ph["caption"])}</figcaption></figure>')
         out.append("</div>")
-    return "\n".join(out)
+    return "\n".join(x for x in out if x)
 
 
 def page(p, nav, footer, css):
@@ -165,7 +226,7 @@ def page(p, nav, footer, css):
 
 
 def card(p):
-    t = f'\n          <p class="work-time">Development: {esc(p["dev_time"])}</p>' if p.get("dev_time") else ""
+    t = f'\n          <p class="work-time">{esc(p["card_line"][0].upper() + p["card_line"][1:])}</p>' if p.get("card_line") else ""
     return f"""        <a class="work" href="/cases/{p['slug']}/">
           {photo_tag(p['photos'][0])}
           <h3>{esc(p['name'])}</h3>
@@ -200,6 +261,9 @@ def main():
                     "<!-- work-grid:end -->", "\n".join(card(p) for p in cards))
     replace_between(os.path.join(ROOT, "index.html"), "<!-- work-grid:start -->",
                     "<!-- work-grid:end -->", "\n".join(card(p) for p in cards[:HOME_CARDS]))
+    related = {p["slug"]: p["related_services"] for p in projects}
+    with open(os.path.join(ROOT, "scripts", "work-data", "related-services.json"), "w", encoding="utf-8", newline="\n") as f:
+        f.write(json.dumps(related, indent=2) + "\n")
     print(f"{len(projects)} projects, {len(cards)} cards")
 
 

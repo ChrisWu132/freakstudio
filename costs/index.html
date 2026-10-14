@@ -17,7 +17,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/css/style.css?v=20261014b">
+<link rel="stylesheet" href="/css/style.css?v=20261014c">
+<link rel="stylesheet" href="/css/services.css?v=20261014b">
 </head>
 <body>
 
@@ -28,6 +29,7 @@
       <span class="brand-name">anvol</span>
     </a>
     <nav class="nav-links" id="nav-links" aria-label="Main">
+      <a href="/what-we-build/">What we build</a>
       <a href="/services/">Services</a>
       <a href="/cases/">Cases</a>
       <a href="/costs/">Costs</a>
@@ -52,19 +54,43 @@
     <div class="container">
       <div class="rows">
         <div class="row"><h2>Four kinds of cost</h2><dl><dt>Development fee</dt><dd>Engineering, design, integration and project work.</dd><dt>Prototype cost</dt><dd>Building and testing the first units.</dd><dt>Pilot batch cost</dt><dd>Producing a small validated batch.</dd><dt>Repeat batch cost</dt><dd>Repeating production once the design and process are stable.</dd></dl></div>
-        <div class="row"><h2>Three delivered projects</h2><div class="table-wrap"><table class="cost-table" style="margin-top:0">
+        <div class="row" id="breakdown"><h2>What a quote breaks into</h2><dl><dt>Development fee</dt><dd>Engineering, design, debugging and project management. Paid once, so a bigger batch spreads it thinner.</dd><dt>BOM / unit cost</dt><dd>Parts and manufacturing for each unit: parts, PCB and assembly, enclosure, final assembly and test. <a href="#unit">Shares below</a>.</dd><dt>Quantity</dt><dd>The units in this run. Each batch is priced for its own quantity.</dd><dt>Testing</dt><dd>Test time, and a test fixture when one is needed.</dd><dt>Packaging</dt><dd>Packaging and packing of each tested unit.</dd><dt>Shipping</dt><dd>Not in the total. <a href="#excluded">What totals leave out</a>.</dd><dt>Exclusions</dt><dd>Certification, later scope changes and anything you add. Listed in the written scope.</dd></dl></div>
+        <div class="row"><h2>Three delivered projects</h2><div><div class="table-wrap"><table class="cost-table" style="margin-top:0">
           <thead><tr><th>Project</th><th class="num">Units</th><th class="num">Per unit</th><th class="num">Development</th><th class="num">Total</th></tr></thead>
           <tbody>
             <tr><td>24-channel logic analyzer</td><td class="num">15</td><td class="num">$20</td><td class="num">$800</td><td class="num"><b>$1,100</b></td></tr>
             <tr><td>Lidar line-following car</td><td class="num">10</td><td class="num">$150</td><td class="num">$5,000</td><td class="num"><b>$6,500</b></td></tr>
             <tr><td>Swing-arm tracked robot</td><td class="num">4</td><td class="num">$5,000</td><td class="num">$10,000</td><td class="num"><b>$30,000</b></td></tr>
           </tbody>
-        </table></div><p class="section-note">Total = development fee + units × per-unit price. Most of the difference between projects is the development fee, which follows the engineering work, not the unit count.</p></div>
-        <div class="row"><h2>Why small batches cost more per unit</h2><dl><dt>Parts</dt><dd>About 40% of unit cost in batches of 5 to 20.</dd><dt>PCB and assembly</dt><dd>About 40%. Each board-assembly run pays a fixed machine setup charge.</dd><dt>Enclosure</dt><dd>About 15%.</dd><dt>Final assembly and test</dt><dd>About 5%.</dd></dl></div>
+        </table></div><p class="section-note">Total = development fee + units × per-unit price. Most of the difference between projects is the development fee, which follows the engineering work, not the unit count.</p></div></div>
+        <div class="row" id="unit"><h2>Why small batches cost more per unit</h2><dl><dt>Parts</dt><dd>About 40% of unit cost in batches of 5 to 20.</dd><dt>PCB and assembly</dt><dd>About 40%. Each board-assembly run pays a fixed machine setup charge.</dd><dt>Enclosure</dt><dd>About 15%.</dd><dt>Final assembly and test</dt><dd>About 5%.</dd></dl></div>
         <div class="row"><h2>Development fee, as a rule of thumb</h2><dl><dt>Simple small device</dt><dd>About $500 to $3,000.</dd><dt>Larger robot</dt><dd>About $10,000 to $20,000.</dd><dt>Note</dt><dd>These are our engineers' experience ranges, not quotes. Compare against the three projects above.</dd></dl></div>
-        <div class="row"><h2>What totals leave out</h2><dl><dt>Certification</dt><dd>None of the three went through FCC or CE. Quoted separately when a product needs it.</dd><dt>Shipping and duties</dt><dd>Usually arranged by the customer once units leave the factory.</dd><dt>Extras</dt><dd>Tutorials, training or a live demo.</dd><dt>100 or 1,000 units</dt><dd>Not published. None of these were made at that volume, and small-batch prices should not be stretched to it.</dd></dl></div>
+        <div class="row" id="excluded"><h2>What totals leave out</h2><dl><dt>Certification</dt><dd>None of the three went through FCC or CE. Quoted separately when a product needs it.</dd><dt>Shipping and duties</dt><dd>Usually arranged by the customer once units leave the factory.</dd><dt>Scope changes</dt><dd>Major changes are re-quoted, with a new timeline, before work continues.</dd><dt>Extras</dt><dd>Tutorials, training or a live demo.</dd><dt>100 or 1,000 units</dt><dd>Not published. None of these were made at that volume, and small-batch prices should not be stretched to it.</dd></dl></div>
       </div>
       <p class="build-foot">Machine-readable data under CC BY 4.0: <a href="https://github.com/ChrisWu132/hardware-prototype-costs" target="_blank" rel="noopener">hardware-prototype-costs on GitHub →</a></p>
+    </div>
+  </section>
+
+  <section class="section section-paper" id="estimate">
+    <div class="container">
+      <h2>Quick estimate: <em>what your project involves.</em></h2>
+      <p class="section-note">Not a price. Answer what you know and you will see whether Anvol fits, which engineering work is involved, what will drive the cost, and whether a paid evaluation makes sense first.</p>
+      <div class="est">
+        <form class="est-form" id="est-form" onsubmit="return false">
+          <label>Where are you today?<select name="stage"><option value="">Choose one</option><option value="idea">An idea or sketch</option><option value="partial_design">A development board or partial design</option><option value="working_prototype">A working prototype</option><option value="repeat_batch">A design I need repeated in batches</option></select></label>
+          <label>Do you have a PCB?<select name="pcb"><option value="">Not sure</option><option value="custom">Yes, a custom PCB</option><option value="devboard">Only a development board or breadboard</option><option value="none">No</option></select></label>
+          <label>Do you have a BOM?<select name="bom"><option value="">Not sure</option><option value="full">Yes, complete</option><option value="partial">Partly</option><option value="none">No</option></select></label>
+          <label>Need firmware?<select name="firmware"><option value="">Not sure</option><option value="new">Yes, new firmware</option><option value="changes">Changes to existing firmware</option><option value="none">No, it is done</option></select></label>
+          <label>Need an enclosure?<select name="enclosure"><option value="">Not sure</option><option value="new">Yes, a new enclosure</option><option value="changes">Changes to an existing one</option><option value="none">No</option></select></label>
+          <label>Need parts sourced?<select name="sourcing"><option value="">Not sure</option><option value="yes">Yes, Anvol buys the parts</option><option value="none">No</option></select></label>
+          <label>Quantity<select name="quantity"><option value="">Not sure</option><option value="proto">A few prototypes</option><option value="small">Up to about 20</option><option value="mid">About 20 to 100</option><option value="large">100 or more</option></select></label>
+          <label>Need testing?<select name="testing"><option value="">Not sure</option><option value="unit">Every unit tested</option><option value="proto">Prototype testing only</option><option value="none">No</option></select></label>
+          <label>Need packaging?<select name="packaging"><option value="">Not sure</option><option value="retail">Retail or branded packaging</option><option value="protect">Shipping protection only</option><option value="none">No</option></select></label>
+          <label>Target market<select name="market"><option value="">Not decided</option><option value="us">United States</option><option value="eu">Europe</option><option value="other">Elsewhere</option><option value="internal">Internal use, research or classroom</option></select></label>
+          <label>Target date<select name="date"><option value="">No fixed date</option><option value="1m">Within a month</option><option value="3m">Within 3 months</option><option value="later">Later than 3 months</option></select></label>
+        </form>
+        <div class="est-out" id="est-out" aria-live="polite"></div>
+      </div>
     </div>
   </section>
 
@@ -95,6 +121,7 @@
   </div>
 </footer>
 
-<script src="/js/main.js?v=20261014b"></script>
+<script src="/js/main.js?v=20261014c"></script>
+<script src="/js/estimate.js?v=20261014b"></script>
 </body>
 </html>

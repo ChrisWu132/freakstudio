@@ -11,22 +11,28 @@ function memoryStorage(initial = {}) {
 
 function fixture(result, valid = true, files = [], uploadOk = true, env = {}) {
   let submit, resets = 0, requests = 0, reported = 0, sent = null;
+  const beacons = [];
   const button = { innerHTML: 'Send', disabled: false };
   const note = { textContent: 'Contact us', className: 'form-note' };
   const form = {
     email: { value: 'test@example.com' }, whatsapp: { value: '+1 555 123 4567' }, whatsapp_ok: { checked: true },
     message: { value: 'A project' }, _honey: { value: '' }, files: { files },
+    name: { value: env.name || '' }, company: { value: '' }, nda_required: { checked: !!env.nda },
     stage: { value: 'working_prototype', selectedIndex: 3, options: [, , , { text: 'I have a working prototype' }] },
     quantity: { value: '50' }, target_date: { value: '' },
     checkValidity: () => valid, reportValidity: () => reported++,
-    reset: () => resets++, addEventListener: (_, fn) => { submit = fn; },
+    reset: () => resets++, addEventListener: (type, fn) => { if (type === 'submit') submit = fn; },
   };
   vm.runInNewContext(readFileSync(join(__dirname, '../js/main.js'), 'utf8'), {
     window: { matchMedia: () => ({ matches: false }), addEventListener() {}, scrollY: 0,
       location: { search: env.search || '', pathname: env.pathname || '/' },
-      sessionStorage: env.storage || memoryStorage() },
+      sessionStorage: env.storage || memoryStorage(), localStorage: memoryStorage() },
+    navigator: { sendBeacon: (url, blob) => { beacons.push(JSON.parse(blob.text)); return true; } },
+    Blob: class { constructor(parts) { this.text = parts.join(''); } },
     document: {
-      referrer: env.referrer || '',
+      referrer: env.referrer || '', addEventListener() {},
+      body: { appendChild() {}, classList: { add() {} } },
+      createElement: () => ({ setAttribute() {} }),
       getElementById: (id) => ({ 'quote-form': form, 'submit-btn': button, 'form-note': note })[id],
       querySelectorAll: () => [],
     },
@@ -40,7 +46,7 @@ function fixture(result, valid = true, files = [], uploadOk = true, env = {}) {
       requests++; sent = JSON.parse(init.body); return { ok: true, json: async () => result };
     },
   });
-  return { submit: () => submit({ preventDefault() {} }), form, button, note, sent: () => sent,
+  return { submit: () => submit({ preventDefault() {} }), form, button, note, sent: () => sent, beacons,
     counts: () => ({ resets, requests, reported }) };
 }
 
@@ -163,4 +169,29 @@ test('subject carries sender and time so Gmail keeps each enquiry in its own thr
   const f = fixture({ success: 'true' }); f.submit();
   await new Promise(setImmediate);
   assert.match(f.sent()._subject, /^New project enquiry: anvol\.dev · test@example\.com · \d{4}-\d\d-\d\d \d\d:\d\d UTC$/);
+});
+
+test('a confirmed send records a project_form_submit event; page view is recorded on load', async () => {
+  const f = fixture({ success: 'true' }); f.submit();
+  await new Promise(setImmediate);
+  const names = f.beacons.map((b) => b.event);
+  assert.equal(names[0], 'page_view');
+  assert.ok(names.includes('project_form_submit'));
+  assert.equal(f.beacons.find((b) => b.event === 'project_form_submit').detail, 'working_prototype');
+});
+
+test('a rejected send records project_form_error, not a submit', async () => {
+  const f = fixture({ success: false }); f.submit();
+  await new Promise(setImmediate);
+  const names = f.beacons.map((b) => b.event);
+  assert.ok(names.includes('project_form_error'));
+  assert.ok(!names.includes('project_form_submit'));
+});
+
+test('name, company and NDA request go into the email', async () => {
+  const f = fixture({ success: 'true' }, true, [], true, { name: 'Ada', nda: true }); f.submit();
+  await new Promise(setImmediate);
+  assert.equal(f.sent().name, 'Ada');
+  assert.equal(f.sent().company, 'not given');
+  assert.equal(f.sent().nda_required, 'yes');
 });

@@ -50,6 +50,11 @@
     "source_pages": [],
     "flags": [
       "Sources: block-less.com creator-program.html and landing.html (already public), spec §8.3. No price: block-less.com shows $3,500 but Zisheng's numbers differ (open decision)."
+    ],
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
     ]
   }
 ]

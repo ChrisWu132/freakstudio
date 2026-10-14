@@ -1,0 +1,57 @@
+/* Service detail pages, What We Build pages, services overview cards and the costs Quick Estimate.
+   Loaded after style.css, only by those pages. */
+
+/* ---------- rows on service / stage pages ---------- */
+.row-text{font-size:16px;line-height:1.65;color:var(--ink-soft);max-width:640px}
+.row .plain{margin-top:0}
+.row>*{min-width:0} /* lets the BOM table scroll inside its wrapper instead of widening the page */
+.row .plain a,.row-text a,.row dd a{text-underline-offset:3px}
+.row .accordion{border-top:0}
+.row .acc-btn{padding-top:0}
+.row .acc-item+.acc-item .acc-btn{padding-top:18px}
+.row .acc-btn{padding-bottom:18px;font-size:16px}
+.tag{font-weight:400;color:var(--ink-faint)}
+
+/* related cases inside a row */
+.rel-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.rel-grid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:6px;margin-bottom:12px}
+.rel-grid h3{font-size:16px}
+.rel-grid p{margin-top:4px;font-size:14px;line-height:1.5;color:var(--ink-soft)}
+
+/* BOM risk table (example) */
+.bom-table{margin-top:16px;min-width:720px;font-size:14px}
+.bom-table th,.bom-table td{padding:10px 10px;vertical-align:top}
+.bom-table caption{caption-side:top;text-align:left;font-size:13px;font-weight:600;color:var(--ink-faint);padding-bottom:4px}
+
+/* ---------- services overview cards ---------- */
+.svc-get{list-style:none}
+.svc-get li{padding-left:14px;position:relative}
+.svc-get li::before{content:"";position:absolute;left:0;top:.7em;width:5px;height:1px;background:var(--ink-faint)}
+.svc-more{display:inline-block;margin-top:16px;font-size:14px;font-weight:600;text-underline-offset:3px}
+
+/* ---------- Quick Estimate (costs page, js/estimate.js) ---------- */
+.est{display:grid;grid-template-columns:1fr 1fr;gap:48px;margin-top:40px;align-items:start}
+.est-form{display:grid;grid-template-columns:1fr 1fr;gap:14px 16px}
+.est-form label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:600;min-width:0}
+.est-form select{width:100%;min-width:0;border:1px solid var(--line);border-radius:8px;padding:10px 12px;font-family:inherit;font-size:15px;color:var(--ink);background:#fff}
+.est-form select:focus{border-color:var(--accent);outline:none}
+.est-out{border:1px solid var(--line);border-radius:8px;background:#fff;padding:24px}
+.est-out h3{font-size:15px;margin-top:18px}
+.est-out h3:first-child{margin-top:0}
+.est-out p,.est-out li{font-size:15px;line-height:1.55;color:var(--ink-soft)}
+.est-out ul{padding-left:18px;margin-top:6px}
+.est-out p{margin-top:6px}
+.est-out a{text-underline-offset:3px}
+.est-out .btn{margin-top:20px}
+.est-empty{color:var(--ink-faint)}
+
+@media (max-width:960px){
+  .est{grid-template-columns:1fr;gap:32px}
+}
+@media (max-width:640px){
+  .rel-grid{grid-template-columns:1fr;gap:16px}
+  .rel-grid a.work{display:grid;grid-template-columns:112px 1fr;gap:14px;align-items:start}
+  .rel-grid img{margin-bottom:0}
+  .est-form{grid-template-columns:1fr}
+  .est-out{padding:20px 16px}
+}

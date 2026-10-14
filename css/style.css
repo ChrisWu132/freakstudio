@@ -273,11 +273,14 @@ a.build:hover h3{color:var(--accent)}
 @media (max-width:640px){.page-strip{grid-template-columns:1fr 1fr}.page-strip img{height:140px}.page-strip img:nth-child(3){display:none}}
 /* partner-factory equipment (small originals, shown near native size) and certificates */
 .equip-head{font-size:16px;font-weight:700;margin:32px 0 0}
-.equip-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:12px;margin-top:12px}
-.equip-grid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:4px}
+.equip-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;margin-top:12px}
+.equip-grid img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:4px}.equip-grid img.equip-render{object-fit:contain;background:#fff}
 .equip-grid figcaption{margin-top:6px;font-size:13px;line-height:1.4;color:var(--ink-soft)}
 .cert-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:20px}
 .cert-grid img{width:100%;height:auto;aspect-ratio:5/7;object-fit:contain;background:var(--panel);border-radius:6px}
 .cert-grid figcaption{margin-top:8px;font-size:13px;line-height:1.5;color:var(--ink-soft)}
 @media (max-width:960px){.equip-grid{grid-template-columns:repeat(4,1fr)}.cert-grid{grid-template-columns:repeat(3,1fr)}}
 @media (max-width:640px){.equip-grid{grid-template-columns:repeat(3,1fr)}.cert-grid{grid-template-columns:1fr 1fr}}
+/* phone: fixed Review my project + WhatsApp (js/main.js adds the bar) */
+.mobile-cta{display:none}
+@media (max-width:760px){.mobile-cta{display:grid;grid-template-columns:1.4fr 1fr;gap:8px;position:fixed;left:0;right:0;bottom:0;z-index:60;padding:8px 16px calc(8px + env(safe-area-inset-bottom));background:var(--bg);border-top:1px solid var(--line)}.mobile-cta .btn{min-height:44px;padding:10px 12px}.mobile-cta .btn-ghost{background:var(--bg);color:var(--ink);border:1px solid var(--line)}body.has-mobile-cta{padding-bottom:72px}body.has-mobile-cta .nav .btn{display:none}body.has-mobile-cta .nav-toggle{margin-left:auto}}

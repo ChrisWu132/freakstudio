@@ -1,0 +1,131 @@
+{
+  "logic-analyzer": [
+    "/services/hardware-engineering-prototype/",
+    "/services/enclosure-integration/",
+    "/services/testing-quality/"
+  ],
+  "lidar-car": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/testing-quality/"
+  ],
+  "tracked-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "desk-ai-companion": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "hexapod-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "indoor-delivery-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "pixelsky-led-board": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "project-play": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "pottedbaby-smart-planter": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "ros2-omni-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/testing-quality/"
+  ],
+  "graftsense-module-kit": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/pilot-small-batch/"
+  ],
+  "chengxiaozhi-maker-kits": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "voice-robot-dog": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "robot-dog-8dof": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "voice-quadruped-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "wheel-leg-balancing-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/testing-quality/"
+  ],
+  "mecanum-arm-kit": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "ai-voice-companion": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "ros-inspection-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "laser-weeding-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "rm-mecanum-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "rm-omni-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "rm-swerve-robot": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "gel-blaster-tank": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ],
+  "f450-quadcopter": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/testing-quality/"
+  ],
+  "flat-frame-rov": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "orange-shell-rov": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/",
+    "/services/enclosure-integration/"
+  ],
+  "eight-thruster-rov": [
+    "/services/hardware-engineering-prototype/",
+    "/services/firmware-embedded/"
+  ]
+}

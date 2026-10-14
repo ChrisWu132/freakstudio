@@ -86,7 +86,22 @@
       "Rejected p36 x218/x219: duplicates of p35 shots (one mirrored).",
       "Slide says 'IP-rated structure design' without a rating; not used.",
       "Slide wording 'articulated arm' read as the swing-arm track modules (p36 lists 'tracks, swing arms'); no separate manipulator is visible in any photo.",
-      "Added after the 10-13 owner update: p37 x224/x223 (purple boards with Chinese slogans in the background; now allowed). x223 is a low-res video frame (588x279)."
+      "Added after the 10-13 owner update: p37 x224/x223 (purple boards with Chinese slogans in the background; now allowed). x223 is a low-res video frame (588x279).",
+      "Deck p35-37 lists USD 30,000 development fee, USD 6,000 per unit (incl. assembly, 4G, camera, video) and MOQ 1 set; this differs from the delivered page ($10,000 development, 4 robots at $5,000). Delivered numbers kept, deck figures not shown."
+    ],
+    "challenge": [
+      "Complex articulated track design and precise manufacturing",
+      "High assembly difficulty with multi-part track modules",
+      "Reliable operation in harsh and uneven terrain",
+      "Integration of camera, 4G communication and control systems",
+      "Heat dissipation, waterproofing and structural robustness",
+      "Stability, safety and long-term reliability"
+    ],
+    "challenge_page": 37,
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
     ]
   },
   {
@@ -175,7 +190,37 @@
       "Photos 5 (PCB CAD render, x236) and 6 (ground-station screenshot + Chinese gamepad manual, x237) come from p39, the slide titled 'Flat-Frame Underwater ROV'. They are filed here by slide title, but p39's real photos show the orange-shell vehicle (see orange-shell-rov), so they may belong to that build instead.",
       "The orange-shell ROV photos on p39 are NOT added here (not confident it's the same vehicle). They are a separate project: orange-shell-rov."
     ],
-    "card_stack": "RK3566 Linux · thruster control · depth sensor"
+    "card_stack": "RK3566 Linux · thruster control · depth sensor",
+    "commercial": {
+      "source_pages": [
+        38
+      ],
+      "dev_fee": [
+        "USD 30,000"
+      ],
+      "unit_label": "Per unit",
+      "unit_cost": [
+        "USD 3,000 / set"
+      ],
+      "included": [
+        "Assembly",
+        "4G remote control",
+        "Camera video transmission"
+      ]
+    },
+    "card_line": "2 months · dev. fee USD 30,000 (reference)",
+    "challenge": [
+      "Structural design for waterproof sealing",
+      "Precision machining and assembly",
+      "Cable routing and connector sealing",
+      "Strength, maintainability and compact packaging"
+    ],
+    "challenge_page": 38,
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
+    ]
   },
   {
     "slug": "ros-inspection-robot",
@@ -228,7 +273,36 @@
       "Rejected p40 x241: tighter crop of the same photo. Only one distinct photo exists for this project.",
       "Slide gives no main-controller model, battery or speed; tech_stack covers only what the slide states."
     ],
-    "card_stack": "ROS · SLAM · 360° lidar"
+    "card_stack": "ROS · SLAM · 360° lidar",
+    "commercial": {
+      "source_pages": [
+        40
+      ],
+      "dev_fee": [
+        "USD 10,000"
+      ],
+      "unit_label": "Per unit",
+      "unit_cost": [
+        "USD 3,000 / unit"
+      ],
+      "included": [
+        "Assembly",
+        "4G remote control",
+        "Camera video transmission"
+      ]
+    },
+    "card_line": "1 month · dev. fee USD 10,000 (reference)",
+    "challenge": [
+      "Large-scale chassis structure design",
+      "Precision machining, assembly and integration",
+      "Mechanical robustness and platform stability",
+      "Suspension and motion coordination"
+    ],
+    "challenge_page": 40,
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/"
+    ]
   },
   {
     "slug": "eight-thruster-rov",
@@ -291,7 +365,25 @@
       "Photos 1-2 are the two cut-outs on white from p43 x258, split into separate files and added after the 10-13 owner update. No in-environment photo exists.",
       "Still excluded: the p43 hero image (part of the AI-looking background layer, low-res, slide text at its edges), the underwater operation and application scenes (AI-generated reef scenes), and the ground-station laptop image (part of the same AI-looking layer)."
     ],
-    "card_stack": "8 thrusters · 4–6 DOF arm · 1080p video"
+    "card_stack": "8 thrusters · 4–6 DOF arm · 1080p video",
+    "commercial": {
+      "source_pages": [
+        43
+      ],
+      "dev_fee": [
+        "23,000 USD"
+      ],
+      "unit_label": "Per unit",
+      "unit_cost": [
+        "3,800 USD assembled (for 10 sets)"
+      ],
+      "quantity": "10 sets (production quantity)"
+    },
+    "card_line": "2 months · dev. fee USD 23,000 (reference)",
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/"
+    ]
   },
   {
     "slug": "indoor-delivery-robot",
@@ -377,7 +469,26 @@
       "Added after the 10-13 owner update: p46 x272 (hotRC brand visible on the remote; now allowed).",
       "Still excluded: p45 x266 (a person's partial face and an NY logo; privacy), p45 x267 (duplicate of photo 3), application-scene thumbnails on p45 (AI-generated stock scenes), and the p46 component tiles and operation thumbnails (part of the slide background, with text)."
     ],
-    "card_stack": "ESP32 · UWB follow · ultrasonic avoidance"
+    "card_stack": "ESP32 · UWB follow · ultrasonic avoidance",
+    "commercial": {
+      "source_pages": [
+        45,
+        46
+      ],
+      "dev_fee": [
+        "USD 20,000"
+      ],
+      "unit_label": "Per unit",
+      "unit_cost": [
+        "USD 2,500 (including assembly)"
+      ],
+      "quantity": "4 sets"
+    },
+    "card_line": "1 month · dev. fee USD 20,000 (reference)",
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/"
+    ]
   },
   {
     "slug": "orange-shell-rov",
@@ -440,7 +551,30 @@
       "Name is mine; the slide gives this vehicle no separate name.",
       "Photo 2 has red Chinese annotation baked in ('蓝色部分为EC8插头' = 'blue part is the EC8 plug'); allowed after the 10-13 update."
     ],
-    "card_stack": "RK3566 Linux · MS5837 depth · Qt ground station"
+    "card_stack": "RK3566 Linux · MS5837 depth · Qt ground station",
+    "commercial": {
+      "source_pages": [
+        39
+      ],
+      "dev_fee": [
+        "USD 30,000"
+      ],
+      "unit_label": "Per unit",
+      "unit_cost": [
+        "USD 3,000 / set"
+      ],
+      "included": [
+        "Assembly",
+        "4G remote control",
+        "Camera video transmission"
+      ]
+    },
+    "card_line": "2 months · dev. fee USD 30,000 (reference)",
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
+    ]
   },
   {
     "slug": "laser-weeding-robot",
@@ -528,6 +662,37 @@
       "Slide header 'Smart Farming Solutions' and 'rugged enclosure for outdoor/agricultural use' are claims; the photos show paving/asphalt and a grass edge, not a crop field.",
       "Category 'Agriculture' is mine, from the slide header 'Agricultural Robotics'."
     ],
-    "card_stack": "ROS · laser array · 4G video link"
+    "card_stack": "ROS · laser array · 4G video link",
+    "commercial": {
+      "source_pages": [
+        41,
+        42
+      ],
+      "dev_fee": [
+        "USD 10,000"
+      ],
+      "unit_label": "Per unit",
+      "unit_cost": [
+        "USD 3,500"
+      ],
+      "included": [
+        "Assembly",
+        "4G remote control",
+        "Camera video transmission"
+      ]
+    },
+    "card_line": "1 month · dev. fee USD 10,000 (reference)",
+    "challenge": [
+      "Mechanical structure, fabrication and assembly",
+      "Laser array mounting and pitch-angle control",
+      "Remote manual aiming and multi-channel safety interlocks",
+      "ROS integration for mobility, control and remote operation"
+    ],
+    "challenge_page": 41,
+    "related_services": [
+      "/services/hardware-engineering-prototype/",
+      "/services/firmware-embedded/",
+      "/services/enclosure-integration/"
+    ]
   }
 ]
