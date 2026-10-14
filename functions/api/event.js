@@ -25,6 +25,9 @@ export async function onRequestPost({ request, env }) {
   if (!EVENTS.has(body.event)) return new Response(null, { status: 400 });
   const row = FIELDS.map((k) => String(body[k] ?? "").slice(0, 300));
   const country = request.headers.get("CF-IPCountry") || "";
+  /* No D1 bound yet (anvol-site-events does not exist, 2026-10-14): every event threw a 500 into the
+     visitor's console. Accept and drop until the database and its wrangler.toml binding exist (HANDOFF). */
+  if (!env.EVENTS) return new Response(null, { status: 204 });
   await env.EVENTS.prepare(
     "INSERT INTO events (ts, event, path, sid, landing_page, referrer, utm_source, utm_medium, utm_campaign, " +
     "first_source, device, detail, country) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)"

@@ -11,7 +11,7 @@ function memoryStorage(initial = {}) {
 
 function fixture(result, valid = true, files = [], uploadOk = true, env = {}) {
   let submit, resets = 0, requests = 0, reported = 0, sent = null;
-  const beacons = [];
+  const beacons = [], timers = [];
   const button = { innerHTML: 'Send', disabled: false };
   const note = { textContent: 'Contact us', className: 'form-note' };
   const form = {
@@ -37,16 +37,23 @@ function fixture(result, valid = true, files = [], uploadOk = true, env = {}) {
       querySelectorAll: () => [],
     },
     URLSearchParams,
+    AbortController,
+    /* Timers fire only when a test calls fireTimers(): the upload timeout without a two-minute wait. */
+    setTimeout: (fn) => { timers.push(fn); return timers.length; },
+    clearTimeout: (id) => { timers[id - 1] = null; },
     FormData: class { append() {} },
     fetch: async (url, init) => {
       if (url === '/api/upload') {
         const ok = Array.isArray(uploadOk) ? uploadOk.shift() : uploadOk; /* array: one answer per upload, in order */
+        /* 'hang': a half-dead connection that only settles when the page aborts it. */
+        if (ok === 'hang') return new Promise((_, reject) => init.signal.addEventListener('abort', () => reject(new Error('aborted'))));
         return { ok, status: ok ? 200 : 500, json: async () => ({ url: 'https://anvol.dev/files/k/a.pdf' }) };
       }
       requests++; sent = JSON.parse(init.body); return { ok: true, json: async () => result };
     },
   });
   return { submit: () => submit({ preventDefault() {} }), form, button, note, sent: () => sent, beacons,
+    fireTimers: () => timers.splice(0).forEach((fn) => fn && fn()),
     counts: () => ({ resets, requests, reported }) };
 }
 
@@ -103,6 +110,18 @@ test('a failed upload still sends the enquiry and names the file that did not ar
   assert.equal(f.sent().attachments_failed, 'board.zip');
   assert.match(f.note.textContent, /board\.zip/);
   assert.equal(f.note.className, 'form-note err');
+});
+
+test('an upload that never answers is aborted and the enquiry still goes, naming the file', async () => {
+  const f = fixture({ success: 'true' }, true, [{ size: 1000, name: 'ok.pdf' }, { size: 1000, name: 'stuck.step' }], [true, 'hang']);
+  f.submit();
+  await new Promise(setImmediate);
+  assert.equal(f.counts().requests, 0, 'still waiting on the stuck upload');
+  f.fireTimers();
+  await new Promise(setImmediate);
+  assert.equal(f.counts().requests, 1);
+  assert.equal(f.sent().attachments, 'https://anvol.dev/files/k/a.pdf');
+  assert.equal(f.sent().attachments_failed, 'stuck.step');
 });
 
 test('no attachments_failed field when every upload worked', async () => {

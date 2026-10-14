@@ -126,12 +126,18 @@
   var MAX_FILES = 5;
   var MAX_FILE_BYTES = 20 * 1024 * 1024;
   var form = document.getElementById("quote-form");
+  /* A half-dead connection never settles the fetch, and the enquiry sat in "Uploading files…" for good.
+     Past the limit the upload is aborted: the file is listed as failed and the enquiry still goes. */
+  var UPLOAD_TIMEOUT_MS = 120000;
   function uploadFile(file) {
     var data = new FormData();
     data.append("file", file);
-    return fetch("/api/upload", { method: "POST", body: data })
+    var controller = new AbortController();
+    var timer = setTimeout(function () { controller.abort(); }, UPLOAD_TIMEOUT_MS);
+    return fetch("/api/upload", { method: "POST", body: data, signal: controller.signal })
       .then(function (r) { if (!r.ok) throw new Error("Upload failed: " + r.status); return r.json(); })
-      .then(function (result) { return result.url; });
+      .then(function (result) { return result.url; })
+      .finally(function () { clearTimeout(timer); });
   }
   function withSource(payload) {
     Object.keys(source).forEach(function (k) { payload[k] = source[k]; });
