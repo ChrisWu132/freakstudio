@@ -102,7 +102,7 @@ def detail_block(p):
 def page(p, nav, footer, css):
     url = f"https://anvol.dev/cases/{p['slug']}/"
     title = f"{p['name']}: {p.get('category', 'Hardware')} build | Anvol"
-    desc = f"{p['one_liner']} Built by our engineers in Shenzhen. Tech stack: {stack_line(p, 4)}."
+    desc = f"{p['one_liner']} Built by our engineers. Tech stack: {stack_line(p, 4)}."
     crumbs = json.dumps({"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": "Anvol", "item": "https://anvol.dev/"},
         {"@type": "ListItem", "position": 2, "name": "Cases", "item": "https://anvol.dev/cases/"},
