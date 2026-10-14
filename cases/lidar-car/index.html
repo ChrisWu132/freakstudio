@@ -54,13 +54,15 @@
   <img src="/assets/img/case-line-follower.jpg" alt="Robot car chassis with lidar, a custom control board with a small OLED screen and wiring" width="1000" height="594">
   <figcaption class="photo-cap">The control board on the chassis: OLED screen, motor drivers and sensor connectors.</figcaption>
 </figure>
-<div class="case-gallery">
-  <figure><img src="/assets/img/work/lidar-car-1.jpg" alt="Top view of a four-wheel rover with a black lidar unit on the front and a controller board with a small OLED screen at the back, on a beige surface" width="825" height="955" loading="lazy"><figcaption>Rover with lidar and controller board</figcaption></figure>
-</div>
 <div class="rows">
   <div class="row"><h2>Tech stack</h2><dl><dt>Main controller</dt><dd>STM32F103RCT6</dd><dt>Sensors</dt><dd>Lidar, line-tracking sensors, MPU6050 IMU, wheel encoders, ultrasonic sensor port</dd><dt>Drive</dt><dd>4-wheel chassis, DC motors with dual encoded motor-driver ports</dd><dt>Control</dt><dd>PID closed-loop speed control; modes for manual/app control, lidar avoidance, lidar follow, wall following, CCD and electromagnetic line tracking</dd><dt>Wireless</dt><dd>Bluetooth module for app / remote control</dd><dt>Power</dt><dd>6–16 V DC input, 5 V 5 A output, voltage monitor</dd><dt>Interfaces</dt><dd>Display port, buzzer, SWD debug, USB download, reserved serial port</dd></dl></div>
   <div class="row"><h2>What we built</h2><ul class="plain case-text"><li>Device-side software: embedded control, drivers and application logic</li><li>Controller board architecture: sensors, motor drive and power design</li><li>Chassis selection, mechanical installation and calibration</li><li>PID motor tuning for closed-loop speed control</li><li>Lidar data acquisition and processing</li><li>Obstacle-avoidance algorithm with real-time perception and path planning</li><li>Multi-sensor line-following algorithm</li><li>Motor driver design with encoder feedback and protection</li><li>Functional testing, performance tuning and demo</li></ul></div>
   <div class="row"><h2>Development time</h2><p class="section-note case-text">1 month</p></div>
+</div>
+<h2 class="gallery-head">Photos and design files</h2>
+<div class="case-gallery">
+  <figure><img src="/assets/img/work/lidar-car-1.jpg" alt="Top view of a four-wheel rover with a black lidar unit on the front and a controller board with a small OLED screen at the back, on a beige surface" width="825" height="955" loading="lazy"><figcaption>Rover with lidar and controller board</figcaption></figure>
+  <figure><img src="/assets/img/work/lidar-car-2.jpg" alt="Black controller board with an STM32 chip, OLED and sensor headers, blue terminal block and a blue IMU module, on a white background with thin red pointer lines" width="602" height="396" loading="lazy"><figcaption>Controller board (pointer lines from the deck)</figcaption></figure>
 </div>
 <!-- work:end -->
       <div class="rows">

@@ -1,7 +1,7 @@
 [
   {
     "slug": "lidar-car",
-    "name": "Lidar Obstacle-Avoidance & Line-Following Rover",
+    "name": "Lidar obstacle-avoidance and line-following rover",
     "category": "Robotics",
     "one_liner": "A four-wheel rover that maps obstacles with lidar and follows lines on its own.",
     "intro": "A four-wheel rover platform with lidar, line tracking and several autonomous driving modes. The team built the device-side software, the controller board architecture, chose and tuned the chassis, and debugged the full system. It is meant for robotics teaching, algorithm testing, indoor inspection and demos.",
@@ -57,6 +57,11 @@
         "file": "/assets/img/work/lidar-car-1.jpg",
         "alt": "Top view of a four-wheel rover with a black lidar unit on the front and a controller board with a small OLED screen at the back, on a beige surface",
         "caption": "Rover with lidar and controller board"
+      },
+      {
+        "file": "/assets/img/work/lidar-car-2.jpg",
+        "alt": "Black controller board with an STM32 chip, OLED and sensor headers, blue terminal block and a blue IMU module, on a white background with thin red pointer lines",
+        "caption": "Controller board (pointer lines from the deck)"
       }
     ],
     "source_pages": [
@@ -64,14 +69,14 @@
       19
     ],
     "flags": [
-      "Only one usable photo: p19 repeats the same shot (IM126, near-duplicate of IM120, not saved).",
-      "Rejected IM121 (controller board): background cut out and red annotation lines baked in.",
-      "Slide p19 lists a development price and BOM figures; left out per the no-prices rule."
+      "The p19 rover photo (IM126) is a near-duplicate of IM120 and was not saved again. The first photo (/assets/img/case-line-follower.jpg) was already on the site; someone else added it, and it was kept.",
+      "Slide p19 lists a development price and BOM figures; left out per the no-prices rule.",
+      "lidar-car-2 (IM121) added after the owner allowed cutouts and annotations. The PDF stores it with a transparency mask; it is flattened onto white."
     ]
   },
   {
     "slug": "hexapod-robot",
-    "name": "Bionic Hexapod Robot",
+    "name": "Bionic hexapod robot",
     "category": "Robotics",
     "one_liner": "A six-legged walking robot with 18 servos, driven from a phone app.",
     "intro": "A multi-terrain six-legged robot for education, research and creative projects. It runs on an STM32 with 18 high-torque servos and can walk, turn, crab-walk, dance and run 24 preset actions. A dedicated Android app and a wireless remote control it.",
@@ -125,6 +130,21 @@
         "caption": "On the workbench"
       },
       {
+        "file": "/assets/img/work/hexapod-robot-5.jpg",
+        "alt": "Top view of the red hexapod on a blue anti-static mat surrounded by tools; the black body cover is embossed 'FreakStudio' and '广西城职大'",
+        "caption": "Red hexapod on the workbench"
+      },
+      {
+        "file": "/assets/img/work/hexapod-robot-6.jpg",
+        "alt": "Top view of the red hexapod with legs spread on a blue mat, a roll of solder beside it",
+        "caption": "Legs spread, top view"
+      },
+      {
+        "file": "/assets/img/work/hexapod-robot-7.jpg",
+        "alt": "Front view of the red hexapod standing on a blue mat in front of a bench power supply",
+        "caption": "Standing on the bench"
+      },
+      {
         "file": "/assets/img/work/hexapod-robot-3.jpg",
         "alt": "Hands plugging servo cables into a blue STM32 board mounted in a white 3D-printed hexapod frame",
         "caption": "Wiring the servos to the controller board"
@@ -133,6 +153,31 @@
         "file": "/assets/img/work/hexapod-robot-4.jpg",
         "alt": "Top view of a white 3D-printed hexapod with purple servos in every leg and the controller board in the center",
         "caption": "White frame build, controller board in the body"
+      },
+      {
+        "file": "/assets/img/work/hexapod-robot-8.jpg",
+        "alt": "Close-up of a white 3D-printed hexapod leg with purple servos and linkage arms",
+        "caption": "Leg assembly close-up"
+      },
+      {
+        "file": "/assets/img/work/hexapod-robot-9.jpg",
+        "alt": "Hand holding a white 3D-printed leg part with a servo fitted, cables and servo horns on the table",
+        "caption": "Fitting a servo into a leg part"
+      },
+      {
+        "file": "/assets/img/work/hexapod-robot-10.jpg",
+        "alt": "Video still: close-up of the white hexapod body frame and servo mounts, with a play-button overlay",
+        "caption": "Video still of the frame"
+      },
+      {
+        "file": "/assets/img/work/hexapod-robot-11.jpg",
+        "alt": "Screenshot of the phone control app with a drive joystick, speed and mode sliders, preset action buttons and posture pads, annotated in Chinese",
+        "caption": "Control app layout"
+      },
+      {
+        "file": "/assets/img/work/hexapod-robot-12.jpg",
+        "alt": "Servo wiring map: a photo of the hexapod with numbered servos 1-18 next to the controller board with matching numbered connectors, Chinese assembly notes in red and purple",
+        "caption": "Servo wiring map"
       }
     ],
     "source_pages": [
@@ -140,17 +185,18 @@
       21
     ],
     "flags": [
-      "SCHOOL NAME ON HARDWARE: the black body cover is embossed 'FreakStudio' plus '广西城职大' (a Guangxi vocational college). The two top-down shots in the p20 2x2 grid show it clearly and were excluded. hexapod-robot-1 shows the same cover from an angle where the text can't be read at this resolution (only 'FreakStudio' is faintly visible). Check it before publishing. The school marking may mean this was built for or with that school; the slide doesn't say so, so the copy doesn't claim it either way.",
-      "hexapod-robot-2 is cropped from one tile of a 2x2 photo grid (IM130), so it is only 500x378 px.",
-      "Photos 3 and 4 show a white 3D-printed build of the same design; the slide uses them as this project's build photos.",
-      "Rejected: video thumbnails with play-button overlays (IM131, IM132); app screenshot with Chinese annotations (IM133); servo wiring map with Chinese annotations (IM135); white leg close-up (IM134) and servo close-up (IM140), left out as redundant; app-scenario tiles baked into the slide (AI-looking stock scenes).",
-      "Slides list development cost, BOM and MOQ; left out per the no-prices rule."
+      "School name on the hardware: the black cover is embossed 'FreakStudio' and '广西城职大' (a Guangxi vocational college). It is plainly visible in hexapod-robot-5 and -6; the owner said 10-13 that this may now be published. The slide never says the robot was built for that school, so the copy doesn't claim it.",
+      "hexapod-robot-2, -5, -6 and -7 are single tiles cut from a 2x2 photo grid (IM130), about 500x375 px each.",
+      "Photos 3, 4 and 8-10 show a white 3D-printed build of the same design; the slide uses them as this project's build photos.",
+      "hexapod-robot-10 is a video thumbnail with a small play-button overlay (IM132).",
+      "Still excluded: IM131, a blurry video still that is mostly a play button over a red leg; the app-scenario tiles baked into the slide, which look AI-generated.",
+      "Slides list development cost, BOM and MOQ; left out."
     ],
     "card_stack": "STM32F407 · 18 servos · MPU6050 IMU"
   },
   {
     "slug": "ros2-omni-robot",
-    "name": "ROS2 Omnidirectional Robot",
+    "name": "ROS2 omnidirectional robot",
     "category": "Robotics",
     "one_liner": "A mecanum-wheel robot that maps rooms and navigates them on its own with ROS2.",
     "intro": "An omnidirectional mobile robot running ROS2, with LiDAR, a depth camera and room for expansion. It does SLAM mapping, autonomous navigation, obstacle avoidance and visual tracking. It is built for robotics teaching, research and real-world uses such as inspection and mapping.",
@@ -206,6 +252,16 @@
         "file": "/assets/img/work/ros2-omni-robot-2.jpg",
         "alt": "Angled view of the same mecanum-wheel robot on a tiled floor, with a tilted touchscreen and a black depth camera on an aluminum frame",
         "caption": "Mecanum chassis, depth camera and touchscreen"
+      },
+      {
+        "file": "/assets/img/work/ros2-omni-robot-3.jpg",
+        "alt": "Photo of a monitor showing a SLAM occupancy-grid map of a room being built, with the robot marker in green",
+        "caption": "SLAM map being built"
+      },
+      {
+        "file": "/assets/img/work/ros2-omni-robot-4.jpg",
+        "alt": "Top-view line drawing of the robot chassis with four mecanum wheels labelled A轮 and B轮",
+        "caption": "Chassis drawing, top view"
       }
     ],
     "source_pages": [
@@ -213,16 +269,16 @@
       23
     ],
     "flags": [
-      "The depth camera body has the vendor name 'ORBBEC' printed on it (a component brand, not a customer or school logo); kept. Drop the photos if no vendor names at all are wanted.",
-      "Rejected: the p23 hero image is a polished render/AI-looking scene, so not used; the front/side/rear thumbnails are baked into the slide; app-scenario tiles are AI stock; the SLAM screen photo (IM148) and video still with a play button (IM149) are blurry.",
-      "Rejected CAD top view (IM146) because it has Chinese labels (A轮/B轮). It could serve as the one design-file image if those labels are acceptable.",
+      "The depth camera body has the vendor name 'ORBBEC' printed on it; owner allows this.",
+      "ros2-omni-robot-3 is a phone photo of a screen and slightly soft, but the map is readable.",
+      "Still excluded: the p23 hero image and its front/side/rear thumbnails (polished AI-looking scene); the app-scenario tiles (AI stock); IM149, a blurry video still with a play button.",
       "Slides list development cost, BOM and MOQ; left out."
     ],
     "card_stack": "Raspberry Pi 4B · ROS2 · LiDAR + depth camera"
   },
   {
     "slug": "wheel-leg-balancing-robot",
-    "name": "Dual-Wheel Legged Self-Balancing Robot",
+    "name": "Wheel-legged self-balancing robot",
     "category": "Robotics",
     "one_liner": "A two-wheel balancing robot whose servo legs lift it over obstacles.",
     "intro": "A hybrid wheel-leg balancing robot built on an STM32 controller. It balances on two wheels for fast driving and uses servo-driven legs to lift one or both sides over obstacles. A 2.4 GHz handheld remote handles driving, speed switching and leg lifting.",
@@ -268,19 +324,32 @@
       "Debugging, testing and bring-up"
     ],
     "dev_time": "20 days",
-    "photos": [],
+    "photos": [
+      {
+        "file": "/assets/img/work/wheel-leg-balancing-robot-1.jpg",
+        "alt": "Three views of a white 3D-printed two-wheel robot with servo-driven legs, on a white background: top view, one side with a leg lifted, and the rear panel with switch and ports",
+        "caption": "Three views of the robot"
+      },
+      {
+        "file": "/assets/img/work/wheel-leg-balancing-robot-2.jpg",
+        "alt": "White handheld remote with two joysticks and two groups of buttons, on a white background",
+        "caption": "2.4 GHz remote controller"
+      }
+    ],
     "source_pages": [
       24,
       25
     ],
     "flags": [
-      "NO PHOTOS SAVED. The only hardware image (IM157 / IM161, same composite) is three background-removed cutouts pasted on white, with leftover background fragments at the edges. That is the cutout look the partner rule rejects. There is no in-environment photo. The remote-controller photo exists only baked into the slide.",
+      "Photos are white-background cutouts; the owner allowed them 10-13. wheel-leg-balancing-robot-1 is the deck's own three-view composite (IM157; IM161 on p25 is the same picture). It was not split up.",
+      "wheel-leg-balancing-robot-2 is cut from the p24 slide image (no separate embed). It is small (263x176 px) and the slide's own labels are outside the crop.",
       "Slides list development cost and BOM; left out."
-    ]
+    ],
+    "card_stack": "STM32F4 · MPU-6050 · PID/LQR balance"
   },
   {
     "slug": "voice-quadruped-robot",
-    "name": "Offline Voice-Controlled Quadruped Robot",
+    "name": "Offline voice-controlled quadruped",
     "category": "Robotics",
     "one_liner": "A small four-legged robot that obeys spoken commands with no internet.",
     "intro": "A compact four-legged robot with offline voice recognition and a 2.4 GHz remote, designed for education, prototyping and interactive displays. It responds to a wake word and fixed voice commands and can walk, turn, sit and stand. The team did the mechanical design, a custom control board and the firmware.",
@@ -321,21 +390,55 @@
       "System integration and debugging"
     ],
     "dev_time": "20 days",
-    "photos": [],
+    "photos": [
+      {
+        "file": "/assets/img/work/voice-quadruped-robot-1.jpg",
+        "alt": "Pink-and-white 3D-printed four-legged robot, angled view, with a speaker grille, a microphone and a sticker on the lid, on a white background",
+        "caption": "Robot, angled view"
+      },
+      {
+        "file": "/assets/img/work/voice-quadruped-robot-2.jpg",
+        "alt": "Front-angled view of the pink quadruped showing the power switch, speaker and lid sticker, on white",
+        "caption": "Front view with power switch"
+      },
+      {
+        "file": "/assets/img/work/voice-quadruped-robot-3.jpg",
+        "alt": "Top view of the pink quadruped's white lid with the microphone, speaker and a sticker with a QR code and logo",
+        "caption": "Top view of the lid"
+      },
+      {
+        "file": "/assets/img/work/voice-quadruped-robot-4.jpg",
+        "alt": "Pink quadruped seen from the other side, standing, on a white background",
+        "caption": "Side-angled view"
+      },
+      {
+        "file": "/assets/img/work/voice-quadruped-robot-5.jpg",
+        "alt": "Underside of the pink quadruped showing a black two-cell battery holder between the legs",
+        "caption": "Underside with battery holder"
+      },
+      {
+        "file": "/assets/img/work/voice-quadruped-robot-6.jpg",
+        "alt": "Close-up of one pink leg joint with its black lower leg, on white",
+        "caption": "Leg joint detail"
+      }
+    ],
     "source_pages": [
       26,
       27
     ],
     "flags": [
-      "NO PHOTOS SAVED. Every hardware image (IM165, IM166, IM167, IM168, IM172–IM176) is a background-removed cutout on white. All but the underside view also show a sticker on the lid with a QR code, a crest-like logo and Chinese text, which may be a school or third-party mark. The underside battery view (IM173 / IM168) is clean but still a cutout.",
+      "Photos are white-background cutouts; the owner allowed them 10-13.",
+      "A sticker on the lid has a QR code, a bird-head logo and Chinese text (unreadable at this size; no visible URL or phone number). The QR code may encode a link; check it if links must stay off the site.",
       "This is a different project from p17's 'Offline Voice-Controlled Robot Dog' (white body with an OLED face, handled by the other agent). Don't merge the two.",
-      "Rejected app-scenario tiles: AI-generated scenes with kids and classrooms.",
-      "p26 footer has useanvol.com, a sales email and a +86 WhatsApp number (none in extracted images). The slides also list fee and BOM; left out."
-    ]
+      "Skipped as duplicates or too small: IM165 (a composite of the same views), IM168 (a tighter crop of the underside, same as IM173), IM167 (237 px).",
+      "Still excluded: app-scenario tiles (AI-generated scenes with kids and classrooms). The p26 footer has useanvol.com, a sales email and a +86 WhatsApp number; none are in the saved images.",
+      "Slides list fee and BOM; left out."
+    ],
+    "card_stack": "STM32 · offline voice · 2.4 GHz remote"
   },
   {
     "slug": "mecanum-arm-kit",
-    "name": "Mecanum-Wheel Robotic Arm Car Teaching Kit",
+    "name": "Mecanum robot-arm car teaching kit",
     "category": "Education kit",
     "one_liner": "An Arduino robot car with gripper arm, handheld controller and 5-lesson course.",
     "intro": "A teaching kit built around an Arduino UNO mecanum-wheel car with a 3D-printed body, a robotic arm and a separate handheld wireless controller. It is designed for robotics classes, maker labs and hands-on engineering practice. The kit ships with a five-lesson course and courseware.",
@@ -373,20 +476,43 @@
       "Courseware: teaching slides, code, documents and guides"
     ],
     "dev_time": "15 days",
-    "photos": [],
+    "photos": [
+      {
+        "file": "/assets/img/work/mecanum-arm-kit-1.jpg",
+        "alt": "Side view of a black robot car with orange mecanum wheels and a servo-driven gripper arm, a handwritten '03' label on its side, on white",
+        "caption": "Robot car with arm, side view"
+      },
+      {
+        "file": "/assets/img/work/mecanum-arm-kit-2.jpg",
+        "alt": "Front view of the robot car showing the gripper arm, its servos and four orange mecanum wheels, on white",
+        "caption": "Front view"
+      },
+      {
+        "file": "/assets/img/work/mecanum-arm-kit-3.jpg",
+        "alt": "Blue handheld controller board with two joysticks, toggle switches, an OLED screen, a wireless module and 'Nano Controller' silkscreen, in a teal 3D-printed case",
+        "caption": "Handheld wireless controller"
+      },
+      {
+        "file": "/assets/img/work/mecanum-arm-kit-4.jpg",
+        "alt": "Back of the teal controller case with two blue cylindrical batteries in a holder and an '03' label",
+        "caption": "Controller battery compartment"
+      }
+    ],
     "source_pages": [
       28,
       29
     ],
     "flags": [
-      "NO PHOTOS SAVED. All hardware images (IM180, IM181, IM185) are background-removed cutouts on white; the car cutout has leftover grey background patches. The car and the controller's battery cover carry handwritten '03' unit labels. IM181 (controller PCB close-up) is the best fallback if a white-background image is ever acceptable.",
+      "Photos are white-background cutouts; the owner allowed them 10-13. mecanum-arm-kit-2 and -4 are single tiles cut from the deck's 2x2 composite (IM185); -1 and -3 are separate embeds (IM180, IM181).",
+      "The handwritten '03' labels are unit numbers on the hardware.",
       "The controller board silkscreen reads 'Nano Controller', but the slide text doesn't name the controller MCU, so it's left out of tech_stack.",
-      "Slides list fee, BOM and quantity; left out. 'Assembly not included' (assembled by users) is also on the slide."
-    ]
+      "Slides list fee, BOM and quantity; left out."
+    ],
+    "card_stack": "Arduino UNO · mecanum chassis · servo arm"
   },
   {
     "slug": "gel-blaster-tank",
-    "name": "Tracked Gel Blaster Robot",
+    "name": "Tracked gel blaster robot",
     "category": "Robotics",
     "one_liner": "A tracked robot with a remote-aimed turret that fires water-gel beads.",
     "intro": "An STM32-based tracked robot that combines a tracked chassis, a gel-bead launcher and an embedded control system. A two-axis servo turret handles aiming and a motor-driven module feeds the launcher. It was built for engineering demos, control experiments and prototype validation.",
@@ -437,20 +563,31 @@
         "file": "/assets/img/work/gel-blaster-tank-2.jpg",
         "alt": "Closer angled view of the tracked robot showing the servo turret, wiring and acrylic electronics enclosure, with lab equipment behind",
         "caption": "Turret, battery and electronics stack"
+      },
+      {
+        "file": "/assets/img/work/gel-blaster-tank-3.jpg",
+        "alt": "High-angle view of the tracked robot on a blue workbench mat, with the yellow gel-bead hopper on the launcher and tools around",
+        "caption": "Top-down on the workbench"
+      },
+      {
+        "file": "/assets/img/work/gel-blaster-tank-4.jpg",
+        "alt": "Angled view of the tracked robot's turret, battery and acrylic electronics stack in front of bench equipment",
+        "caption": "Turret and electronics, angled"
       }
     ],
     "source_pages": [
       30
     ],
     "flags": [
-      "Content note: this is a toy gel-bead 'blaster' with an aiming turret. Decide whether a weapon-style project fits the site before publishing.",
-      "Rejected IM191 (a different angle, but only 381 px wide) and IM192 (near-duplicate of IM190).",
+      "Content note: this is a toy gel-bead launcher with an aiming turret. The owner said 10-13 to publish all cases; the copy avoids combat wording.",
+      "gel-blaster-tank-3 and -4 are small (about 385x309 px); -4 is close in angle to -2.",
       "Slide lists development cost, BOM and MOQ; left out."
-    ]
+    ],
+    "card_stack": "STM32 · tracked chassis · 2-axis turret"
   },
   {
     "slug": "robot-dog-8dof",
-    "name": "Small Dynamic Robot Dog",
+    "name": "Small dynamic robot dog",
     "category": "Robotics",
     "one_liner": "A small 8-joint robot dog with its own programming tool for classrooms.",
     "intro": "A compact quadruped robot with an 8-DOF leg structure for walking, balancing and teaching. Besides the mechanics, electronics and firmware, the team built a dedicated IDE for deploying, debugging and visual programming. The architecture is open for vision and AI add-ons.",
@@ -502,16 +639,20 @@
         "file": "/assets/img/work/robot-dog-8dof-2.jpg",
         "alt": "Low side view of the orange robot dog's legs and servo linkages on a blue workbench mat",
         "caption": "Leg linkages on the bench"
+      },
+      {
+        "file": "/assets/img/work/robot-dog-8dof-3.jpg",
+        "alt": "Top view of the orange-and-grey robot dog on a blue workbench mat; the grey lid is embossed '广西城职大' and 'FreakStudio'",
+        "caption": "Top view on the workbench"
       }
     ],
     "source_pages": [
       31
     ],
     "flags": [
-      "SCHOOL NAME ON HARDWARE: in the top view (IM199) the lid reads '广西城职大' above 'FreakStudio', so that photo was excluded. robot-dog-8dof-1 shows the same lid at an angle; the top line can't be read at this resolution. Check it before publishing.",
-      "'FreakStudio' (presumably the partner team's studio name) is embossed on the body in both kept photos.",
-      "robot-dog-8dof-2 is small (396x264).",
-      "Rejected IM197: a motion-blurred video frame.",
+      "School name on the hardware: the lid reads '广西城职大' above 'FreakStudio' (plain in robot-dog-8dof-3). The owner said 10-13 that this may now be published.",
+      "robot-dog-8dof-2 and -3 are small (about 400x300 px).",
+      "Still excluded: IM197, a motion-blurred video frame.",
       "The slide calls the IDE the main difficulty ('requires significant time and engineering effort'); left out of the copy.",
       "Slide lists development cost and BOM; left out."
     ],
@@ -519,7 +660,7 @@
   },
   {
     "slug": "rm-swerve-robot",
-    "name": "RM Competition Robot: Swerve Chassis Platform",
+    "name": "RM competition robot: swerve chassis",
     "category": "Robotics",
     "one_liner": "An agile competition robot with steerable wheels and a turret-style gimbal.",
     "intro": "An agile robot for robotics competitions, built as a scalable development platform. The team did the chassis hardware, power system, controller and compute-board carrier, plus the mechanical gimbal and chassis and the embedded software.",
@@ -560,24 +701,27 @@
     "photos": [
       {
         "file": "/assets/img/work/rm-swerve-robot-1.jpg",
-        "alt": "Side view of a black competition robot with a number '1' armor plate, gold-colored wheels and a gimbal on top, standing on carpet in front of a printed backdrop",
-        "caption": "Competition robot, side view"
+        "alt": "Black carbon-fiber competition robot with white bumper rings and a tilted gimbal on a grey studio backdrop; each wheel sits under its own steering motor",
+        "caption": "Competition robot, studio shot"
       }
     ],
     "source_pages": [
-      32
+      32,
+      34
     ],
     "flags": [
-      "PROVENANCE: RM (RoboMaster-style) robots are usually built by university teams. Confirm with the partner that this is the team's own build before publishing.",
-      "WHEELS LOOK SWAPPED: the 'Swerve' slide photo shows gold mecanum-style roller wheels, while the p34 'Mecanum' photo shows steerable wheel modules. The captions don't name the wheel type. Ask the partner which photo goes with which slide.",
-      "The photo is part of the full-slide image (no separate embed), so it was cropped as a rectangle from IM202; about 736x611 px.",
-      "Slide wording 'support fire and tactical mobility' was left out. The footer shows anvolrobotics.com (not in the crop). The slide lists engineering fee, BOM and MOQ; left out.",
+      "PHOTO MOVED: on a high-zoom check, the photo the deck put on the p32 'Swerve' slide shows gold mecanum wheels with angled rollers. The photo on the p34 'Mecanum' slide shows steerable wheel modules: a motor stacked above each tyre. Each is now filed under the project whose wheels it shows. The file names are unchanged and their contents swapped (rm-swerve-robot-1.jpg now holds the p34 photo). Text still comes from each project's own slide (swerve text p32, mecanum text p34).",
+      "Provenance: RM (RoboMaster-style) robots are usually university-team builds. The owner said to publish all, but confirming with the partner is still worthwhile.",
+      "An orange cartoon mascot sticker with Chinese text sits on the gimbal; owner allows it.",
+      "Photo cropped from the full-slide image IM208 (no separate embed); about 671x532 px.",
+      "Slide wording 'support fire and tactical mobility' left out. The footers show anvolrobotics.com / anvol.com (not in the crops). Slides list engineering fee, BOM and MOQ; left out.",
       "Development time not stated."
-    ]
+    ],
+    "card_stack": "Swerve drive · multi-CAN · RTOS"
   },
   {
     "slug": "rm-omni-robot",
-    "name": "RM Competition Robot: Omni-Wheel Chassis Platform",
+    "name": "RM competition robot: omni-wheel chassis",
     "category": "Robotics",
     "one_liner": "A fast-turning omni-wheel competition robot with a gimbal and full custom electronics.",
     "intro": "An omni-wheel competition robot built to maneuver quickly in tight spaces. It also works as a base for teaching and further development. The team did the complete hardware, the chassis and gimbal mechanics, and the embedded software.",
@@ -624,16 +768,17 @@
       33
     ],
     "flags": [
-      "PROVENANCE: same question as rm-swerve-robot; confirm it's the team's own build.",
-      "There's a small white geometric emblem on a black panel next to the '3' plate. Its origin is unknown and it could be a team or school mark. Check before publishing.",
+      "Provenance: same note as rm-swerve-robot.",
+      "A small white geometric emblem on a black panel next to the '3' plate may be a team mark; owner allows it.",
       "Cropped from the full-slide image IM205; about 579x512 px.",
-      "Slide wording 'point defense and support' was left out. The slide lists engineering fee, BOM and MOQ; left out.",
+      "Slide wording 'point defense and support' left out. Slide lists engineering fee, BOM and MOQ; left out.",
       "Development time not stated."
-    ]
+    ],
+    "card_stack": "Omni wheels · CAN bus · RTOS"
   },
   {
     "slug": "rm-mecanum-robot",
-    "name": "RM Competition Robot: Mecanum-Wheel Chassis Platform",
+    "name": "RM competition robot: mecanum chassis",
     "category": "Robotics",
     "one_liner": "A modular aluminum competition robot base with a gimbal and CAN-controlled drive.",
     "intro": "A modular competition robot platform with a 6061 aluminum chassis and a top structure that carries a gimbal and payloads. The team designed the mechanics, the CAN-based electronics and the embedded control software.",
@@ -672,20 +817,21 @@
     "photos": [
       {
         "file": "/assets/img/work/rm-mecanum-robot-1.jpg",
-        "alt": "Black carbon-fiber competition robot with white bumper rings and a tilted gimbal, photographed on a grey studio backdrop",
-        "caption": "Competition robot, studio shot"
+        "alt": "Side view of a black competition robot with a number '1' armor plate, gold mecanum wheels with angled rollers and a gimbal on top, standing on carpet in front of a printed backdrop",
+        "caption": "Competition robot, side view"
       }
     ],
     "source_pages": [
-      34
+      34,
+      32
     ],
     "flags": [
-      "PROVENANCE: same question as the other RM robots.",
-      "An orange cartoon mascot sticker with Chinese text sits on the gimbal; it may be a team mascot. Check before publishing.",
-      "WHEELS LOOK SWAPPED: see rm-swerve-robot. This 'Mecanum' photo appears to show steerable wheel modules.",
-      "Studio grey-background shot (photographed that way, not a cutout). Cropped from the full-slide image IM208 with the slide frame trimmed; about 671x532 px.",
-      "The footer shows anvol.com (not in the crop). The slide lists engineering fee, BOM and MOQ; left out.",
+      "PHOTO MOVED: this photo comes from the p32 'Swerve' slide but shows mecanum wheels with angled rollers, so it belongs here. See rm-swerve-robot.",
+      "Provenance: same note as rm-swerve-robot.",
+      "Photo cropped from the full-slide image IM202; about 736x611 px.",
+      "Footers show anvolrobotics.com / anvol.com (not in the crops). Slides list engineering fee, BOM and MOQ; left out.",
       "Development time not stated."
-    ]
+    ],
+    "card_stack": "6061 aluminum · mecanum · CAN control"
   }
 ]

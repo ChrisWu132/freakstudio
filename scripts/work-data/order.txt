@@ -1,6 +1,5 @@
 # Card order on /cases/ (first 4 also on the homepage). Hand-written cost pages are listed so their detail block is rebuilt.
-# Left out until Chris/Zisheng decide: rm-swerve-robot, rm-omni-robot, rm-mecanum-robot (who built them), gel-blaster-tank (toy blaster),
-# chengxiaozhi-maker-kits, wheel-leg-balancing-robot, voice-quadruped-robot, mecanum-arm-kit, eight-thruster-rov, esp32-underwater-robot (no real photo).
+# Left out: Dancing Swing Light (NSFW print, waiting on Chris), esp32-underwater-robot (images look AI-generated, removed from data).
 logic-analyzer
 lidar-car
 tracked-robot
@@ -8,11 +7,24 @@ desk-ai-companion
 hexapod-robot
 indoor-delivery-robot
 pixelsky-led-board
+project-play
 pottedbaby-smart-planter
 ros2-omni-robot
+graftsense-module-kit
+chengxiaozhi-maker-kits
 voice-robot-dog
 robot-dog-8dof
+voice-quadruped-robot
+wheel-leg-balancing-robot
+mecanum-arm-kit
 ai-voice-companion
-graftsense-module-kit
 ros-inspection-robot
+laser-weeding-robot
+rm-mecanum-robot
+rm-omni-robot
+rm-swerve-robot
+gel-blaster-tank
+f450-quadcopter
 flat-frame-rov
+orange-shell-rov
+eight-thruster-rov

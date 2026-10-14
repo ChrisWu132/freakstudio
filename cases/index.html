@@ -50,14 +50,26 @@
   <section class="section" style="padding-top:24px">
     <div class="container">
       <h2>With <em>full costs.</em></h2>
-      <div class="table-wrap"><table class="cost-table">
-        <thead><tr><th>Project</th><th>Category</th><th>What it involved</th><th class="num">Units</th><th class="num">Development</th><th class="num">Per unit</th><th class="num">Total</th></tr></thead>
-        <tbody>
-          <tr><td><a href="/cases/logic-analyzer/">24-channel logic analyzer</a></td><td>Instrumentation / test equipment</td><td>PCB, testing, small batch</td><td class="num">15</td><td class="num">$800</td><td class="num">$20</td><td class="num"><b>$1,100</b></td></tr>
-          <tr><td><a href="/cases/lidar-car/">Lidar line-following car</a></td><td>Robotics / embedded systems</td><td>Sensors, motors, structure, firmware</td><td class="num">10</td><td class="num">$5,000</td><td class="num">$150</td><td class="num"><b>$6,500</b></td></tr>
-          <tr><td><a href="/cases/tracked-robot/">Swing-arm tracked robot</a></td><td>Robotics / mechatronics</td><td>Mechanical structure, motion control</td><td class="num">4</td><td class="num">$10,000</td><td class="num">$5,000</td><td class="num"><b>$30,000</b></td></tr>
-        </tbody>
-      </table></div>
+      <div class="build-grid">
+        <a class="build" href="/cases/logic-analyzer/">
+          <img src="/assets/img/case-logic-analyzer.jpg" alt="24-channel logic analyzer with coloured test hooks" width="1000" height="610" loading="lazy">
+          <h3>24-channel logic analyzer</h3>
+          <div class="build-price">$1,100</div>
+          <p>15 units at $20 each, plus $800 development.</p>
+        </a>
+        <a class="build" href="/cases/lidar-car/">
+          <img src="/assets/img/case-line-follower.jpg" alt="Four-wheel robot car with a lidar and a custom control board" width="1000" height="594" loading="lazy">
+          <h3>Lidar line-following car</h3>
+          <div class="build-price">$6,500</div>
+          <p>10 units at $150 each, plus $5,000 development.</p>
+        </a>
+        <a class="build" href="/cases/tracked-robot/">
+          <img src="/assets/img/case-tracked-robot.jpg" alt="Swing-arm tracked robot chassis with PTZ camera" width="861" height="750" loading="lazy">
+          <h3>Swing-arm tracked robot</h3>
+          <div class="build-price">$30,000</div>
+          <p>4 units at $5,000 each, plus $10,000 development.</p>
+        </a>
+      </div>
       <p class="build-foot">All three delivered. Totals exclude certification (FCC/CE) and shipping. <a href="/costs/">How costs break down →</a></p>
     </div>
   </section>
@@ -76,14 +88,14 @@
         </a>
         <a class="work" href="/cases/hexapod-robot/">
           <img src="/assets/img/work/hexapod-robot-1.jpg" alt="Red 3D-printed six-legged robot with a black body cover standing on a tiled floor next to a cardboard box" width="990" height="588" loading="lazy">
-          <h3>Bionic Hexapod Robot</h3>
+          <h3>Bionic hexapod robot</h3>
           <p>A six-legged walking robot with 18 servos, driven from a phone app.</p>
           <p class="work-stack">STM32F407 · 18 servos · MPU6050 IMU</p>
           <p class="work-time">Development: 20 days</p>
         </a>
         <a class="work" href="/cases/indoor-delivery-robot/">
           <img src="/assets/img/work/indoor-delivery-robot-1.jpg" alt="Black aluminium-frame cargo robot on a lab floor, a hand in the foreground pointing a handheld remote at it, benches with test instruments and a potted plant behind" width="899" height="585" loading="lazy">
-          <h3>Indoor Delivery Robot</h3>
+          <h3>Indoor delivery robot</h3>
           <p>A 200 kg cargo cart that follows you or drives by remote.</p>
           <p class="work-stack">ESP32 · UWB follow · ultrasonic avoidance</p>
           <p class="work-time">Development: 1 month</p>
@@ -95,6 +107,12 @@
           <p class="work-stack">ESP32 · 16×8 RGB matrix · MicroPython</p>
           <p class="work-time">Development: about 10 days</p>
         </a>
+        <a class="work" href="/cases/project-play/">
+          <img src="/assets/img/work/project-play-1.jpg" alt="The creator&#x27;s working prototype of Project Play: a 3D-printed body with keycaps, being played on a desk" width="1200" height="1466" loading="lazy">
+          <h3>Project Play</h3>
+          <p>A compact music workstation with keys, sliders and a speaker, in engineering.</p>
+          <p class="work-stack">Custom PCB · keys + sliders · audio</p>
+        </a>
         <a class="work" href="/cases/pottedbaby-smart-planter/">
           <img src="/assets/img/work/pottedbaby-smart-planter-1.jpg" alt="A small potted pine tree in a grey ceramic pot on a white office table, with a square device clipped into the pot rim" width="525" height="707" loading="lazy">
           <h3>PottedBaby AI smart planter</h3>
@@ -104,10 +122,23 @@
         </a>
         <a class="work" href="/cases/ros2-omni-robot/">
           <img src="/assets/img/work/ros2-omni-robot-1.jpg" alt="Front view of a mecanum-wheel robot on a tiled floor; a touchscreen on the front shows a mapping program with a grid, and a black depth camera sits on top" width="790" height="788" loading="lazy">
-          <h3>ROS2 Omnidirectional Robot</h3>
+          <h3>ROS2 omnidirectional robot</h3>
           <p>A mecanum-wheel robot that maps rooms and navigates them on its own with ROS2.</p>
           <p class="work-stack">Raspberry Pi 4B · ROS2 · LiDAR + depth camera</p>
           <p class="work-time">Development: 18 days</p>
+        </a>
+        <a class="work" href="/cases/graftsense-module-kit/">
+          <img src="/assets/img/work/graftsense-module-kit-5.jpg" alt="Two photos of a clear acrylic case holding a Pico controller board, wired sensor modules, a battery and a soil probe, on a grey table" width="612" height="263" loading="lazy">
+          <h3>GraftSense sensor module kit</h3>
+          <p>Plug-and-play sensor modules and controller boards for classrooms and fast prototypes.</p>
+          <p class="work-stack">300+ modules · Grove · Raspberry Pi Pico</p>
+        </a>
+        <a class="work" href="/cases/chengxiaozhi-maker-kits/">
+          <img src="/assets/img/work/chengxiaozhi-maker-kits-1.jpg" alt="Kit board in a clear acrylic case with a red 7-segment display reading 6 and green status LEDs" width="477" height="354" loading="lazy">
+          <h3>ChengXiaoZhi youth maker kits</h3>
+          <p>Six small sensor kits in acrylic cases for youth STEAM classes and gifts.</p>
+          <p class="work-stack">RP2040 · 6 sensor kits · acrylic cases</p>
+          <p class="work-time">Development: about 30 days for 6 kits (about 10 days per kit)</p>
         </a>
         <a class="work" href="/cases/voice-robot-dog/">
           <img src="/assets/img/work/voice-robot-dog-1.jpg" alt="Small white 3D-printed quadruped robot with an OLED face, a green strap and many servo wires, on a blue workbench mat" width="618" height="768" loading="lazy">
@@ -118,10 +149,31 @@
         </a>
         <a class="work" href="/cases/robot-dog-8dof/">
           <img src="/assets/img/work/robot-dog-8dof-1.jpg" alt="Small orange-and-grey 3D-printed quadruped robot standing on a dark grey surface, &#x27;FreakStudio&#x27; embossed on the side of its body" width="846" height="606" loading="lazy">
-          <h3>Small Dynamic Robot Dog</h3>
+          <h3>Small dynamic robot dog</h3>
           <p>A small 8-joint robot dog with its own programming tool for classrooms.</p>
           <p class="work-stack">8-DOF legs · IMU balance · own IDE</p>
           <p class="work-time">Development: 30 days</p>
+        </a>
+        <a class="work" href="/cases/voice-quadruped-robot/">
+          <img src="/assets/img/work/voice-quadruped-robot-1.jpg" alt="Pink-and-white 3D-printed four-legged robot, angled view, with a speaker grille, a microphone and a sticker on the lid, on a white background" width="519" height="438" loading="lazy">
+          <h3>Offline voice-controlled quadruped</h3>
+          <p>A small four-legged robot that obeys spoken commands with no internet.</p>
+          <p class="work-stack">STM32 · offline voice · 2.4 GHz remote</p>
+          <p class="work-time">Development: 20 days</p>
+        </a>
+        <a class="work" href="/cases/wheel-leg-balancing-robot/">
+          <img src="/assets/img/work/wheel-leg-balancing-robot-1.jpg" alt="Three views of a white 3D-printed two-wheel robot with servo-driven legs, on a white background: top view, one side with a leg lifted, and the rear panel with switch and ports" width="714" height="641" loading="lazy">
+          <h3>Wheel-legged self-balancing robot</h3>
+          <p>A two-wheel balancing robot whose servo legs lift it over obstacles.</p>
+          <p class="work-stack">STM32F4 · MPU-6050 · PID/LQR balance</p>
+          <p class="work-time">Development: 20 days</p>
+        </a>
+        <a class="work" href="/cases/mecanum-arm-kit/">
+          <img src="/assets/img/work/mecanum-arm-kit-1.jpg" alt="Side view of a black robot car with orange mecanum wheels and a servo-driven gripper arm, a handwritten &#x27;03&#x27; label on its side, on white" width="555" height="555" loading="lazy">
+          <h3>Mecanum robot-arm car teaching kit</h3>
+          <p>An Arduino robot car with gripper arm, handheld controller and 5-lesson course.</p>
+          <p class="work-stack">Arduino UNO · mecanum chassis · servo arm</p>
+          <p class="work-time">Development: 15 days</p>
         </a>
         <a class="work" href="/cases/ai-voice-companion/">
           <img src="/assets/img/work/ai-voice-companion-1.jpg" alt="Hand holding a pink 3D-printed rectangular device with a small screen, a microphone hole and a speaker grille, over a cluttered workbench" width="690" height="714" loading="lazy">
@@ -130,24 +182,70 @@
           <p class="work-stack">Wi‑Fi · LLM voice · screen + speaker</p>
           <p class="work-time">Development: about 10 days</p>
         </a>
-        <a class="work" href="/cases/graftsense-module-kit/">
-          <img src="/assets/img/work/graftsense-module-kit-1.jpg" alt="Close-up of many small white sensor modules with blue, black and green components on a glossy black surface" width="1005" height="550" loading="lazy">
-          <h3>GraftSense sensor module kit</h3>
-          <p>Plug-and-play sensor modules and controller boards for classrooms and fast prototypes.</p>
-          <p class="work-stack">300+ modules · Grove · Raspberry Pi Pico</p>
-        </a>
         <a class="work" href="/cases/ros-inspection-robot/">
           <img src="/assets/img/work/ros-inspection-robot-1.jpg" alt="Two large flat-deck robots with blue and yellow acrylic side panels on aluminium frames, mecanum wheels and spring suspension, parked on a dark marble floor in a lobby, a lidar puck on the deck" width="726" height="363" loading="lazy">
-          <h3>Large ROS Inspection Robot</h3>
+          <h3>Large ROS inspection robot</h3>
           <p>A large autonomous patrol robot that maps a building and drives itself.</p>
           <p class="work-stack">ROS · SLAM · 360° lidar</p>
           <p class="work-time">Development: 1 month</p>
         </a>
+        <a class="work" href="/cases/laser-weeding-robot/">
+          <img src="/assets/img/work/laser-weeding-robot-1.jpg" alt="White four-wheel robot outdoors at night on paving beside grass, four laser modules on a beam above it firing blue beams into the sky, green status lights" width="693" height="894" loading="lazy">
+          <h3>Laser weeding robot</h3>
+          <p>A remote-driven robot that aims a high-power laser array at weeds.</p>
+          <p class="work-stack">ROS · laser array · 4G video link</p>
+          <p class="work-time">Development: 1 month</p>
+        </a>
+        <a class="work" href="/cases/rm-mecanum-robot/">
+          <img src="/assets/img/work/rm-mecanum-robot-1.jpg" alt="Side view of a black competition robot with a number &#x27;1&#x27; armor plate, gold mecanum wheels with angled rollers and a gimbal on top, standing on carpet in front of a printed backdrop" width="736" height="611" loading="lazy">
+          <h3>RM competition robot: mecanum chassis</h3>
+          <p>A modular aluminum competition robot base with a gimbal and CAN-controlled drive.</p>
+          <p class="work-stack">6061 aluminum · mecanum · CAN control</p>
+        </a>
+        <a class="work" href="/cases/rm-omni-robot/">
+          <img src="/assets/img/work/rm-omni-robot-1.jpg" alt="Black competition robot with number &#x27;3&#x27; armor plates lit by red LED strips, omni wheels and a gimbal on top, against a pink wall" width="579" height="512" loading="lazy">
+          <h3>RM competition robot: omni-wheel chassis</h3>
+          <p>A fast-turning omni-wheel competition robot with a gimbal and full custom electronics.</p>
+          <p class="work-stack">Omni wheels · CAN bus · RTOS</p>
+        </a>
+        <a class="work" href="/cases/rm-swerve-robot/">
+          <img src="/assets/img/work/rm-swerve-robot-1.jpg" alt="Black carbon-fiber competition robot with white bumper rings and a tilted gimbal on a grey studio backdrop; each wheel sits under its own steering motor" width="671" height="532" loading="lazy">
+          <h3>RM competition robot: swerve chassis</h3>
+          <p>An agile competition robot with steerable wheels and a turret-style gimbal.</p>
+          <p class="work-stack">Swerve drive · multi-CAN · RTOS</p>
+        </a>
+        <a class="work" href="/cases/gel-blaster-tank/">
+          <img src="/assets/img/work/gel-blaster-tank-1.jpg" alt="Tracked metal chassis with a white 3D-printed launcher on a servo turret, blue battery pack and acrylic electronics enclosure, on a workbench with a hopper of yellow gel beads and a bench power supply" width="741" height="633" loading="lazy">
+          <h3>Tracked gel blaster robot</h3>
+          <p>A tracked robot with a remote-aimed turret that fires water-gel beads.</p>
+          <p class="work-stack">STM32 · tracked chassis · 2-axis turret</p>
+          <p class="work-time">Development: 15 days</p>
+        </a>
+        <a class="work" href="/cases/f450-quadcopter/">
+          <img src="/assets/img/work/f450-quadcopter-1.jpg" alt="Top view of an assembled quadcopter with red and white arms, white propellers, a GPS puck and a strapped battery, on concrete ground" width="612" height="482" loading="lazy">
+          <h3>F450 quadcopter platform</h3>
+          <p>An open, GPS-equipped quadcopter for teaching, research and flight-algorithm work.</p>
+          <p class="work-stack">APM flight controller · NEO-M8N GPS · Mission Planner</p>
+        </a>
         <a class="work" href="/cases/flat-frame-rov/">
           <img src="/assets/img/work/flat-frame-rov-1.jpg" alt="White flat-frame ROV seen from above on a grey carpet, next to a foam case holding the gripper, yellow tether cable and a small clear parts box" width="480" height="315" loading="lazy">
-          <h3>Flat-Frame Underwater ROV</h3>
+          <h3>Flat-frame underwater ROV</h3>
           <p>A light, tethered underwater robot with a gripper for inspection and sampling.</p>
           <p class="work-stack">RK3566 Linux · thruster control · depth sensor</p>
+          <p class="work-time">Development: 2 months</p>
+        </a>
+        <a class="work" href="/cases/orange-shell-rov/">
+          <img src="/assets/img/work/orange-shell-rov-1.jpg" alt="Front of an ROV with orange thruster shells on a grey carpet: clear camera dome in a black housing, two small lights below, a hand holding two metal rods above" width="848" height="549" loading="lazy">
+          <h3>Underwater ROV, orange-shell build</h3>
+          <p>An underwater robot with HD camera, depth sensing and a Linux main controller.</p>
+          <p class="work-stack">RK3566 Linux · MS5837 depth · Qt ground station</p>
+          <p class="work-time">Development: 2 months</p>
+        </a>
+        <a class="work" href="/cases/eight-thruster-rov/">
+          <img src="/assets/img/work/eight-thruster-rov-1.jpg" alt="Eight-thruster ROV on a white background, three-quarter front view: blue foam float blocks with vertical thrusters, carbon-fibre pressure tube with front camera dome, black frame and a small gripper underneath" width="414" height="417" loading="lazy">
+          <h3>Eight-thruster underwater ROV with arm</h3>
+          <p>A tethered eight-thruster underwater robot with a gripper arm for inspection and sampling.</p>
+          <p class="work-stack">8 thrusters · 4–6 DOF arm · 1080p video</p>
           <p class="work-time">Development: 2 months</p>
         </a>
 <!-- work-grid:end -->

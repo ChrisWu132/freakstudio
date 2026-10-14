@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Indoor Delivery Robot: Logistics build | Anvol</title>
+<title>Indoor delivery robot: Logistics build | Anvol</title>
 <meta name="description" content="A 200 kg cargo cart that follows you or drives by remote. Built by our engineers in Shenzhen. Tech stack: ESP32 · UWB modules front and rear · 4 ultrasonic sensors · 1080p camera.">
 <link rel="canonical" href="https://anvol.dev/cases/indoor-delivery-robot/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://anvol.dev/cases/indoor-delivery-robot/">
-<meta property="og:title" content="Indoor Delivery Robot: Logistics build | Anvol">
+<meta property="og:title" content="Indoor delivery robot: Logistics build | Anvol">
 <meta property="og:description" content="A 200 kg cargo cart that follows you or drives by remote. Built by our engineers in Shenzhen. Tech stack: ESP32 · UWB modules front and rear · 4 ultrasonic sensors · 1080p camera.">
 <meta property="og:image" content="https://anvol.dev/assets/img/work/indoor-delivery-robot-1.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Anvol","item":"https://anvol.dev/"},{"@type":"ListItem","position":2,"name":"Cases","item":"https://anvol.dev/cases/"},{"@type":"ListItem","position":3,"name":"Indoor Delivery Robot","item":"https://anvol.dev/cases/indoor-delivery-robot/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Anvol","item":"https://anvol.dev/"},{"@type":"ListItem","position":2,"name":"Cases","item":"https://anvol.dev/cases/"},{"@type":"ListItem","position":3,"name":"Indoor delivery robot","item":"https://anvol.dev/cases/indoor-delivery-robot/"}]}</script>
 <link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,7 @@
 <main>
 
   <header class="page-head">
-    <h1>Indoor Delivery Robot</h1>
+    <h1>Indoor delivery robot</h1>
     <p>An indoor delivery robot for moving materials in factories, warehouses, labs and other indoor spaces. It follows a person wearing a UWB tag at a set distance, or can be driven with a handheld remote. Ultrasonic sensors stop it from running into obstacles, and it carries up to 200 kg in a lidded aluminium-frame box on four air-filled wheels.</p>
   </header>
   <section class="section" style="padding-top:24px">
@@ -53,14 +53,16 @@
   <img src="/assets/img/work/indoor-delivery-robot-1.jpg" alt="Black aluminium-frame cargo robot on a lab floor, a hand in the foreground pointing a handheld remote at it, benches with test instruments and a potted plant behind" width="899" height="585">
   <figcaption class="photo-cap">Driven by handheld remote in the electronics lab.</figcaption>
 </figure>
-<div class="case-gallery">
-  <figure><img src="/assets/img/work/indoor-delivery-robot-2.jpg" alt="Two black box-shaped delivery robots with chunky air-filled wheels on a tiled floor, a small tracked robot in the background" width="831" height="627" loading="lazy"><figcaption>Two units on the floor.</figcaption></figure>
-  <figure><img src="/assets/img/work/indoor-delivery-robot-3.jpg" alt="Black box-shaped delivery robot with a split lid and four air-filled wheels on a tiled floor, cardboard boxes and lab benches behind" width="645" height="603" loading="lazy"><figcaption>Aluminium frame, split lid, 10-inch air-filled tires.</figcaption></figure>
-</div>
 <div class="rows">
   <div class="row"><h2>Tech stack</h2><dl><dt>Main controller</dt><dd>ESP32 running FreeRTOS</dd><dt>Positioning</dt><dd>UWB modules front and rear (UART); follow distance 1–7 m, adjustable</dd><dt>Obstacle sensing</dt><dd>4 ultrasonic sensors (RS485) and 6-axis IMU, multi-sensor fusion</dd><dt>Camera</dt><dd>1080p camera with video streaming and recording</dd><dt>Drive</dt><dd>4WD differential drive, in-place turning, 10-inch air-filled tires, PID / S-curve motor control</dd><dt>Power</dt><dd>24 V 20 Ah battery with BMS; ≈4 h charge; up to 15 km per charge</dd><dt>Load &amp; speed</dt><dd>≤200 kg payload, ≈30 kg empty, up to 5 km/h, ≤10° slope, 5 cm obstacles</dd><dt>Remote</dt><dd>Handheld remote, ≤40 m range; optional 4G remote monitoring</dd></dl></div>
   <div class="row"><h2>What we built</h2><ul class="plain case-text"><li>Mechanical design: aluminium-frame body, lidded cargo box, 4WD chassis</li><li>Control hardware: ESP32 main board, motor drivers, power and BMS, sensor wiring</li><li>Embedded software: UWB follow algorithm, remote control, obstacle-avoidance logic, motor control</li><li>Status display (voltage, distance, sensor data) and video streaming</li></ul></div>
   <div class="row"><h2>Development time</h2><p class="section-note case-text">1 month</p></div>
+</div>
+<h2 class="gallery-head">Photos and design files</h2>
+<div class="case-gallery">
+  <figure><img src="/assets/img/work/indoor-delivery-robot-2.jpg" alt="Two black box-shaped delivery robots with chunky air-filled wheels on a tiled floor, a small tracked robot in the background" width="831" height="627" loading="lazy"><figcaption>Two units on the floor.</figcaption></figure>
+  <figure><img src="/assets/img/work/indoor-delivery-robot-3.jpg" alt="Black box-shaped delivery robot with a split lid and four air-filled wheels on a tiled floor, cardboard boxes and lab benches behind" width="645" height="603" loading="lazy"><figcaption>Aluminium frame, split lid, 10-inch air-filled tires.</figcaption></figure>
+  <figure><img src="/assets/img/work/indoor-delivery-robot-4.jpg" alt="Close-up of a hand holding a red-and-black handheld remote in front of the black delivery robot&#x27;s lower panel and wheels, tiled floor" width="705" height="374" loading="lazy"><figcaption>Handheld remote used to drive it.</figcaption></figure>
 </div>
       <p class="more"><a href="/cases/">All builds →</a></p>
     </div>

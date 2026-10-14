@@ -38,6 +38,21 @@
     "dev_time": null,
     "photos": [
       {
+        "file": "/assets/img/work/graftsense-module-kit-5.jpg",
+        "alt": "Two photos of a clear acrylic case holding a Pico controller board, wired sensor modules, a battery and a soil probe, on a grey table",
+        "caption": "Student build: soil monitor in an acrylic case"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-6.jpg",
+        "alt": "Stacks of clear plastic kit boxes, each with a black 'GraftSense/Port Dev Kit' label",
+        "caption": "Packed kits ready to ship"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-7.jpg",
+        "alt": "Collage of five student projects in acrylic cases, each labelled in Chinese: touch alarm clock, UV monitor, waveform capture, fire alarm, music light",
+        "caption": "Projects built with the kit (labels in Chinese)"
+      },
+      {
         "file": "/assets/img/work/graftsense-module-kit-1.jpg",
         "alt": "Close-up of many small white sensor modules with blue, black and green components on a glossy black surface",
         "caption": "A batch of sensor modules"
@@ -53,9 +68,49 @@
         "caption": "Modules with cables and battery, as packed in a kit"
       },
       {
+        "file": "/assets/img/work/graftsense-module-kit-8.jpg",
+        "alt": "Angled close-up of sensor modules, a motor driver board and servo cables on a black surface",
+        "caption": "Modules and motor driver"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-9.jpg",
+        "alt": "Rows of small sensor modules photographed at an angle on a black surface",
+        "caption": "Module rows"
+      },
+      {
         "file": "/assets/img/work/graftsense-module-kit-4.jpg",
         "alt": "PCB layout screenshot of a small module board with RELOAD, BOOT and RST buttons and an Ethernet jack footprint",
-        "caption": "Design file: PCB layout of one module"
+        "caption": "PCB layout of one module"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-10.jpg",
+        "alt": "Documentation page with Chinese text and schematic blocks for a Raspberry Pi Pico board circuit",
+        "caption": "Schematic and circuit notes for the Pico board"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-11.jpg",
+        "alt": "3D renders of four controller boards with Grove connectors, two holding a green Raspberry Pi Pico, one with an Ethernet jack",
+        "caption": "3D render of the GraftPort controller boards"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-12.jpg",
+        "alt": "3D renders of dozens of sensor modules arranged in rows on a black background",
+        "caption": "3D render of the module library"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-13.jpg",
+        "alt": "Grey translucent CAD model of a rectangular case with a grid of mounting holes",
+        "caption": "Enclosure CAD"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-14.jpg",
+        "alt": "Screenshot of a Chinese documentation site with a module list on the left and a page for a 16-channel PWM servo driver module",
+        "caption": "Module documentation (Chinese)"
+      },
+      {
+        "file": "/assets/img/work/graftsense-module-kit-15.jpg",
+        "alt": "Screenshot of the BIPES block-programming editor with blocks to initialise an SSD1306 OLED and write text",
+        "caption": "Block-based programming of a module"
       }
     ],
     "source_pages": [
@@ -65,12 +120,10 @@
     ],
     "flags": [
       "Pages are out of order in the PDF: p2 is 01/03, p1 is 02/03, p3 is 03/03.",
-      "All module photos are studio shots on a black reflective surface, not messy-environment shots; no better option in this section.",
-      "Rejected p3 photo of packed kits in clear boxes (real environment, good shot) because the box stickers carry QR codes and 'FreakStudio' branding; usable if QR codes are acceptable.",
-      "Rejected p3 diptych of acrylic-case student builds on a desk (real environment) because each half is only ~300px wide.",
-      "Rejected p1 project collage (Chinese captions baked in), p2 3D renders of modules/boards, p2 and p3 Feishu doc / schematic / BIPES screenshots (Chinese UI text), p3 CAD render of enclosure.",
-      "'Raspberry Pi Pico (RP2040)' and 'GraftPort' are read from board silkscreen and the schematic screenshot in the slide images, not from slide body text.",
-      "Slide also lists per-module fee, BOM and packaging cost; all omitted per owner rule."
+      "Photo 7 (project collage) has Chinese captions baked in; photo 6 boxes carry FreakStudio stickers and small QR codes (not readable as URLs).",
+      "Photo 15 shows the third-party open-source BIPES editor UI and logo.",
+      "'Raspberry Pi Pico (RP2040)' and 'GraftPort' are read from board silkscreen and the schematic screenshot, not slide body text.",
+      "Nothing excluded except the full-slide backgrounds. Slide also lists per-module fee, BOM and packaging cost; all omitted."
     ],
     "card_stack": "300+ modules · Grove · Raspberry Pi Pico"
   },
@@ -128,9 +181,34 @@
         "caption": "Screen, motion sensor and front panel"
       },
       {
+        "file": "/assets/img/work/pottedbaby-smart-planter-4.jpg",
+        "alt": "The device in the pot with its small screen lit blue",
+        "caption": "Screen lit up"
+      },
+      {
         "file": "/assets/img/work/pottedbaby-smart-planter-3.jpg",
         "alt": "Red PCB layout with dimension lines, showing footprints labelled OLED, PIR, MIC, MSE and IMP",
-        "caption": "Design file: 60 x 60 mm PCB layout"
+        "caption": "PCB layout (60 x 60 mm)"
+      },
+      {
+        "file": "/assets/img/work/pottedbaby-smart-planter-7.jpg",
+        "alt": "Schematic sheet with blocks for OLED, motion sensor, soil sensor, microphone and speaker, charging and the ESP32-C3 controller, labelled in Chinese",
+        "caption": "Schematic"
+      },
+      {
+        "file": "/assets/img/work/pottedbaby-smart-planter-5.jpg",
+        "alt": "3D render of a blue PCB with an OLED module inside a grey square frame",
+        "caption": "3D render of the design"
+      },
+      {
+        "file": "/assets/img/work/pottedbaby-smart-planter-6.jpg",
+        "alt": "Dimensioned drawing of the front panel with screen window, sensor hole and a cartoon plant label",
+        "caption": "Front panel design drawing"
+      },
+      {
+        "file": "/assets/img/work/pottedbaby-smart-planter-8.jpg",
+        "alt": "Screenshot of the public GitHub repository 'PottedBaby' with folders for ai, audio, core, drivers and services",
+        "caption": "Source repository"
       }
     ],
     "source_pages": [
@@ -138,12 +216,11 @@
       5
     ],
     "flags": [
-      "Device front label reads 'FreakStudio' and 'Plant Baby' (team brand, visible in photos 1 and 2); slide calls the product PottedBaby.",
+      "Device front label reads 'FreakStudio' and 'Plant Baby' (team brand); slide calls the product PottedBaby.",
       "ESP32-C3 SuperMini and MAX98357A are read from the schematic screenshot on p5, not slide body text.",
-      "Slide links to a public GitHub repo FreakStudioCN/PottedBaby (screenshot); not used.",
-      "Rejected: p4 small lit-screen close-up (264x332, too small, duplicate angle); p5 dimension drawing on transparent background, schematic (Chinese labels), 3D enclosure render, GitHub screenshot.",
-      "Slide footer shows www.anvol.com; not in any saved image.",
-      "Slide lists development cost, BOM cost per unit and reference quantity; omitted per owner rule."
+      "Photo 6 (front-panel drawing) has a baked-in checkerboard 'transparency' background from the source image.",
+      "Photo 8 shows GitHub UI and the repo path FreakStudioCN/PottedBaby (no domain shown).",
+      "Slide footer shows www.anvol.com; not in any saved image. Development cost, BOM cost and reference quantity omitted."
     ],
     "card_stack": "ESP32-C3 · soil sensor · OLED face"
   },
@@ -200,9 +277,14 @@
         "caption": "The orange companion at a desk"
       },
       {
-        "file": "/assets/img/work/desk-ai-companion-2.jpg",
-        "alt": "Small screen showing Sessions and Config tabs, a pixel character, a BLE indicator and the status 'S1: Idle'",
-        "caption": "Screen UI showing a session status over BLE"
+        "file": "/assets/img/work/desk-ai-companion-4.jpg",
+        "alt": "Hand holding a white square box with black glasses and a yellow moustache, a red light glowing, in front of a monitor",
+        "caption": "White-enclosure variant"
+      },
+      {
+        "file": "/assets/img/work/desk-ai-companion-5.jpg",
+        "alt": "The orange character standing on an office desk partition",
+        "caption": "On an office desk"
       },
       {
         "file": "/assets/img/work/desk-ai-companion-3.jpg",
@@ -210,9 +292,34 @@
         "caption": "Printed enclosure on the workbench"
       },
       {
-        "file": "/assets/img/work/desk-ai-companion-4.jpg",
-        "alt": "Hand holding a white square box with black glasses and a yellow moustache, a red light glowing, in front of a monitor",
-        "caption": "White-enclosure variant"
+        "file": "/assets/img/work/desk-ai-companion-7.jpg",
+        "alt": "Hand holding the white square box with black glasses and a yellow moustache",
+        "caption": "White-enclosure variant, front"
+      },
+      {
+        "file": "/assets/img/work/desk-ai-companion-6.jpg",
+        "alt": "Collage of five photos of the orange character fitted with different accessories: headphones, frog hat, cat ears",
+        "caption": "Swappable accessories"
+      },
+      {
+        "file": "/assets/img/work/desk-ai-companion-8.jpg",
+        "alt": "Collage: speaker and PCB in hand, enclosure renders, and hands assembling a PCB into a green 3D-printed case",
+        "caption": "Build process: electronics and enclosure assembly"
+      },
+      {
+        "file": "/assets/img/work/desk-ai-companion-2.jpg",
+        "alt": "Small screen showing Sessions and Config tabs, a pixel character, a BLE indicator and the status 'S1: Idle'",
+        "caption": "Screen UI showing a session status over BLE"
+      },
+      {
+        "file": "/assets/img/work/desk-ai-companion-9.jpg",
+        "alt": "3D renders of eight accessory parts (glasses, top, base, headphones, heart glasses, black glasses, rabbit ears, frog hat) labelled in Chinese",
+        "caption": "3D render of the accessory parts"
+      },
+      {
+        "file": "/assets/img/work/desk-ai-companion-10.jpg",
+        "alt": "Schematic sheet with blocks for speaker, vibration sensor, vibration motor, status LEDs, charging and the main controller with audio amplifier, labelled in Chinese",
+        "caption": "Schematic of the white variant"
       }
     ],
     "source_pages": [
@@ -221,11 +328,11 @@
       8
     ],
     "flags": [
-      "Renamed from 'Claude Code Companion' per instruction; all Claude/Claude Code wording removed.",
-      "Rejected p6 and p7 photos showing the terminal of the coding agent (agent UI and 'bypass permissions' text visible), p7 collages with Chinese subtitles, p7 accessory renders with Chinese labels, p8 composites of assembly shots (each panel ~300px), p8 schematic/PCB (silkscreen reads 'claude-knock').",
-      "p8 white variant: schematic shows WizFi360-EVB-Pico (RP2040 + Wi-Fi), vibration sensor, vibration motor and a 3 W speaker, i.e. a different controller than the BLE orange unit. Not put in tech_stack; mention only if wanted.",
-      "Photo 4 has a monitor in the background with blurred Chinese text; nothing legible as a trademark.",
-      "Slide lists development cost and BOM cost; omitted per owner rule."
+      "Renamed from the deck's original name per instruction; no trademark wording in shown fields.",
+      "Excluded (trademark): p6 terminal photo and p7 frames showing the coding agent's terminal ('bypass permissions', welcome screen), the p7 scenario collage containing those frames, and the p8 PCB layout whose silkscreen carries the trademark name. Photo 10 is cropped above the schematic title block, which also carries that name.",
+      "White variant (photos 2, 5, 10): schematic shows WizFi360-EVB-Pico (RP2040 + Wi-Fi), vibration sensor, vibration motor and a 3 W speaker, i.e. a different controller than the BLE orange unit. Not put in tech_stack.",
+      "Photo 8 includes a small screenshot-tool overlay from the source.",
+      "Development cost and BOM cost omitted."
     ],
     "card_stack": "BLE 5.0 · LVGL screen · MicroPython"
   },
@@ -238,7 +345,7 @@
     "tech_stack": [
       {
         "label": "Main controller",
-        "value": "ESP32"
+        "value": "ESP32 (the editor lists XIAO ESP32-C3)"
       },
       {
         "label": "Display",
@@ -277,9 +384,24 @@
         "caption": "Drawing in the web editor, shown on the board"
       },
       {
+        "file": "/assets/img/work/pixelsky-led-board-5.jpg",
+        "alt": "Hands holding a lit LED panel showing a coloured pixel flower, with the same drawing in the editor behind",
+        "caption": "Pixel art from the editor on the board"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-6.jpg",
+        "alt": "LED panel showing the time 16:29 in purple and blue, in front of a screen showing 16:30",
+        "caption": "Clock mode"
+      },
+      {
         "file": "/assets/img/work/pixelsky-led-board-2.jpg",
         "alt": "Hand plugging a USB cable into a green LED matrix board with rows of white LEDs lit",
         "caption": "Bare LED matrix board powered up"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-7.jpg",
+        "alt": "Green LED matrix PCB seated in a black frame on a white desk",
+        "caption": "Board in its frame"
       },
       {
         "file": "/assets/img/work/pixelsky-led-board-3.jpg",
@@ -287,9 +409,39 @@
         "caption": "A batch of LED matrix boards"
       },
       {
+        "file": "/assets/img/work/pixelsky-led-board-8.jpg",
+        "alt": "Soldering iron over a green PCB with 'FreakStudio', 'SparkMinds 创智实验室' and 'PixelSky 像素面板-V1.1.2' silkscreen",
+        "caption": "Soldering the controller board"
+      },
+      {
         "file": "/assets/img/work/pixelsky-led-board-4.jpg",
         "alt": "Hand soldering a component onto a green PCB on a blue anti-static mat",
         "caption": "Hand-soldering a controller board"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-9.jpg",
+        "alt": "Hands using a screwdriver to fit a white diffuser panel into a black frame",
+        "caption": "Fitting the diffuser panel"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-12.jpg",
+        "alt": "Screenshot of the PixelSky web editor in time mode with a 16 x 8 pixel canvas showing 17:38",
+        "caption": "Web editor: time mode"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-13.jpg",
+        "alt": "Screenshot of the PixelSky web editor in drawing mode with an AI prompt box and an ESP32 device connection panel",
+        "caption": "Web editor: drawing mode and AI prompt"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-10.jpg",
+        "alt": "Red PCB layout of a 16 x 8 grid of LED footprints",
+        "caption": "PCB layout, top"
+      },
+      {
+        "file": "/assets/img/work/pixelsky-led-board-11.jpg",
+        "alt": "Blue PCB layout of the board's back with large mirrored 'FreakStudio', 'SparkMinds 创智实验室' and 'PixelSky 像素面板-V1.1.2' silkscreen",
+        "caption": "PCB layout, bottom"
       }
     ],
     "source_pages": [
@@ -297,13 +449,90 @@
       10
     ],
     "flags": [
-      "All four photos are crops of single frames out of one multi-photo collage on p9/p10 (no background removal). They are low-res (415–730px wide).",
-      "Photo 4 shows partial silkscreen ('...V1.1.2', 'ds'); the full board silkscreen reads 'FreakStudio' and 'SparkMinds 创智实验室' (possibly a third-party lab brand); that text is not legible in the crop.",
-      "'16 x 8' is from the web editor screenshot label on the slide; LED type not stated.",
-      "Rejected: PCB layout renders (mirrored 'FreakStudio / SparkMinds 创智实验室' silkscreen), web editor screenshots (Chinese UI), clock-display and other collage frames (duplicates).",
-      "Slide lists development cost, BOM cost and quantity; omitted per owner rule."
+      "Photos 1–9 are crops of single frames out of one multi-photo collage on p9/p10 (no background removal); low-res (415–730px wide).",
+      "Board silkscreen carries 'FreakStudio' and 'SparkMinds 创智实验室' (photo 8 and the bottom PCB layout).",
+      "'16 x 8' and 'XIAO ESP32-C3' are read from the web editor screenshot; LED type not stated.",
+      "Editor screenshots have Chinese UI text. Development cost, BOM cost and quantity omitted."
     ],
     "card_stack": "ESP32 · 16×8 RGB matrix · MicroPython"
+  },
+  {
+    "slug": "f450-quadcopter",
+    "name": "F450 quadcopter platform",
+    "category": "Drone",
+    "one_liner": "An open, GPS-equipped quadcopter for teaching, research and flight-algorithm work.",
+    "intro": "A teaching and research quadcopter built on the F450 frame and the open-source APM flight controller. The team integrates the frame, flight controller, GPS, motors and power system, then assembles, tests and tunes it into a stable, extensible platform for education, prototype development and algorithm validation. Optional work adds autonomous flight such as waypoint navigation, position hold and automatic takeoff and landing.",
+    "tech_stack": [
+      {
+        "label": "Frame",
+        "value": "F450 glass-fibre nylon frame"
+      },
+      {
+        "label": "Flight controller",
+        "value": "APM (open source)"
+      },
+      {
+        "label": "GPS",
+        "value": "u-blox NEO-M8N module"
+      },
+      {
+        "label": "Propulsion",
+        "value": "Brushless motors, ESCs, propellers"
+      },
+      {
+        "label": "Power",
+        "value": "LiPo battery"
+      },
+      {
+        "label": "Radio",
+        "value": "FlySky / Radiolink remote control"
+      },
+      {
+        "label": "Ground station",
+        "value": "Mission Planner"
+      }
+    ],
+    "scope": [
+      "F450 frame integration and optimization",
+      "Flight controller setup, power distribution, wiring and power system",
+      "Motor, ESC, propeller, GPS and receiver integration",
+      "3D-printed mounting parts where needed",
+      "Full assembly, flight testing and parameter tuning",
+      "Optional: autonomous waypoint flight, position hold, auto takeoff and landing, path planning and ground-station integration"
+    ],
+    "dev_time": null,
+    "photos": [
+      {
+        "file": "/assets/img/work/f450-quadcopter-1.jpg",
+        "alt": "Top view of an assembled quadcopter with red and white arms, white propellers, a GPS puck and a strapped battery, on concrete ground",
+        "caption": "Assembled quadcopter on the ground"
+      },
+      {
+        "file": "/assets/img/work/f450-quadcopter-2.jpg",
+        "alt": "Top view of the quadcopter frame held by two hands, showing the flight controller, GPS module and wiring",
+        "caption": "Flight controller, GPS and wiring"
+      },
+      {
+        "file": "/assets/img/work/f450-quadcopter-3.jpg",
+        "alt": "Hands holding four brushless motors with their leads on a cutting mat",
+        "caption": "Preparing the motors"
+      },
+      {
+        "file": "/assets/img/work/f450-quadcopter-4.jpg",
+        "alt": "The quadcopter frame next to a handheld radio transmitter on cutting mats",
+        "caption": "Frame and radio transmitter"
+      }
+    ],
+    "source_pages": [
+      11,
+      12
+    ],
+    "flags": [
+      "Pages 11 and 12 are two versions of this case with contradictory development time and cost; no numbers from either are used (dev_time null). Component ratings (motor KV, ESC amps, prop size, cell count) also left out.",
+      "Excluded: p12 photos of a larger black industrial drone on grass beside a case and of a drone carrying a parcel (not an F450; look like stock/third-party footage); p11 'Typical applications' scenes and p12 component icons (stock/AI-style images); the p11 in-flight photo exists only inside the full-slide background image (~280x206).",
+      "Slide lists hardware-platform and algorithm-development prices; omitted."
+    ],
+    "card_stack": "APM flight controller · NEO-M8N GPS · Mission Planner"
   },
   {
     "slug": "chengxiaozhi-maker-kits",
@@ -350,17 +579,52 @@
       "Logo, colour and packaging customization"
     ],
     "dev_time": "about 30 days for 6 kits (about 10 days per kit)",
-    "photos": [],
+    "photos": [
+      {
+        "file": "/assets/img/work/chengxiaozhi-maker-kits-1.jpg",
+        "alt": "Kit board in a clear acrylic case with a red 7-segment display reading 6 and green status LEDs",
+        "caption": "UV detector kit"
+      },
+      {
+        "file": "/assets/img/work/chengxiaozhi-maker-kits-2.jpg",
+        "alt": "Kit board in an acrylic case with an OLED showing body temperature, heart rate and oxygen readings",
+        "caption": "Health monitoring kit"
+      },
+      {
+        "file": "/assets/img/work/chengxiaozhi-maker-kits-3.jpg",
+        "alt": "Kit board in an acrylic case with an MP3 module and touch sensor",
+        "caption": "Touch & sound kit"
+      },
+      {
+        "file": "/assets/img/work/chengxiaozhi-maker-kits-4.jpg",
+        "alt": "Two kit boards with 16-LED bar displays and a microphone, green LEDs lit",
+        "caption": "Audio visualizer kit"
+      },
+      {
+        "file": "/assets/img/work/chengxiaozhi-maker-kits-5.jpg",
+        "alt": "Two kit boards with 16-segment light bars and a photoresistor",
+        "caption": "Light balance kit"
+      },
+      {
+        "file": "/assets/img/work/chengxiaozhi-maker-kits-6.jpg",
+        "alt": "Kit board with an OLED and a long probe printed 'FreakStudio', green LEDs lit",
+        "caption": "Plant care kit with soil probe"
+      },
+      {
+        "file": "/assets/img/work/chengxiaozhi-maker-kits-7.jpg",
+        "alt": "Video frame of a finger fixing the top acrylic plate onto a kit, with a Chinese assembly caption and player controls",
+        "caption": "Assembly tutorial video (Chinese)"
+      }
+    ],
     "source_pages": [
       13
     ],
     "flags": [
-      "NO PHOTOS SAVED: every kit photo shows PCB silkscreen 'FreakStudio X GXCVU' plus '城小智' branding. GXCVU / 城小智 looks like a co-brand with a school (possibly Guangxi City Vocational University) — treated as a third-party / school mark per rules. Best candidates if the owner clears it: scratchpad pdfwork-a/imgs/p13_2_x89_477x354.png (UV kit), p13_3_x90_588x336.png (health kit), p13_4_x91_612x375.png (touch & sound kit); all are studio shots on black, ~350px tall.",
-      "Possibly made with or for that school; the slide does not say 'client', so the text does not either.",
-      "Rejected p13 video frame (Chinese subtitle and player UI baked in) and p13 plant-care photo (large 'FreakStudio' plaque).",
-      "p13 holds two slides side by side (01/02 and 02/02).",
-      "Slide lists total development cost and per-set price; omitted per owner rule."
-    ]
+      "Boards carry 'FreakStudio X GXCVU' and 城小智 co-branding (cleared by owner 10-13). Possibly made with or for that school; the slide does not say so, and the text does not either.",
+      "All six kit photos are studio shots on black; photo 7 is a frame from a tutorial video with Chinese subtitle and player UI.",
+      "p13 holds two slides side by side (01/02 and 02/02). Total development cost and per-set price omitted."
+    ],
+    "card_stack": "RP2040 · 6 sensor kits · acrylic cases"
   },
   {
     "slug": "logic-analyzer",
@@ -403,20 +667,34 @@
     "dev_time": "3 days",
     "photos": [
       {
+        "file": "/assets/img/work/logic-analyzer-1.jpg",
+        "alt": "The logic analyzer on a wooden desk connected by a USB cable, with red arrows and labels: signal input channels, Micro-USB, USB-A",
+        "caption": "In use on a desk (annotated)"
+      },
+      {
         "file": "/assets/img/case-logic-analyzer.jpg",
         "alt": "24-channel logic analyzer in a clear case, with a bundle of coloured test hooks",
         "caption": "The analyzer and its test hooks. The panel is marked for 3.3 V to 5 V logic levels."
+      },
+      {
+        "file": "/assets/img/work/logic-analyzer-2.jpg",
+        "alt": "Close-up of the analyzer's pin header with probe wires attached, red boxes and arrows marking the input channel and GND",
+        "caption": "Connecting probes to the channels (annotated)"
+      },
+      {
+        "file": "/assets/img/work/logic-analyzer-3.jpg",
+        "alt": "Kraft-paper box printed with an eagle logo and '24通道100M逻辑分析仪', on white",
+        "caption": "Retail packaging"
       }
     ],
     "source_pages": [
       15
     ],
     "flags": [
-      "NO PHOTOS SAVED. The only in-environment photos (unit on a wooden desk with USB cable; close-up of pin header) have red Chinese/English annotation arrows and labels baked in. The white-background shots (unit + test hooks, unit + kraft box) are background-removed cutouts (background is pure #FFFFFF), so rejected per the 'no cutouts' rule. The hero image on the slide is part of the slide background with text over it.",
-      "If the partner can send the original desk photo without annotations, it would be the right lead image.",
-      "Unit and box carry the 'FreakStudio' eagle logo (team brand).",
-      "Slide lists development cost and unit BOM; omitted per owner rule.",
-      "Lead photo is the existing white-background product shot; the PDF desk photo has red annotation arrows. Need a clean desk photo from Zisheng."
+      "Photos 1 and 3 (desk, pin header) have red Chinese/English annotations baked in. The existing site shot (case-logic-analyzer.jpg) and the packaging shot are background-removed product photos (pure white), allowed per owner 10-13. Lead changed from the existing product shot to the annotated desk photo per 'best in-environment first'; swap back if preferred.",
+      "A clean desk photo without annotations from Zisheng would still be the best lead.",
+      "Excluded: the deck's unit + test-hooks cutout (same shot as the existing, higher-res case-logic-analyzer.jpg); a unit-only front cutout (duplicate); the slide hero and a clean 'In Use' thumbnail exist only inside the full-slide background image (thumbnail ~577x153, too small).",
+      "Unit and box carry the 'FreakStudio' eagle logo (team brand). Development cost and unit BOM omitted."
     ]
   },
   {
@@ -464,6 +742,11 @@
         "file": "/assets/img/work/ai-voice-companion-1.jpg",
         "alt": "Hand holding a pink 3D-printed rectangular device with a small screen, a microphone hole and a speaker grille, over a cluttered workbench",
         "caption": "Prototype in hand at the workbench"
+      },
+      {
+        "file": "/assets/img/work/ai-voice-companion-2.jpg",
+        "alt": "Side view of the pink device held in hand, with a blue arrow and circle marking a small button below the scroll wheel",
+        "caption": "Side wheel and button (annotated)"
       }
     ],
     "source_pages": [
@@ -472,7 +755,6 @@
     "flags": [
       "Slide title is 'AI Voice Interaction Robot', but the device is a handheld box, not a robot; renamed 'AI voice companion'. Check whether the owner prefers the original name.",
       "Main controller is not stated on the slide.",
-      "Rejected side-view photo (blue arrow and circle annotation baked in).",
       "Slide lists hardware/software design fee, full-project fee and unit BOM; omitted per owner rule."
     ],
     "card_stack": "Wi‑Fi · LLM voice · screen + speaker"
@@ -525,6 +807,11 @@
         "caption": "Prototype on the workbench, OLED face showing an expression"
       },
       {
+        "file": "/assets/img/work/voice-robot-dog-3.jpg",
+        "alt": "Side view of the robot with servo wires, a green strap printed 'SAMZHE 山泽' and the OLED face",
+        "caption": "Side view on the bench"
+      },
+      {
         "file": "/assets/img/work/voice-robot-dog-2.jpg",
         "alt": "Front view of the small robot with two blue eyes on its OLED screen, on a blue mat with test equipment behind",
         "caption": "Front view on the bench"
@@ -534,12 +821,11 @@
       17
     ],
     "flags": [
-      "Photo 1: the green velcro strap shows a partial third-party brand print ('…HE 山泽'); small but legible. Rejected the other side view (p17 middle photo) where the strap brand 'SAMZHE 山泽' is clearly readable.",
+      "Photos 1 and 2 show a third-party brand print on the velcro strap ('SAMZHE 山泽').",
       "Photo 2 is low-res (246x398).",
       "Voice module and MCU part numbers are not stated.",
       "Slide lists development cost, unit BOM and 10 prototype units; cost omitted per owner rule.",
-      "Pages 11-12 (F450 quadcopter, two versions with contradictory numbers) skipped entirely per instruction.",
-      "Page 14 (Dancing Swing Light, heart-shaped LED PCB, 2-day circuit-only job) left out of this file: the PCB silkscreen is vulgar/NSFW (censored profanity, nude silhouettes, \"NSFW\"), so every image is unusable and the project is a poor fit for the site."
+      "Page 14 (Dancing Swing Light) left out: the PCB silkscreen is vulgar/NSFW, so every image is unusable."
     ],
     "card_stack": "Custom servo board · offline voice · OLED face"
   }

@@ -38,7 +38,7 @@ def load_projects():
             sys.exit(f"order.txt names unknown slugs: {missing}")
         projects = [by_slug[s] for s in order]
     for p in projects:
-        for key in ("slug", "name", "one_liner", "intro", "tech_stack", "scope", "photos"):
+        for key in ("slug", "name", "one_liner", "intro", "tech_stack", "photos"):
             if not p.get(key):
                 sys.exit(f"{p.get('slug')}: missing {key}")
         for ph in p["photos"]:
@@ -80,20 +80,22 @@ def detail_block(p):
     photos = p["photos"]
     out = ['<figure class="case-photo">', "  " + photo_tag(photos[0], lazy=False),
            f'  <figcaption class="photo-cap">{esc(photos[0]["caption"])}</figcaption>', "</figure>"]
-    if len(photos) > 1:
-        out.append('<div class="case-gallery">')
-        for ph in photos[1:]:
-            out.append(f'  <figure>{photo_tag(ph)}<figcaption>{esc(ph["caption"])}</figcaption></figure>')
-        out.append("</div>")
     rows = "".join(f"<dt>{esc(r['label'])}</dt><dd>{esc(r['value'])}</dd>" for r in p["tech_stack"])
-    scope = "".join(f"<li>{esc(s)}</li>" for s in p["scope"])
+    scope = "".join(f"<li>{esc(s)}</li>" for s in p.get("scope") or [])
     out.append('<div class="rows">')
     out.append(f'  <div class="row"><h2>Tech stack</h2><dl>{rows}</dl></div>')
-    out.append(f'  <div class="row"><h2>What we built</h2><ul class="plain case-text">{scope}</ul></div>')
+    if scope:
+        out.append(f'  <div class="row"><h2>What we built</h2><ul class="plain case-text">{scope}</ul></div>')
     if p.get("dev_time"):
         out.append(f'  <div class="row"><h2>Development time</h2><p class="section-note case-text">'
                    f'{esc(p["dev_time"])}</p></div>')
     out.append("</div>")
+    if len(photos) > 1:
+        out.append('<h2 class="gallery-head">Photos and design files</h2>')
+        out.append('<div class="case-gallery">')
+        for ph in photos[1:]:
+            out.append(f'  <figure>{photo_tag(ph)}<figcaption>{esc(ph["caption"])}</figcaption></figure>')
+        out.append("</div>")
     return "\n".join(out)
 
 

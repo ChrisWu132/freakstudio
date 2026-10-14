@@ -251,10 +251,23 @@ section[id]{scroll-margin-top:var(--nav-h)}
 a.work{display:block;text-decoration:none;color:var(--ink)}
 a.work:hover h3{color:var(--accent)}
 .work .work-stack{margin-top:6px;font-size:13px;color:var(--accent)}
-.case-gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;max-width:880px}
+.case-gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:20px}
 .case-gallery img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:6px}
 .case-gallery figcaption{margin-top:8px;font-size:13px;line-height:1.5;color:var(--ink-faint)}
 @media (max-width:640px){.case-gallery{grid-template-columns:1fr 1fr}}
 .bench-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:4px;background:var(--ink)}
 .bench-strip img{width:100%;height:240px;object-fit:cover}
 @media (max-width:640px){.bench-strip{grid-template-columns:repeat(2,1fr)}.bench-strip img{height:150px}.bench-strip img:nth-child(5){display:none}}
+/* hero on a real bench photo, darkened so the text reads */
+.hero-wrap{background:linear-gradient(rgba(10,18,32,.8),rgba(10,18,32,.8)),url(/assets/img/f-debug-bench.jpg) center/cover}
+.hero-wrap .hero-title{color:#fff}
+.hero-wrap .hero-title em{color:#7DB8FF}
+.hero-wrap .hero-sub{color:rgba(255,255,255,.88)}
+.hero-wrap .hero-facts{color:rgba(255,255,255,.72)}
+.hero-wrap .quote-card{background:#fff;border-color:transparent}
+a.build{display:block;text-decoration:none;color:var(--ink)}
+a.build:hover h3{color:var(--accent)}
+.page-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:8px}
+.page-strip img{width:100%;height:260px;object-fit:cover;border-radius:6px}
+.gallery-head{font-size:22px;letter-spacing:-.01em;margin:56px 0 0}
+@media (max-width:640px){.page-strip{grid-template-columns:1fr 1fr}.page-strip img{height:140px}.page-strip img:nth-child(3){display:none}}

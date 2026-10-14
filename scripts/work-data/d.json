@@ -1,0 +1,55 @@
+[
+  {
+    "slug": "project-play",
+    "name": "Project Play",
+    "category": "Consumer electronics",
+    "one_liner": "A compact music workstation with keys, sliders and a speaker, in engineering.",
+    "intro": "A compact music workstation we are developing with an independent creator. It started as the creator's own 3D-printed working prototype; our engineers are turning it into a product that can be built in batches. Engineering is under way and it has not shipped yet.",
+    "tech_stack": [
+      {
+        "label": "Controls",
+        "value": "Keys, sliders and knobs"
+      },
+      {
+        "label": "Display",
+        "value": "Screen"
+      },
+      {
+        "label": "Audio",
+        "value": "Speaker and audio output"
+      },
+      {
+        "label": "Electronics",
+        "value": "Custom PCB"
+      },
+      {
+        "label": "Enclosure",
+        "value": "Designed for assembly, from a 3D-printed prototype"
+      }
+    ],
+    "card_stack": "Custom PCB · keys + sliders · audio",
+    "scope": [
+      "Schematics and PCB layout",
+      "Firmware",
+      "Enclosure design and assembly",
+      "Test procedures and production files"
+    ],
+    "dev_time": null,
+    "photos": [
+      {
+        "file": "/assets/img/work/project-play-1.jpg",
+        "alt": "The creator's working prototype of Project Play: a 3D-printed body with keycaps, being played on a desk",
+        "caption": "Where it started: the creator's own working prototype."
+      },
+      {
+        "file": "/assets/img/work/project-play-2.jpg",
+        "alt": "Engineering design of Project Play, a compact music workstation with keys, sliders and a speaker",
+        "caption": "Engineering design of the product version (render)."
+      }
+    ],
+    "source_pages": [],
+    "flags": [
+      "Sources: block-less.com creator-program.html and landing.html (already public), spec §8.3. No price: block-less.com shows $3,500 but Zisheng's numbers differ (open decision)."
+    ]
+  }
+]

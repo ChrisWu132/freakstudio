@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ROS2 Omnidirectional Robot: Robotics build | Anvol</title>
+<title>ROS2 omnidirectional robot: Robotics build | Anvol</title>
 <meta name="description" content="A mecanum-wheel robot that maps rooms and navigates them on its own with ROS2. Built by our engineers in Shenzhen. Tech stack: Raspberry Pi 4B · EAI G4 LiDAR · 4 independent mecanum wheels · SLAM.">
 <link rel="canonical" href="https://anvol.dev/cases/ros2-omni-robot/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://anvol.dev/cases/ros2-omni-robot/">
-<meta property="og:title" content="ROS2 Omnidirectional Robot: Robotics build | Anvol">
+<meta property="og:title" content="ROS2 omnidirectional robot: Robotics build | Anvol">
 <meta property="og:description" content="A mecanum-wheel robot that maps rooms and navigates them on its own with ROS2. Built by our engineers in Shenzhen. Tech stack: Raspberry Pi 4B · EAI G4 LiDAR · 4 independent mecanum wheels · SLAM.">
 <meta property="og:image" content="https://anvol.dev/assets/img/work/ros2-omni-robot-1.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Anvol","item":"https://anvol.dev/"},{"@type":"ListItem","position":2,"name":"Cases","item":"https://anvol.dev/cases/"},{"@type":"ListItem","position":3,"name":"ROS2 Omnidirectional Robot","item":"https://anvol.dev/cases/ros2-omni-robot/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Anvol","item":"https://anvol.dev/"},{"@type":"ListItem","position":2,"name":"Cases","item":"https://anvol.dev/cases/"},{"@type":"ListItem","position":3,"name":"ROS2 omnidirectional robot","item":"https://anvol.dev/cases/ros2-omni-robot/"}]}</script>
 <link rel="icon" href="/assets/img/anvol-mark.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +44,7 @@
 <main>
 
   <header class="page-head">
-    <h1>ROS2 Omnidirectional Robot</h1>
+    <h1>ROS2 omnidirectional robot</h1>
     <p>An omnidirectional mobile robot running ROS2, with LiDAR, a depth camera and room for expansion. It does SLAM mapping, autonomous navigation, obstacle avoidance and visual tracking. It is built for robotics teaching, research and real-world uses such as inspection and mapping.</p>
   </header>
   <section class="section" style="padding-top:24px">
@@ -53,13 +53,16 @@
   <img src="/assets/img/work/ros2-omni-robot-1.jpg" alt="Front view of a mecanum-wheel robot on a tiled floor; a touchscreen on the front shows a mapping program with a grid, and a black depth camera sits on top" width="790" height="788">
   <figcaption class="photo-cap">Mapping software on the onboard screen</figcaption>
 </figure>
-<div class="case-gallery">
-  <figure><img src="/assets/img/work/ros2-omni-robot-2.jpg" alt="Angled view of the same mecanum-wheel robot on a tiled floor, with a tilted touchscreen and a black depth camera on an aluminum frame" width="790" height="790" loading="lazy"><figcaption>Mecanum chassis, depth camera and touchscreen</figcaption></figure>
-</div>
 <div class="rows">
   <div class="row"><h2>Tech stack</h2><dl><dt>Main computer</dt><dd>Raspberry Pi 4B, Ubuntu + ROS2</dd><dt>Sensors</dt><dd>EAI G4 LiDAR, Orbbec Astra Pro depth camera, IMU, wheel encoders</dd><dt>Drive</dt><dd>4 independent mecanum wheels, motor drivers (PWM / serial)</dd><dt>Mapping &amp; navigation</dt><dd>SLAM (Gmapping / Karto / Hector / Cartographer), TEB / DWA navigation, A* / RRT path planning</dd><dt>Perception</dt><dd>KCF visual tracking, line following</dd><dt>Simulation</dt><dd>Gazebo</dd><dt>Power &amp; frame</dt><dd>12 V battery, aluminum chassis</dd><dt>Control</dt><dd>Wi-Fi mobile app</dd></dl></div>
   <div class="row"><h2>What we built</h2><ul class="plain case-text"><li>Robot chassis design</li><li>Carrier board and hardware development: sensor integration, power management, motor control</li><li>Embedded software on ROS2</li><li>System integration, debugging and testing</li><li>Delivered complete hardware, software source code, documentation, assembly drawings and a test guide</li></ul></div>
   <div class="row"><h2>Development time</h2><p class="section-note case-text">18 days</p></div>
+</div>
+<h2 class="gallery-head">Photos and design files</h2>
+<div class="case-gallery">
+  <figure><img src="/assets/img/work/ros2-omni-robot-2.jpg" alt="Angled view of the same mecanum-wheel robot on a tiled floor, with a tilted touchscreen and a black depth camera on an aluminum frame" width="790" height="790" loading="lazy"><figcaption>Mecanum chassis, depth camera and touchscreen</figcaption></figure>
+  <figure><img src="/assets/img/work/ros2-omni-robot-3.jpg" alt="Photo of a monitor showing a SLAM occupancy-grid map of a room being built, with the robot marker in green" width="747" height="462" loading="lazy"><figcaption>SLAM map being built</figcaption></figure>
+  <figure><img src="/assets/img/work/ros2-omni-robot-4.jpg" alt="Top-view line drawing of the robot chassis with four mecanum wheels labelled A轮 and B轮" width="546" height="648" loading="lazy"><figcaption>Chassis drawing, top view</figcaption></figure>
 </div>
       <p class="more"><a href="/cases/">All builds →</a></p>
     </div>
